@@ -1,0 +1,29 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-sass-chokidar": "^0.0.3",
+    "normalize.css": "^7.0.0",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-modal": "^3.1.10",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "dev-server": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "compile:sass": "node-sass src/css/styles.scss src/css/styles.css -w"
+  },
+  "devDependencies": {
+    "react-router-dom": "^4.2.2"
+  }
+}
