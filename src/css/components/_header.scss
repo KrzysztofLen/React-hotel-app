@@ -4,19 +4,6 @@
 	display: flex;
 	margin: 3rem 0;
 
-	.container {
-		margin: 0;
-		max-width: none;
-
-		.col-60 {
-			display: flex;
-
-			@include media-queries(L) {
-				display: flex;
-				flex-direction: column;
-			}
-		}
-	}
 
 	&__back {
 		height: 40px;

@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 const Header = (props) => {
 	return (
 	<header className="header">
-		<div className="container">
 			<div className="row">
 				<div className="col-20">
 					<NavLink to="/" className="header__back">
@@ -52,7 +51,6 @@ const Header = (props) => {
 					<button className="header__search-btn">Search</button>
 				</div>
 			</div>}
-		</div>
 	</header>
 	)
 };

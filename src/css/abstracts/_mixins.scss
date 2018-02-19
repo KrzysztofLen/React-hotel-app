@@ -1,0 +1,97 @@
+/*
+* SASS DOC
+*/
+
+/// Helper mixin to style navigation depends what side was chosen.
+/// @group shorthand
+///
+/// @example scss - Sizing `.nav`
+///   .nav {
+///     @include navigation(100vh, 94px, hidden, fixed, 0, 0;);
+///   }
+@mixin navigation($height, $width, $overflow, $position, $z-index, $top) {
+  height: $height;
+  width: $width;
+  overflow: $overflow;
+  position: $position;
+  z-index: $z-index;
+  top: $top;
+  @content;
+}
+
+/// Helper mixin to work with media queries.
+/// @group shorthand
+///
+/// @example scss - Sizing `.nav`
+///   .nav {
+///     @include navigation(100vh, 94px, hidden, fixed, 0, 0;);
+///   }
+@mixin media-queries($media) {
+  @media #{$media} {
+    @content;
+  }
+}
+
+/// Mixin to center element vartically i horitzontally
+/// @group shorthand
+@mixin centered-vertical($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/// Mixin to work with many fonts family
+/// @group shorthand
+///
+/// @example scss - `.nav`
+///   .nav {
+///     @include font($fontName1);
+///   }
+@mixin font($font) {
+  @if $font == $NameOfFont0 {
+    font-family: $NameOfFont0;
+  } @else if $font == $NameOfFont1 {
+    font-family: $NameOfFont1;
+  } @else if $font == $NameOfFont2 {
+    font-family: $NameOfFont2;
+  } @else if $font == $NameOfFont3 {
+    font-family: $NameOfFont3;
+  }
+}
+
+/// Mixin to work with Font weight
+/// @group shorthand
+///
+@mixin font-weight($weight) {
+	font-weight: $weight;
+}
+
+/// Mixin to work with Font-size in rem's
+/// @group shorthand
+///
+@mixin font-size($sizeValue: 1.6) {
+	font-size: ($sizeValue * 10) + px;
+	font-size: $sizeValue + rem;
+}
+
+/// Mixin to add border-radius
+/// @group shorthand
+///
+@mixin border-radius($radius: 0.25em) {
+	border-radius: $radius;
+}
+
+/// Mixin for padding
+/// @group shorthand
+/// @example scss - `.nav`
+///   .nav {
+///     @include padding(1.2rem, 4rem);
+///   }
+@mixin padding($values...) {
+    @each $var in $values {
+        padding: #{$var};
+    }
+}

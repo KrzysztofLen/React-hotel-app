@@ -5,15 +5,14 @@ import SingleComment from './SingleComment';
 class SingleQuestion extends React.Component {
 	constructor(props) {
 		super(props);
-		this.voteUp = this.voteUp.bind(this);
-		this.voteDown = this.voteDown.bind(this);
-		this.addComment = this.addComment.bind(this);
 		this.state = {
 			count: -1,
 			comment: 1,
 			page: 1
 		};
-		console.log(props);
+		this.voteUp = this.voteUp.bind(this);
+		this.voteDown = this.voteDown.bind(this);
+		this.addComment = this.addComment.bind(this);
 	}
 
 	componentDidMount() {

@@ -30,7 +30,7 @@ class App extends Component {
 		const elem = app_data.slice(0, count);
 
 		return (
-			<div className="App">
+			<div className="container">
 				<Header/>
 				<div className="content">
 					<div className="content__container">

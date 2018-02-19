@@ -2,6 +2,9 @@
 /* ------------- */
 /*		ABSTRACTS	 */
 /* ------------- */
+/*
+* SASS DOC
+*/
 /* ------------- */
 /*		BASE    */
 /* ------------- */
@@ -10,7 +13,11 @@ html {
 
 body {
   font-family: Lato, Arial, sans-serif;
-  counter-reset: items-left; }
+  counter-reset: items-left;
+  color: #777;
+  background-image: linear-gradient(to right bottom, #FF3366, #BA265D);
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 button {
   cursor: pointer; }
@@ -22,136 +29,15 @@ body.ReactModal__Body--open {
   overflow: hidden; }
 
 .container {
-  margin: 0 auto;
-  max-width: 112.0rem;
-  padding: 0 2rem;
-  position: relative;
-  width: 100%; }
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
-.row-no-gutter > .col,
-.row-no-gutter > [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0; }
-
-.row-no-vertical-spacing > .col,
-.row-no-vertical-spacing > [class*="col-"] {
-  margin-bottom: 0; }
-
-.row-no-wrap {
-  flex-wrap: nowrap; }
-
-.justify-content-center {
-  -ms-flex-pack: center !important;
-  justify-content: center !important; }
-
-.row-wrap {
-  flex-wrap: wrap; }
-
-.row-top {
-  align-items: flex-start; }
-
-.row-bottom {
-  align-items: flex-end; }
-
-.row-center {
-  align-items: center; }
-
-.row-stretch {
-  align-items: stretch; }
-
-.row-baseline {
-  align-items: baseline; }
-
-[class*="col-"],
-.col {
-  display: block;
-  flex: 1 1 auto;
-  margin-left: 0;
-  max-width: 100%;
-  margin-bottom: 1rem; }
-
-.col-no-gutter {
-  padding-left: 0;
-  padding-right: 0; }
-
-.col-break {
-  width: 100% !important; }
-
-.col-10 {
-  flex: 0 0 10%;
-  max-width: 10%; }
-
-.col-20 {
-  flex: 0 0 20%;
-  max-width: 20%; }
-
-.col-25 {
-  flex: 0 0 25%;
-  max-width: 25%; }
-
-.col-30 {
-  flex: 0 0 30%;
-  max-width: 30%; }
-
-.col-33 {
-  flex: 0 0 33.3333%;
-  max-width: 33.3333%; }
-
-.col-40 {
-  flex: 0 0 40%;
-  max-width: 40%; }
-
-.col-50 {
-  flex: 0 0 50%;
-  max-width: 50%; }
-
-.col-60 {
-  flex: 0 0 60%;
-  max-width: 60%; }
-
-.col-66 {
-  flex: 0 0 66.6666%;
-  max-width: 66.6666%; }
-
-.col-70 {
-  flex: 0 0 70%;
-  max-width: 70%; }
-
-.col-75 {
-  flex: 0 0 75%;
-  max-width: 75%; }
-
-.col-80 {
-  flex: 0 0 80%;
-  max-width: 80%; }
-
-.col-90 {
-  flex: 0 0 90%;
-  max-width: 90%; }
-
-.col-100 {
-  flex: 0 0 100%;
-  max-width: 100%; }
-
-.col-top {
-  align-self: flex-start; }
-
-.col-bottom {
-  align-self: flex-end; }
-
-.col-center {
-  align-self: center; }
-
-.column.column-offset-10 {
-  margin-left: 10%; }
-
-.column.column-offset-20 {
-  margin: 0 20%; }
+  margin: 8rem auto;
+  background-color: #faf9f9;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      width: 100%;
+      max-width: 100%; } }
 
 /* COLORS */
 /* SPACING */
@@ -216,15 +102,6 @@ body.ReactModal__Body--open {
 .header {
   display: flex;
   margin: 3rem 0; }
-  .header .container {
-    margin: 0;
-    max-width: none; }
-    .header .container .col-60 {
-      display: flex; }
-      @media only screen and (max-width: 1024px) {
-        .header .container .col-60 {
-          display: flex;
-          flex-direction: column; } }
   .header__back {
     height: 40px;
     width: 40px;
