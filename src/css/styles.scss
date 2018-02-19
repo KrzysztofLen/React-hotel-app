@@ -5,15 +5,15 @@
 /* ------------- */
 /*		BASE    */
 /* ------------- */
-@import 'Base/base';
-@import 'Base/grid';
-@import 'Base/settings';
-@import 'Base/utilities';
+@import 'base/base';
+@import 'base/grid';
+@import 'base/settings';
+@import 'base/utilities';
 
 /* ------------- */
 /*		COMPONENTS    */
 /* ------------- */
-@import "Components/header";
+@import "components/header";
 @import "components/questions";
 @import "components/question";
 @import "components/single-comment";
