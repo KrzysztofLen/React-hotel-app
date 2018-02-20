@@ -1,0 +1,66 @@
+// SEARCH /////////////////////////////////
+.search {
+	flex: 0 0 40%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media only screen and (max-width: $bp-smallest) {
+		order: 1;
+		flex: 0 0 100%;
+		background-color: $color-grey-light-2;
+	}
+
+	&__input {
+		font-family: inherit;
+		font-size: 1.4rem;
+		background-color: $color-grey-light-2;
+		border: none;
+		color: inherit;
+		padding: .7rem 2rem;
+		border-radius: 100px;
+		width: 90%;
+		transition: all .2s;
+		background-image: url('../assets/SVG/magnifying-glass.svg');
+		background-repeat: no-repeat;
+		background-position: 98%;
+
+		&:focus {
+			outline: none;
+			width: 100%;
+			background-color: $color-grey-light-3;
+		}
+
+		&::-webkit-input-placeholder {
+			font-weight: 100;
+			color: $color-grey-light-4;
+		}
+	}
+
+	&__input:focus + &__button {
+		background-color: $color-grey-light-3;
+	}
+
+	&__button {
+		border: none;
+		background-color: $color-grey-light-2;
+		background-image: url('../assets/SVG/magnifying-glass.svg');
+		background-repeat: no-repeat;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:active {
+			transform: translateY(2px);
+		}
+	}
+
+	&__icon {
+		height: 2rem;
+		width: 2rem;
+
+		fill: $color-grey-dark-3;
+	}
+}

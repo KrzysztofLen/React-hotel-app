@@ -62,10 +62,6 @@ body.ReactModal__Body--open {
 .u-margin-top-small {
   margin-top: 2rem; }
 
-.active {
-  color: #a7a9ac !important;
-  text-decoration: underline; }
-
 .name {
   display: inline-block;
   font-size: 1.4rem;
@@ -100,147 +96,34 @@ body.ReactModal__Body--open {
 /*		COMPONENTS    */
 /* ------------- */
 .header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: 1px solid #f4f2f2;
   display: flex;
-  margin: 3rem 0; }
+  justify-content: space-between;
+  align-items: center; }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      flex-wrap: wrap;
+      height: 11rem;
+      align-content: space-around; } }
   .header__back {
-    height: 40px;
-    width: 40px;
     background-color: transparent;
-    border: 1px solid #cacbcd;
-    border-radius: 50%;
-    margin-left: 4rem;
-    margin-right: 13rem;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center; }
-    .header__back svg {
-      fill: #cacbcd; }
-  .header__main-header {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 175px; }
-    @media (max-width: 1366px) {
-      .header__main-header {
-        margin-right: 20%; } }
-    @media only screen and (max-width: 1024px) {
-      .header__main-header {
-        justify-content: center;
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 35px; } }
-  .header__question {
-    color: #2d2c2e;
+    background-image: url("../assets/chevron-left.svg");
+    background-repeat: no-repeat;
+    background-position: center left;
+    border: 1px solid #eb2f64;
     text-transform: uppercase;
-    display: inline-block;
-    padding-right: 45px;
-    font-size: 26px;
-    margin: 0; }
-    @media (max-width: 1366px) {
-      .header__question {
-        padding-right: 15px; } }
-  .header__option {
-    display: inline-block;
-    margin-right: 50px; }
-  .header__option-label {
-    font-size: 1.4rem;
-    color: #000000;
-    font-weight: bold;
-    padding-left: 10px; }
-  .header__options {
-    justify-content: flex-end;
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
-    width: 100%; }
-    @media only screen and (max-width: 1024px) {
-      .header__options {
-        display: inline-flex;
-        justify-content: center; } }
-    .header__options .header-sort .sort {
-      font-size: 14px;
-      font-style: italic;
-      padding: 0 10px;
-      font-family: 'Quintessential'; }
-    .header__options .header-sort .sort-option {
-      background: none;
-      border: none;
-      font-size: 14px;
-      color: blue;
-      padding: 0; }
-  .header__search {
-    background: #fbfbfb;
-    max-width: 700px;
-    width: 100%;
-    padding: 10px 18px;
-    font-size: 16px;
-    border: 1px solid #eeeeee;
-    margin-right: 22px; }
-    @media only screen and (max-width: 1024px) {
-      .header__search {
-        display: inline-flex;
-        padding: 10px;
-        margin: 0;
-        box-sizing: border-box; } }
-  .header__search-btn {
-    background: none;
-    border: 1px solid #a7a9ac;
-    padding: 10px 48px;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-    color: #a7a9ac; }
-
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
-  position: absolute;
-  left: -9999px; }
-
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label {
-  position: relative;
-  padding-left: 28px;
-  padding-right: 28px;
-  cursor: pointer;
-  line-height: 20px;
-  display: inline-block;
-  color: #666; }
-
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #ddd;
-  border-radius: 100%;
-  background: #fff; }
-
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  background: #2d2c2e;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
-
-[type="radio"]:not(:checked) + label:after {
-  opacity: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0); }
-
-[type="radio"]:checked + label:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1); }
+    text-decoration: none;
+    color: #eb2f64;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    margin-right: 2rem;
+    transition: all .2s; }
+    .header__back:hover {
+      background-color: #eb2f64;
+      color: #fff; }
 
 .question__container {
   background-color: #fff;
@@ -762,6 +645,52 @@ body.ReactModal__Body--open {
 .modal [class*="level-"].active svg {
   fill: #FD3A37; }
 
+.search {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  @media only screen and (max-width: 31.25em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: #f4f2f2; } }
+  .search__input {
+    font-family: inherit;
+    font-size: 1.4rem;
+    background-color: #f4f2f2;
+    border: none;
+    color: inherit;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all .2s;
+    background-image: url("../assets/SVG/magnifying-glass.svg");
+    background-repeat: no-repeat;
+    background-position: 98%; }
+    .search__input:focus {
+      outline: none;
+      width: 100%;
+      background-color: #f0eeee; }
+    .search__input::-webkit-input-placeholder {
+      font-weight: 100;
+      color: #ccc; }
+  .search__input:focus + .search__button {
+    background-color: #f0eeee; }
+  .search__button {
+    border: none;
+    background-color: #f4f2f2;
+    background-image: url("../assets/SVG/magnifying-glass.svg");
+    background-repeat: no-repeat; }
+    .search__button:focus {
+      outline: none; }
+    .search__button:active {
+      transform: translateY(2px); }
+  .search__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #999; }
+
 /* ------------- */
 /*		LAYOUT    */
 /* ------------- */
@@ -843,6 +772,10 @@ body.ReactModal__Body--open {
   margin: 0 auto;
   text-align: center;
   left: 43%; }
+
+.logo {
+  height: 3.25rem;
+  margin-left: 2rem; }
 
 /* ------------- */
 /*		PAGES    */

@@ -32,7 +32,6 @@ $bp-smallest: 31.25em; // 500px
 $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
 
-
 $color-primary: #eb2f64;
 $color-primary-light: #FF3366;
 $color-primary-dark: #BA265D;
@@ -45,3 +44,5 @@ $color-grey-light-4: #ccc;
 $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
+
+$line: 1px solid $color-grey-light-2;
