@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import Header from './../header';
 import SingleQuestion from './../SingleQuestion';
 import App from "../../App";
 
@@ -14,6 +13,6 @@ const AppRouter = () => {
 			</Switch>
 		</div>
 	</BrowserRouter>
-}
+};
 
 export default AppRouter;
