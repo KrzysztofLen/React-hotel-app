@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import app_data from './app_data';
 
 // Components
-import Header from './js/header.jsx';
-import Question from './js/QuestionBox.jsx';
+import Header from './js/Header.jsx';
+import Navigation from './js/Navigation'
+import Question from './js/HotelList.jsx';
 
 
 class App extends Component {
@@ -33,8 +34,10 @@ class App extends Component {
 			<div className="container">
 				<Header/>
 				<div className="content">
+				<Navigation/>
+				<main className="hotel-list">
 					<div className="content__container">
-						<div className="column column-offset-20 col-80">
+						<div className="column">
 								<div id="question-root">
 									{elem.map((data) => <Question data={data} key={data.id}/>)}
 								</div>
@@ -43,6 +46,7 @@ class App extends Component {
 							</div>
 						</div>
 					</div>
+				</main>
 				</div>
 			</div>
 		);

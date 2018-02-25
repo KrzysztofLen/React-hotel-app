@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import SingleQuestion from './../SingleQuestion';
 import App from "../../App";
+import Navigation from '../Navigation';
 
 const AppRouter = () => {
 	return <BrowserRouter>

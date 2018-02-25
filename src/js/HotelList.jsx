@@ -66,7 +66,7 @@ class Question extends Component {
 		console.log(this.props);
 		return (
 			<div className="question__container">
-				<div className="question__avatar-container col-100">
+				<div className="question__avatar-container">
 					<div className="question__avatar-panel">
 						<Avatar onClick={this.handleClick} value={this.props} />
 						<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} value={this.props}/>
@@ -83,7 +83,7 @@ class Question extends Component {
 							{window.innerWidth < 1366 && (
 								[...Array(1)].map((x, i) => <Commented key={i} commented={this.props.commented} /> ))}
 						</div>
-						<div className="question__side col-20">
+						<div className="question__side">
 							<ul className="question__connections-list">
 								<li className="question__connections"><span>1</span> related discussion</li>
 								<li className="question__connections"><span>6</span> peers involved</li>
