@@ -16,6 +16,14 @@ class SingleQuestion extends React.Component {
 		console.log(props);
 	}
 
+	// test() {
+	// 	const index = parseInt(this.props.match.params.id);
+	// 	const value = this.props.extra.filter(x => x.id === index);
+	// 	const [desc] = value;
+	// 	console.log(desc);
+	//
+	// }
+
 	componentDidMount() {
 		const json = localStorage.getItem('count');
 		const count = parseInt(json);
@@ -58,6 +66,9 @@ class SingleQuestion extends React.Component {
 
 	render() {
 		const count = this.state.page * this.state.comment;
+		const index = parseInt(this.props.match.params.id);
+		const value = this.props.extra.filter(x => x.id === index);
+		const [desc] = value;
 
 		return (
 			<div>
@@ -72,9 +83,9 @@ class SingleQuestion extends React.Component {
 										     alt=""/>
 									</div>
 									<div className="question__question">
-										<h3 className="name">Eva</h3>
+										<h3 className="name">{desc.name}</h3>
 										<span className="who">is asking:</span>
-										<h4 className="question">Will insulin make my patient gain weight?</h4>
+										<h4 className="question">{desc.question}</h4>
 										<a href="#" className="unfollow">unfollow</a>
 										<div className="single-question__text">
 											<p className="single-question__text--question">Lorem ipsum dolor sit

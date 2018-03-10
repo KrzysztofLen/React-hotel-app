@@ -1,0 +1,30 @@
+.hotel {
+	&__container {
+		grid-template-columns: 20rem 18rem 18rem 18rem 1fr;
+		grid-template-rows: 5rem 5rem auto;
+		display: grid;
+		margin-bottom: 2rem;
+		padding: 2rem 2rem 0 2rem;
+	}
+
+	&__image-container {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	&__image {
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__details {
+		&--name,
+		&--description {
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+	}
+}

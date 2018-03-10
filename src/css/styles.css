@@ -783,6 +783,31 @@ body.ReactModal__Body--open {
     .legal {
       display: none; } }
 
+.hotel-list {
+  width: 100%; }
+
+.hotel__container {
+  grid-template-columns: 20rem 18rem 18rem 18rem 1fr;
+  grid-template-rows: 5rem 5rem auto;
+  display: grid;
+  margin-bottom: 2rem;
+  padding: 2rem 2rem 0 2rem; }
+
+.hotel__image-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3; }
+
+.hotel__image {
+  cursor: pointer;
+  width: 100%;
+  height: 100%; }
+
+.hotel__details--name, .hotel__details--description {
+  grid-column-start: 2;
+  grid-column-end: 4; }
+
 /* ------------- */
 /*		LAYOUT    */
 /* ------------- */
