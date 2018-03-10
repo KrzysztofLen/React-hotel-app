@@ -7,15 +7,14 @@ import Navigation from '../Navigation';
 import app_data from '../../app_data';
 
 const AppRouter = () => {
-	const someVariable = app_data;
+	const appData = app_data;
 
 	return <BrowserRouter>
 		<div>
 			<Switch>
 				<Route path="/" component={App} exact={true}/>
-				{/*<Route path="/question/:id" component={SingleQuestion}/>*/}
 				<Route path="/question/:id"
-					render={(props) => <SingleQuestion {...props} extra={someVariable} />}
+					render={(props) => <SingleQuestion {...props} appData={appData} />}
 				/>
 			</Switch>
 		</div>

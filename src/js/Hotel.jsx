@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
 import OptionModal from './Modal';
 
 import HotelImage from './HotelImage';
+import HotelLink from './HotelLink';
 
 const Name = (data) => <h3 className="name">{data.name}</h3>;
-const HotelLink = (data) => {
-	console.log(data);
-	return (
-		<NavLink to={"/question/" + data.id} className="question">{data.hotelName}</NavLink>
-	)
-}
 
 const MoreActivities = (data) => (
 	<div className="more-activities__panel">
@@ -68,16 +62,14 @@ class Hotel extends Component {
 	}
 
 	render() {
-		console.log(this.props.data.image);
 		return (
 			<div className="hotel__container">
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.handleClick} image={this.props.data.image} />
 					<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} value={this.props}/>
-					{/*<span className="question__asking">ASKED</span>*/}
 				</div>
 				<div className="hotel__details--name">
-					<HotelLink hotelName={this.props.data.question} id={this.props.data.id}/>
+					<HotelLink hotelName={this.props.data.hotel_name} id={this.props.data.id}/>
 				</div>
 				<div className="hotel__details--rate">
 					5 star
@@ -91,7 +83,6 @@ class Hotel extends Component {
 				<div className="holel__details--price">
 					$599
 				</div>
-				{/*<Panel {...this.props} />*/}
 			</div>
 		)
 	}
