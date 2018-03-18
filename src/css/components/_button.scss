@@ -1,0 +1,16 @@
+.btn {
+	background: $color-more;
+	border: none;
+	color: $color-white;
+	padding: 1em 3rem;
+	transition: background .4s ease;
+	text-transform: uppercase;
+
+	&:hover {
+		background: darken($color-more, 7%);
+	}
+
+	&--login {
+		margin-right: 2rem;
+	}
+}

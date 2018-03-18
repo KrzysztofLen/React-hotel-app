@@ -809,6 +809,18 @@ body.ReactModal__Body--open {
   grid-column-start: 2;
   grid-column-end: 4; }
 
+.btn {
+  background: #dc173f;
+  border: none;
+  color: #fff;
+  padding: 1em 3rem;
+  transition: background .4s ease;
+  text-transform: uppercase; }
+  .btn:hover {
+    background: #bc1436; }
+  .btn--login {
+    margin-right: 2rem; }
+
 /* ------------- */
 /*		LAYOUT    */
 /* ------------- */
