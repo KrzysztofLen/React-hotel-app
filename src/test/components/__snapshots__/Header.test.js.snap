@@ -39,6 +39,11 @@ ShallowWrapper {
                     type="text"
           />
 </form>,
+        <button
+          className="btn btn--login"
+>
+          Login
+</button>,
       ],
       "className": "header",
     },
@@ -103,6 +108,18 @@ ShallowWrapper {
         },
         "type": "form",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Login",
+          "className": "btn btn--login",
+        },
+        "ref": null,
+        "rendered": "Login",
+        "type": "button",
+      },
     ],
     "type": "header",
   },
@@ -134,6 +151,11 @@ ShallowWrapper {
                         type="text"
             />
 </form>,
+          <button
+            className="btn btn--login"
+>
+            Login
+</button>,
         ],
         "className": "header",
       },
@@ -197,6 +219,18 @@ ShallowWrapper {
             "type": "input",
           },
           "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Login",
+            "className": "btn btn--login",
+          },
+          "ref": null,
+          "rendered": "Login",
+          "type": "button",
         },
       ],
       "type": "header",
