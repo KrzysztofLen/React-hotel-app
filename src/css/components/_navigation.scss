@@ -37,6 +37,18 @@
 		&:nth-child(1):before {
 			background-image: url('../assets/SVG/home.svg');
 		}
+
+		&:nth-child(2):before {
+			background-image: url('../assets/SVG/paypal.svg');
+		}
+
+		&:nth-child(3):before {
+			background-image: url('../assets/SVG/shopping-cart.svg');
+		}
+
+		&:nth-child(4):before {
+			background-image: url('../assets/SVG/folder.svg');
+		}
 	}
 
 	&__item:before {
@@ -78,6 +90,7 @@
 		padding: 1.5rem 3rem;
 		z-index: 10;
 		position: relative;
+		margin-left: 5rem;
 
 		display: flex;
 		align-items: center;

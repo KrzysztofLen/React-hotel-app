@@ -725,6 +725,12 @@ body.ReactModal__Body--open {
         flex: 1; } }
     .side-nav__item:nth-child(1):before {
       background-image: url("../assets/SVG/home.svg"); }
+    .side-nav__item:nth-child(2):before {
+      background-image: url("../assets/SVG/paypal.svg"); }
+    .side-nav__item:nth-child(3):before {
+      background-image: url("../assets/SVG/shopping-cart.svg"); }
+    .side-nav__item:nth-child(4):before {
+      background-image: url("../assets/SVG/folder.svg"); }
   .side-nav__item:before {
     content: '';
     position: absolute;
@@ -753,6 +759,7 @@ body.ReactModal__Body--open {
     padding: 1.5rem 3rem;
     z-index: 10;
     position: relative;
+    margin-left: 5rem;
     display: flex;
     align-items: center; }
     @media only screen and (max-width: 56.25em) {

@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {startLogin} from "../actions/auth";
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 import LoginButton from "./LoginButton";
-
+import LogoutButton from './LoginSystem/LogoutButton';
 
 export default class Header extends React.Component {
 	constructor(props) {
@@ -30,8 +28,8 @@ export default class Header extends React.Component {
 				<form action="#" className="search">
 					<input type="text" className="search__input" placeholder="Search hotels"/>
 				</form>
-				<LoginButton onClick={this.handleClick}
-				             isLogged={this.state.isLogged}/>
+				<LogoutButton/>
+				<LoginButton />
 				{/*<button type="button" className="btn btn--login" onClick={startLogin}>Login</button>*/}
 				{/*<NavLink to="/" className="header__back">Back</NavLink>*/}
 			</header>
@@ -39,8 +37,3 @@ export default class Header extends React.Component {
 	}
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-// 	startLogin: () => dispatch(startLogin())
-// });
-//
-// export default connect(undefined, mapDispatchToProps)(LoginButton);

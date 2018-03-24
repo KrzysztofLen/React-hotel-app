@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {startLogin} from "../actions/auth";
 
-const LoginButton = ({startLogin}, isLogged) => {
-	console.log(isLogged);
+export const LoginButton = ({startLogin}) => {
 	return (
-		<button type="button" className="btn btn--login" onClick={this.handleClick}>Login</button>
+		<button type="button" className="btn btn--login" onClick={startLogin}>Login</button>
 	)
 };
 
@@ -13,5 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
 	startLogin: () => dispatch(startLogin())
 });
 
-// export default connect(undefined, mapDispatchToProps)(LoginButton);
-export default LoginButton;
+export default connect(undefined, mapDispatchToProps)(LoginButton);
