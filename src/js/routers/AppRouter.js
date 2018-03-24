@@ -13,7 +13,7 @@ const AppRouter = () => {
 		<div>
 			<Switch>
 				<Route path="/" component={App} exact={true}/>
-				<Route path="/question/:id"
+				<Route path="/hotel/:id"
 					render={(props) => <SingleQuestion {...props} appData={appData} />}
 				/>
 			</Switch>

@@ -792,7 +792,8 @@ body.ReactModal__Body--open {
   grid-template-rows: 5rem 5rem auto;
   display: grid;
   margin-bottom: 2rem;
-  padding: 2rem 2rem 0 2rem; }
+  padding: 2rem 2rem 0 2rem;
+  background: #faf9f9; }
 
 .hotel__image-container {
   grid-column-start: 1;
@@ -805,9 +806,44 @@ body.ReactModal__Body--open {
   width: 100%;
   height: 100%; }
 
+.hotel__details--name {
+  margin: 1rem 3rem; }
+
 .hotel__details--name, .hotel__details--description {
   grid-column-start: 2;
   grid-column-end: 4; }
+
+.hotel__details--description {
+  margin: 1rem 3rem; }
+
+.hotel__details--text {
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #777;
+  margin: 0; }
+
+.hotel__details--more {
+  justify-self: end; }
+
+.hotel__details--rate {
+  justify-self: center; }
+
+.hotel__details--price {
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #777;
+  justify-self: center; }
+  .hotel__details--price span {
+    font-size: 18px;
+    font-size: 1.8rem;
+    color: #BA265D;
+    margin-right: 5px; }
+
+.hotel__link {
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #BA265D; }
 
 .btn {
   background: #dc173f;
@@ -820,6 +856,12 @@ body.ReactModal__Body--open {
     background: #bc1436; }
   .btn--login {
     margin-right: 2rem; }
+  .btn--more {
+    border: 1px solid #bc1436;
+    background: #fff;
+    color: #BA265D; }
+    .btn--more:hover {
+      color: #fff; }
 
 /* ------------- */
 /*		LAYOUT    */

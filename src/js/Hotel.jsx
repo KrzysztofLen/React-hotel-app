@@ -3,6 +3,7 @@ import OptionModal from './Modal';
 
 import HotelImage from './HotelImage';
 import HotelLink from './HotelLink';
+import Rating from './Hotel/Rating';
 
 const Name = (data) => <h3 className="name">{data.name}</h3>;
 
@@ -72,16 +73,19 @@ class Hotel extends Component {
 					<HotelLink hotelName={this.props.data.hotel_name} id={this.props.data.id}/>
 				</div>
 				<div className="hotel__details--rate">
-					5 star
+					<Rating rate={this.props.data.rate} />
+					{/*<i className={(item ? "fas" : "far") + " fa-star"}></i>*/}
+					{/*<i className="fas fa-star"></i>*/}
+					{/*<i className="far fa-star"></i>*/}
 				</div>
 				<div className="hotel__details--more">
-					<button>More</button>
+					<button className="btn btn--more">More</button>
 				</div>
 				<div className="hotel__details--description">
-					Lorem ipsum dolor sit amet
+					<p className="hotel__details--text">Lorem ipsum dolor sit amet</p>
 				</div>
-				<div className="holel__details--price">
-					$599
+				<div className="hotel__details--price">
+					<span>$</span>599
 				</div>
 			</div>
 		)

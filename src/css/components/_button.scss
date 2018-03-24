@@ -13,4 +13,14 @@
 	&--login {
 		margin-right: 2rem;
 	}
+
+	&--more {
+		border: 1px solid darken($color-more, 7%);
+		background: $color-white;
+		color: $color-primary-dark;
+
+		&:hover {
+			color: $color-white;
+		}
+	}
 }

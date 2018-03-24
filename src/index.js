@@ -11,8 +11,6 @@ import configureStore from './store/configureStore';
 import {firebase} from './firebase';
 import registerServiceWorker from './registerServiceWorker';
 
-console.log(firebase);
-
 const store = configureStore();
 
 const jsx = (
@@ -22,5 +20,13 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById('root'));
+
+firebase.auth().onAuthStateChanged((user) => {
+	if(user) {
+		console.log('Login');
+	} else {
+		console.log('Logout');
+	}
+});
 
 registerServiceWorker();
