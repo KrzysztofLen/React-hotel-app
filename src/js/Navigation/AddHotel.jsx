@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const AddHotel = () => (
 	<li className="side-nav__item">
-		<a href="#" className="side-nav__link">
+		<Link to="/add" className="side-nav__link">
 			<span>Add Hotel</span>
-		</a>
+		</Link>
 	</li>
 );

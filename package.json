@@ -2,8 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "dependencies": {
+    "cross-env": "^5.1.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "express": "^4.16.2",
     "firebase": "^4.11.0",
     "node-sass-chokidar": "^0.0.3",
@@ -28,7 +30,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "compile:sass": "node-sass src/css/styles.scss src/css/styles.css -w",
-    "generate:doc": "sassdoc src/css/abstracts/_mixins.scss"
+    "generate:doc": "sassdoc src/css/abstracts/_mixins.scss",
+    "testing": "cross-env NODE_ENV=test jest --config=jest.config.json"
   },
   "devDependencies": {
     "react-router-dom": "^4.2.2"

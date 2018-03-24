@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const Cart = () => (
 	<li className="side-nav__item">
-		<a href="#" className="side-nav__link">
+		<Link to ="/cart" className="side-nav__link">
 			<span>Cart</span>
-		</a>
+		</Link>
 	</li>
 );
