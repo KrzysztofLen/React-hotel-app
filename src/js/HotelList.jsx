@@ -16,7 +16,7 @@ class HotelsList extends Component {
 	handleClick() {
 		this.setState((prevState) => {
 			return {
-				perpage: prevState.perpage + 1
+				perpage: prevState.perpage + 3
 			}
 		});
 	}
@@ -33,7 +33,7 @@ class HotelsList extends Component {
 							{elem.map((data) => <Hotel data={data} key={data.id}/>)}
 						</div>
 						<div className="more-container">
-							<button className="btn-more" onClick={this.handleClick}>load more questions</button>
+							<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
 						</div>
 					</div>
 				</div>

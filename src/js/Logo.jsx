@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/logo.png';
 
 export const Logo = () => (
 	<NavLink to="/">
-		<img src={require("../assets/logo.png")} className="logo" alt="trillo logo"/>
+		<img src={logo} className="logo" alt="trillo logo"/>
 	</NavLink>
 );

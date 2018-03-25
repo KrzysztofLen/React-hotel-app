@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Rating extends Component {
+class HotelRating extends Component {
 	constructor(props) {
 		super(props);
 
@@ -13,16 +13,16 @@ class Rating extends Component {
 		console.log(this.props.rate);
 		const item = true;
 		return (
-			<React.Fragment>
+			<div className="hotel__details--rate">
 				{this.state.indicator.map((item, i) => {
 					return (
 						<i key={i}
 						   className={(item ? "fas" : "far") + " fa-star"}></i>
 					)
 				})}
-			</React.Fragment>
+			</div>
 		)
 	}
 }
 
-export default Rating;
+export default HotelRating;
