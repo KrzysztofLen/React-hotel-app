@@ -5,13 +5,29 @@ class HotelRating extends Component {
 		super(props);
 
 		this.state = {
-			indicator: [true, true, true, false, false]
+			max: 5,
+			rating: null,
+			indicator: []
 		}
 	}
 
+	componentDidMount = () => {
+		const rate = this.props.rate;
+		this.setState({rating: rate});
+		this.setIndicator();
+	};
+
+	setIndicator = () => {
+		this.setState({
+			indicator: this.makeIndicator(this.props.rate, this.state.max)
+		})
+	};
+
+	makeIndicator = (rating, max) => {
+			return [...Array(rating).fill(true), ...Array(max - rating).fill(false)]
+	};
+
 	render() {
-		console.log(this.props.rate);
-		const item = true;
 		return (
 			<div className="hotel__details--rate">
 				{this.state.indicator.map((item, i) => {

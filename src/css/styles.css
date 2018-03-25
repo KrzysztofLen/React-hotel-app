@@ -814,14 +814,16 @@ body.ReactModal__Body--open {
   height: 100%; }
 
 .hotel__details--name {
-  margin: 1rem 3rem; }
+  margin: 1rem 3rem;
+  align-self: center; }
 
 .hotel__details--name, .hotel__details--description {
   grid-column-start: 2;
   grid-column-end: 4; }
 
 .hotel__details--description {
-  margin: 1rem 3rem; }
+  margin: 1rem 3rem;
+  align-self: center; }
 
 .hotel__details--text {
   font-size: 16px;
@@ -830,16 +832,19 @@ body.ReactModal__Body--open {
   margin: 0; }
 
 .hotel__details--more {
-  justify-self: end; }
+  justify-self: end;
+  align-self: center; }
 
 .hotel__details--rate {
-  justify-self: center; }
+  justify-self: center;
+  align-self: center; }
 
 .hotel__details--price {
   font-size: 16px;
   font-size: 1.6rem;
   color: #777;
-  justify-self: center; }
+  justify-self: center;
+  align-self: center; }
   .hotel__details--price span {
     font-size: 18px;
     font-size: 1.8rem;
@@ -869,6 +874,11 @@ body.ReactModal__Body--open {
     color: #BA265D; }
     .btn--more:hover {
       color: #fff; }
+
+.svg-inline--fa {
+  color: #BA265D;
+  font-size: 12px;
+  font-size: 1.2rem; }
 
 /* ------------- */
 /*		LAYOUT    */

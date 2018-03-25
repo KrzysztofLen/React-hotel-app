@@ -25,6 +25,7 @@
 	&__details {
 		&--name {
 			margin: 1rem 3rem;
+			align-self: center;
 		}
 
 		&--name,
@@ -35,6 +36,7 @@
 
 		&--description {
 			margin: 1rem 3rem;
+			align-self: center;
 		}
 
 		&--text {
@@ -45,16 +47,19 @@
 
 		&--more {
 			justify-self: end;
+			align-self: center;
 		}
 
 		&--rate {
 			justify-self: center;
+			align-self: center;
 		}
 
 		&--price {
 			@include font-size(1.6);
 			color: $color-grey-dark-2;
 			justify-self: center;
+			align-self: center;
 
 			span {
 				@include font-size(1.8);
