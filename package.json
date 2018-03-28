@@ -33,7 +33,9 @@
     "compile:sass": "node-sass src/css/styles.scss src/css/styles.css -w",
     "generate:doc": "sassdoc src/css/abstracts/_mixins.scss",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
-    "coveralls": "node node_modules/.bin/coveralls"
+    "coveralls": "node node_modules/.bin/coveralls",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage --config=jest.config.json",
+    "test-ci": "cross-env NODE_ENV=test jest --config=jest.config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "devDependencies": {
     "react-router-dom": "^4.2.2"
