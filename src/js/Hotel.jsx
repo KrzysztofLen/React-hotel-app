@@ -17,15 +17,32 @@ const HotelPrice = () => (
 	</div>
 );
 
+class Button extends React.Component {
+	handleClick = () => {
+		console.log(this.props.index);
+	}
+
+	render() {
+		return (
+			<div className="hotel__details--more">
+				<button className="btn btn--more" onClick={this.handleClick}>More</button>
+			</div>
+		)
+	}
+}
+
 class Hotel extends Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
 		this.closeModal = this.closeModal.bind(this);
 		this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
 		this.state = {
 			modalIsOpen: false,
-			width: 0
+			width: 0,
+			activeIndex: null,
+			isActive: false
 		};
 	}
 
@@ -50,6 +67,12 @@ class Hotel extends Component {
 		this.setState({modalIsOpen: false});
 	}
 
+	toggleButton = index => {
+		console.log('cliked');
+		this.setState({ activeIndex: index });
+		console.log(this.state.activeIndex);
+	};
+
 	render() {
 		return (
 			<div className="hotel__container">
@@ -59,9 +82,13 @@ class Hotel extends Component {
 				</div>
 				<HotelLink hotelName={this.props.data.hotel_name} id={this.props.data.id}/>
 				<HotelRating rate={this.props.data.rate}/>
-				<div className="hotel__details--more">
-					<button className="btn btn--more">More</button>
-				</div>
+				<Button index={this.props.index}
+						activeIndex={this.state.activeIndex === this.props.index}
+						onClick={this.toggleButton}
+				/>
+				{/*<div className="hotel__details--more">*/}
+					{/*<button className="btn btn--more">More</button>*/}
+				{/*</div>*/}
 				<HotelDescription/>
 				<HotelPrice/>
 			</div>

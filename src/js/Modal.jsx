@@ -35,7 +35,6 @@ const Chevron = (props) => (
 );
 
 const OptionModal = (props) => {
-	console.log(props);
 	return (
 		<Modal
 			isOpen={props.isOpen}

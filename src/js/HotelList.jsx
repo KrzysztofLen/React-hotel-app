@@ -30,7 +30,7 @@ class HotelsList extends Component {
 				<div className="content__container">
 					<div className="column">
 						<div id="question-root">
-							{elem.map((data) => <Hotel data={data} key={data.id}/>)}
+							{elem.map((data, index) => <Hotel data={data} key={data.id} index={index} />)}
 						</div>
 						<div className="more-container">
 							<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
