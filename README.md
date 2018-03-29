@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/KrzysztofLen/React-hotel-app.svg?branch=master)](https://travis-ci.org/KrzysztofLen/React-hotel-app)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://react-hotel-app.herokuapp.com/)
+[![Coverage Status](https://coveralls.io/repos/github/KrzysztofLen/React-hotel-app/badge.svg?branch=master)](https://coveralls.io/github/KrzysztofLen/React-hotel-app?branch=master)
 
 # React Hotel App
 
