@@ -1,0 +1,12 @@
+.fa-star {
+	color: $color-primary-dark;
+	@include font-size(1.2);
+}
+
+.fa-angle-up {
+	color: $color-grey-light-1;
+}
+
+.fa-angle-down {
+	color: $color-primary-dark;
+}

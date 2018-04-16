@@ -795,12 +795,14 @@ body.ReactModal__Body--open {
   width: 100%; }
 
 .hotel__container {
-  grid-template-columns: 20rem 18rem 18rem 18rem 1fr;
+  grid-template-columns: 20rem 10rem 18rem 18rem 1fr;
   grid-template-rows: 5rem 5rem auto;
   display: grid;
-  margin-bottom: 2rem;
-  padding: 2rem 2rem 0 2rem;
-  background: #faf9f9; }
+  padding: 2rem;
+  background: #faf9f9;
+  border-bottom: 1px solid #eee; }
+  .hotel__container:hover {
+    background: #f4f2f2; }
 
 .hotel__image-container {
   grid-column-start: 1;
@@ -834,6 +836,10 @@ body.ReactModal__Body--open {
 .hotel__details--more {
   justify-self: end;
   align-self: center; }
+  .hotel__details--more .btn, .hotel__details--more .btn--less {
+    display: flex; }
+    .hotel__details--more .btn svg, .hotel__details--more .btn--less svg {
+      margin-left: 8px; }
 
 .hotel__details--rate {
   justify-self: center;
@@ -856,29 +862,38 @@ body.ReactModal__Body--open {
   font-size: 1.6rem;
   text-decoration: none;
   color: #BA265D; }
+  .hotel__link:hover {
+    text-decoration: underline; }
 
-.btn {
+.btn, .btn--less, .btn--less:hover {
   background: #dc173f;
   border: none;
   color: #fff;
   padding: 1em 3rem;
   transition: background .4s ease;
-  text-transform: uppercase; }
-  .btn:hover {
-    background: #bc1436; }
+  text-transform: uppercase;
+  outline: none; }
+  .btn:hover, .btn--less:hover {
+    background: #bc1436;
+    background-image: url("../assets/chevron-small-down-1.svg");
+    background-repeat: no-repeat;
+    background-position: 90% 45%; }
   .btn--login {
     margin-right: 2rem; }
   .btn--more {
     border: 1px solid #bc1436;
     background: #fff;
-    color: #BA265D; }
+    color: #BA265D;
+    background-image: url("../assets/chevron-small-down.svg");
+    background-repeat: no-repeat;
+    background-position: 90% 45%; }
     .btn--more:hover {
       color: #fff; }
-
-.svg-inline--fa {
-  color: #BA265D;
-  font-size: 12px;
-  font-size: 1.2rem; }
+  .btn--less, .btn--less:hover {
+    border: 1px solid #bc1436;
+    background-image: url("../assets/chevron-small-up.svg");
+    background-repeat: no-repeat;
+    background-position: 90% 45%; }
 
 /* ------------- */
 /*		LAYOUT    */
@@ -971,6 +986,17 @@ body.ReactModal__Body--open {
 .logo {
   height: 3.25rem;
   margin-left: 2rem; }
+
+.fa-star {
+  color: #BA265D;
+  font-size: 12px;
+  font-size: 1.2rem; }
+
+.fa-angle-up {
+  color: #faf9f9; }
+
+.fa-angle-down {
+  color: #BA265D; }
 
 /* ------------- */
 /*		PAGES    */

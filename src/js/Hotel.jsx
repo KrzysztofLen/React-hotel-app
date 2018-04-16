@@ -4,6 +4,7 @@ import OptionModal from './Modal';
 import HotelImage from './Hotel/HotelImage';
 import HotelLink from './Hotel/HotelLink';
 import HotelRating from './Hotel/HotelRating';
+import ToggleButton from './External/ToggleButton';
 
 const HotelDescription = () => (
 	<div className="hotel__details--description">
@@ -17,80 +18,60 @@ const HotelPrice = () => (
 	</div>
 );
 
-class Button extends React.Component {
-	handleClick = () => {
-		console.log(this.props.index);
-	}
-
-	render() {
-		return (
-			<div className="hotel__details--more">
-				<button className="btn btn--more" onClick={this.handleClick}>More</button>
-			</div>
-		)
-	}
-}
-
 class Hotel extends Component {
 	constructor(props) {
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
-		this.closeModal = this.closeModal.bind(this);
-		this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+		this.onModalOpen = this.onModalOpen.bind(this);
+		this.onCloseModal = this.onCloseModal.bind(this);
+		this.onToggleButton = this.onToggleButton.bind(this);
 
 		this.state = {
 			modalIsOpen: false,
-			width: 0,
-			activeIndex: null,
-			isActive: false
+			activeIndex: null
 		};
 	}
 
-	componentDidMount() {
-		this.updateWindowDimensions();
-		window.addEventListener('resize', this.updateWindowDimensions);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.updateWindowDimensions);
-	}
-
-	updateWindowDimensions() {
-		this.setState({width: window.innerWidth});
-	}
-
-	handleClick() {
+	onModalOpen() {
 		this.setState({modalIsOpen: true});
 	}
 
-	closeModal() {
+	onCloseModal() {
 		this.setState({modalIsOpen: false});
 	}
 
-	toggleButton = index => {
-		console.log('cliked');
-		this.setState({ activeIndex: index });
-		console.log(this.state.activeIndex);
+	onToggleButton = (index) => {
+		this.setState({
+			activeIndex: index
+		});
+		if (this.state.activeIndex === index) {
+			this.setState({
+				activeIndex: null
+			})
+		}
 	};
 
 	render() {
 		return (
 			<div className="hotel__container">
 				<div className="hotel__image-container">
-					<HotelImage onClick={this.handleClick} image={this.props.data.image}/>
-					<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} value={this.props}/>
+					<HotelImage onClick={this.onModalOpen} image={this.props.data.image}/>
+					<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} value={this.props}/>
 				</div>
 				<HotelLink hotelName={this.props.data.hotel_name} id={this.props.data.id}/>
 				<HotelRating rate={this.props.data.rate}/>
-				<Button index={this.props.index}
-						activeIndex={this.state.activeIndex === this.props.index}
-						onClick={this.toggleButton}
-				/>
-				{/*<div className="hotel__details--more">*/}
-					{/*<button className="btn btn--more">More</button>*/}
-				{/*</div>*/}
-				<HotelDescription/>
-				<HotelPrice/>
+				<div className="hotel__details--more">
+					<ToggleButton key={this.props.index}
+					              index={this.props.index}
+					              activeIndex={this.state.activeIndex === this.props.index}
+					              onClick={this.onToggleButton}
+					              btnClass={"btn btn" + (this.state.activeIndex === this.props.index ? '--less' : '--more')}
+					/>
+				</div>
+				{this.state.activeIndex === this.props.index &&
+				<React.Fragment>
+					<HotelDescription/>
+					<HotelPrice/>
+				</React.Fragment>}
 			</div>
 		)
 	}

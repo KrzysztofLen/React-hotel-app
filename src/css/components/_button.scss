@@ -5,9 +5,13 @@
 	padding: 1em 3rem;
 	transition: background .4s ease;
 	text-transform: uppercase;
+	outline: none;
 
 	&:hover {
 		background: darken($color-more, 7%);
+		background-image: url("../assets/chevron-small-down-1.svg");
+		background-repeat: no-repeat;
+		background-position: 90% 45%;
 	}
 
 	&--login {
@@ -18,9 +22,24 @@
 		border: 1px solid darken($color-more, 7%);
 		background: $color-white;
 		color: $color-primary-dark;
+		background-image: url("../assets/chevron-small-down.svg");
+		background-repeat: no-repeat;
+		background-position: 90% 45%;
 
 		&:hover {
 			color: $color-white;
+		}
+	}
+
+	&--less {
+		@extend .btn;
+		border: 1px solid darken($color-more, 7%);
+		background-image: url("../assets/chevron-small-up.svg");
+		background-repeat: no-repeat;
+		background-position: 90% 45%;
+
+		&:hover {
+			@extend .btn--less;
 		}
 	}
 }
