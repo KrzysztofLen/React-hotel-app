@@ -4,7 +4,7 @@ import OptionModal from './Modal';
 import HotelImage from './Hotel/HotelImage';
 import HotelLink from './Hotel/HotelLink';
 import HotelRating from './Hotel/HotelRating';
-import ToggleButton from './External/ToggleButton';
+import ToggleButton from './External/ToggleButton/ToggleButton';
 
 const HotelDescription = () => (
 	<div className="hotel__details--description">

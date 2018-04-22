@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import ToggleButton from '../../../js/External/ToggleButton';
+import ToggleButton from '../../../components/External/ToggleButton/ToggleButton';
 
 test('it should render ToggleButton component correctly', () => {
 	const wrapper = shallow(<ToggleButton key={1} index={1} onClick={() => {}}/>);

@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {LogoutButton} from '../../../js/LoginSystem/LogoutButton';
+import {LogoutButton} from '../../../components/LoginSystem/LogoutButton';
 
 test('should render LogoutButton correctly', () => {
 	const wrapper = shallow(<LogoutButton/>);

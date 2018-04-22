@@ -5,9 +5,9 @@
       // Search DOM
       search: {
         items: '.sassdoc__item',
-        input: '#js-search-input',
-        form: '#js-search',
-        suggestionsWrapper: '#js-search-suggestions'
+        input: '#components-search-input',
+        form: '#components-search',
+        suggestionsWrapper: '#components-search-suggestions'
       },
 
       // Fuse options

@@ -13,7 +13,7 @@
       indexAttribute: 'data-slug',
 
       // Toggle button
-      toggleBtn: '.js-btn-toggle',
+      toggleBtn: '.components-btn-toggle',
 
       // Automatic initialization
       init: true

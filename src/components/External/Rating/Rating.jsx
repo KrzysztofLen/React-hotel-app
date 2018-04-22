@@ -25,19 +25,27 @@ class Rating extends Component {
 		});
 	};
 
+	onSetRating(rating) {
+		this.setState({
+			rating: rating
+		});
+	}
+
 	setIndicator(rating) {
 		return [...Array(rating + 1).fill(true), ...Array(this.state.max - rating - 1).fill(false)]
 	};
 
 	render() {
+		console.log(this.state.rating);
 		const fillStar = "#BA265D";
 		return (
 			<div className="rating">
 				{this.state.indicator.map((item, idx) => {
 					return (
 						<div key={idx} className={"icon icon-" + (item ? "star" : "star-outlined")}
-						     onMouseOver={this.onSetTempRate.bind(this, idx)}>
-							{item ? <StarFullFilled fill={fillStar}/> : <StarOutlined fill={fillStar}/>}
+						     onMouseOver={this.onSetTempRate.bind(this, idx)}
+							 onClick={this.onSetRating.bind(this, idx)}>
+							 {item ? <StarFullFilled fill={fillStar}/> : <StarOutlined fill={fillStar}/>}
 						</div>
 					);
 				})}
@@ -47,12 +55,16 @@ class Rating extends Component {
 }
 
 Rating.propTypes = {
+	/** defaultValue. */
 	defaultValue: PropTypes.number,
+	/** max value. */
 	max: PropTypes.number
 };
 
 Rating.defaultProps = {
+	/** Description of prop "defaultValue". */
 	defaultValue: 0,
+	/** Description of prop "max value". */
 	max: 5
 };
 

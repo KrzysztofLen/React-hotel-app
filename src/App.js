@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 // Components
-import Header from './js/Header.jsx';
-import Navigation from './js/Navigation'
-import HotelsList from './js/HotelList.jsx';
+import Header from './components/Header.jsx';
+import Navigation from './components/Navigation'
+import HotelsList from './components/HotelList.jsx';
 
 
 class App extends Component {
