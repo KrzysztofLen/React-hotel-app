@@ -64,6 +64,13 @@ class Navigation extends React.Component {
 						return <LinkHotel key={index} index={index} onClick={this.onSetActiveIndex}
 						                  activeIndex={this.state.activeIndex === index} {...child}/>
 					})}
+					{/* TEMPORARY */}
+					<li className="side-nav__item side-nav__item--active">
+						<a href="/add" className="side-nav__link">
+							<span>Add hotel</span>
+						</a>
+					</li>
+					{/* =======*/}
 				</ul>
 
 				<div className="legal">
@@ -88,10 +95,10 @@ Navigation.defaultProps = {
 			link: "Cart",
 			href: "/cart"
 		},
-		{
-			link: "Add Hotel",
-			href: "/add"
-		}
+		// {
+		// 	link: "Add Hotel",
+		// 	href: "/add"
+		// }
 	]
 };
 

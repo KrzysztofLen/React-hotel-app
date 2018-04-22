@@ -45,7 +45,8 @@ const AppRouter = () => {
 				/>
 				<Route path="/cart" component={Cart} />
 				<Route path="/buy" component={BuyHotel} />
-				<PrivateRoute path="/add" component={AddHotel} />
+				<Route path="/add" component={AddHotel} />
+				{/*<PrivateRoute path="/add" component={AddHotel} />*/}
 			</Switch>
 		</div>
 	</BrowserRouter>

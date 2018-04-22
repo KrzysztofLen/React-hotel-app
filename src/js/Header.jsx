@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginButton from "./LoginSystem/LoginButton";
 import LogoutButton from './LoginSystem/LogoutButton';
-import {Logo} from './Logo';
+import {Logo} from './Logo/Logo';
 
 export default class Header extends React.Component {
 	constructor(props) {
