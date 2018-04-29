@@ -1,9 +1,9 @@
 .container {
-	margin: 8rem auto;
+	//margin: 8rem auto;
 	background-color: $color-grey-light-1;
 	box-shadow: $shadow-dark;
 
-	min-height: 50rem;
+	min-height: 100vh;
 
 	@media only screen and (max-width: $bp-largest) {
 		margin: 0;

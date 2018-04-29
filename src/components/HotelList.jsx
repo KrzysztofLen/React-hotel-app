@@ -7,7 +7,7 @@ class HotelsList extends Component {
 		super(props);
 		this.state = {
 			showComponent: false,
-			perpage: 3,
+			perpage: 6,
 			page: 1
 		};
 		this.handleClick = this.handleClick.bind(this);

@@ -13,22 +13,32 @@
 	margin-top: 3.5rem;
 	padding: 0;
 
-	@media only screen and (max-width: $bp-medium) {
+	//@media only screen and (max-width: $bp-medium) {
 		display: flex;
 		margin: 0;
 		padding: 0;
-	}
+	//}
 
 	&__item {
 		position: relative;
+		margin: 0;
+		cursor: pointer;
 
-		&:not(:last-child) {
-			margin-bottom: .5rem;
-
+		//&:not(:last-child) {
+		//	margin-bottom: .5rem;
+		//
 			@media only screen and (max-width: $bp-medium) {
-				margin: 0;
+				width: 200px;
 			}
+
+		@media only screen and (max-width: 1100px) {
+			flex: 1 1;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			display: flex;
 		}
+		//}
 
 		@media only screen and (max-width: $bp-medium) {
 			flex: 1;
@@ -95,7 +105,7 @@
 		display: flex;
 		align-items: center;
 
-		@media only screen and (max-width: $bp-medium) {
+		@media only screen and (max-width: $bp-large) {
 			justify-content: center;
 			padding: 2rem;
 		}
