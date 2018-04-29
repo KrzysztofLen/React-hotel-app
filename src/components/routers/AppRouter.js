@@ -14,7 +14,20 @@ const fakeAuth = {
 	isAuthenticated: false
 };
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+class NotAuthenticate extends React.Component {
+	render() {
+		// debugger;
+		const { from } = this.props.location.state || { from: { pathname: "/" } };
+		return (
+			<div className="container">
+				<p>You must log in to view the page at {from.pathname}</p>
+				<button onClick={() => alert('forbidden')}>Log in</button>
+			</div>
+		);
+	}
+}
+
+const PrivateRoute = ({component: Component, ...rest}) => (
 	<Route
 		{...rest}
 		render={props =>
@@ -23,8 +36,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 			) : (
 				<Redirect
 					to={{
-						pathname: "/",
-						state: { from: props.location }
+						pathname: "/forbidden",
+						state: {from: props.location}
 					}}
 				/>
 			)
@@ -32,111 +45,35 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 	/>
 );
 
-const AppRouter1 = () => {
-	const appData = app_data;
-
-	return <BrowserRouter>
-		<div>
-
-				<Route path="/" component={App} exact={true}/>
-				<Route path="/hotel/:id"
-					render={(props) => <SingleQuestion {...props} appData={appData} />}
-				/>
-				<Route path="/cart" component={Cart} />
-				<Route path="/buy" component={BuyHotel} />
-				<Route path="/add" component={AddHotel} />
-				{/*<PrivateRoute path="/add" component={AddHotel} />*/}
-
-		</div>
-	</BrowserRouter>
-};
-
-
 class AppRouter extends React.Component {
 	constructor(props) {
 		super(props);
-		this.onSetActiveIndex = this.onSetActiveIndex.bind(this);
-
-		this.state = {
-			activeIndex: 0
-		};
 	}
-
-	onSetActiveIndex = (index) => {
-		console.log(index);
-		this.setState({
-			activeIndex: index
-		});
-	};
 
 	render() {
 		const appData = app_data;
 		return (
 			<BrowserRouter>
-			<nav className="sidebar">
-				<Navigation/>
-				{/*<ul className="side-nav">*/}
-					{/*{routes.map((route, index) => {*/}
-						{/*// return <React.Fragment>*/}
-						{/*// <LinkHotel key={index} index={index} onClick={this.onSetActiveIndex}*/}
-						{/*//                   activeIndex={this.state.activeIndex === index} {...route}/>*/}
-						{/*// </React.Fragment>*/}
-						{/*return <li className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}*/}
-						           {/*onClick={this.onSetActiveIndex.bind(this, index)}>*/}
-							{/*<NavLink to={`${route.path}`} className="side-nav__link">*/}
-								{/*<span>{route.link}</span>*/}
-							{/*</NavLink>*/}
-						{/*</li>*/}
-					{/*})}*/}
-					{/*/!* TEMPORARY *!/*/}
-					{/*/!*<li className="side-nav__item side-nav__item--active">*!/*/}
-					{/*/!*<a href="/add" className="side-nav__link">*!/*/}
-					{/*/!*<span>Add hotel</span>*!/*/}
-					{/*/!*</a>*!/*/}
-					{/*/!*</li>*!/*/}
-					{/*/!* =======*!/*/}
-				{/*</ul>*/}
+				<nav className="sidebar">
+					<Navigation/>
 
-				<Route path="/" component={App} exact={true}/>
-				<Route path="/hotel/:id"
-				       render={(props) => <SingleQuestion {...props} appData={appData} />}
-				/>
-				<Route path="/cart" component={Cart} />
-				<Route path="/buy" component={BuyHotel} />
-				<Route path="/add" component={AddHotel} />
-				{/*<Route key={index} path={route.path} exact={route.exact} component={route.sidebar}/>*/}
+					<Route path="/" component={App} exact={true}/>
+					<Route path="/hotel/:id"
+					       render={(props) => <SingleQuestion {...props} appData={appData}/>}
+					/>
+					<Route path="/cart" component={Cart}/>
+					<Route path="/buy" component={BuyHotel}/>
 
-				{/*</Switch>*/}
-				<div className="legal">
-					&copy; 2017 by Trillo. All rights reserved.
-				</div>
-			</nav>
+					<PrivateRoute path="/add" component={AddHotel}/>
+					<Route path="/forbidden" component={NotAuthenticate} />
+
+					<div className="legal">
+						&copy; 2017 by Trillo. All rights reserved.
+					</div>
+				</nav>
 			</BrowserRouter>
 		)
 	}
 }
-
-const routes = [
-	{
-		link: "Hotel's",
-		exact: true,
-		path: "/",
-		sidebar: App
-	},
-	{
-		link: "Buy Hotel",
-		path: "/buy",
-		sidebar: BuyHotel
-	},
-	{
-		link: "Cart",
-		path: "/cart"
-	},
-	{
-		link: "Add Hotel",
-		path: "/add"
-	}
-];
-
 
 export default AppRouter;
