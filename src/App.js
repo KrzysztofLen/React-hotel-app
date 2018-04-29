@@ -12,7 +12,7 @@ class App extends Component {
 			<div className="container">
 				<Header/>
 				<div className="content">
-					<Navigation/>
+					{/*<Navigation/>*/}
 					<HotelsList/>
 				</div>
 			</div>

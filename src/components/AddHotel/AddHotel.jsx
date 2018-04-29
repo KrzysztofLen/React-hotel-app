@@ -10,7 +10,7 @@ export const AddHotel = () => (
 		<div className="container">
 			<Header/>
 			<div className="content">
-				<Navigation/>
+				{/*<Navigation/>*/}
 				<h1>This is from AddHotel</h1>
 				<Rating />
 			</div>

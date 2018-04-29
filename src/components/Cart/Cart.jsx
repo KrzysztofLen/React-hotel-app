@@ -9,7 +9,7 @@ export const Cart = () => (
 		<div className="container">
 			<Header/>
 			<div className="content">
-				<Navigation/>
+				{/*<Navigation/>*/}
 				<h1>This is from CART</h1>
 			</div>
 		</div>

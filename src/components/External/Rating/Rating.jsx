@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import StarOutlined from './StarOutlined';
-import StarFullFilled from './Star';
+import StarFullFilled from './StarFullFilled';
 
 class Rating extends Component {
 	constructor(props) {

@@ -9,7 +9,7 @@ export const BuyHotel = () => (
 		<div className="container">
 			<Header/>
 			<div className="content">
-				<Navigation/>
+				{/*<Navigation/>*/}
 				<h1>This is from BuyHotel</h1>
 			</div>
 		</div>
