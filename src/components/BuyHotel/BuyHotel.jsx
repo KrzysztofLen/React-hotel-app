@@ -2,7 +2,7 @@ import React from 'react';
 
 // Components
 import Header from './../Header.jsx';
-import Navigation from './../Navigation';
+import Navigation from '../Navigation/Navigation';
 
 export const BuyHotel = () => (
 	<React.Fragment>

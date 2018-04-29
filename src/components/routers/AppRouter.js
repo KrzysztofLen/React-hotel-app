@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Router, Switch, NavLink, Redirect} from 'react-rou
 
 import SingleQuestion from './../SingleQuestion';
 import App from "../../App";
-import Navigation from '../Navigation';
+import Navigation from '../Navigation/Navigation';
 import {Cart} from './../Cart/Cart';
 import {BuyHotel} from './../BuyHotel/BuyHotel';
 import {AddHotel} from './../AddHotel/AddHotel';

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 // Components
 import Header from './components/Header.jsx';
-import Navigation from './components/Navigation'
+import Navigation from './components/Navigation/Navigation'
 import HotelsList from './components/HotelList.jsx';
 
 
