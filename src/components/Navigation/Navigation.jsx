@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 class Navigation extends React.Component {
@@ -21,7 +21,7 @@ class Navigation extends React.Component {
 			<ul className="side-nav">
 				{this.props.navlinks.map((element, index) => {
 					return (
-						<li
+						<li key={index}
 							className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
 							onClick={this.onSetActiveIndex.bind(this, index)}>
 							<NavLink to={`${element.path}`} className="side-nav__link">

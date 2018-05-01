@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Router, Switch, NavLink, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 
 import SingleQuestion from './../SingleQuestion';
 import App from "../../App";
@@ -7,6 +7,7 @@ import Navigation from '../Navigation/Navigation';
 import {Cart} from './../Cart/Cart';
 import {BuyHotel} from './../BuyHotel/BuyHotel';
 import {AddHotel} from './../AddHotel/AddHotel';
+import NoMatch404 from './../404/NoMatch404';
 import app_data from '../../app_data';
 
 //TODO Make private route with addHotel component
@@ -67,6 +68,7 @@ class AppRouter extends React.Component {
 					<PrivateRoute path="/add" component={AddHotel}/>
 					<Route path="/forbidden" component={NotAuthenticate} />
 
+					{/*<Route component={NoMatch404} />*/}
 					<div className="legal">
 						&copy; 2017 by Trillo. All rights reserved.
 					</div>
