@@ -131,6 +131,29 @@ var app_data = [
 		"discussions": 12,
 		"findings": 5,
 		"questions": 7
+	},
+	// New data schema. All data will be dynamic by adding to DB
+	{
+		"hotel_name": "Crown Hotel",
+		"hotel_adress": {
+			"adress": "Stare miasto",
+			"city": "Wrocław",
+			"province": "Dolnośląskie",
+			"distance": 1.3
+		},
+		"description": "Lorem ipsum dolor sit amet",
+		"hotel_stars": 5,
+		"hotel_rating": 8.4, // Depends on that show "Good, very good, poor etc."
+		"opinions": 831,
+		"is_new": true,
+		"is_apartment": true,
+		"facilities": {
+			"restaurant": true,
+			"gym": false,
+			"wifi": true,
+			"card_payment": true,
+			"game_room": false
+		}
 	}
 ];
 
