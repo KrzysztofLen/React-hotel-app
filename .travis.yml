@@ -3,6 +3,7 @@ node_js:
   - "6"
 before_install: cd client
 install: npm install
+before_script: cd client
 script: npm run test
 after_script:
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run test-ci

@@ -4,6 +4,6 @@
     "/**": "index.html"
   },
   "setupFiles": [
-    "<rootDir>/src/setupTests.js"
+    "<rootDir>/client/src/setupTests.js"
   ]
 }
