@@ -59,6 +59,7 @@ router.post("/", (req, res, next) => {
 router.get("/:orderId", (req, res, next) => {
 	// Find order by ID and display message
 	Order.findById(req.params.orderId).exec().then(order => {
+		// Check if order ID is null after delete
 		if(!order) {
 			return res.status(404).json({
 				message: 'Order not found'
