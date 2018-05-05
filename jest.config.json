@@ -1,7 +1,7 @@
 {
   "setupFiles": [
     "raf/polyfill",
-    "<rootDir>/src/setupTests.js"
+    "<rootDir>/client/src/setupTests.js"
   ],
   "snapshotSerializers": ["enzyme-to-json/serializer"],
   "moduleNameMapper": {
