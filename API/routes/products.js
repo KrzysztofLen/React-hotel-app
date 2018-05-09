@@ -1,6 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
+const multer = require('multer');
+
+// Storage image file
+const storage = multer.diskStorage({
+	destination: function(req, file, cb) {
+		cb(null, './uploads/');
+	},
+	filename: function(req, files, cb) {
+		cb(null, new Date().toISOString().replace(/:/g, '-') + files.originalname);
+	}
+});
+
+const upload = multer({storage: storage});
+// const upload = multer({ dest: 'uploads/'});
 
 const Product = require('../models/product');
 
@@ -11,12 +25,19 @@ const Product = require('../models/product');
 router.get("/", (req, res, next) => {
 	Product.find()
 	// Select which property show
-		.select('name price _id')
+		.select('name price _id productImage')
 		.exec().then(docs => {
 		// Show length of objects
 		const response = {
 			count: docs.length,
-			products: docs
+			products: docs.map(doc => {
+				return {
+					name: doc.name,
+					price: doc.price,
+					productImage: doc.productImage,
+					_id: doc._id
+				}
+			})
 		};
 		res.status(200).json(response);
 	}).catch(err => {
@@ -29,22 +50,33 @@ router.get("/", (req, res, next) => {
  * Method POST
  * Send new product object to DB
  */
-router.post("/", (req, res, next) => {
+router.post("/", upload.array('productImage'),(req, res, next) => {
+	// console.log(req.files[0].path);
+	const filesTest = [];
+	req.files.forEach(file => {
+		filesTest.push(file.path);
+	});
+
+	console.log(filesTest);
+
 	// Object values
 	const product = new Product({
 		_id: new mongoose.Types.ObjectId(),
 		name: req.body.name,
-		price: req.body.price
+		price: req.body.price,
+		productImage: filesTest
 	});
 	// Save product
 	product.save().then(result => {
+		console.log(result);
 		res.status(201).json({
 			message: "Handling POST request tp /products",
 			// Sending product schema
 			createdProduct: {
 				name: result.name,
 				price: result.price,
-				_id: result._id
+				_id: result._id,
+				productImage: result.productImage
 			}
 		});
 	}).catch(err => {

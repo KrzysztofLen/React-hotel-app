@@ -10,6 +10,7 @@ const ordersRoutes = require('../API/routes/orders');
 mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 

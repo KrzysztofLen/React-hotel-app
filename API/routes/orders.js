@@ -9,7 +9,7 @@ const Product = require('../models/product');
  * Method GET all orders from DB
  */
 router.get("/", (req, res, next) => {
-	Order.find().select('product quantity _id').exec().then(docs => {
+	Order.find().select('product quantity _id').populate('product', 'name').exec().then(docs => {
 		console.log('\x1b[36m%s\x1b[0m', '[Success]', docs);
 		const response = {
 			count: docs.length,
