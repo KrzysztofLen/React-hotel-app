@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('../API/routes/products');
 const ordersRoutes = require('../API/routes/orders');
+const hotelsRoutes = require('../API/routes/hotels');
 
 mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
 
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 
 app.use('/products', productRoutes);
 app.use('/orders', ordersRoutes);
+app.use('/hotels', hotelsRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error('Not found');
