@@ -6,24 +6,24 @@ const hotelSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	// hotel_adress: {
-	// 	adress: {
-	// 		type: String,
-	// 		required: true
-	// 	},
-	// 	city: {
-	// 		type: String,
-	// 		required: true
-	// 	},
-	// 	province: {
-	// 		type: String,
-	// 		required: true
-	// 	},
-	// 	distance: {
-	// 		type: Number,
-	// 		required: true
-	// 	}
-	// },
+	hotel_adress: {
+		adress: {
+			type: String,
+			required: true
+		},
+		// city: {
+		// 	type: String,
+		// 	required: true
+		// },
+		// province: {
+		// 	type: String,
+		// 	required: true
+		// },
+		// distance: {
+		// 	type: Number,
+		// 	required: true
+		// }
+	},
 	description: {
 		type: String,
 		required: true
@@ -34,6 +34,14 @@ const hotelSchema = mongoose.Schema({
 	},
 	hotel_rating: {
 		type: Number,
+		required: true
+	},
+	opinions: {
+		type: Number,
+		required: true
+	},
+	is_new: {
+		type: Boolean,
 		required: true
 	}
 });

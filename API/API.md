@@ -17,3 +17,6 @@ DELETE
 6. Get top 15 hotels
 GET
 /top
+7. Get Count of hotels
+GET
+/count

@@ -153,7 +153,11 @@ var app_data = [
 			"wifi": true,
 			"card_payment": true,
 			"game_room": false
-		}
+		},
+		"hotel_images": [
+			"https://preview.ibb.co/eoD207/nichlas_andersen_225986_unsplash.jpg",
+			"https://preview.ibb.co/bBxsYS/christoph_schulz_559688_unsplash.jpg"
+		]
 	}
 ];
 
