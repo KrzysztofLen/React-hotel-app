@@ -18,19 +18,21 @@ class Navigation extends React.Component {
 
 	render() {
 		return (
-			<ul className="side-nav">
-				{this.props.navlinks.map((element, index) => {
-					return (
-						<li key={index}
-							className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
-							onClick={this.onSetActiveIndex.bind(this, index)}>
-							<NavLink to={`${element.path}`} className="side-nav__link">
-								<span>{element.link}</span>
-							</NavLink>
-						</li>
-					)
-				})}
-			</ul>
+			<nav className="sidebar">
+				<ul className="side-nav">
+					{this.props.navlinks.map((element, index) => {
+						return (
+							<li key={index}
+							    className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
+							    onClick={this.onSetActiveIndex.bind(this, index)}>
+								<NavLink to={`${element.path}`} className="side-nav__link">
+									<span>{element.link}</span>
+								</NavLink>
+							</li>
+						)
+					})}
+				</ul>
+			</nav>
 		)
 	}
 }

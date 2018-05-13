@@ -7,24 +7,22 @@ const hotelSchema = mongoose.Schema({
 		required: true
 	},
 	hotel_adress: {
-		adress: {
-			type: String,
-			required: true
-		},
-		// city: {
-		// 	type: String,
-		// 	required: true
-		// },
-		// province: {
-		// 	type: String,
-		// 	required: true
-		// },
-		// distance: {
-		// 	type: Number,
-		// 	required: true
-		// }
+		type: String,
+		required: true
 	},
-	description: {
+	hotel_city: {
+		type: String,
+		required: true
+	},
+	hotel_province: {
+		type: String,
+		required: true
+	},
+	hotel_distance: {
+		type: Number,
+		required: true
+	},
+	hotel_description: {
 		type: String,
 		required: true
 	},
@@ -42,6 +40,34 @@ const hotelSchema = mongoose.Schema({
 	},
 	is_new: {
 		type: Boolean,
+		required: true
+	},
+	is_apartment: {
+		type: Boolean,
+		required: true,
+	},
+	facilities_restaurant: {
+		type: Boolean,
+		required: true
+	},
+	facilities_gym: {
+		type: Boolean,
+		required: true,
+	},
+	facilities_wifi: {
+		type: Boolean,
+		required: true,
+	},
+	facilities_card_payment: {
+		type: Boolean,
+		required: true,
+	},
+	facilities_game_room: {
+		type: Boolean,
+		required: true,
+	},
+	hotel_images: {
+		type: Array,
 		required: true
 	}
 });

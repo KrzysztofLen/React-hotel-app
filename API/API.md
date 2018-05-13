@@ -20,3 +20,17 @@ GET
 7. Get Count of hotels
 GET
 /count
+
+// User
+1. Authenticate
+GET
+/auth/google
+2. Authenticate callback
+GET
+/auth/google/callback
+3. Logout
+GET
+/auth/logout
+4. Get current user
+GET
+/auth/current_user

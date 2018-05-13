@@ -1,14 +1,15 @@
 import React from 'react';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 
-import SingleQuestion from './../SingleQuestion';
-import App from "../../App";
-import Navigation from '../Navigation/Navigation';
-import {Cart} from './../Cart/Cart';
-import {BuyHotel} from './../BuyHotel/BuyHotel';
-import {AddHotel} from './../AddHotel/AddHotel';
-import NoMatch404 from './../404/NoMatch404';
-import app_data from '../../app_data';
+import SingleQuestion from '../components/SingleQuestion';
+import App from "../App";
+import Navigation from '../components/Navigation/Navigation';
+import {Cart} from '../components/Cart/Cart';
+import {BuyHotel} from '../components/BuyHotel/BuyHotel';
+import {AddHotel} from '../components/AddHotel/AddHotel';
+import Footer from '../components/Footer/Footer';
+import NoMatch404 from '../components/404/NoMatch404';
+import app_data from '../app_data';
 
 //TODO Make private route with addHotel component
 const fakeAuth = {
@@ -55,7 +56,7 @@ class AppRouter extends React.Component {
 		const appData = app_data;
 		return (
 			<BrowserRouter>
-				<nav className="sidebar">
+				<div>
 					<Navigation/>
 
 					<Route path="/" component={App} exact={true}/>
@@ -68,11 +69,8 @@ class AppRouter extends React.Component {
 					<PrivateRoute path="/add" component={AddHotel}/>
 					<Route path="/forbidden" component={NotAuthenticate} />
 
-					{/*<Route component={NoMatch404} />*/}
-					<div className="legal">
-						&copy; 2017 by Trillo. All rights reserved.
-					</div>
-				</nav>
+					<Footer/>
+				</div>
 			</BrowserRouter>
 		)
 	}

@@ -909,6 +909,9 @@ body.ReactModal__Body--open {
   display: flex;
   height: 100%; }
 
+.legal {
+  background-color: #333; }
+
 /* ------------- */
 /*		LAYOUT    */
 /* ------------- */
