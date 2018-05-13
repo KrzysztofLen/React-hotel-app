@@ -61,6 +61,10 @@ class App extends React.Component {
 			color: 'white'
 		};
 
+		const imgStyle = {
+			"width": "100px"
+		};
+
 		return <div>
 			{isLoading && <p style={divStyle}>Loading ...</p>}
 			{data.map((element, idx) => {
@@ -112,7 +116,7 @@ class App extends React.Component {
 						</tr>
 						<tr>
 							{element.hotel_images.map(elem => {
-								return <th><img src={elem} /></th>
+								return <th><img style={imgStyle} src={elem} /></th>
 							})}
 						</tr>
 						</tbody>

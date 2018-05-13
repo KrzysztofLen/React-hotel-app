@@ -5,10 +5,10 @@ const multer = require('multer');
 
 const Hotel = require('../models/hotel');
 
-// Storage image files
+// Storage image file
 const storage = multer.diskStorage({
-	desination: function (req, file, cb) {
-		cb(null, './uploads');
+	destination: function (req, file, cb) {
+		cb(null, './uploads/');
 	},
 	filename: function (req, files, cb) {
 		cb(null, new Date().toISOString().replace(/:/g, '-') + files.originalname);
@@ -17,6 +17,25 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
+const properties = '_id ' +
+	'hotel_name ' +
+	'hotel_adress ' +
+	'hotel_city ' +
+	'hotel_province ' +
+	'hotel_distance ' +
+	'hotel_description ' +
+	'hotel_stars ' +
+	'hotel_rating ' +
+	'hotel_opinions ' +
+	'is_new ' +
+	'is_apartment ' +
+	'facilities_restaurant ' +
+	'facilities_gym ' +
+	'facilities_wifi ' +
+	'facilities_card_payment ' +
+	'facilities_game_room ' +
+	'hotel_images';
+
 /**
  * @type GET
  * @description Get all hotel's
@@ -24,7 +43,7 @@ const upload = multer({storage: storage});
 router.get('/', (req, res, next) => {
 	Hotel.find()
 	// Select what values show
-		.select('_id hotel_name hotel_adress hotel_city hotel_province hotel_distance hotel_description hotel_stars hotel_rating opinions is_new is_apartment facilities_restaurant facilities_gym facilities_wifi facilities_card_payment facilities_game_room, hotel_images')
+		.select(properties)
 		.exec()
 		.then(docs => {
 			// Create object hotels with hotels object inside
@@ -40,7 +59,7 @@ router.get('/', (req, res, next) => {
 						hotel_description: doc.hotel_description,
 						hotel_stars: doc.hotel_stars,
 						hotel_rating: doc.hotel_rating,
-						opinions: doc.opinions,
+						hotel_opinions: doc.hotel_opinions,
 						is_new: doc.is_new,
 						is_apartment: doc.is_apartment,
 						facilities_restaurant: doc.facilities_restaurant,
@@ -63,12 +82,11 @@ router.get('/', (req, res, next) => {
  * @type POST
  * @description Send new hotel to DB
  */
-router.post('/', upload.array('hotel_images'), (req, res, next) => {
+router.post("/", upload.array('hotel_images'), (req, res, next) => {
 	const imageFiles = [];
 	req.files.forEach(file => {
 		imageFiles.push(file.path);
 	});
-
 	// Object values
 	const hotel = new Hotel({
 		_id: new mongoose.Types.ObjectId(),
@@ -80,7 +98,7 @@ router.post('/', upload.array('hotel_images'), (req, res, next) => {
 		hotel_description: req.body.hotel_description,
 		hotel_stars: req.body.hotel_stars,
 		hotel_rating: req.body.hotel_rating,
-		opinions: req.body.opinions,
+		hotel_opinions: req.body.hotel_opinions,
 		is_new: req.body.is_new,
 		is_apartment: req.body.is_apartment,
 		facilities_restaurant: req.body.facilities_restaurant,
@@ -106,7 +124,7 @@ router.post('/', upload.array('hotel_images'), (req, res, next) => {
 				hotel_description: result.hotel_description,
 				hotel_stars: result.hotel_stars,
 				hotel_rating: result.hotel_rating,
-				opinions: result.opinions,
+				hotel_opinions: result.hotel_opinions,
 				is_new: result.is_new,
 				is_apartment: result.is_apartment,
 				facilities_restaurant: result.facilities_restaurant,
@@ -123,5 +141,47 @@ router.post('/', upload.array('hotel_images'), (req, res, next) => {
 	});
 });
 
+/**
+ * @type GET
+ * @description Get hotel by ID
+ */
+router.get('/:hotelsId', (req, res, next) => {
+	const id = req.params.hotelsId;
+
+	Hotel.findById(id)
+	// Select which property show
+		.select(properties)
+		.exec()
+		.then(doc => {
+			if (doc) {
+				res.status(200).json(doc);
+			} else {
+				res.status(404).json({
+					message: "No valid entry found for provided ID"
+				});
+			}
+		}).catch(err => {
+		console.log('\x1b[31m', '[Failure]', err);
+		res.status(500).json(err);
+	});
+});
+
+/**
+ * @type DELETE
+ * @description Delete hotel by ID
+ */
+router.delete('/:hotelsId', (req, res, next) => {
+	const id = req.params.hotelsId;
+	Hotel.remove({
+		_id: id
+	}).exec().then(result => {
+		res.status(200).json({
+			message: 'Hotel properly deleted'
+		});
+	}).catch(err => {
+		console.log('\x1b[31m', '[Failure]', err);
+		res.status(500).json(err);
+	});
+});
 
 module.exports = router;
