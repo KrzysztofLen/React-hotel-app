@@ -44,7 +44,7 @@ const hotelSchema = mongoose.Schema({
 	},
 	is_apartment: {
 		type: Boolean,
-		required: true,
+		required: true
 	},
 	facilities_restaurant: {
 		type: Boolean,
@@ -52,19 +52,19 @@ const hotelSchema = mongoose.Schema({
 	},
 	facilities_gym: {
 		type: Boolean,
-		required: true,
+		required: true
 	},
 	facilities_wifi: {
 		type: Boolean,
-		required: true,
+		required: true
 	},
 	facilities_card_payment: {
 		type: Boolean,
-		required: true,
+		required: true
 	},
 	facilities_game_room: {
 		type: Boolean,
-		required: true,
+		required: true
 	},
 	hotel_images: {
 		type: Array,
