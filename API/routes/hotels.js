@@ -26,7 +26,7 @@ const properties = '_id ' +
 	'hotel_description ' +
 	'hotel_stars ' +
 	'hotel_rating ' +
-	'hotel_opinions ' +
+	'hotel_reviews ' +
 	'is_new ' +
 	'is_apartment ' +
 	'facilities_restaurant ' +
@@ -59,7 +59,7 @@ router.get('/', (req, res, next) => {
 						hotel_description: doc.hotel_description,
 						hotel_stars: doc.hotel_stars,
 						hotel_rating: doc.hotel_rating,
-						hotel_opinions: doc.hotel_opinions,
+						hotel_reviews: doc.hotel_reviews,
 						is_new: doc.is_new,
 						is_apartment: doc.is_apartment,
 						facilities_restaurant: doc.facilities_restaurant,
@@ -98,7 +98,7 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 		hotel_description: req.body.hotel_description,
 		hotel_stars: req.body.hotel_stars,
 		hotel_rating: req.body.hotel_rating,
-		hotel_opinions: req.body.hotel_opinions,
+		hotel_reviews: req.body.hotel_reviews,
 		is_new: req.body.is_new,
 		is_apartment: req.body.is_apartment,
 		facilities_restaurant: req.body.facilities_restaurant,
@@ -124,7 +124,7 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 				hotel_description: result.hotel_description,
 				hotel_stars: result.hotel_stars,
 				hotel_rating: result.hotel_rating,
-				hotel_opinions: result.hotel_opinions,
+				hotel_reviews: result.hotel_reviews,
 				is_new: result.is_new,
 				is_apartment: result.is_apartment,
 				facilities_restaurant: result.facilities_restaurant,
@@ -163,6 +163,28 @@ router.get('/:hotelsId', (req, res, next) => {
 		}).catch(err => {
 		console.log('\x1b[31m', '[Failure]', err);
 		res.status(500).json(err);
+	});
+});
+
+/**
+ * @type UPDATE/PATCH
+ * @description Update hotel by ID
+ */
+router.patch('/:hotelsId', (req, res, next) => {
+	const id = req.params.hotelsId;
+	const updateOps = {};
+	for(const ops of req.body) {
+		updateOps[ops.propName] = ops.value;
+	}
+	Hotel.update({_id: id}, {$set: updateOps}).exec().then(result => {
+		res.status(200).json({
+			message: 'Hotel properly updated'
+		});
+	}).catch(err => {
+		console.log(err);
+		res.status(500).json({
+			error: error
+		});
 	});
 });
 

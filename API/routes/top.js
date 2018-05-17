@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 			const top = [];
 
 			docs.map(doc => {
-				if (doc.hotel_rating > 3) {
+				if (doc.hotel_rating >= 8) {
 					const topHotels = {
 						_id: doc._id,
 						hotel_name: doc.hotel_name,
@@ -26,7 +26,7 @@ router.get('/', (req, res, next) => {
 						hotel_description: doc.hotel_description,
 						hotel_stars: doc.hotel_stars,
 						hotel_rating: doc.hotel_rating,
-						hotel_opinions: doc.hotel_opinions,
+						hotel_reviews: doc.hotel_reviews,
 						is_new: doc.is_new,
 						is_apartment: doc.is_apartment,
 						facilities_restaurant: doc.facilities_restaurant,

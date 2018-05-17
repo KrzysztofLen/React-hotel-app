@@ -34,7 +34,7 @@ const hotelSchema = mongoose.Schema({
 		type: Number,
 		required: true
 	},
-	hotel_opinions: {
+	hotel_reviews: {
 		type: Number,
 		required: true
 	},

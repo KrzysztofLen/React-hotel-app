@@ -144,7 +144,7 @@ var app_data = [
 		"description": "Lorem ipsum dolor sit amet",
 		"hotel_stars": 5,
 		"hotel_rating": 8.4, // Depends on that show "Good, very good, poor etc."
-		"opinions": 831,
+		"hotel_reviews": 831,
 		"is_new": true,
 		"is_apartment": true,
 		"facilities": {

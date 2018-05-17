@@ -9,6 +9,12 @@ POST
 GET
 /:hotelId
 4. Update hotel by ID
+! To update hotel must:
+[
+	{
+	"propName": "facilities_restaurant", "value": "true"
+	}
+]
 PATCH
 /:hotelId
 5. Delete hotel by ID

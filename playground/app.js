@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// const productRoutes = require('../API/routes/products');
+//const productRoutes = require('./API/routes/products');
 // const ordersRoutes = require('../API/routes/orders');
 const hotelsRoutes = require('../API/routes/hotels');
 const countRoutes = require('../API/routes/count');
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-// app.use('/products', productRoutes);
+//app.use('/products', productRoutes);
 // app.use('/orders', ordersRoutes);
 app.use('/hotels', hotelsRoutes);
 app.use('/count', countRoutes);
