@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage});
 
 const properties = '_id ' +
+	'id ' +
 	'hotel_name ' +
 	'hotel_adress ' +
 	'hotel_city ' +
@@ -51,6 +52,7 @@ router.get('/', (req, res, next) => {
 				hotels: docs.map(doc => {
 					return {
 						_id: doc._id,
+						id: doc.id,
 						hotel_name: doc.hotel_name,
 						hotel_adress: doc.hotel_adress,
 						hotel_city: doc.hotel_city,
@@ -90,6 +92,7 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 	// Object values
 	const hotel = new Hotel({
 		_id: new mongoose.Types.ObjectId(),
+		id: req.body.id,
 		hotel_name: req.body.hotel_name,
 		hotel_adress: req.body.hotel_adress,
 		hotel_city: req.body.hotel_city,
@@ -116,6 +119,7 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 			message: "Handling POST request to /hotels",
 			createdHotel: {
 				_id: result._id,
+				id: result.id,
 				hotel_name: result.hotel_name,
 				hotel_adress: result.hotel_adress,
 				hotel_city: result.hotel_city,

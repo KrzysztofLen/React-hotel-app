@@ -6,9 +6,9 @@ import HotelLink from './Hotel/HotelLink';
 import HotelRating from './Hotel/HotelRating';
 import ToggleButton from './External/ToggleButton/ToggleButton';
 
-const HotelDescription = () => (
+const HotelDescription = (data) => (
 	<div className="hotel__details--description">
-		<p className="hotel__details--text">Lorem ipsum dolor sit amet</p>
+		<p className="hotel__details--text">{data.description}</p>
 	</div>
 );
 
@@ -51,14 +51,15 @@ class Hotel extends Component {
 	};
 
 	render() {
+		console.log(this.props);
 		return (
 			<div className="hotel__container">
 				<div className="hotel__image-container">
-					<HotelImage onClick={this.onModalOpen} image={this.props.data.image}/>
+					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
 					<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} value={this.props}/>
 				</div>
-				<HotelLink hotelName={this.props.data.hotel_name} id={this.props.data.id}/>
-				<HotelRating rate={this.props.data.rate}/>
+				<HotelLink hotelName={this.props.data.hotel_name} id={this.props.index}/>
+				<HotelRating rate={this.props.data.hotel_stars}/>
 				<div className="hotel__details--more">
 					<ToggleButton key={this.props.index}
 					              index={this.props.index}
@@ -69,7 +70,7 @@ class Hotel extends Component {
 				</div>
 				{this.state.activeIndex === this.props.index &&
 				<React.Fragment>
-					<HotelDescription/>
+					<HotelDescription description={this.props.data.hotel_description}/>
 					<HotelPrice/>
 				</React.Fragment>}
 			</div>

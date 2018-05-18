@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const hotelSchema = mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
+	id: {
+		type: Number,
+		required: true
+	},
 	hotel_name: {
 		type: String,
 		required: true

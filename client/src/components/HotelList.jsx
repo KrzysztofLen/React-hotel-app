@@ -8,7 +8,9 @@ class HotelsList extends Component {
 		this.state = {
 			showComponent: false,
 			perpage: 6,
-			page: 1
+			page: 1,
+			data: [],
+			isLoading: false,
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -21,14 +23,38 @@ class HotelsList extends Component {
 		});
 	}
 
+	componentDidMount() {
+		this.setState({isLoading: true});
+
+		// Temp to see Loading
+		setTimeout(() => {
+
+		fetch('/hotels', {
+			method: 'GET'
+		}).then(response => response.json())
+			.then((data) => {
+				this.setState({data: data.hotels, isLoading: false});
+			}).catch(err => {
+			if (err.status !== 200) {
+				console.error('[Fetch Error :-S]', err);
+			}
+		});
+
+		}, 5000);
+	}
+
 	render() {
 		const count = this.state.page * this.state.perpage;
-		const elem = app_data.slice(0, count);
-
+		const elem = this.state.data.slice(0, count);
+		const divStyle = {
+			color: 'black',
+			fontSize: '25px'
+		};
 		return (
 			<main className="hotel-list">
 				<div className="content__container">
 					<div className="column">
+						{this.state.isLoading && <p style={divStyle}>Loading ...</p>}
 						<div id="question-root">
 							{elem.map((data, index) => <Hotel data={data} key={data.id} index={index} />)}
 						</div>

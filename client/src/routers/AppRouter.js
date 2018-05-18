@@ -50,10 +50,35 @@ const PrivateRoute = ({component: Component, ...rest}) => (
 class AppRouter extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			data: []
+		}
+	}
+
+	componentDidMount() {
+		this.setState({isLoading: true});
+
+		// Temp to see Loading
+		// setInterval(() => {
+
+		fetch('/hotels', {
+			method: 'GET'
+		}).then(response => response.json())
+			.then((data) => {
+				this.setState({data: data.hotels, isLoading: false});
+			}).catch(err => {
+			if (err.status !== 200) {
+				console.error('[Fetch Error :-S]', err);
+			}
+		});
+
+		// }, 5000);
 	}
 
 	render() {
-		const appData = app_data;
+		const appData = this.state.data;
+
 		return (
 			<BrowserRouter>
 				<div>
