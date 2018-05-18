@@ -51,7 +51,6 @@ class Hotel extends Component {
 	};
 
 	render() {
-		console.log(this.props);
 		return (
 			<div className="hotel__container">
 				<div className="hotel__image-container">
