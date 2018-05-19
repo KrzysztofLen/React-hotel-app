@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Loader = (props) => {
 	return (
@@ -12,6 +13,10 @@ const Loader = (props) => {
 			<span className="loading" data-name="Loading">{props.text}</span>
 		</div>
 	)
+};
+
+Loader.propTypes = {
+	text: PropTypes.string.isRequired
 };
 
 export default Loader;

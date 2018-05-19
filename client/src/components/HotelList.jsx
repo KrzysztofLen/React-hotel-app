@@ -42,6 +42,7 @@ class HotelsList extends Component {
 			});
 
 		}, 5000);
+
 	}
 
 	render() {

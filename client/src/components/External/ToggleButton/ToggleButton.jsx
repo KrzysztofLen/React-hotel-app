@@ -13,7 +13,7 @@ class ToggleButton extends React.Component {
 	render() {
 		return <React.Fragment>
 			<button className={this.props.btnClass}
-			        onClick={this.onToggleButton}>{this.props.activeIndex ? "Less" : "More"}
+			        onClick={this.onToggleButton}>{this.props.activeIndex ? "Less" : "More info"}
 			</button>
 		</React.Fragment>
 	}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 
-import SingleQuestion from '../components/SingleQuestion';
+import SingleHotel from '../components/SingleHotel/SingleHotel';
 import App from "../App";
 import Navigation from '../components/Navigation/Navigation';
 import {Cart} from '../components/Cart/Cart';
@@ -57,28 +57,21 @@ class AppRouter extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({isLoading: true});
-
-		// Temp to see Loading
-		// setInterval(() => {
 
 		fetch('/hotels', {
 			method: 'GET'
 		}).then(response => response.json())
 			.then((data) => {
-				this.setState({data: data.hotels, isLoading: false});
+				this.setState({data: data.hotels});
 			}).catch(err => {
 			if (err.status !== 200) {
 				console.error('[Fetch Error :-S]', err);
 			}
 		});
 
-		// }, 5000);
 	}
 
 	render() {
-		const appData = this.state.data;
-
 		return (
 			<BrowserRouter>
 				<div>
@@ -86,7 +79,7 @@ class AppRouter extends React.Component {
 
 					<Route path="/" component={App} exact={true}/>
 					<Route path="/hotel/:id"
-					       render={(props) => <SingleQuestion {...props} appData={appData}/>}
+					       render={(props) => <SingleHotel {...props} appData={this.state.data}/>}
 					/>
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel}/>
