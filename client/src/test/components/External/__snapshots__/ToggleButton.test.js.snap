@@ -5,7 +5,7 @@ exports[`it should render ToggleButton component correctly 1`] = `
   <button
     onClick={[Function]}
   >
-    More
+    More info
   </button>
 </React.Fragment>
 `;
@@ -25,7 +25,7 @@ exports[`it should render inside test with More 1`] = `
   <button
     onClick={[Function]}
   >
-    More
+    More info
   </button>
 </React.Fragment>
 `;
