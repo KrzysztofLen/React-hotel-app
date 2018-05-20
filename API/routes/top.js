@@ -22,6 +22,7 @@ router.get('/', (req, res, next) => {
 						hotel_adress: doc.hotel_adress,
 						hotel_city: doc.hotel_city,
 						hotel_province: doc.hotel_province,
+						hotel_price: doc.hotel_price,
 						hotel_distance: doc.hotel_distance,
 						hotel_description: doc.hotel_description,
 						hotel_stars: doc.hotel_stars,

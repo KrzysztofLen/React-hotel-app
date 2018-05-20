@@ -18,6 +18,32 @@
 		margin-right: 2rem;
 	}
 
+	&--underline {
+		background: transparent;
+		color: $color-primary-dark;
+		text-decoration: underline;
+		padding: 10px 0;
+		font-size: 12px;
+
+		&:hover {
+			color: $color-white;
+			background: $color-primary-dark;
+		}
+	}
+
+	&--no-underline {
+		background: transparent;
+		border: 1px solid darken($color-more, 7%);
+		color: $color-primary-dark;
+		background-image: none;
+
+		&:hover {
+			background-image: none;
+			color: $color-white;
+			background: $color-primary-dark;
+		}
+	}
+
 	&--more {
 		border: 1px solid darken($color-more, 7%);
 		background: $color-white;

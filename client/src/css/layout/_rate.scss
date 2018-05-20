@@ -1,0 +1,30 @@
+.rate__color {
+	display: block;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 10px 0;
+
+	&--verybad {
+		color: $rate-bad;
+	}
+
+	&--poor {
+		color: $rate-poor;
+	}
+
+	&--fair {
+		color: $rate-fair;
+	}
+
+	&--good {
+		color: $rate-good;
+	}
+
+	&--verygood {
+		color: $rate-very-good;
+	}
+
+	&--excellent {
+		color: $rate-excellent;
+	}
+}

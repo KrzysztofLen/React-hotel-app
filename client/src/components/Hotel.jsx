@@ -6,7 +6,7 @@ import HotelLink from './HotelLink/HotelLink';
 import HotelRating from './Hotel/HotelRating';
 import ToggleButton from './External/ToggleButton/ToggleButton';
 import HotelPrice from './HotelPrice/HotelPrice';
-import Rating from "./External/Rating/Rating";
+import HotelOpinion from './HotelOpinion/HotelOpinion';
 
 const HotelDescription = (data) => (
 	<div className="hotel__details--description">
@@ -53,19 +53,26 @@ class Hotel extends Component {
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
 					<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} value={this.props}/>
 				</div>
-				<HotelLink hotelName={this.props.data.hotel_name}
-				           hotelDistance={this.props.data.hotel_distance}
-				           hotelAdress={this.props.data.hotel_adress}
-				           id={this.props.index}/>
-				<div className="hotel__details-box">
-					<HotelPrice/>
+				<div className="hotel__name-container">
+					<HotelLink hotelName={this.props.data.hotel_name}
+					           hotelDistance={this.props.data.hotel_distance}
+					           hotelAdress={this.props.data.hotel_adress}
+					           id={this.props.index}/>
 					<HotelRating rate={this.props.data.hotel_stars}/>
+				</div>
+				<div className="hotel__details--adressBox">
+					<span className="hotel__details--adress">{this.props.data.hotel_adress}</span>
+					<p className="hotel__details--distance">(<span className="hotel__details--distanceValue">{this.props.data.hotel_distance}</span> km from center)</p>
+				</div>
+				<div className="hotel__details-box">
+					<HotelPrice price={this.props.data.hotel_price}/>
+					<HotelOpinion hotelRating={this.props.data.hotel_rating} hotelReviews={this.props.data.hotel_reviews}/>
 					<div className="hotel__details--more">
 						<ToggleButton key={this.props.index}
 						              index={this.props.index}
 						              activeIndex={this.state.activeIndex === this.props.index}
 						              onClick={this.onToggleButton}
-						              btnClass={"btn btn" + (this.state.activeIndex === this.props.index ? '--less' : '--more')}
+						              btnClass={"btn btn" + (this.state.activeIndex === this.props.index ? '--no-underline' : '--underline') + " hotel__details--moreBtn"}
 						/>
 					</div>
 				</div>

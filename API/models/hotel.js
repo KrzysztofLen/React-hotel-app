@@ -22,6 +22,10 @@ const hotelSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	hotel_price: {
+		type: Number,
+		required: true
+	},
 	hotel_distance: {
 		type: Number,
 		required: true

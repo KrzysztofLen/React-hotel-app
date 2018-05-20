@@ -812,7 +812,8 @@ body.ReactModal__Body--open {
   background: #faf9f9;
   border-bottom: 1px solid #eee;
   box-shadow: 2px 2px 19px -1px rgba(0, 0, 0, 0.2);
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  position: relative; }
   .hotel__container:hover {
     background: #f4f2f2; }
 
@@ -837,9 +838,8 @@ body.ReactModal__Body--open {
   position: relative; }
 
 .hotel__details--name {
-  margin-left: 1.5rem; }
-
-.hotel__details--name {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   grid-column-start: 2; }
 
 .hotel__details--description {
@@ -864,7 +864,10 @@ body.ReactModal__Body--open {
 .hotel__details--adressBox {
   display: flex;
   align-items: center;
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin-left: 1.5rem; }
   .hotel__details--adressBox::before {
     content: '';
     position: absolute;
@@ -890,18 +893,14 @@ body.ReactModal__Body--open {
     .hotel__details--more .btn svg, .hotel__details--more .btn--less svg {
       margin-left: 8px; }
 
-.hotel__details--rate {
-  margin-top: 10px; }
-
-.hotel__details--price {
-  font-size: 16px;
-  font-size: 1.6rem;
+.hotel__details--priceValue {
+  margin: 0;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: bold;
   color: #777; }
-  .hotel__details--price span {
-    font-size: 18px;
-    font-size: 1.8rem;
-    color: #BA265D;
-    margin-right: 5px; }
+  .hotel__details--priceValue span {
+    color: #BA265D; }
 
 .hotel__link {
   font-size: 20px;
@@ -911,6 +910,15 @@ body.ReactModal__Body--open {
   font-weight: 200; }
   .hotel__link:hover {
     text-decoration: underline; }
+
+.hotel__name-container {
+  display: flex;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  align-items: center;
+  justify-content: flex-start;
+  top: 0;
+  position: absolute; }
 
 .btn, .btn--less, .btn--less:hover {
   background: #dc173f;
@@ -927,6 +935,24 @@ body.ReactModal__Body--open {
     background-position: 90% 45%; }
   .btn--login {
     margin-right: 2rem; }
+  .btn--underline {
+    background: transparent;
+    color: #BA265D;
+    text-decoration: underline;
+    padding: 10px 0;
+    font-size: 12px; }
+    .btn--underline:hover {
+      color: #fff;
+      background: #BA265D; }
+  .btn--no-underline {
+    background: transparent;
+    border: 1px solid #bc1436;
+    color: #BA265D;
+    background-image: none; }
+    .btn--no-underline:hover {
+      background-image: none;
+      color: #fff;
+      background: #BA265D; }
   .btn--more {
     border: 1px solid #bc1436;
     background: #fff;
@@ -1143,6 +1169,24 @@ body.ReactModal__Body--open {
 
 .fa-angle-down {
   color: #BA265D; }
+
+.rate__color {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 10px 0; }
+  .rate__color--verybad {
+    color: #BC2026; }
+  .rate__color--poor {
+    color: #EF4723; }
+  .rate__color--fair {
+    color: #F68E1F; }
+  .rate__color--good {
+    color: #FECC09; }
+  .rate__color--verygood {
+    color: #7DBB42; }
+  .rate__color--excellent {
+    color: #0F9246; }
 
 /* ------------- */
 /*		PAGES    */

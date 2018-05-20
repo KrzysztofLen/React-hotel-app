@@ -1,8 +1,8 @@
 import React from 'react';
 
-const HotelPrice = () => (
+const HotelPrice = (props) => (
 	<div className="hotel__details--price">
-		<span>$</span>599
+		<p className="hotel__details--priceValue"><span>&#36;</span>{props.price}</p>
 	</div>
 );
 

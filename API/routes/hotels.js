@@ -23,6 +23,7 @@ const properties = '_id ' +
 	'hotel_adress ' +
 	'hotel_city ' +
 	'hotel_province ' +
+	'hotel_price ' +
 	'hotel_distance ' +
 	'hotel_description ' +
 	'hotel_stars ' +
@@ -57,6 +58,7 @@ router.get('/', (req, res, next) => {
 						hotel_adress: doc.hotel_adress,
 						hotel_city: doc.hotel_city,
 						hotel_province: doc.hotel_province,
+						hotel_price: doc.hotel_price,
 						hotel_distance: doc.hotel_distance,
 						hotel_description: doc.hotel_description,
 						hotel_stars: doc.hotel_stars,
@@ -97,6 +99,7 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 		hotel_adress: req.body.hotel_adress,
 		hotel_city: req.body.hotel_city,
 		hotel_province: req.body.hotel_province,
+		hotel_price: req.body.hotel_price,
 		hotel_distance: req.body.hotel_distance,
 		hotel_description: req.body.hotel_description,
 		hotel_stars: req.body.hotel_stars,
@@ -124,6 +127,7 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 				hotel_adress: result.hotel_adress,
 				hotel_city: result.hotel_city,
 				hotel_province: result.hotel_province,
+				hotel_price: result.hotel_price,
 				hotel_distance: result.hotel_distance,
 				hotel_description: result.hotel_description,
 				hotel_stars: result.hotel_stars,

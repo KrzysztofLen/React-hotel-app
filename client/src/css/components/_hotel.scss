@@ -7,8 +7,9 @@
 
 		background: $color-grey-light-1;
 		border-bottom: 1px solid $color-grey-light-5;
-		box-shadow: 2px 2px 19px -1px rgba(0,0,0,0.20);
+		box-shadow: 2px 2px 19px -1px rgba(0, 0, 0, 0.20);
 		margin-bottom: 3rem;
+		position: relative;
 
 		&:hover {
 			background: $color-grey-light-2;
@@ -39,11 +40,10 @@
 	}
 
 	&__details {
-		&--name {
-			margin-left: 1.5rem;
-		}
 
 		&--name {
+			margin-left: 1.5rem;
+			margin-right: 1.5rem;
 			grid-column-start: 2;
 		}
 
@@ -74,6 +74,9 @@
 			display: flex;
 			align-items: center;
 			margin-top: 1rem;
+			grid-column-start: 2;
+			grid-row-start: 1;
+			margin-left: 1.5rem;
 
 			&::before {
 				content: '';
@@ -107,18 +110,14 @@
 			}
 		}
 
-		&--rate {
-			margin-top: 10px;
-		}
-
-		&--price {
-			@include font-size(1.6);
+		&--priceValue {
+			margin: 0;
+			@include font-size(1.8);
+			font-weight: bold;
 			color: $color-grey-dark-2;
 
 			span {
-				@include font-size(1.8);
 				color: $color-primary-dark;
-				margin-right: 5px;
 			}
 		}
 	}
@@ -132,5 +131,15 @@
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+
+	&__name-container {
+		display: flex;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		align-items: center;
+		justify-content: flex-start;
+		top: 0;
+		position: absolute;
 	}
 }
