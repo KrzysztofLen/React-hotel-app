@@ -12,21 +12,5 @@ exports[`should render Hotel Link correctly 1`] = `
   >
     Test Sunset Willow Resort
   </NavLink>
-  <div
-    className="hotel__details--adressBox"
-  >
-    <span
-      className="hotel__details--adress"
-    />
-    <p
-      className="hotel__details--distance"
-    >
-      (
-      <span
-        className="hotel__details--distanceValue"
-      />
-       km from center)
-    </p>
-  </div>
 </div>
 `;
