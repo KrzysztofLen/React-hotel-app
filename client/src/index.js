@@ -13,13 +13,11 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
 
-const jsx = (
+ReactDOM.render(
 	<Provider store={store}>
 		<AppRouter/>
-	</Provider>
-);
-
-ReactDOM.render(jsx, document.getElementById('root'));
+	</Provider>,
+	document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
 	if(user) {

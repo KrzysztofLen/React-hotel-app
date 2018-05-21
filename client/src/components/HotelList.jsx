@@ -3,6 +3,9 @@ import app_data from '../app_data';
 import Hotel from './Hotel';
 import Loader from './Loader/Loader';
 
+import {connect} from 'react-redux';
+import * as actions from "../actions";
+
 class HotelsList extends Component {
 	constructor(props) {
 		super(props);
@@ -27,7 +30,7 @@ class HotelsList extends Component {
 	componentDidMount() {
 		this.setState({isLoading: true});
 
-		// Temp to see Loading
+		//Temp to see Loading
 		setTimeout(() => {
 
 			fetch('/hotels', {
@@ -61,6 +64,7 @@ class HotelsList extends Component {
 								<div className="more-container">
 									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
 								</div>
+								{/*{this.renderContent()}*/}
 							</React.Fragment>}
 					</div>
 				</div>
@@ -69,4 +73,10 @@ class HotelsList extends Component {
 	}
 }
 
-export default HotelsList;
+function mapStateToProps({hotels}) {
+	return {
+		hotels
+	}
+}
+
+export default connect(mapStateToProps)(HotelsList);
