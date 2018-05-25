@@ -8,6 +8,7 @@
 /* ------------- */
 /*		BASE    */
 /* ------------- */
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,400,700");
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
@@ -16,7 +17,8 @@ html {
       font-size: 50%; } }
 
 body {
-  font-family: Lato, Arial, sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
   counter-reset: items-left;
   color: #777;
   background-image: linear-gradient(to right bottom, #FF3366, #BA265D);
@@ -695,6 +697,9 @@ body.ReactModal__Body--open {
     width: 2rem;
     fill: #999; }
 
+.content__container {
+  height: 500px; }
+
 .sidebar {
   background-color: #333;
   flex: 0 0 18%;
@@ -804,6 +809,22 @@ body.ReactModal__Body--open {
 .hotel-list {
   width: 100%; }
 
+.gallery__container {
+  display: flex; }
+
+.gallery__item {
+  margin: 0;
+  flex-grow: 1;
+  display: flex; }
+
+.gallery__photo {
+  width: 302px;
+  height: 181px;
+  display: block;
+  object-fit: cover;
+  align-items: stretch;
+  flex-grow: 1; }
+
 .hotel__container {
   grid-template-columns: 40rem 1fr 20rem;
   grid-template-rows: 8rem 8rem auto;
@@ -907,7 +928,7 @@ body.ReactModal__Body--open {
   font-size: 2rem;
   text-decoration: none;
   color: #BA265D;
-  font-weight: 200; }
+  font-weight: 400; }
   .hotel__link:hover {
     text-decoration: underline; }
 

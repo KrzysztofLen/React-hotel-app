@@ -11,6 +11,7 @@
 @import 'base/grid';
 @import 'base/settings';
 @import 'base/utilities';
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,400,700');
 
 /* ------------- */
 /*		COMPONENTS    */
@@ -21,8 +22,10 @@
 @import "components/single-comment";
 @import "components/modal";
 @import "components/search";
+@import "components/single-hotel";
 @import "components/navigation";
 @import "components/hotel-list";
+@import "components/hotel-gallery";
 @import "components/hotel";
 @import "components/button";
 @import "components/loader";

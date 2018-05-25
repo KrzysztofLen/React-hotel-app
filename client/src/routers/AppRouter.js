@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import SingleHotel from '../components/SingleHotel/SingleHotel';
 import App from "../App";
 import Navigation from '../components/Navigation/Navigation';
+import Header from '../components/Header';
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import {AddHotel} from '../components/AddHotel/AddHotel';
@@ -19,7 +20,7 @@ const fakeAuth = {
 class NotAuthenticate extends React.Component {
 	render() {
 		// debugger;
-		const { from } = this.props.location.state || { from: { pathname: "/" } };
+		const {from} = this.props.location.state || {from: {pathname: "/"}};
 		return (
 			<div className="container">
 				<p>You must log in to view the page at {from.pathname}</p>
@@ -76,6 +77,7 @@ class AppRouter extends React.Component {
 			<BrowserRouter>
 				<div>
 					<Navigation/>
+					<Header title="Question" options={false}/>
 
 					<Route path="/" component={App} exact={true}/>
 					<Route path="/hotel/:id"
@@ -85,7 +87,7 @@ class AppRouter extends React.Component {
 					<Route path="/buy" component={BuyHotel}/>
 
 					<PrivateRoute path="/add" component={AddHotel}/>
-					<Route path="/forbidden" component={NotAuthenticate} />
+					<Route path="/forbidden" component={NotAuthenticate}/>
 
 					<Footer/>
 				</div>

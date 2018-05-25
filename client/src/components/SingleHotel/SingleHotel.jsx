@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../Header';
 import SingleComment from '../SingleComment';
 import PropTypes from 'prop-types';
 import Loader from '../Loader/Loader';
+import Gallery from '../Gallery/Gallery';
 
 class SingleHotel extends React.Component {
 	constructor(props) {
@@ -65,82 +65,84 @@ class SingleHotel extends React.Component {
 	}
 
 	render() {
-		console.log('From Render: ', this.state.data);
 		const count = this.state.page * this.state.comment;
 		const index = parseInt(this.props.match.params.id);
 		const value = this.state.data.filter(x => x.id === index);
 		const [desc] = value;
-
+		console.log(desc);
 		return (
-			<div>
-				<Header title="Question" options={false}/>
-				{this.state.isLoading ? <Loader text="Loading"/> :
-					<React.Fragment>
 						<div className="content 12">
 							<div className="content__container">
-								<div className="column column-offset-20 col-80">
-									<div className="single-question__container">
-										<div className="question__avatar-container">
-											<div className="question__avatar-panel">
-												<img className="question__avatar" src="http://via.placeholder.com/50x50"
-												     alt=""/>
-											</div>
-											<div className="question__question">
-												<h3 className="name">{desc.hotel_name}</h3>
-												<span className="who">is asking:</span>
-												<h4 className="question">{desc.hotel_name}</h4>
-												<a href="#" className="unfollow">unfollow</a>
-												<div className="single-question__text">
-													<p className="single-question__text--question">Lorem ipsum dolor sit
-														amet, consectetur adipisicing elit. Atque distinctio neque
-														quaerat
-														quod tenetur vero! Atque consectetur consequuntur delectus
-														doloribus, ducimus earum eius, facilis, mollitia nam odio
-														pariatur
-														possimus quas.</p>
-													<div className="single-question__count-container">
-														<span
-															className="single-question__counter">{this.state.count}</span>
-														<span
-															className="single-question__votes">{this.state.count >= 0 ? 'upvotes' : 'downvotes'}</span>
-													</div>
-													<div className="single-question__counter-btn-container">
-														<button className="btn-count count-up" onClick={this.voteUp}>
-															<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-															     width="20"
-															     height="20" viewBox="0 0 20 20">
-																<title>triangle-up</title>
-																<path d="M15 14h-10l5-9 5 9z"></path>
-															</svg>
-														</button>
-														<button className="btn-count count-down"
-														        onClick={this.voteDown}>
-															<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-															     width="20"
-															     height="20" viewBox="0 0 20 20">
-																<title>triangle-down</title>
-																<path d="M5 6h10l-5 9-5-9z"></path>
-															</svg>
-														</button>
-													</div>
-												</div>
-												<button className="btn-new-answer">GIVE new answer</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div className="column column-offset-20 col-80 content__comment-container">
-									<p className="single-question__answered"><span>2</span>peers already answered Eva
-									</p>
-									{[...Array(count)].map((x, i) => <SingleComment key={i} count={this.state.count}
-									                                                voteUp={this.voteUp}
-									                                                voteDown={this.voteDown}/>)}
-									<button className="btn-new-comment" onClick={this.addComment}>COMMENT</button>
-								</div>
+								{this.state.isLoading ? <Loader text="Loading"/> :
+									<React.Fragment>
+										<main className="hotel-view">
+											<Gallery images={desc.hotel_images} />
+										</main>
+
+
+								{/*<div className="column column-offset-20 col-80">*/}
+									{/*<div className="single-question__container">*/}
+										{/*<div className="question__avatar-container">*/}
+											{/*<div className="question__avatar-panel">*/}
+												{/*<img className="question__avatar" src="http://via.placeholder.com/50x50"*/}
+												     {/*alt=""/>*/}
+											{/*</div>*/}
+											{/*<div className="question__question">*/}
+												{/*<h3 className="name">{desc.hotel_name}</h3>*/}
+												{/*<span className="who">is asking:</span>*/}
+												{/*<h4 className="question">{desc.hotel_name}</h4>*/}
+												{/*<a href="#" className="unfollow">unfollow</a>*/}
+												{/*<div className="single-question__text">*/}
+													{/*<p className="single-question__text--question">Lorem ipsum dolor sit*/}
+														{/*amet, consectetur adipisicing elit. Atque distinctio neque*/}
+														{/*quaerat*/}
+														{/*quod tenetur vero! Atque consectetur consequuntur delectus*/}
+														{/*doloribus, ducimus earum eius, facilis, mollitia nam odio*/}
+														{/*pariatur*/}
+														{/*possimus quas.</p>*/}
+													{/*<div className="single-question__count-container">*/}
+														{/*<span*/}
+															{/*className="single-question__counter">{this.state.count}</span>*/}
+														{/*<span*/}
+															{/*className="single-question__votes">{this.state.count >= 0 ? 'upvotes' : 'downvotes'}</span>*/}
+													{/*</div>*/}
+													{/*<div className="single-question__counter-btn-container">*/}
+														{/*<button className="btn-count count-up" onClick={this.voteUp}>*/}
+															{/*<svg version="1.1" xmlns="http://www.w3.org/2000/svg"*/}
+															     {/*width="20"*/}
+															     {/*height="20" viewBox="0 0 20 20">*/}
+																{/*<title>triangle-up</title>*/}
+																{/*<path d="M15 14h-10l5-9 5 9z"></path>*/}
+															{/*</svg>*/}
+														{/*</button>*/}
+														{/*<button className="btn-count count-down"*/}
+														        {/*onClick={this.voteDown}>*/}
+															{/*<svg version="1.1" xmlns="http://www.w3.org/2000/svg"*/}
+															     {/*width="20"*/}
+															     {/*height="20" viewBox="0 0 20 20">*/}
+																{/*<title>triangle-down</title>*/}
+																{/*<path d="M5 6h10l-5 9-5-9z"></path>*/}
+															{/*</svg>*/}
+														{/*</button>*/}
+													{/*</div>*/}
+												{/*</div>*/}
+												{/*<button className="btn-new-answer">GIVE new answer</button>*/}
+											{/*</div>*/}
+										{/*</div>*/}
+									{/*</div>*/}
+								{/*</div>*/}
+								{/*<div className="column column-offset-20 col-80 content__comment-container">*/}
+									{/*<p className="single-question__answered"><span>2</span>peers already answered Eva*/}
+									{/*</p>*/}
+									{/*{[...Array(count)].map((x, i) => <SingleComment key={i} count={this.state.count}*/}
+									                                                {/*voteUp={this.voteUp}*/}
+									                                                {/*voteDown={this.voteDown}/>)}*/}
+									{/*<button className="btn-new-comment" onClick={this.addComment}>COMMENT</button>*/}
+								{/*</div>*/}
+									</React.Fragment>
+								}
 							</div>
 						</div>
-					</React.Fragment>}
-			</div>
 		);
 	}
 }

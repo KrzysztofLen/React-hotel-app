@@ -64,7 +64,6 @@ class HotelsList extends Component {
 								<div className="more-container">
 									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
 								</div>
-								{/*{this.renderContent()}*/}
 							</React.Fragment>}
 					</div>
 				</div>

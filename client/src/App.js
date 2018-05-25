@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 // Components
-import Header from './components/Header.jsx';
 import HotelsList from './components/HotelList.jsx';
 
 import {connect} from 'react-redux';
@@ -15,7 +14,6 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
-				<Header/>
 				<div className="content">
 					<HotelsList/>
 				</div>

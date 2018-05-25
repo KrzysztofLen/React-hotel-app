@@ -1,0 +1,19 @@
+.gallery {
+	&__container {
+		display: flex;
+	}
+	&__item {
+		margin: 0;
+		flex-grow: 1;
+		display: flex;
+	}
+
+	&__photo {
+		width: 302px;
+		height: 181px;
+		display: block;
+		object-fit: cover;
+		align-items: stretch;
+		flex-grow: 1;
+	}
+}
