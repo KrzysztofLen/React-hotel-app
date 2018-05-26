@@ -17,7 +17,7 @@
 // 	{
 // 		"id": 1,
 // 		"name": "Andrew",
-// 		"hotel_name": "Mirror Hotel",
+// 		"hotel_name": "Mirror HotelRating",
 // 		"image": "https://preview.ibb.co/nbDc07/chuttersnap_221987_unsplash.jpg",
 // 		"rate": 4,
 // 		"more_activities": true,
@@ -32,7 +32,7 @@
 // 	{
 // 		"id": 2,
 // 		"name": "Joseph",
-// 		"hotel_name": "Ruby Garden Hotel",
+// 		"hotel_name": "Ruby Garden HotelRating",
 // 		"image": "https://preview.ibb.co/gK1fL7/daniil_vnoutchkov_397278_unsplash.jpg",
 // 		"rate": 2,
 // 		"more_activities": false,
@@ -62,7 +62,7 @@
 // 	{
 // 		"id": 4,
 // 		"name": "Andrew",
-// 		"hotel_name": "Regal Spring Hotel",
+// 		"hotel_name": "Regal Spring HotelRating",
 // 		"image": "https://preview.ibb.co/eD6ann/shane_hauser_140922_unsplash.jpg",
 // 		"rate": 1,
 // 		"more_activities": false,
@@ -76,7 +76,7 @@
 // 	{
 // 		"id": 5,
 // 		"name": "Andrew",
-// 		"hotel_name": "Sunny Park Hotel",
+// 		"hotel_name": "Sunny Park HotelRating",
 // 		"image": "https://preview.ibb.co/h5xgSn/scott_webb_67607_unsplash.jpg",
 // 		"rate": 4,
 // 		"more_activities": false,
@@ -90,7 +90,7 @@
 // 	{
 // 		"id": 6,
 // 		"name": "Marek",
-// 		"hotel_name": "Modest Nugget Hotel",
+// 		"hotel_name": "Modest Nugget HotelRating",
 // 		"image": "https://preview.ibb.co/bBxsYS/christoph_schulz_559688_unsplash.jpg",
 // 		"rate": 3,
 // 		"more_activities": true,
@@ -120,7 +120,7 @@
 // 	{
 // 		"id": 8,
 // 		"name": "Jarek",
-// 		"hotel_name": "Crown Hotel",
+// 		"hotel_name": "Crown HotelRating",
 // 		"image": "https://preview.ibb.co/eoD207/nichlas_andersen_225986_unsplash.jpg",
 // 		"rate": 5,
 // 		"more_activities": true,
@@ -134,7 +134,7 @@
 // 	},
 // 	// New data schema. All data will be dynamic by adding to DB
 // 	// {
-// 	// 	"hotel_name": "Crown Hotel",
+// 	// 	"hotel_name": "Crown HotelRating",
 // 	// 	"hotel_adress": {
 // 	// 		"adress": "Stare miasto",
 // 	// 		"city": "Wrocław",

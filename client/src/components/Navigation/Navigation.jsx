@@ -40,11 +40,11 @@ class Navigation extends React.Component {
 Navigation.defaultProps = {
 	navlinks: [
 		{
-			link: "Hotel's",
+			link: "HotelRating's",
 			path: "/"
 		},
 		{
-			link: "Buy Hotel",
+			link: "Buy HotelRating",
 			path: "/buy"
 		},
 		{
@@ -52,7 +52,7 @@ Navigation.defaultProps = {
 			path: "/cart"
 		},
 		{
-			link: "Add Hotel",
+			link: "Add HotelRating",
 			path: "/add"
 		}
 	]

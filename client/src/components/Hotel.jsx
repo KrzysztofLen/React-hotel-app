@@ -3,7 +3,7 @@ import OptionModal from './Modal';
 
 import HotelImage from './HotelImage/HotelImage';
 import HotelLink from './HotelLink/HotelLink';
-import HotelRating from './Hotel/HotelRating';
+import HotelRating from './HotelRating/HotelRating';
 import ToggleButton from './External/ToggleButton/ToggleButton';
 import HotelPrice from './HotelPrice/HotelPrice';
 import HotelOpinion from './HotelOpinion/HotelOpinion';

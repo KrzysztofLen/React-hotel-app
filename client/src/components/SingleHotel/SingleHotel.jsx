@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Loader from '../Loader/Loader';
 import Gallery from '../Gallery/Gallery';
 import {HotelOverview} from "../HotelOverview/HotelOverview";
+import {Details} from "../Details/Details";
 
 class SingleHotel extends React.Component {
 	constructor(props) {
@@ -79,6 +80,7 @@ class SingleHotel extends React.Component {
 							<React.Fragment>
 								<Gallery images={desc.hotel_images}/>
 								<HotelOverview {...desc} />
+								<Details/>
 							</React.Fragment>
 						}
 					</main>

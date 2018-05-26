@@ -186,7 +186,7 @@ router.patch('/:hotelsId', (req, res, next) => {
 	}
 	Hotel.update({_id: id}, {$set: updateOps}).exec().then(result => {
 		res.status(200).json({
-			message: 'Hotel properly updated'
+			message: 'HotelRating properly updated'
 		});
 	}).catch(err => {
 		console.log(err);
@@ -206,7 +206,7 @@ router.delete('/:hotelsId', (req, res, next) => {
 		_id: id
 	}).exec().then(result => {
 		res.status(200).json({
-			message: 'Hotel properly deleted'
+			message: 'HotelRating properly deleted'
 		});
 	}).catch(err => {
 		console.log('\x1b[31m', '[Failure]', err);

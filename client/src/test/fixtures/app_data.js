@@ -17,7 +17,7 @@ export default [
 	{
 		"id": 1,
 		"name": "Test Andrew",
-		"hotel_name": "Test Mirror Hotel",
+		"hotel_name": "Test Mirror HotelRating",
 		"image": "https://preview.ibb.co/nbDc07/chuttersnap_221987_unsplash.jpg",
 		"rate": 5,
 		"more_activities": true,
