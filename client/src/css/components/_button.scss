@@ -68,4 +68,22 @@
 			@extend .btn--less;
 		}
 	}
+
+	&--inline {
+		border: none;
+		color: darken($color-more, 7%);
+		font-size: inherit;
+		border-bottom: 1px solid currentColor;
+		padding: 0;
+		padding-bottom: 2px;
+		display: inline-block;
+		background-color: transparent;
+		cursor: pointer;
+		transition: all .2s;
+
+		&:hover {
+			color: $color-grey-dark-1;
+			background: transparent;
+		}
+	}
 }

@@ -72,7 +72,7 @@ class Hotel extends Component {
 						              index={this.props.index}
 						              activeIndex={this.state.activeIndex === this.props.index}
 						              onClick={this.onToggleButton}
-						              btnClass={"btn btn" + (this.state.activeIndex === this.props.index ? '--no-underline' : '--underline') + " hotel__details--moreBtn"}
+						              btnClass={"btn btn" + (this.state.activeIndex === this.props.index ? '--no-underline' : '--inline') + " hotel__details--moreBtn"}
 						/>
 					</div>
 				</div>

@@ -697,8 +697,8 @@ body.ReactModal__Body--open {
     width: 2rem;
     fill: #999; }
 
-.content__container {
-  height: 500px; }
+.hotel-view {
+  min-height: 500px; }
 
 .sidebar {
   background-color: #333;
@@ -824,6 +824,37 @@ body.ReactModal__Body--open {
   object-fit: cover;
   align-items: stretch;
   flex-grow: 1; }
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f4f2f2; }
+  .overview__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+    .overview__stars .fa-star {
+      font-size: 16px;
+      font-size: 1.6rem; }
+  .overview__location {
+    font-size: 1.2rem;
+    display: flex; }
+    .overview__location .btn--inline {
+      position: relative; }
+      .overview__location .btn--inline::before {
+        content: '';
+        position: absolute;
+        background: url("../assets/room.svg");
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain; }
 
 .hotel__container {
   grid-template-columns: 40rem 1fr 20rem;
@@ -988,6 +1019,20 @@ body.ReactModal__Body--open {
     background-image: url("../assets/chevron-small-up.svg");
     background-repeat: no-repeat;
     background-position: 90% 45%; }
+  .btn--inline {
+    border: none;
+    color: #bc1436;
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding: 0;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s; }
+    .btn--inline:hover {
+      color: #333;
+      background: transparent; }
 
 .cube-folding {
   width: 50px;
