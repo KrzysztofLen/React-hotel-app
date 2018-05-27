@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 //const productRoutes = require('./API/routes/products');
 // const ordersRoutes = require('../API/routes/orders');
-const hotelsRoutes = require('../API/routes/hotels');
-const countRoutes = require('../API/routes/count');
-const topRoutes = require('../API/routes/top');
+const hotelsRoutes = require('./routes/hotels');
+const countRoutes = require('./routes/count');
+const topRoutes = require('./routes/top');
 
 mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
 
