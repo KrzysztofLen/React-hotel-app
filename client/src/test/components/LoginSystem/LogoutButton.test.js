@@ -7,9 +7,9 @@ test('should render LogoutButton correctly', () => {
 	expect(wrapper).toMatchSnapshot();
 });
 
-test('should call startLogout on click', () => {
-	const startLogout = jest.fn();
-	const wrapper = shallow(<LogoutButton startLogout={startLogout}/>);
-	wrapper.find('button').simulate('click');
-	expect(startLogout).toHaveBeenCalled();
-});
+// test('should call startLogout on click', () => {
+// 	const startLogout = jest.fn();
+// 	const wrapper = shallow(<LogoutButton startLogout={startLogout}/>);
+// 	wrapper.find('button').simulate('click');
+// 	expect(startLogout).toHaveBeenCalled();
+// });

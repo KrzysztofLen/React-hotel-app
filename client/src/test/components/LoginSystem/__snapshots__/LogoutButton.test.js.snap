@@ -3,6 +3,7 @@
 exports[`should render LogoutButton correctly 1`] = `
 <button
   className="btn btn--login"
+  onClick={[Function]}
   type="button"
 >
   Logout
