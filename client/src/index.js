@@ -8,7 +8,7 @@ import './css/styles.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 
-import {firebase} from './firebase';
+// import {firebase} from './firebase';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
@@ -19,12 +19,12 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById('root'));
 
-firebase.auth().onAuthStateChanged((user) => {
-	if(user) {
-		console.log('Login');
-	} else {
-		console.log('Logout');
-	}
-});
+// firebase.auth().onAuthStateChanged((user) => {
+// 	if(user) {
+// 		console.log('Login');
+// 	} else {
+// 		console.log('Logout');
+// 	}
+// });
 
 registerServiceWorker();

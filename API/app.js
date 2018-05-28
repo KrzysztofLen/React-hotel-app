@@ -4,12 +4,22 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-//const productRoutes = require('./API/routes/products');
-// const ordersRoutes = require('../API/routes/orders');
+
+//######### SERVICES #########
+require('./services/passport');
+
+//######### ROUTES #########
 const hotelsRoutes = require('./routes/hotels');
 const countRoutes = require('./routes/count');
 const topRoutes = require('./routes/top');
+require('./routes/authRoutes')(app);
 
+// Use routes
+app.use('/hotels', hotelsRoutes);
+app.use('/count', countRoutes);
+app.use('/top', topRoutes);
+
+//######### MONGODB CONNECT #########
 mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
 
 app.use(morgan('dev'));
@@ -29,12 +39,6 @@ app.use((req, res, next) => {
 	}
 	next();
 });
-
-//app.use('/products', productRoutes);
-// app.use('/orders', ordersRoutes);
-app.use('/hotels', hotelsRoutes);
-app.use('/count', countRoutes);
-app.use('/top', topRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error('Not found');
