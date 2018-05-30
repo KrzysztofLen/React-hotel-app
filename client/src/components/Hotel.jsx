@@ -7,12 +7,10 @@ import HotelRating from './HotelRating/HotelRating';
 import ToggleButton from './External/ToggleButton/ToggleButton';
 import HotelPrice from './HotelPrice/HotelPrice';
 import HotelOpinion from './HotelOpinion/HotelOpinion';
+import HotelFacilities from './HotelFacilities/HotelFacilities';
+import HotelDescription from './HotelDescription/HotelDescription';
 
-const HotelDescription = (data) => (
-	<div className="hotel__details--description">
-		<p className="hotel__details--text">{data.description}</p>
-	</div>
-);
+import isNew from '../assets/new.svg';
 
 class Hotel extends Component {
 	constructor(props) {
@@ -62,11 +60,14 @@ class Hotel extends Component {
 				</div>
 				<div className="hotel__details--adressBox">
 					<span className="hotel__details--adress">{this.props.data.hotel_adress}</span>
-					<p className="hotel__details--distance">(<span className="hotel__details--distanceValue">{this.props.data.hotel_distance}</span> km from center)</p>
+					<p className="hotel__details--distance">(<span
+						className="hotel__details--distanceValue">{this.props.data.hotel_distance}</span> km from
+						center)</p>
 				</div>
 				<div className="hotel__details-box">
 					<HotelPrice price={this.props.data.hotel_price}/>
-					<HotelOpinion hotelRating={this.props.data.hotel_rating} hotelReviews={this.props.data.hotel_reviews}/>
+					<HotelOpinion hotelRating={this.props.data.hotel_rating}
+					              hotelReviews={this.props.data.hotel_reviews}/>
 					<div className="hotel__details--more">
 						<ToggleButton key={this.props.index}
 						              index={this.props.index}
@@ -79,7 +80,9 @@ class Hotel extends Component {
 				{this.state.activeIndex === this.props.index &&
 				<React.Fragment>
 					<HotelDescription description={this.props.data.hotel_description}/>
+					<HotelFacilities {...this.props.data}/>
 				</React.Fragment>}
+				{this.props.data.is_new ? <img src={isNew} alt="new" className="hotel__details--isNew"/> : null}
 			</div>
 		)
 	}

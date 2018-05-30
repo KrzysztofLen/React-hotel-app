@@ -1,0 +1,31 @@
+import React from 'react';
+
+import visa from '../../assets/cc-visa.svg';
+import cutlery from '../../assets/cutlery.svg';
+import gamepad from '../../assets/gamepad.svg';
+import heartbeat from '../../assets/heartbeat.svg';
+import wifi from '../../assets/wifi.svg';
+
+class HotelFacilities extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		console.log(this.props);
+		return (
+			<div className="facilities">
+				<span className="facilities__header">Facilities: </span>
+				<div className="facilities__container">
+					{this.props.facilities_card_payment ? <img className="facilities__icon" src={visa} alt="visa" /> : null}
+					{this.props.facilities_restaurant ? <img className="facilities__icon" src={cutlery} alt="cutlery" /> : null}
+					{this.props.facilities_gym ? <img className="facilities__icon" src={heartbeat} alt="heartbeat" /> : null}
+					{this.props.facilities_wifi ? <img className="facilities__icon" src={wifi} alt="wifi" /> : null}
+					{this.props.facilities_game_room ? <img className="facilities__icon" src={gamepad} alt="gamepad" /> : null}
+				</div>
+			</div>
+		)
+	}
+}
+
+export default HotelFacilities;

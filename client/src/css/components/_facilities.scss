@@ -1,0 +1,18 @@
+.facilities {
+	grid-column-start: 2;
+	margin: 1.5rem;
+
+	&__header {
+		@include font-size(1.5);
+		margin-bottom: 1.5rem;
+	}
+
+	&__icon {
+		margin-right: 1.5rem;
+		opacity: 0.6;
+	}
+
+	&__container {
+		margin-top: 1rem;
+	}
+}

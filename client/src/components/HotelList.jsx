@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import app_data from '../app_data';
 import Hotel from './Hotel';
 import Loader from './Loader/Loader';
 

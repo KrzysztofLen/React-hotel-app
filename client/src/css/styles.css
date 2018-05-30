@@ -864,6 +864,17 @@ body.ReactModal__Body--open {
     text-transform: uppercase;
     font-weight: 200; }
 
+.opinion__hotel-rating {
+  font-size: 24px;
+  font-size: 2.4rem;
+  color: #eb2f64;
+  margin-right: 0.5rem; }
+
+.opinion__hotel-reviews {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: 200; }
+
 .hotel__container {
   grid-template-columns: 40rem 1fr 20rem;
   grid-template-rows: 8rem 8rem auto;
@@ -904,22 +915,27 @@ body.ReactModal__Body--open {
 
 .hotel__details--description {
   grid-column-start: 2;
-  grid-row-start: 2; }
+  grid-row-start: 2;
+  margin: 1.5rem;
+  align-self: center;
+  transition: all 4s; }
 
 .hotel__details--distance span {
   font-weight: bold;
   font-size: 12px;
   font-size: 1.2rem; }
 
-.hotel__details--description {
-  margin: 1rem 3rem;
-  align-self: center; }
-
 .hotel__details--text {
   font-size: 16px;
   font-size: 1.6rem;
   color: #777;
-  margin: 0; }
+  margin: 0;
+  font-weight: 200; }
+
+.hotel__details--isNew {
+  width: 55px;
+  position: absolute;
+  animation: move 0.7s ease infinite alternate-reverse; }
 
 .hotel__details--adressBox {
   display: flex;
@@ -955,9 +971,9 @@ body.ReactModal__Body--open {
 
 .hotel__details--priceValue {
   margin: 0;
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: 200;
   color: #777; }
   .hotel__details--priceValue span {
     color: #BA265D; }
@@ -979,6 +995,16 @@ body.ReactModal__Body--open {
   justify-content: flex-start;
   top: 0;
   position: absolute; }
+
+@keyframes move {
+  0% {
+    top: 0;
+    opacity: 0.5;
+    transform: scale(1); }
+  100% {
+    top: 4px;
+    opacity: 1;
+    transform: scale(1.3); } }
 
 .btn, .btn--less, .btn--less:hover {
   background: #dc173f;
@@ -1128,6 +1154,19 @@ body.ReactModal__Body--open {
         color: #eb2f64;
         font-size: 2.2rem;
         font-weight: 300; }
+
+.facilities {
+  grid-column-start: 2;
+  margin: 1.5rem; }
+  .facilities__header {
+    font-size: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem; }
+  .facilities__icon {
+    margin-right: 1.5rem;
+    opacity: 0.6; }
+  .facilities__container {
+    margin-top: 1rem; }
 
 .cube-folding {
   width: 50px;
@@ -1335,7 +1374,8 @@ body.ReactModal__Body--open {
   display: block;
   font-size: 20px;
   font-weight: 400;
-  margin: 10px 0; }
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
   .rate__color--verybad {
     color: #BC2026; }
   .rate__color--poor {

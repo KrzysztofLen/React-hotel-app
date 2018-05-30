@@ -50,6 +50,10 @@
 		&--description {
 			grid-column-start: 2;
 			grid-row-start: 2;
+			margin: 1.5rem;
+			align-self: center;
+
+			transition: all 4s;
 		}
 
 		&--distance {
@@ -59,15 +63,17 @@
 			}
 		}
 
-		&--description {
-			margin: 1rem 3rem;
-			align-self: center;
-		}
-
 		&--text {
 			@include font-size(1.6);
 			color: $color-grey-dark-2;
 			margin: 0;
+			@include font-weight(200);
+		}
+
+		&--isNew {
+			width: 55px;
+			position: absolute;
+			animation: move 0.7s ease infinite alternate-reverse;
 		}
 
 		&--adressBox {
@@ -112,8 +118,8 @@
 
 		&--priceValue {
 			margin: 0;
-			@include font-size(1.8);
-			font-weight: bold;
+			@include font-size(2);
+			font-weight: 200;
 			color: $color-grey-dark-2;
 
 			span {
@@ -141,5 +147,16 @@
 		justify-content: flex-start;
 		top: 0;
 		position: absolute;
+	}
+}
+
+@keyframes move {
+	0% {
+		opacity: 0.5;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.3);
 	}
 }
