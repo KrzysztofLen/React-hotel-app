@@ -13,7 +13,7 @@ class HotelsList extends Component {
 			perpage: 6,
 			page: 1,
 			data: [],
-			isLoading: false,
+			isLoading: false
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -32,18 +32,11 @@ class HotelsList extends Component {
 		//Temp to see Loading
 		setTimeout(() => {
 
-			fetch('/hotels', {
-				method: 'GET'
-			}).then(response => response.json())
-				.then((data) => {
-					this.setState({data: data.hotels, isLoading: false});
-				}).catch(err => {
-				if (err.status !== 200) {
-					console.error('[Fetch Error :-S]', err);
-				}
+			this.setState({
+				data: this.props.hotels.hotels,
+				isLoading: false
 			});
-
-		}, 5000);
+		}, 2000);
 
 	}
 
