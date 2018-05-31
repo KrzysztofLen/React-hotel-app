@@ -15,7 +15,6 @@ exports[`should render Header correctly 1`] = `
       type="text"
     />
   </form>
-  <LogoutButton />
-  <LoginButton />
+  <Connect(LoginSystem) />
 </header>
 `;
