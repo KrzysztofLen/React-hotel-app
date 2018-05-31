@@ -31,7 +31,7 @@ class HotelsList extends React.Component<Props, State> {
 	}
 
 	handleClick = (event: SyntheticEvent<HTMLButtonElement>) => {
-		this.setState((prevState) => {
+		this.setState((prevState): Object => {
 			return {
 				perpage: prevState.perpage + 3
 			}
@@ -63,7 +63,8 @@ class HotelsList extends React.Component<Props, State> {
 						{this.state.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
 								<div id="question-root">
-									{elem.map((data: any, index: number) => <Hotel data={data} key={data.id} index={index}/>)}
+									{elem.map((data: any, index: number): Object => <Hotel data={data} key={data.id}
+									                                                       index={index}/>)}
 								</div>
 								<div className="more-container">
 									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
@@ -76,7 +77,11 @@ class HotelsList extends React.Component<Props, State> {
 	}
 }
 
-function mapStateToProps({hotels}) {
+interface Hotels {
+	hotels: Array<Object>
+}
+
+function mapStateToProps({hotels}: Hotels): Object {
 	return {
 		hotels
 	}
