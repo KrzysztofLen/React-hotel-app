@@ -1,11 +1,24 @@
-import React, {Component} from 'react';
+// @flow
+import * as React from 'react'
 import Hotel from './Hotel';
 import Loader from './Loader/Loader';
 
 import {connect} from 'react-redux';
 
-class HotelsList extends Component {
-	constructor(props) {
+type Props = {
+	hotels: any
+};
+
+type State = {
+	showComponent: boolean,
+	perpage: number,
+	page: number,
+	data: Array<mixed>,
+	isLoading: boolean
+}
+
+class HotelsList extends React.Component<Props, State> {
+	constructor(props: Props) {
 		super(props);
 		this.state = {
 			showComponent: false,
@@ -17,13 +30,13 @@ class HotelsList extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick() {
+	handleClick = (event: SyntheticEvent<HTMLButtonElement>) => {
 		this.setState((prevState) => {
 			return {
 				perpage: prevState.perpage + 3
 			}
 		});
-	}
+	};
 
 	componentDidMount() {
 		this.setState({isLoading: true});
@@ -40,8 +53,8 @@ class HotelsList extends Component {
 	}
 
 	render() {
-		const count = this.state.page * this.state.perpage;
-		const elem = this.state.data.slice(0, count);
+		const count: number = this.state.page * this.state.perpage;
+		const elem: Array<mixed> = this.state.data.slice(0, count);
 
 		return (
 			<main className="hotel-list">
@@ -50,7 +63,7 @@ class HotelsList extends Component {
 						{this.state.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
 								<div id="question-root">
-									{elem.map((data, index) => <Hotel data={data} key={data.id} index={index}/>)}
+									{elem.map((data: any, index: number) => <Hotel data={data} key={data.id} index={index}/>)}
 								</div>
 								<div className="more-container">
 									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
