@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
 class HotelOpinion extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	range() {
 		const rate = this.props.hotelRating;
 		let ratingLevel;

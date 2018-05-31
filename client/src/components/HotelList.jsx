@@ -3,7 +3,6 @@ import Hotel from './Hotel';
 import Loader from './Loader/Loader';
 
 import {connect} from 'react-redux';
-import * as actions from "../actions";
 
 class HotelsList extends Component {
 	constructor(props) {

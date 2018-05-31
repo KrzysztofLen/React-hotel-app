@@ -7,12 +7,7 @@ import heartbeat from '../../assets/heartbeat.svg';
 import wifi from '../../assets/wifi.svg';
 
 class HotelFacilities extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
-		console.log(this.props);
 		return (
 			<div className="facilities">
 				<span className="facilities__header">Facilities: </span>

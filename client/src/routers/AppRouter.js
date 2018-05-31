@@ -10,7 +10,6 @@ import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import {AddHotel} from '../components/AddHotel/AddHotel';
 import Footer from '../components/Footer/Footer';
 import NoMatch404 from '../components/404/NoMatch404';
-import app_data from '../app_data';
 
 //TODO Make private route with addHotel component
 const fakeAuth = {

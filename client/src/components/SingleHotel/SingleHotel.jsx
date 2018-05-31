@@ -1,5 +1,4 @@
 import React from 'react';
-import SingleComment from '../SingleComment';
 import PropTypes from 'prop-types';
 import Loader from '../Loader/Loader';
 import Gallery from '../Gallery/Gallery';
@@ -67,11 +66,10 @@ class SingleHotel extends React.Component {
 	}
 
 	render() {
-		const count = this.state.page * this.state.comment;
 		const index = parseInt(this.props.match.params.id);
 		const value = this.state.data.filter(x => x.id === index);
 		const [desc] = value;
-		console.log(desc);
+
 		return (
 			<div className="content">
 				<div className="content__container">
