@@ -8,7 +8,7 @@ html {
 }
 
 body {
-	font-family: 'Oswald', sans-serif;
+	@include font-family($oswald);
 	font-weight: 400;
 	counter-reset: items-left;
 	color: $color-grey-dark-2;

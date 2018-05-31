@@ -9,13 +9,46 @@
 
 	&:hover {
 		background: darken($color-more, 7%);
-		background-image: url("../assets/chevron-small-down-1.svg");
-		background-repeat: no-repeat;
-		background-position: 90% 45%;
 	}
 
 	&--login {
+		display: flex;
+		align-items: center;
+		background: $rate-very-good;
 		margin-right: 2rem;
+		@include font-family($oswald);
+		@include font-weight(700);
+		letter-spacing: 1px;
+		text-decoration: none;
+		padding: 1rem 1.5rem;
+		border-radius: 2px;
+
+		&:hover {
+			background: darken($rate-very-good, 7%);
+		}
+
+		svg {
+			fill: $color-white;
+			margin-left: 10px;
+		}
+	}
+
+	&--logout {
+		display: flex;
+		align-items: center;
+		background: $rate-bad;
+		margin-right: 2rem;
+		@include font-family($oswald);
+		@include font-weight(700);
+		letter-spacing: 1px;
+		text-decoration: none;
+		padding: 1rem 1.5rem;
+		border-radius: 2px;
+
+		svg {
+			fill: $color-white;
+			margin-left: 10px;
+		}
 	}
 
 	&--underline {

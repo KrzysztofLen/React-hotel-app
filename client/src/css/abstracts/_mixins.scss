@@ -50,16 +50,8 @@
 ///   .nav {
 ///     @include font($fontName1);
 ///   }
-@mixin font($font) {
-  @if $font == $NameOfFont0 {
-    font-family: $NameOfFont0;
-  } @else if $font == $NameOfFont1 {
-    font-family: $NameOfFont1;
-  } @else if $font == $NameOfFont2 {
-    font-family: $NameOfFont2;
-  } @else if $font == $NameOfFont3 {
-    font-family: $NameOfFont3;
-  }
+@mixin font-family($font) {
+    font-family: $font;
 }
 
 /// Mixin to work with Font weight
