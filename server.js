@@ -1,23 +1,60 @@
-// const express = require('express');
-// const path = require('path');
-// const app = express();
-//
-// //############ TEMP
-// // require('./API/app');
-// //############
-//
-// app.use(express.static('client/build'));
-//
-// app.get('*', (req, res) => {
-// 	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-// });
-//
-// app.listen(process.env.PORT || 9999);
+const express = require('express');
+const path = require('path');
+const app = express();
 
-const app = require('./API/app');
-const http = require('http');
+//############ TEMP
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+const morgan = require('morgan');
+const keys = require('./API/config/keys');
 
-const port = process.env.PORT || 1234;
-const server = http.createServer(app);
+//######### MODELS #########
+require('./API/models/Users');
 
-server.listen(port);
+//######### SERVICES #########
+require('./API/services/passport');
+
+//######### MONGODB CONNECT #########
+mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
+
+//######### ROUTES #########
+const hotelsRoutes = require('./API/routes/hotels');
+const countRoutes = require('./API/routes/count');
+const topRoutes = require('./API/routes/top');
+// require('./routes/authRoutes')(app);
+
+// Use routes
+app.use('/hotels', hotelsRoutes);
+app.use('/count', countRoutes);
+app.use('/top', topRoutes);
+
+app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.json());
+app.use(
+	cookieSession({
+		maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+		keys: [keys.cookieKey]
+	})
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./API/routes/authRoutes')(app);
+//############
+
+app.use(express.static('client/build'));
+
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+	console.log('Example app listening on port 5000!')
+});
