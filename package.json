@@ -4,7 +4,8 @@
   "scripts": {
     "client": "cd client && yarn start",
     "start-api": "nodemon cd API/server.js",
-    "dev": "concurrently \"yarn start-api\" \"yarn client\""
+    "dev": "concurrently \"yarn start-api\" \"yarn client\"",
+    "build": "cd client && yarn build"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
