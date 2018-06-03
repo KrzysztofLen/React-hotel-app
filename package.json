@@ -1,11 +1,11 @@
 {
-  "name": "my-app",
+  "name": "root react-hotel-app",
   "version": "0.1.0",
   "scripts": {
     "client": "cd client && yarn start",
     "start-api": "nodemon cd API/server.js",
     "dev": "concurrently \"yarn start-api\" \"yarn client\"",
-    "build": "cd client && yarn build"
+    "build": "cd client && npm install && yarn build"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",

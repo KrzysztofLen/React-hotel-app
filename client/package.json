@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "client react-hotel-app",
   "version": "0.1.0",
   "proxy": {
     "/auth/google": {
