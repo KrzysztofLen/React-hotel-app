@@ -1,5 +1,5 @@
 {
-  "name": "root react-hotel-app",
+  "name": "root-react-hotel-app",
   "version": "0.1.0",
   "scripts": {
     "client": "cd client && yarn start",
