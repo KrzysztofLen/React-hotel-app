@@ -1,5 +1,0 @@
-{
-  "setupFiles": [
-    "<rootDir>/client/src/setupTests.js"
-  ]
-}
