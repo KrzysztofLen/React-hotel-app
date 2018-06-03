@@ -3,52 +3,7 @@ const path = require('path');
 const app = express();
 
 //############ TEMP
-
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-
-const morgan = require('morgan');
-const keys = require('./API/config/keys');
-
-//######### MODELS #########
-require('./API/models/Users');
-
-//######### SERVICES #########
-require('./API/services/passport');
-
-//######### MONGODB CONNECT #########
-mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
-
-//######### ROUTES #########
-const hotelsRoutes = require('./API/routes/hotels');
-const countRoutes = require('./API/routes/count');
-const topRoutes = require('./API/routes/top');
-// require('./routes/authRoutes')(app);
-
-// Use routes
-app.use('/hotels', hotelsRoutes);
-app.use('/count', countRoutes);
-app.use('/top', topRoutes);
-
-app.use(morgan('dev'));
-app.use('/uploads', express.static('uploads'));
-app.use(bodyParser.urlencoded({extended: false}));
-
-app.use(bodyParser.json());
-app.use(
-	cookieSession({
-		maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-		keys: [keys.cookieKey]
-	})
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-require('./routes/authRoutes')(app);
-
+require('./API/server');
 //############
 
 app.use(express.static('client/build'));
