@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "client": "cd client && yarn start",
-    "start-api": "nodemon cd API/server.js",
+    "start-api": "nodemon server.js",
     "dev": "concurrently \"yarn start-api\" \"yarn client\"",
     "build": "cd client && npm install && yarn build"
   },
