@@ -1,9 +1,7 @@
 {
   "root": "client/build/",
-  "proxies": {
-    "/hotels": {
-      "origin": "https://react-hotel-app.herokuapp.com/"
-    }
+  "routes": {
+    "/**": "Test Test"
   },
   "setupFiles": [
     "<rootDir>/client/src/setupTests.js"
