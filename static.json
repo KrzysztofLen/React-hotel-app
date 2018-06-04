@@ -1,7 +1,9 @@
 {
   "root": "client/build/",
-  "routes": {
-    "/**": "Test Test"
+  "headers": {
+    "/**": {
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   "setupFiles": [
     "<rootDir>/client/src/setupTests.js"
