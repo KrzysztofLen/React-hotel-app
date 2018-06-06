@@ -5,16 +5,7 @@ exports[`should render Header correctly 1`] = `
   className="header"
 >
   <Logo />
-  <form
-    action="#"
-    className="search"
-  >
-    <input
-      className="search__input"
-      placeholder="Search hotels"
-      type="text"
-    />
-  </form>
+  <Connect(Search) />
   <Connect(LoginSystem) />
 </header>
 `;
