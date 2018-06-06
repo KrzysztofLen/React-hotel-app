@@ -57,16 +57,16 @@ class AppRouter extends React.Component {
 	}
 
 	componentDidMount() {
-		// fetch('/hotels', {
-		// 	method: 'GET'
-		// }).then(response => response.json())
-		// 	.then((data) => {
-		// 		this.setState({data: data.hotels});
-		// 	}).catch(err => {
-		// 	if (err.status !== 200) {
-		// 		console.error('[Fetch Error :-S]', err);
-		// 	}
-		// });
+		fetch('/hotels', {
+			method: 'GET'
+		}).then(response => response.json())
+			.then((data) => {
+				this.setState({data: data.hotels});
+			}).catch(err => {
+			if (err.status !== 200) {
+				console.error('[Fetch Error :-S]', err);
+			}
+		});
 	}
 
 	render() {
