@@ -1,5 +1,8 @@
 {
   "root": "client/build/",
+  "routes": {
+    "/**": "index.html"
+  },
   "setupFiles": [
     "<rootDir>/client/src/setupTests.js"
   ]
