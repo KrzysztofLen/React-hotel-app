@@ -57,7 +57,6 @@ class AppRouter extends React.Component {
 	}
 
 	componentDidMount() {
-
 		// fetch('/hotels', {
 		// 	method: 'GET'
 		// }).then(response => response.json())
@@ -68,7 +67,6 @@ class AppRouter extends React.Component {
 		// 		console.error('[Fetch Error :-S]', err);
 		// 	}
 		// });
-
 	}
 
 	render() {
@@ -94,5 +92,6 @@ class AppRouter extends React.Component {
 		)
 	}
 }
+
 
 export default AppRouter;
