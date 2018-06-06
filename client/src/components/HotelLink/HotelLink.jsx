@@ -9,7 +9,7 @@ type Props = {
 
 const HotelLink = (data: Props) => (
 	<div className="hotel__details--name">
-		<NavLink to={"/hotel/" + data.id} ariaCurrent="page" className="hotel__link">{data.hotelName}</NavLink>
+		<NavLink to={"/hotel/" + data.id} aria-current="page" className="hotel__link">{data.hotelName}</NavLink>
 	</div>
 );
 

@@ -6,7 +6,8 @@ exports[`should render HotelRating Link correctly 1`] = `
 >
   <NavLink
     activeClassName="active"
-    ariaCurrent="page"
+    aria-current="page"
+    ariaCurrent="true"
     className="hotel__link"
     to="/hotel/0"
   >
