@@ -54,26 +54,26 @@ app.get('*', (req, res) => {
 	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-// this array is used for identification of allowed origins in CORS
-const originWhitelist = ['http://localhost:3000', 'https://react-hotel-app.herokuapp.com/'];
-app.use((req, res, next) => {
-	console.log('Server info: Request received');
-
-	let origin = req.headers.origin;
-
-	// only allow requests from origins that we trust
-	if (originWhitelist.indexOf(origin) > -1) {
-		res.setHeader('Access-Control-Allow-Origin', origin);
-	}
-
-	// only allow get requests, separate methods by comma e.g. 'GET, POST'
-	res.setHeader('Access-Control-Allow-Methods', 'GET');
-	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-	res.setHeader('Access-Control-Allow-Credentials', true);
-
-	// push through to the proper route
-	next();
-});
+// // this array is used for identification of allowed origins in CORS
+// const originWhitelist = ['http://localhost:3000', 'https://react-hotel-app.herokuapp.com/'];
+// app.use((req, res, next) => {
+// 	console.log('Server info: Request received');
+//
+// 	let origin = req.headers.origin;
+//
+// 	// only allow requests from origins that we trust
+// 	if (originWhitelist.indexOf(origin) > -1) {
+// 		res.setHeader('Access-Control-Allow-Origin', origin);
+// 	}
+//
+// 	// only allow get requests, separate methods by comma e.g. 'GET, POST'
+// 	res.setHeader('Access-Control-Allow-Methods', 'GET');
+// 	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+// 	res.setHeader('Access-Control-Allow-Credentials', true);
+//
+// 	// push through to the proper route
+// 	next();
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
