@@ -1,10 +1,10 @@
-
-import React from 'react';
+// @flow
+import React, {Component} from 'react';
 import { connect } from "react-redux";
 
 import { searchHotels } from "../../actions";
 
-class Search extends React.Component {
+class Search extends Component {
 	handleSearchChange = (e) => {
 		this.props.searchHotels(e.currentTarget.value);
 	}
