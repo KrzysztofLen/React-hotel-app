@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {FETCH_HOTELS} from './types';
 import {FETCH_USER} from './types';
+import {SEARCH_HOTELS} from './types';
 
 export const fetchHotels = () => async(dispatch) => {
 	const res = await axios.get('/hotels');
@@ -17,3 +18,8 @@ export const fetchUser = () => async(dispatch) => {
 		payload: res.data
 	});
 };
+
+export const searchHotels = (text) => ({
+	type: SEARCH_HOTELS,
+	text
+});

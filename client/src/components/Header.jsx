@@ -3,13 +3,12 @@
 import React from 'react';
 import LoginSystem from './LoginSystem/LoginSystem';
 import {Logo} from './Logo/Logo';
+import Search from "./Search/Search";
 
 export const Header = () => (
 	<header className="header">
 		<Logo/>
-		<form action="#" className="search">
-			<input type="text" className="search__input" placeholder="Search hotels"/>
-		</form>
+		<Search/>
 		<LoginSystem/>
 	</header>
 );
