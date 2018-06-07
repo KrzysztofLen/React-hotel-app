@@ -55,7 +55,7 @@ app.get('*', (req, res) => {
 });
 
 // this array is used for identification of allowed origins in CORS
-const originWhitelist = ['http://localhost:3000', 'https://react-hotel-app.herokuapp.com/'];
+const originWhitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://react-hotel-app.herokuapp.com/'];
 app.use((req, res, next) => {
 	console.log('Server info: Request received');
 

@@ -10,6 +10,8 @@ import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import {AddHotel} from '../components/AddHotel/AddHotel';
 import Footer from '../components/Footer/Footer';
 import NoMatch404 from '../components/404/NoMatch404';
+import {connect} from "react-redux";
+import * as actions from "../actions";
 
 //TODO Make private route with addHotel component
 const fakeAuth = {
@@ -57,16 +59,7 @@ class AppRouter extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('/hotels', {
-			method: 'GET'
-		}).then(response => response.json())
-			.then((data) => {
-				this.setState({data: data.hotels});
-			}).catch(err => {
-			if (err.status !== 200) {
-				console.error('[Fetch Error :-S]', err);
-			}
-		});
+		this.props.fetchHotels();
 	}
 
 	render() {
@@ -85,6 +78,7 @@ class AppRouter extends React.Component {
 
 					<PrivateRoute path="/add" component={AddHotel}/>
 					<Route path="/forbidden" component={NotAuthenticate}/>
+					{/*<Route component={NoMatch404}/>*/}
 
 					<Footer/>
 				</div>
@@ -94,4 +88,4 @@ class AppRouter extends React.Component {
 }
 
 
-export default AppRouter;
+export default connect(null, actions)(AppRouter);

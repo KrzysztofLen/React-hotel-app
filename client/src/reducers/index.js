@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import getHotelReducers from './getHotelReducers';
 import authReducers from './authReducers';
-import hotelSearchReducers from './hotelSearchReducers';
+import {hotelsSearch} from './hotelSearchReducers';
 
 export default combineReducers({
 	auth: authReducers,
 	hotels: getHotelReducers,
-	search: hotelSearchReducers
+	hotelsSearch
 });

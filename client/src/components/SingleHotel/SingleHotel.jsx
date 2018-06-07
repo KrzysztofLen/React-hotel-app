@@ -4,6 +4,7 @@ import Loader from '../Loader/Loader';
 import Gallery from '../Gallery/Gallery';
 import {HotelOverview} from "../HotelOverview/HotelOverview";
 import {Details} from "../Details/Details";
+import {connect} from "react-redux";
 
 class SingleHotel extends React.Component {
 	constructor(props) {
@@ -16,7 +17,12 @@ class SingleHotel extends React.Component {
 
 	componentDidMount() {
 		setTimeout(() => {
-			this.setState({data: this.props.appData, isLoading: false});
+			console.log('%c SingleHotel component ', 'background: #222 color: #bada55', this.props);
+			// this.setState({data: this.props.appData, isLoading: false});
+			this.setState({
+				data: this.props.hotels.hotels,
+				isLoading: false
+			});
 		}, 1500);
 	}
 
@@ -48,5 +54,10 @@ SingleHotel.propTypes = {
 	appData: PropTypes.array.isRequired
 };
 
+function mapStateToProps({hotels}) {
+	return {
+		hotels
+	}
+}
 
-export default SingleHotel;
+export default connect(mapStateToProps)(SingleHotel);

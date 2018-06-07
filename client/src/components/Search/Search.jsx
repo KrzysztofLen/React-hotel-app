@@ -4,10 +4,18 @@ import { connect } from "react-redux";
 
 import { searchHotels } from "../../actions";
 
-class Search extends Component {
+type Props = {
+	searchHotels: Function,
+	hotelsSearch: string
+};
+
+class Search extends Component<Props> {
+	componentDidMount() {
+		console.log('%c Search component ', 'background: #222 color: #bada55', this.props);
+	}
 	handleSearchChange = (e) => {
 		this.props.searchHotels(e.currentTarget.value);
-	}
+	};
 
 	render() {
 		return (
@@ -15,7 +23,7 @@ class Search extends Component {
 				<input type="text"
 				       className="search__input"
 				       placeholder="Search hotels"
-				       // value={this.props.searchHotels}
+				       value={this.props.hotelsSearch}
 				       onChange={this.handleSearchChange}
 				/>
 			</form>
@@ -25,10 +33,10 @@ class Search extends Component {
 
 const mapStateToProps = state => {
 	return {
-		searchHotels: state.searchHotels
+		hotelsSearch: state.hotelsSearch
 	}
 };
 
 const mapDispatchToProps = {searchHotels};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export const HotelsFilterContainer = connect(mapStateToProps, mapDispatchToProps)(Search);

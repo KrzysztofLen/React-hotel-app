@@ -43,6 +43,7 @@ class HotelsList extends React.Component<Props, State> {
 
 		//Temp to see Loading
 		setTimeout(() => {
+			console.log('%c HotelList component ', 'background: #222 color: #bada55', this.props);
 
 			this.setState({
 				data: this.props.hotels.hotels,
