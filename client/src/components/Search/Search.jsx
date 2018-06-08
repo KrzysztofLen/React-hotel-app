@@ -11,7 +11,7 @@ type Props = {
 
 class Search extends Component<Props> {
 	componentDidMount() {
-		console.log('%c Search component ', 'background: #222 color: #bada55', this.props);
+		console.log('%c [SEARCH COMPONENT] ', 'background: #222; color: #f21c01', this.props);
 	}
 
 	handleSearchChange = (e) => {
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {searchHotels};
 
-export const HotelsFilterContainer = connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

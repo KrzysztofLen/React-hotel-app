@@ -1,9 +1,9 @@
 import React from 'react';
 import LoginSystem from './LoginSystem/LoginSystem';
 import {Logo} from './Logo/Logo';
-import {HotelsFilterContainer} from "./Search/Search";
 import {getFilteredHotels} from "../selectors/getFilteredHotels";
 import {connect} from "react-redux";
+import Search from "./Search/Search";
 
 export class Header extends React.Component {
 
@@ -11,8 +11,7 @@ export class Header extends React.Component {
 		return (
 			<header className="header">
 				<Logo/>
-				{/*<Search/>*/}
-				<HotelsFilterContainer/>
+				<Search/>
 				<LoginSystem/>
 			</header>
 		)

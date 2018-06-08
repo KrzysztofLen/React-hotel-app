@@ -3,29 +3,22 @@ import * as React from 'react'
 import HotelListItem from './HotelListItem';
 import Loader from './Loader/Loader';
 
-import {connect} from 'react-redux';
-
 type Props = {
-	hotels: any
+	data: Array<mixed>,
+	isLoading: boolean
 };
 
 type State = {
-	showComponent: boolean,
 	perpage: number,
-	page: number,
-	data: Array<mixed>,
-	isLoading: boolean
+	page: number
 }
 
 class HotelsList extends React.Component<Props, State> {
 	constructor(props: Props) {
 		super(props);
 		this.state = {
-			showComponent: false,
 			perpage: 6,
-			page: 1,
-			data: [],
-			isLoading: false
+			page: 1
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -38,30 +31,16 @@ class HotelsList extends React.Component<Props, State> {
 		});
 	};
 
-	componentDidMount() {
-		this.setState({isLoading: true});
-
-		//Temp to see Loading
-		setTimeout(() => {
-			console.log('%c HotelList component ', 'background: #222 color: #bada55', this.props);
-
-			this.setState({
-				data: this.props.hotels.hotels,
-				isLoading: false
-			});
-		}, 2000);
-
-	}
-
 	render() {
+		console.log('%c [HOTEL LIST] ', 'background: #222; color: #bada55', this.props);
 		const count: number = this.state.page * this.state.perpage;
-		const elem: Array<mixed> = this.state.data.slice(0, count);
+		const elem: Array<mixed> = this.props.data.slice(0, count);
 
 		return (
 			<main className="hotel-list">
 				<div className="content__container">
 					<div className="column">
-						{this.state.isLoading ? <Loader text="Loading"/> :
+						{this.props.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
 								<div id="question-root">
 									{elem.map((data: any, index: number): Object => <HotelListItem data={data} key={data.id}
@@ -78,14 +57,4 @@ class HotelsList extends React.Component<Props, State> {
 	}
 }
 
-interface Hotels {
-	hotels: Array<Object>
-}
-
-function mapStateToProps({hotels}: Hotels): Object {
-	return {
-		hotels
-	}
-}
-
-export default connect(mapStateToProps)(HotelsList);
+export default HotelsList;
