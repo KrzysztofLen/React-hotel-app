@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import Hotel from './Hotel';
+import HotelListItem from './HotelListItem';
 import Loader from './Loader/Loader';
 
 import {connect} from 'react-redux';
@@ -64,8 +64,8 @@ class HotelsList extends React.Component<Props, State> {
 						{this.state.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
 								<div id="question-root">
-									{elem.map((data: any, index: number): Object => <Hotel data={data} key={data.id}
-									                                                       index={index}/>)}
+									{elem.map((data: any, index: number): Object => <HotelListItem data={data} key={data.id}
+									                                                               index={index}/>)}
 								</div>
 								<div className="more-container">
 									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>

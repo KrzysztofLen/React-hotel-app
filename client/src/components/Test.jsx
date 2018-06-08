@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Hotel from './Hotel';
+import HotelListItem from './HotelListItem';
 import Loader from './Loader/Loader';
 
 import {connect} from 'react-redux';

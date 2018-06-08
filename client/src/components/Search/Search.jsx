@@ -1,8 +1,8 @@
 // @flow
 import React, {Component} from 'react';
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 
-import { searchHotels } from "../../actions";
+import {searchHotels} from "../../actions";
 
 type Props = {
 	searchHotels: Function,
@@ -13,6 +13,7 @@ class Search extends Component<Props> {
 	componentDidMount() {
 		console.log('%c Search component ', 'background: #222 color: #bada55', this.props);
 	}
+
 	handleSearchChange = (e) => {
 		this.props.searchHotels(e.currentTarget.value);
 	};

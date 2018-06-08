@@ -12,7 +12,7 @@ import HotelDescription from './HotelDescription/HotelDescription';
 
 import isNew from '../assets/new.svg';
 
-class Hotel extends Component {
+class HotelListItem extends Component {
 	constructor(props) {
 		super(props);
 		this.onModalOpen = this.onModalOpen.bind(this);
@@ -88,4 +88,4 @@ class Hotel extends Component {
 	}
 }
 
-export default Hotel;
+export default HotelListItem;
