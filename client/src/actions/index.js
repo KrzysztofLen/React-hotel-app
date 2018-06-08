@@ -4,7 +4,7 @@ export const fetchHotels = () => async(dispatch) => {
 	const res = await axios.get('/hotels');
 	dispatch({
 		type: 'FETCH_HOTELS',
-		payload: res.data
+		payload: res.data.hotels
 	});
 };
 

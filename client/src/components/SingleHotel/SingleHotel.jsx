@@ -20,7 +20,7 @@ class SingleHotel extends React.Component {
 			console.log('%c SingleHotel component ', 'background: #222 color: #bada55', this.props);
 			// this.setState({data: this.props.appData, isLoading: false});
 			this.setState({
-				data: this.props.hotels.hotels,
+				data: this.props.state.hotels,
 				isLoading: false
 			});
 		}, 1500);
@@ -54,9 +54,9 @@ SingleHotel.propTypes = {
 	appData: PropTypes.array.isRequired
 };
 
-function mapStateToProps({hotels}) {
+function mapStateToProps(state) {
 	return {
-		hotels
+		state
 	}
 }
 

@@ -1,4 +1,11 @@
 export const getFilteredHotels = (hotels, text) => {
 	const hotelsSearch = text.toLowerCase();
-	console.log('%c getFilteredHotels component ', 'background: #222 color: #bada55', hotelsSearch);
-}
+
+	return hotels.filter(hotel => {
+		const {name} = hotel.hotel_name;
+
+		return (
+			name.toLowerCase().includes(hotelsSearch)
+		);
+	});
+};

@@ -11,7 +11,7 @@ type Props = {
 
 class Search extends Component<Props> {
 	componentDidMount() {
-		console.log('%c [SEARCH COMPONENT] ', 'background: #222; color: #f21c01', this.props);
+		// console.log('%c [SEARCH COMPONENT] ', 'background: #222; color: #f21c01', this.props);
 	}
 
 	handleSearchChange = (e) => {
@@ -33,6 +33,8 @@ class Search extends Component<Props> {
 }
 
 const mapStateToProps = state => {
+	// console.log('%c [SEARCH STATE] ', 'background: #222; color: #f21c01', state);
+
 	return {
 		hotelsSearch: state.hotelsSearch
 	}
