@@ -1,9 +1,15 @@
+// @flow
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Check} from '../SVG/Check';
 import {Cross} from '../SVG/Cross';
 
-class LoginSystem extends Component {
+type Props = {
+	auth: Object,
+	dispatch: Function
+}
+
+class LoginSystem extends Component<Props> {
 	renderContent() {
 		switch (this.props.auth) {
 			case null:
@@ -21,7 +27,9 @@ class LoginSystem extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="login__container">
+				{this.props.auth && <span className="login__profile">Hello
+					<span className="login__profile--name">{this.props.auth.name}</span>!</span>}
 				{this.renderContent()}
 			</div>
 		)

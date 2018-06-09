@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // Components
-import HotelsList from './components/HotelList.jsx';
+import HotelsList from './components/HotelList/HotelList.jsx';
 
 import {connect} from 'react-redux';
 import * as actions from './actions';
@@ -28,11 +28,10 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.props.hotels);
 		return (
 			<div className="container">
 				<div className="content">
-					{this.props.hotels.length === 0 ? <span className="content__no-results">Sorry no results :(</span> :
+					{this.props.hotels.length === 0 && this.state.isLoading === false ? <span className="content__no-results">Sorry no results :(</span> :
 						<HotelsList isLoading={this.state.isLoading} data={this.props.hotels}/>
 					}
 				</div>

@@ -21,7 +21,7 @@ body {
   font-weight: 400;
   counter-reset: items-left;
   color: #777;
-  background-image: linear-gradient(to right bottom, #FF3366, #BA265D);
+  background-image: linear-gradient(to right bottom, #afe0fe, #014c7a);
   background-size: cover;
   background-repeat: no-repeat; }
 
@@ -118,16 +118,16 @@ body.ReactModal__Body--open {
     background-image: url("../assets/chevron-left.svg");
     background-repeat: no-repeat;
     background-position: center left;
-    border: 1px solid #eb2f64;
+    border: 1px solid #17A5FD;
     text-transform: uppercase;
     text-decoration: none;
-    color: #eb2f64;
+    color: #17A5FD;
     padding: .7rem 2rem;
     border-radius: 100px;
     margin-right: 2rem;
     transition: all .2s; }
     .header__back:hover {
-      background-color: #eb2f64;
+      background-color: #17A5FD;
       color: #fff; }
 
 .question__container {
@@ -671,14 +671,14 @@ body.ReactModal__Body--open {
     border-radius: 100px;
     width: 90%;
     transition: all .2s;
-    background-image: url("../assets/SVG/magnifying-glass.svg");
+    background-image: url("../assets/magnifying-glass.svg");
     background-repeat: no-repeat;
     background-position: 98%; }
     .search__input:focus {
       outline: none;
       width: 100%;
       background-color: #f0eeee;
-      border: 1px solid rgba(235, 47, 100, 0.4);
+      border: 1px solid rgba(23, 165, 253, 0.4);
       transition: all .2s; }
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
@@ -729,7 +729,7 @@ body.ReactModal__Body--open {
       left: 0;
       height: 100%;
       width: 3px;
-      background-color: #FF3366;
+      background-color: #afe0fe;
       transform: scaleY(0);
       transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
       background-repeat: no-repeat;
@@ -738,7 +738,7 @@ body.ReactModal__Body--open {
         .side-nav__item:before {
           background-position: center top; } }
     .side-nav__item--active::before {
-      background-color: #eb2f64; }
+      background-color: #17A5FD; }
     @media only screen and (max-width: 56.25em) {
       .side-nav__item {
         width: 200px;
@@ -762,7 +762,7 @@ body.ReactModal__Body--open {
     transform: scaleY(1);
     width: 100%; }
   .side-nav__item:active::before {
-    background: #eb2f64; }
+    background: #17A5FD; }
   .side-nav__link:link, .side-nav__link:visited {
     color: #faf9f9;
     text-decoration: none;
@@ -847,7 +847,7 @@ body.ReactModal__Body--open {
     font-size: 1.2rem;
     display: flex; }
   .overview__rating {
-    background-color: #eb2f64;
+    background-color: #17A5FD;
     margin-left: 3rem;
     color: #fff;
     padding: 0 2.25rem;
@@ -869,7 +869,7 @@ body.ReactModal__Body--open {
 .opinion__hotel-rating {
   font-size: 24px;
   font-size: 2.4rem;
-  color: #eb2f64;
+  color: #17A5FD;
   margin-right: 0.5rem; }
 
 .opinion__hotel-reviews {
@@ -978,13 +978,13 @@ body.ReactModal__Body--open {
   font-weight: 200;
   color: #777; }
   .hotel__details--priceValue span {
-    color: #BA265D; }
+    color: #014c7a; }
 
 .hotel__link {
   font-size: 20px;
   font-size: 2rem;
   text-decoration: none;
-  color: #BA265D;
+  color: #014c7a;
   font-weight: 400; }
   .hotel__link:hover {
     text-decoration: underline; }
@@ -1048,39 +1048,39 @@ body.ReactModal__Body--open {
       margin-left: 10px; }
   .btn--underline {
     background: transparent;
-    color: #BA265D;
+    color: #014c7a;
     text-decoration: underline;
     padding: 10px 0;
     font-size: 12px; }
     .btn--underline:hover {
       color: #fff;
-      background: #BA265D; }
+      background: #014c7a; }
   .btn--no-underline {
     background: transparent;
-    border: 1px solid #bc1436;
-    color: #BA265D;
+    border: 1px solid #014c7a;
+    color: #014c7a;
     background-image: none; }
     .btn--no-underline:hover {
       background-image: none;
       color: #fff;
-      background: #BA265D; }
+      background: #014c7a; }
   .btn--more {
-    border: 1px solid #bc1436;
+    border: 1px solid #014c7a;
     background: #fff;
-    color: #BA265D;
+    color: #014c7a;
     background-image: url("../assets/chevron-small-down.svg");
     background-repeat: no-repeat;
     background-position: 90% 45%; }
     .btn--more:hover {
       color: #fff; }
   .btn--less, .btn--less:hover {
-    border: 1px solid #bc1436;
+    border: 1px solid #014c7a;
     background-image: url("../assets/chevron-small-up.svg");
     background-repeat: no-repeat;
     background-position: 90% 45%; }
   .btn--inline {
     border: none;
-    color: #eb2f64;
+    color: #17A5FD;
     font-size: inherit;
     border-bottom: 1px solid currentColor;
     padding: 0;
@@ -1126,7 +1126,7 @@ body.ReactModal__Body--open {
         height: 1rem;
         width: 1rem;
         margin-right: .7rem;
-        background-color: #eb2f64;
+        background-color: #17A5FD;
         -webkit-mask-image: url(../assets/chevron-thin-right.svg);
         -webkit-mask-size: cover; }
   .detail .recommend {
@@ -1176,7 +1176,7 @@ body.ReactModal__Body--open {
         font-size: 1rem;
         color: #999; }
       .detail .user-reviews .review__rating {
-        color: #eb2f64;
+        color: #17A5FD;
         font-size: 2.2rem;
         font-weight: 300; }
 
@@ -1207,7 +1207,7 @@ body.ReactModal__Body--open {
     display: inline-block; }
     .cube-folding span::before {
       content: '';
-      background-color: #eb2f64;
+      background-color: #17A5FD;
       position: absolute;
       left: 0;
       top: 0;
@@ -1220,17 +1220,17 @@ body.ReactModal__Body--open {
     transform: rotateZ(90deg) scale(1.1); }
     .cube-folding .leaf2::before {
       animation-delay: .30s;
-      background-color: #e91853; }
+      background-color: #029af8; }
   .cube-folding .leaf3 {
     transform: rotateZ(270deg) scale(1.1); }
     .cube-folding .leaf3::before {
       animation-delay: .90s;
-      background-color: #e91853; }
+      background-color: #029af8; }
   .cube-folding .leaf4 {
     transform: rotateZ(180deg) scale(1.1); }
     .cube-folding .leaf4::before {
       animation-delay: .60s;
-      background-color: #d3144a; }
+      background-color: #028adf; }
 
 @keyframes folding {
   0%, 10% {
@@ -1270,7 +1270,7 @@ body.ReactModal__Body--open {
     font-size: 12px;
     letter-spacing: 0.1em;
     display: block;
-    color: #eb2f64;
+    color: #17A5FD;
     position: relative;
     top: 25px;
     z-index: 2;
@@ -1284,6 +1284,18 @@ body.ReactModal__Body--open {
   100% {
     bottom: -18px;
     width: 100px; } }
+
+.login__container {
+  display: flex;
+  align-items: center; }
+
+.login__profile {
+  margin-right: 2rem;
+  font-size: 16px;
+  font-size: 1.6rem; }
+  .login__profile--name {
+    font-weight: 200;
+    margin: 0 .3rem; }
 
 .rating {
   display: flex;
@@ -1310,7 +1322,7 @@ body.ReactModal__Body--open {
   justify-content: center;
   font-size: 26px;
   font-size: 2.6rem;
-  color: #BA265D;
+  color: #014c7a;
   margin: 5rem;
   width: 100%; }
 
@@ -1394,7 +1406,7 @@ body.ReactModal__Body--open {
   margin-left: 2rem; }
 
 .fa-star {
-  color: #BA265D;
+  color: #014c7a;
   font-size: 12px;
   font-size: 1.2rem; }
 
@@ -1402,7 +1414,7 @@ body.ReactModal__Body--open {
   color: #faf9f9; }
 
 .fa-angle-down {
-  color: #BA265D; }
+  color: #014c7a; }
 
 .rate__color {
   display: block;

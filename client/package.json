@@ -1,6 +1,7 @@
 {
   "name": "client-react-hotel-app",
   "version": "0.1.0",
+  "private": true,
   "proxy": {
     "/auth/google": {
       "target": "http://localhost:5000"

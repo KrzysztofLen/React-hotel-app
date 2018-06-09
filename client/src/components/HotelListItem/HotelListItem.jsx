@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import OptionModal from './Modal';
+import OptionModal from '../Modal';
 
-import HotelImage from './HotelImage/HotelImage';
-import HotelLink from './HotelLink/HotelLink';
-import HotelRating from './HotelRating/HotelRating';
-import ToggleButton from './External/ToggleButton/ToggleButton';
-import HotelPrice from './HotelPrice/HotelPrice';
-import HotelOpinion from './HotelOpinion/HotelOpinion';
-import HotelFacilities from './HotelFacilities/HotelFacilities';
-import HotelDescription from './HotelDescription/HotelDescription';
+import HotelImage from '../HotelImage/HotelImage';
+import HotelLink from '../HotelLink/HotelLink';
+import HotelRating from '../HotelRating/HotelRating';
+import ToggleButton from '../External/ToggleButton/ToggleButton';
+import HotelPrice from '../HotelPrice/HotelPrice';
+import HotelOpinion from '../HotelOpinion/HotelOpinion';
+import HotelFacilities from '../HotelFacilities/HotelFacilities';
+import HotelDescription from '../HotelDescription/HotelDescription';
 
-import isNew from '../assets/new.svg';
+import isNew from '../../assets/new.svg';
 
 class HotelListItem extends Component {
 	constructor(props) {

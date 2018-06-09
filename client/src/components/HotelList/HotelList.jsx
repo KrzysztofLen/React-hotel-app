@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react'
-import HotelListItem from './HotelListItem';
-import Loader from './Loader/Loader';
+import HotelListItem from '../HotelListItem/HotelListItem';
+import Loader from '../Loader/Loader';
 
 type Props = {
 	data: Array<mixed>,

@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import SingleHotel from '../components/SingleHotel/SingleHotel';
 import App from "../App";
 import Navigation from '../components/Navigation/Navigation';
-import {Header} from '../components/Header';
+import {Header} from '../components/Header/Header';
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import {AddHotel} from '../components/AddHotel/AddHotel';
@@ -50,14 +50,6 @@ const PrivateRoute = ({component: Component, ...rest}) => (
 );
 
 class AppRouter extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			data: []
-		}
-	}
-
 	componentDidMount() {
 		this.props.fetchHotels();
 	}
@@ -67,11 +59,11 @@ class AppRouter extends React.Component {
 			<BrowserRouter>
 				<div>
 					<Navigation/>
-					<Header title="Question" options={false}/>
+					<Header/>
 
 					<Route path="/" component={App} exact={true}/>
 					<Route path="/hotel/:id"
-					       render={(props) => <SingleHotel {...props} appData={this.state.data}/>}
+					       render={(props) => <SingleHotel {...props} />}
 					/>
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel}/>

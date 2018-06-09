@@ -48,10 +48,6 @@ class SingleHotel extends React.Component {
 	}
 }
 
-SingleHotel.propTypes = {
-	appData: PropTypes.array.isRequired
-};
-
 function mapStateToProps(state) {
 	return {
 		state

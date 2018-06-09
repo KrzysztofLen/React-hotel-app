@@ -1,0 +1,14 @@
+.login__container {
+	display: flex;
+	align-items: center;
+}
+
+.login__profile {
+	margin-right: 2rem;
+	@include font-size(1.6);
+
+	&--name {
+		@include font-weight(200);
+		margin: 0 .3rem;
+	}
+}

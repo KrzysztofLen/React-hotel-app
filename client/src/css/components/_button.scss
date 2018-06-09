@@ -66,7 +66,7 @@
 
 	&--no-underline {
 		background: transparent;
-		border: 1px solid darken($color-more, 7%);
+		border: 1px solid $color-primary-dark;
 		color: $color-primary-dark;
 		background-image: none;
 
@@ -78,7 +78,7 @@
 	}
 
 	&--more {
-		border: 1px solid darken($color-more, 7%);
+		border: 1px solid $color-primary-dark;
 		background: $color-white;
 		color: $color-primary-dark;
 		background-image: url("../assets/chevron-small-down.svg");
@@ -92,7 +92,7 @@
 
 	&--less {
 		@extend .btn;
-		border: 1px solid darken($color-more, 7%);
+		border: 1px solid $color-primary-dark;
 		background-image: url("../assets/chevron-small-up.svg");
 		background-repeat: no-repeat;
 		background-position: 90% 45%;

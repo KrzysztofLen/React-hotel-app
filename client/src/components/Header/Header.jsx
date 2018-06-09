@@ -1,12 +1,11 @@
 import React from 'react';
-import LoginSystem from './LoginSystem/LoginSystem';
-import {Logo} from './Logo/Logo';
-import {getFilteredHotels} from "../selectors/getFilteredHotels";
+import LoginSystem from '../LoginSystem/LoginSystem';
+import {Logo} from '../Logo/Logo';
+import {getFilteredHotels} from "../../selectors/getFilteredHotels";
 import {connect} from "react-redux";
-import Search from "./Search/Search";
+import Search from "../Search/Search";
 
 export class Header extends React.Component {
-
 	render() {
 		return (
 			<header className="header">
@@ -18,7 +17,7 @@ export class Header extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: Object) => {
 	return {
 		hotels: getFilteredHotels(state.hotels, state.hotelsSearch)
 	};
