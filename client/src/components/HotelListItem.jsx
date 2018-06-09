@@ -55,7 +55,7 @@ class HotelListItem extends Component {
 					<HotelLink hotelName={this.props.data.hotel_name}
 					           hotelDistance={this.props.data.hotel_distance}
 					           hotelAdress={this.props.data.hotel_adress}
-					           id={this.props.index}/>
+					           id={this.props.id}/>
 					<HotelRating rate={this.props.data.hotel_stars}/>
 				</div>
 				<div className="hotel__details--adressBox">

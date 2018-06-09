@@ -42,10 +42,11 @@ class HotelsList extends React.Component<Props, State> {
 					<div className="column">
 						{this.props.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
-								<div id="question-root">
-									{elem.map((data: any, index: number): Object => <HotelListItem data={data} key={data.id}
-									                                                               index={index}/>)}
-								</div>
+								{elem.map((data: any, index: number): Object => <HotelListItem data={data}
+								                                                               key={data.id}
+								                                                               id={data.id}
+								                                                               index={index}/>
+								)}
 								<div className="more-container">
 									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
 								</div>

@@ -23,7 +23,6 @@ class App extends Component {
 		setTimeout(() => {
 			console.log(this.props);
 			this.setState({
-				data: this.props.state.hotels,
 				isLoading: false
 			});
 		}, 2000);
@@ -35,7 +34,7 @@ class App extends Component {
 		return (
 			<div className="container">
 				<div className="content">
-					<HotelsList isLoading={this.state.isLoading} data={this.state.data}/>
+					<HotelsList isLoading={this.state.isLoading} data={this.props.hotels}/>
 				</div>
 			</div>
 		);
@@ -45,8 +44,7 @@ class App extends Component {
 function mapStateToProps(state) {
 	console.log('%c [APP STATE] ', 'background: #222; color: #f21c01', state);
 	return {
-		state
-		// hotels: getFilteredHotels(state.hotels, state.hotelsSearch)
+		hotels: getFilteredHotels(state.hotels, state.hotelsSearch)
 	}
 }
 
