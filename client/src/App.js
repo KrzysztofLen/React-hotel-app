@@ -21,7 +21,6 @@ class App extends Component {
 		this.props.fetchUser();
 		//Temp to see Loading
 		setTimeout(() => {
-			console.log(this.props);
 			this.setState({
 				isLoading: false
 			});
@@ -29,12 +28,13 @@ class App extends Component {
 	}
 
 	render() {
-		console.log('%c [APP PROPS] ', 'background: #222; color: #f21c01', this.props);
-
+		console.log(this.props.hotels);
 		return (
 			<div className="container">
 				<div className="content">
-					<HotelsList isLoading={this.state.isLoading} data={this.props.hotels}/>
+					{this.props.hotels.length === 0 ? <span className="content__no-results">Sorry no results :(</span> :
+						<HotelsList isLoading={this.state.isLoading} data={this.props.hotels}/>
+					}
 				</div>
 			</div>
 		);
@@ -42,7 +42,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log('%c [APP STATE] ', 'background: #222; color: #f21c01', state);
 	return {
 		hotels: getFilteredHotels(state.hotels, state.hotelsSearch)
 	}

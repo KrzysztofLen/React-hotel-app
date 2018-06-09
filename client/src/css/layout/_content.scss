@@ -14,6 +14,16 @@
 			display: table;
 		}
 	}
+
+	&__no-results {
+		display: flex;
+		justify-content: center;
+		@include font-size(2.6);
+		color: $color-primary-dark;
+		margin: 5rem;
+		width: 100%;
+	}
+
 	.more-container {
 		background: $color-white;
 	}

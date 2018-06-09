@@ -677,7 +677,9 @@ body.ReactModal__Body--open {
     .search__input:focus {
       outline: none;
       width: 100%;
-      background-color: #f0eeee; }
+      background-color: #f0eeee;
+      border: 1px solid rgba(235, 47, 100, 0.4);
+      transition: all .2s; }
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
       color: #ccc; }
@@ -1302,6 +1304,15 @@ body.ReactModal__Body--open {
     content: "";
     clear: both;
     display: table; }
+
+.content__no-results {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  font-size: 2.6rem;
+  color: #BA265D;
+  margin: 5rem;
+  width: 100%; }
 
 .content .more-container {
   background: #fff; }

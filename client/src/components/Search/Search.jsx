@@ -10,11 +10,7 @@ type Props = {
 };
 
 class Search extends Component<Props> {
-	componentDidMount() {
-		// console.log('%c [SEARCH COMPONENT] ', 'background: #222; color: #f21c01', this.props);
-	}
-
-	handleSearchChange = (e) => {
+	handleSearchChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
 		this.props.searchHotels(e.currentTarget.value);
 	};
 
@@ -32,14 +28,6 @@ class Search extends Component<Props> {
 	}
 }
 
-const mapStateToProps = state => {
-	// console.log('%c [SEARCH STATE] ', 'background: #222; color: #f21c01', state);
-
-	return {
-		hotelsSearch: state.hotelsSearch
-	}
-};
-
 const mapDispatchToProps = {searchHotels};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(null, mapDispatchToProps)(Search);

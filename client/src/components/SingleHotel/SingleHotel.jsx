@@ -17,8 +17,6 @@ class SingleHotel extends React.Component {
 
 	componentDidMount() {
 		setTimeout(() => {
-			console.log('%c SingleHotel component ', 'background: #222 color: #bada55', this.props);
-			// this.setState({data: this.props.appData, isLoading: false});
 			this.setState({
 				data: this.props.state.hotels,
 				isLoading: false

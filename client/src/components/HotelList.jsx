@@ -23,7 +23,7 @@ class HotelsList extends React.Component<Props, State> {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick = (event: SyntheticEvent<HTMLButtonElement>) => {
+	handleClick = () => {
 		this.setState((prevState): Object => {
 			return {
 				perpage: prevState.perpage + 3
@@ -32,7 +32,6 @@ class HotelsList extends React.Component<Props, State> {
 	};
 
 	render() {
-		// console.log('%c [HOTEL LIST] ', 'background: #222; color: #bada55', this.props);
 		const count: number = this.state.page * this.state.perpage;
 		const elem: Array<mixed> = this.props.data.slice(0, count);
 
