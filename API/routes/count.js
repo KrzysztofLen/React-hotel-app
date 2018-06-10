@@ -7,9 +7,7 @@ const Hotel = require('../models/hotel');
  * @description GET top 15 hotel by
  */
 router.get('/', (req, res, next) => {
-	Hotel.find()
-	// Select what values show
-		.select()
+	Hotel.find().select()
 		.exec()
 		.then(docs => {
 			const response = {

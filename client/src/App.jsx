@@ -6,6 +6,7 @@ import HotelsList from './components/HotelList/HotelList.jsx';
 import {connect} from 'react-redux';
 import * as actions from './actions';
 import {getFilteredHotels} from "./selectors/getFilteredHotels";
+import Filters from "./components/Filters/Filters";
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
+				<Filters/>
 				<div className="content">
 					{this.props.hotels.length === 0 && this.state.isLoading === false ? <span className="content__no-results">Sorry no results :(</span> :
 						<HotelsList isLoading={this.state.isLoading} data={this.props.hotels}/>

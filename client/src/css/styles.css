@@ -1011,6 +1011,31 @@ body.ReactModal__Body--open {
     opacity: 1;
     transform: scale(1.3); } }
 
+.filters {
+  border-bottom: 1px solid #f4f2f2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .filters__views {
+    padding: 1rem;
+    border: 1px solid #f4f2f2;
+    margin-right: 12rem; }
+  .filters__list {
+    display: inline-block;
+    margin-right: 1rem;
+    cursor: pointer; }
+    .filters__list svg {
+      fill: #999; }
+    .filters__list:hover svg {
+      fill: red; }
+  .filters__full {
+    display: inline-block;
+    cursor: pointer; }
+    .filters__full svg {
+      fill: #999; }
+    .filters__full:hover svg {
+      fill: red; }
+
 .btn, .btn--less, .btn--less:hover {
   background: #dc173f;
   border: none;

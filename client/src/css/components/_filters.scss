@@ -1,0 +1,45 @@
+.filters {
+	border-bottom: $line;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	&__views {
+		padding: 1rem;
+		border: $line;
+		margin-left: 2rem;
+	}
+
+	&__list {
+		display: inline-block;
+		margin-right: 1rem;
+		cursor: pointer;
+		transition: all .4s;
+
+		svg {
+			fill: $color-grey-dark-3;
+		}
+
+		&:hover {
+			svg {
+				fill: $color-grey-dark-1;
+			}
+		}
+	}
+
+	&__full {
+		display: inline-block;
+		cursor: pointer;
+		transition: all .4s;
+
+		svg {
+			fill: $color-grey-dark-3;
+		}
+
+		&:hover {
+			svg {
+				fill: $color-grey-dark-1;
+			}
+		}
+	}
+}
