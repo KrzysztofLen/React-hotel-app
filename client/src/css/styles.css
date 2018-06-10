@@ -894,7 +894,12 @@ body.ReactModal__Body--open {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
-  grid-row-end: 3; }
+  grid-row-end: 3;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .hotel__image-container:hover .overlay {
+    left: 0; }
 
 .hotel__image {
   cursor: pointer;
@@ -1035,7 +1040,7 @@ body.ReactModal__Body--open {
   .btn--logout {
     display: flex;
     align-items: center;
-    background: #BC2026;
+    background: #014c7a;
     margin-right: 2rem;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
@@ -1043,6 +1048,8 @@ body.ReactModal__Body--open {
     text-decoration: none;
     padding: 1rem 1.5rem;
     border-radius: 2px; }
+    .btn--logout:hover {
+      background: #015b93; }
     .btn--logout svg {
       fill: #fff;
       margin-left: 10px; }
@@ -1346,6 +1353,21 @@ body.ReactModal__Body--open {
   @media only screen and (max-width: 56.25em) {
     .content {
       flex-direction: column; } }
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: -100%;
+  transition: transform 0.2s, left 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
+  .overlay__text {
+    color: #fff;
+    font-size: 20px;
+    font-size: 2rem; }
 
 .btn-plus {
   height: 25px;

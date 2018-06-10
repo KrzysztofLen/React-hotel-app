@@ -36,7 +36,13 @@ class LoginSystem extends Component<Props> {
 	}
 }
 
-function mapStateToProps({auth}) {
+interface Auth {
+	auth: Object,
+	googleId: string,
+	name: string
+}
+
+function mapStateToProps({auth}:Auth) {
 	return {
 		auth
 	}

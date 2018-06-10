@@ -50,3 +50,22 @@
 		flex-direction: column;
 	}
 }
+
+.overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($color-black, 0.7);
+	left: -100%;
+	transition: transform .2s,
+	left .4s cubic-bezier(1, 0, 0, 1) .2s,
+	background-color .1s;
+
+	&__text {
+		color: $color-white;
+		@include font-size(2);
+	}
+}

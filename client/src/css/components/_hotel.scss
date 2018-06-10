@@ -21,6 +21,15 @@
 		grid-column-end: 2;
 		grid-row-start: 1;
 		grid-row-end: 3;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:hover {
+			.overlay {
+				left: 0;
+			}
+		}
 	}
 
 	&__image {
