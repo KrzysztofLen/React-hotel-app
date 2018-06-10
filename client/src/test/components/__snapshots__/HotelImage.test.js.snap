@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should render HotelImage component correctly 1`] = `
+<React.Fragment>
+  <div
+    className="overlay"
+  >
+    <span
+      className="overlay__text"
+    >
+      Click
+    </span>
+  </div>
+  <img
+    alt="xyz"
+    className="hotel__image"
+    src="h"
+  />
+  ;
+</React.Fragment>
+`;
