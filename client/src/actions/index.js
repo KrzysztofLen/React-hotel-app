@@ -20,3 +20,8 @@ export const searchHotels = (text) => ({
 	type: 'SEARCH_HOTELS',
 	text
 });
+
+export const switchView = (id) => ({
+	type: 'SWITCH_VIEW',
+	id
+});

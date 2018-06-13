@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {List} from "../SVG/List";
 import {Full} from "../SVG/Full";
+import {connect} from "react-redux";
+import * as actions from '../../actions';
 
 
 class Filters extends Component {
@@ -12,6 +14,10 @@ class Filters extends Component {
 		};
 
 		this.setActive = this.setActive.bind(this);
+	}
+
+	componentDidMount() {
+		console.log(this.props);
 	}
 
 	setActive(id) {
@@ -34,4 +40,11 @@ class Filters extends Component {
 	}
 }
 
-export default Filters;
+function mapStateToProps(state) {
+	console.log(state);
+	return {
+		state: state.viewSwitch
+	}
+}
+
+export default connect(mapStateToProps, actions)(Filters);
