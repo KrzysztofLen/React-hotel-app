@@ -1,15 +1,16 @@
 // @flow
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import * as React from 'react';
+import {connect} from "react-redux";
 import {Check} from '../SVG/Check';
 import {Cross} from '../SVG/Cross';
+import Payments from "../Payments/Payments";
 
 type Props = {
 	auth: Object,
 	dispatch: Function
 }
 
-class LoginSystem extends Component<Props> {
+class LoginSystem extends React.Component<Props> {
 	renderContent() {
 		switch (this.props.auth) {
 			case null:
@@ -20,7 +21,11 @@ class LoginSystem extends Component<Props> {
 				);
 			default:
 				return (
+					<React.Fragment>
+					Credits: {this.props.auth.credits}
+					<Payments/>
 					<a href="/api/logout" className="btn btn--logout">Logout<Cross width={20} height={20}/></a>
+					</React.Fragment>
 				)
 		}
 	}
@@ -39,7 +44,8 @@ class LoginSystem extends Component<Props> {
 interface Auth {
 	auth: Object,
 	googleId: string,
-	name: string
+	name: string,
+	credits: number
 }
 
 function mapStateToProps({auth}:Auth) {

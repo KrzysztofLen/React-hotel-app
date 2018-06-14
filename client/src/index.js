@@ -8,8 +8,6 @@ import './css/styles.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 
-import registerServiceWorker from './registerServiceWorker';
-
 const store = configureStore();
 
 ReactDOM.render(
@@ -18,4 +16,3 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById('root'));
 
-// registerServiceWorker();

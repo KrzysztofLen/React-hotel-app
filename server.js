@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const http = require('http');
+const chalk = require('./API/chalk');
 
 //############ TEMP
 const mongoose = require('mongoose');
@@ -18,7 +19,7 @@ require('./API/models/Users');
 require('./API/services/passport');
 
 //######### MONGODB CONNECT #########
-mongoose.connect('mongodb+srv://admin:admin@react-hotel-app-4z48b.mongodb.net/test');
+mongoose.connect(keys.mongoURI);
 
 //######### ROUTES #########
 const hotelsRoutes = require('./API/routes/hotels');
@@ -47,6 +48,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./API/routes/authRoutes')(app);
+require('./API/routes/billingRoutes')(app);
 //############
 
 app.use(express.static('client/build'));
@@ -76,12 +78,12 @@ app.get('*', (req, res) => {
 // 	next();
 // });
 
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-// 	console.log('Example app listening on port 5000!')
-// });
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+	console.log(chalk.info(`Example app listening on port ${PORT}!`));
+});
 
-const port = process.env.PORT || 5000;
-const server = http.createServer(app);
-
-server.listen(port);
+// const port = process.env.PORT || 5000;
+// const server = http.createServer(app);
+//
+// server.listen(port);

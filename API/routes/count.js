@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Hotel = require('../models/hotel');
+const chalk = require('../chalk');
 
 /**
  * @type GET
@@ -14,8 +15,9 @@ router.get('/', (req, res, next) => {
 				count: docs.length,
 			};
 			res.status(200).json(response);
+			console.log(chalk.success('[Success get data /count]'));
 		}).catch(err => {
-			console.log('\x1b[31m', '[Failure]', err);
+			console.log(chalk.error('[Failure]', err));
 			res.status(500).json(err);
 	});
 });
