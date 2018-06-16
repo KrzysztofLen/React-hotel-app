@@ -7,7 +7,7 @@
     "start": "node server.js",
     "start-api": "nodemon server.js",
     "dev": "concurrently \"yarn start-api\" \"yarn client\"",
-    "build": "set NODE_ENV=production cd client && npm install && yarn build"
+    "build": "cd client && npm install && yarn build"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
