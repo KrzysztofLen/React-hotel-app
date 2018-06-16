@@ -53,11 +53,11 @@ require('./API/routes/billingRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
-}
 
-app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	});
+}
 
 // // this array is used for identification of allowed origins in CORS
 // const originWhitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://react-hotel-app.herokuapp.com/'];

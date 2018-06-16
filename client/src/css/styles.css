@@ -1013,7 +1013,7 @@ body.ReactModal__Body--open {
 
 .credits {
   text-transform: uppercase; }
-  .credits--value {
+  .credits__value {
     font-size: 18px;
     font-size: 1.8rem;
     font-weight: 700;
