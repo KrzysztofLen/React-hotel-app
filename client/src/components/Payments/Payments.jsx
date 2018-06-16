@@ -13,7 +13,9 @@ class Payments extends Component {
 				name="React-hotel-app"
 				description="5$ for 5 credits"
 				currency="USD"
-			/>
+			>
+				<button className="btn btn--payment">Pay with credit card</button>
+			</StripeCheckout>
 		)
 	}
 }

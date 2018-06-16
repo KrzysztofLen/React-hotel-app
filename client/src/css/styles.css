@@ -1011,6 +1011,16 @@ body.ReactModal__Body--open {
     opacity: 1;
     transform: scale(1.3); } }
 
+.credits {
+  text-transform: uppercase; }
+  .credits--value {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: underline;
+    color: #7DBB42;
+    margin-left: 1rem; }
+
 .filters {
   border-bottom: 1px solid #f4f2f2;
   display: flex;
@@ -1120,6 +1130,12 @@ body.ReactModal__Body--open {
     .btn--inline:hover {
       color: #333;
       background: transparent; }
+  .btn--payment {
+    background: #17A5FD;
+    font-family: "Oswald", sans-serif;
+    border-radius: 2px;
+    padding: 1rem 1.5rem;
+    margin: 0 2rem; }
 
 .detail {
   display: flex;

@@ -22,9 +22,11 @@ class LoginSystem extends React.Component<Props> {
 			default:
 				return (
 					<React.Fragment>
-					Credits: {this.props.auth.credits}
-					<Payments/>
-					<a href="/api/logout" className="btn btn--logout">Logout<Cross width={20} height={20}/></a>
+						<span className="credits">Credits: <span
+							className="credits__value">{this.props.auth.credits}</span>
+						</span>
+						<Payments/>
+						<a href="/api/logout" className="btn btn--logout">Logout<Cross width={20} height={20}/></a>
 					</React.Fragment>
 				)
 		}
@@ -48,7 +50,7 @@ interface Auth {
 	credits: number
 }
 
-function mapStateToProps({auth}:Auth) {
+function mapStateToProps({auth}: Auth) {
 	return {
 		auth
 	}

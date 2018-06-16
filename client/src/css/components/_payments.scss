@@ -1,0 +1,11 @@
+.credits {
+	text-transform: uppercase;
+
+	&--value {
+		@include font-size(1.8);
+		@include font-weight(700);
+		text-decoration: underline;
+		color: $rate-very-good;
+		margin-left: 1rem;
+	}
+}
