@@ -8,6 +8,8 @@ import './css/styles.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 
+import chalk from '../../API/chalk';
+
 // import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
@@ -19,3 +21,4 @@ ReactDOM.render(
 	document.getElementById('root'));
 
 // registerServiceWorker();
+console.log(chalk.warning('ENVIRONMENT IS: ', process.env.NODE_ENV));
