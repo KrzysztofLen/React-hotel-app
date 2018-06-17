@@ -20,12 +20,17 @@ class App extends Component {
 	componentDidMount() {
 		this.setState({isLoading: true});
 		this.props.fetchUser();
+		this.props.fetchHotelsLength();
 		//Temp to see Loading
-		setTimeout(() => {
+		this._timer = setTimeout(() => {
 			this.setState({
 				isLoading: false
 			});
 		}, 2000);
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this._timer);
 	}
 
 	render() {

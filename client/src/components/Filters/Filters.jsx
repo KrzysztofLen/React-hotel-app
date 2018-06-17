@@ -10,14 +10,21 @@ class Filters extends Component {
 		super(props);
 
 		this.state = {
-			activeId: 1
+			activeId: 1,
+			hotelsLength: 0
 		};
 
 		this.setActive = this.setActive.bind(this);
 	}
 
 	componentDidMount() {
-		console.log(this.props);
+		this._timer = setTimeout(() => {
+			this.setState({hotelsLength: this.props.length});
+		}, 1000);
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this._timer);
 	}
 
 	setActive(id) {
@@ -35,6 +42,10 @@ class Filters extends Component {
 						className={this.state.activeId === 2 ? "filters__filter filters__filter--active" : "filters__filter"}
 						onClick={() => this.setActive(2)}><List width="20" height="20"/></div>
 				</div>
+				<div className="filters__counter">
+					<span className="filters__counter-text">We've got : <span
+						className="filters__counter-number">{this.state.hotelsLength}</span> hotel's in our database</span>
+				</div>
 			</div>
 		)
 	}
@@ -43,7 +54,8 @@ class Filters extends Component {
 function mapStateToProps(state) {
 	console.log(state);
 	return {
-		state: state.viewSwitch
+		state: state.viewSwitch,
+		length: state.length.count
 	}
 }
 

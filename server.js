@@ -51,6 +51,7 @@ require('./API/routes/authRoutes')(app);
 require('./API/routes/billingRoutes')(app);
 //############
 
+//#TODO on heroku is development so app doesn't showing
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 

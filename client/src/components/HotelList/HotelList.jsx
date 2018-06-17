@@ -2,6 +2,7 @@
 import * as React from 'react'
 import HotelListItem from '../HotelListItem/HotelListItem';
 import Loader from '../Loader/Loader';
+import {Spinner} from "../Spinner/Spinner";
 
 type Props = {
 	data: Array<mixed>,
@@ -10,7 +11,8 @@ type Props = {
 
 type State = {
 	perpage: number,
-	page: number
+	page: number,
+	spinner: boolean
 }
 
 class HotelsList extends React.Component<Props, State> {
@@ -18,17 +20,29 @@ class HotelsList extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			perpage: 6,
-			page: 1
+			page: 1,
+			spinner: true
 		};
-		this.handleClick = this.handleClick.bind(this);
+
+		this.onScroll = this.onScroll.bind(this);
 	}
 
-	handleClick = () => {
-		this.setState((prevState): Object => {
-			return {
-				perpage: prevState.perpage + 3
-			}
-		});
+	componentDidMount() {
+		window.addEventListener('scroll', this.onScroll);
+		window.onbeforeunload = () => window.scrollTo(0, 0); // force scroller to top on load
+	}
+
+	onScroll = () => {
+		let windowHeight: number = window.innerHeight + window.scrollY;
+		let bodyOffset: number = document.body.offsetHeight;
+
+		if(windowHeight >= bodyOffset) {
+			this.setState((prevState): Object => {
+				return {
+					perpage: prevState.perpage + 3
+				}
+			});
+		}
 	};
 
 	render() {
@@ -46,8 +60,8 @@ class HotelsList extends React.Component<Props, State> {
 								                                                               id={data.id}
 								                                                               index={index}/>
 								)}
-								<div className="more-container">
-									<button className="btn-more" onClick={this.handleClick}>Load more Hotel's</button>
+								<div className="hotel-list__more">
+									{!(elem.length === this.props.data.length) && <Spinner/>}
 								</div>
 							</React.Fragment>}
 					</div>

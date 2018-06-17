@@ -33,3 +33,11 @@ export const handleToken = (token) => async (dispatch) => {
 		payload: res.data
 	});
 };
+
+export const fetchHotelsLength = () => async(dispatch) => {
+	const res = await axios.get('/count');
+	dispatch({
+		type: 'HOTELS_LENGTH',
+		payload: res.data
+	});
+};

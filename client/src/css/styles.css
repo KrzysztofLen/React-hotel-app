@@ -810,6 +810,9 @@ body.ReactModal__Body--open {
 
 .hotel-list {
   width: 100%; }
+  .hotel-list__more {
+    display: flex;
+    justify-content: center; }
 
 .gallery__container {
   display: flex; }
@@ -1025,7 +1028,19 @@ body.ReactModal__Body--open {
   border-bottom: 1px solid #f4f2f2;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+100,7db9e8+100 */
+  background: #1e5799;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+  /* IE6-9 */ }
   .filters__views {
     padding: 1rem;
     display: flex;
@@ -1036,11 +1051,30 @@ body.ReactModal__Body--open {
     cursor: pointer;
     transition: all .4s; }
     .filters__filter svg {
-      fill: #999; }
+      fill: #fff; }
     .filters__filter:hover svg {
       fill: #333; }
     .filters__filter--active svg {
       fill: #333; }
+  .filters__counter {
+    right: 0;
+    position: absolute;
+    margin-right: 2rem;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 200; }
+  .filters__counter-text {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    color: #fff; }
+  .filters__counter-number {
+    font-size: 45px;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 10px;
+    text-decoration: none; }
 
 .btn, .btn--less, .btn--less:hover {
   background: #dc173f;
@@ -1347,6 +1381,50 @@ body.ReactModal__Body--open {
 
 .legal {
   background-color: #333; }
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px; }
+  .lds-ellipsis__item {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #17A5FD;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0); }
+    .lds-ellipsis__item:nth-child(1) {
+      left: 6px;
+      animation: lds-ellipsis1 0.6s infinite; }
+    .lds-ellipsis__item:nth-child(2) {
+      left: 6px;
+      animation: lds-ellipsis2 0.6s infinite; }
+    .lds-ellipsis__item:nth-child(3) {
+      left: 26px;
+      animation: lds-ellipsis2 0.6s infinite; }
+    .lds-ellipsis__item:nth-child(4) {
+      left: 45px;
+      animation: lds-ellipsis3 0.6s infinite; }
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0); } }
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(19px, 0); } }
 
 /* ------------- */
 /*		LAYOUT    */
