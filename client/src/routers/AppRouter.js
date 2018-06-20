@@ -7,7 +7,7 @@ import Navigation from '../components/Navigation/Navigation';
 import {Header} from '../components/Header/Header';
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';
-import {AddHotel} from '../components/AddHotel/AddHotel';
+import AddHotel from '../components/AddHotel/AddHotel';
 import Footer from '../components/Footer/Footer';
 import NoMatch404 from '../components/404/NoMatch404';
 import {connect} from "react-redux";
@@ -15,7 +15,7 @@ import * as actions from "../actions";
 
 //TODO Make private route with addHotel component
 const fakeAuth = {
-	isAuthenticated: false
+	isAuthenticated: true
 };
 
 class NotAuthenticate extends React.Component {

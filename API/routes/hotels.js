@@ -91,27 +91,29 @@ router.post("/", upload.array('hotel_images'), (req, res, next) => {
 	req.files.forEach(file => {
 		imageFiles.push(file.path);
 	});
+
+	const {id, hotel_name, hotel_adress, hotel_city, hotel_province, hotel_price, hotel_distance, hotel_description, hotel_stars, hotel_rating, hotel_reviews, is_new, is_apartment, facilities_restaurant, facilities_gym, facilities_wifi, facilities_card_payment, facilities_game_room} = req.body;
 	// Object values
 	const hotel = new Hotel({
 		_id: new mongoose.Types.ObjectId(),
-		id: req.body.id,
-		hotel_name: req.body.hotel_name,
-		hotel_adress: req.body.hotel_adress,
-		hotel_city: req.body.hotel_city,
-		hotel_province: req.body.hotel_province,
-		hotel_price: req.body.hotel_price,
-		hotel_distance: req.body.hotel_distance,
-		hotel_description: req.body.hotel_description,
-		hotel_stars: req.body.hotel_stars,
-		hotel_rating: req.body.hotel_rating,
-		hotel_reviews: req.body.hotel_reviews,
-		is_new: req.body.is_new,
-		is_apartment: req.body.is_apartment,
-		facilities_restaurant: req.body.facilities_restaurant,
-		facilities_gym: req.body.facilities_gym,
-		facilities_wifi: req.body.facilities_wifi,
-		facilities_card_payment: req.body.facilities_card_payment,
-		facilities_game_room: req.body.facilities_game_room,
+		id,
+		hotel_name,
+		hotel_adress,
+		hotel_city,
+		hotel_province,
+		hotel_price,
+		hotel_distance,
+		hotel_description,
+		hotel_stars,
+		hotel_rating,
+		hotel_reviews,
+		is_new,
+		is_apartment,
+		facilities_restaurant,
+		facilities_gym,
+		facilities_wifi,
+		facilities_card_payment,
+		facilities_game_room,
 		hotel_images: imageFiles
 	});
 
@@ -181,7 +183,7 @@ router.get('/:hotelsId', (req, res, next) => {
 router.patch('/:hotelsId', (req, res, next) => {
 	const id = req.params.hotelsId;
 	const updateOps = {};
-	for(const ops of req.body) {
+	for (const ops of req.body) {
 		updateOps[ops.propName] = ops.value;
 	}
 	Hotel.update({_id: id}, {$set: updateOps}).exec().then(result => {
