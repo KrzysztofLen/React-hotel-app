@@ -23,5 +23,6 @@ yarn-error.log*
 .idea
 .yarn.lock
 API/config/dev.js
+API/config/prod.js
 
 client/flow-typed
