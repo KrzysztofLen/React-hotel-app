@@ -16,7 +16,7 @@ class SingleHotel extends React.Component {
 	}
 
 	componentDidMount() {
-		setTimeout(() => {
+		this._timer = setTimeout(() => {
 			this.setState({
 				data: this.props.state.hotels,
 				isLoading: false
@@ -24,6 +24,9 @@ class SingleHotel extends React.Component {
 		}, 1500);
 	}
 
+	componentWillUnmount() {
+		clearTimeout(this._timer);
+	}
 
 	render() {
 		const index = parseInt(this.props.match.params.id);
