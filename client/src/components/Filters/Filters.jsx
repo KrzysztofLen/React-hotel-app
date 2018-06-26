@@ -52,7 +52,6 @@ class Filters extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log(state);
 	return {
 		state: state.viewSwitch,
 		length: state.length.count

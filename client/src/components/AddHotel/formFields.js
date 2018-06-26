@@ -1,6 +1,6 @@
 export default [
-	{ label: 'Campaign Title', name: 'title' },
-	{ label: 'Subject Line', name: 'subject' },
-	{ label: 'Email Body', name: 'body' },
-	{ label: 'Recipient List', name: 'recipients' }
+	{ label: 'Hotel name', name: 'hotel_name' },
+	{ label: 'Hotel adress', name: 'hotel_adress' },
+	{ label: 'Hotel city', name: 'hotel_city' },
+	{ label: 'Hotel province', name: 'hotel_province' }
 ];
