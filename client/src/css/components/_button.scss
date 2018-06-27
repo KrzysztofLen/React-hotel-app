@@ -131,4 +131,19 @@
 		padding: 1rem 1.5rem;
 		margin: 0 2rem;
 	}
+
+	&--close {
+		background-color: $color-grey-light-4;
+		color: $color-white;
+		@include font-family($oswald);
+		@include font-size(1.5);
+		border-radius: 30px;
+		transition: all .4s;
+		width: 95px;
+		text-decoration: none;
+
+		&:hover {
+			background-color: $color-grey-dark-2;
+		}
+	}
 }

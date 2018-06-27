@@ -14,5 +14,5 @@ export default combineReducers({
 	viewSwitch,
 	length: fetchHotelsLength,
 	form: reduxForm,
-	submit: submitHotel
+	submitHotel
 });

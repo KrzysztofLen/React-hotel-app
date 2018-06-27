@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import OptionModal from '../Modal';
 
 import HotelImage from '../HotelImage/HotelImage';
 import HotelLink from '../HotelLink/HotelLink';
@@ -11,6 +10,8 @@ import HotelFacilities from '../HotelFacilities/HotelFacilities';
 import HotelDescription from '../HotelDescription/HotelDescription';
 
 import isNew from '../../assets/new.svg';
+import Modal_OLD from "../Modal_OLD";
+import ModalWindow from "../ModalWindow";
 
 class HotelListItem extends Component {
 	constructor(props) {
@@ -49,7 +50,7 @@ class HotelListItem extends Component {
 			<div className="hotel__container">
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
-					<OptionModal isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} value={this.props}/>
+					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={<Modal_OLD value={this.props}/>}/>
 				</div>
 				<div className="hotel__name-container">
 					<HotelLink hotelName={this.props.data.hotel_name}

@@ -12,6 +12,7 @@ import Footer from '../components/Footer/Footer';
 import NoMatch404 from '../components/404/NoMatch404';
 import {connect} from "react-redux";
 import * as actions from "../actions";
+import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 
 //TODO Make private route with addHotel component
 const fakeAuth = {
@@ -54,7 +55,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 	)
 };
 
-
+//#TODO After click on name ID is change so doesn't see single Hotel
 class AppRouter extends React.Component {
 	componentDidMount() {
 		this.props.fetchHotels();
@@ -77,6 +78,7 @@ class AppRouter extends React.Component {
 
 					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.auth} exact/>
 					<Route path="/forbidden" component={NotAuthenticate}/>
+					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}
 
 					<Footer/>

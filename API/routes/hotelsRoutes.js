@@ -157,14 +157,35 @@ module.exports = (app) => {
 	 * @description Send new hotel to DB
 	 */
 	app.post('/hotels', (req, res, next) => {
-		const {hotel_name, hotel_adress, hotel_city, hotel_province} = req.body;
+		// const imageFiles = [];
+		// req.files.forEach(file => {
+		// 	imageFiles.push(file.path);
+		// });
+
+		const {hotel_name, hotel_adress, hotel_city, hotel_province, hotel_price, hotel_distance, hotel_description,
+			hotel_stars, hotel_rating, hotel_reviews, is_new, is_apartment, facilities_restaurant, facilities_gym,
+			facilities_wifi, facilities_card_payment, facilities_game_room} = req.body;
 		// Object values
 		const hotel = new Hotel({
 			_id: new mongoose.Types.ObjectId(),
 			hotel_name,
 			hotel_adress,
 			hotel_city,
-			hotel_province
+			hotel_province,
+			hotel_price,
+			hotel_distance,
+			hotel_description,
+			hotel_stars,
+			hotel_rating,
+			hotel_reviews,
+			is_new,
+			is_apartment,
+			facilities_restaurant,
+			facilities_gym,
+			facilities_wifi,
+			facilities_card_payment,
+			facilities_game_room
+			// hotel_images
 		});
 
 		// Save hotel based on hotel schema object
@@ -177,7 +198,21 @@ module.exports = (app) => {
 					hotel_name: result.hotel_name,
 					hotel_adress: result.hotel_adress,
 					hotel_city: result.hotel_city,
-					hotel_province: result.hotel_province
+					hotel_province: result.hotel_province,
+					hotel_price: result.hotel_price,
+					hotel_distance: result.hotel_distance,
+					hotel_description: result.hotel_description,
+					hotel_stars: result.hotel_stars,
+					hotel_rating: result.hotel_rating,
+					hotel_reviews: result.hotel_reviews,
+					is_new: result.is_new,
+					is_apartment: result.is_apartment,
+					facilities_restaurant: result.facilities_restaurant,
+					facilities_gym: result.facilities_gym,
+					facilities_wifi: result.facilities_wifi,
+					facilities_card_payment: result.facilities_card_payment,
+					facilities_game_room: result.facilities_game_room
+					// hotel_images: result.hotel_images
 				}
 			});
 		}).catch(err => {

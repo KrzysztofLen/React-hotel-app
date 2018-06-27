@@ -1,17 +1,4 @@
 import React from 'react';
-import Modal from 'react-modal';
-
-const customStyles = {
-	overlay: {
-		position: 'fixed',
-		overflow: 'scroll',
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		backgroundColor: 'rgba(0, 0, 0, 0.75)'
-	}
-};
 
 const SmallHeader = (props) => <h4 className="modal__subheader">{props.title}</h4>;
 const RelatedPeople = (props) => (
@@ -36,14 +23,7 @@ const Chevron = (props) => (
 
 const OptionModal = (props) => {
 	return (
-		<Modal
-			isOpen={props.isOpen}
-			onRequestClose={props.closeModal}
-			contentLabel="Selected option"
-			className="modal"
-			style={customStyles}
-			ariaHideApp={false}
-		>
+		<React.Fragment>
 			<div className="column modal__details">
 				<img className="modal__avatar" src={props.value.data.image} alt="xyz"/>
 				<h2 className="modal__name">{props.value.data.name}</h2>
@@ -123,7 +103,8 @@ const OptionModal = (props) => {
 			</div>
 			<button onClick={props.closeModal} className="modal__close"></button>
 			<div>{props.value.data.question}</div>
-		</Modal>)
+		</React.Fragment>
+		)
 };
 
 export default OptionModal;

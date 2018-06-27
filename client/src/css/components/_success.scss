@@ -1,0 +1,16 @@
+.success__container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.success__subheader {
+	color: $color-grey-dark-2;
+	@include font-size(1.2);
+}
+
+.success__icon {
+	height: 6.25rem;
+}

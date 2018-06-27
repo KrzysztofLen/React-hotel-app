@@ -45,7 +45,7 @@ export const fetchHotelsLength = () => async(dispatch) => {
 export const submitSurvey = (values, history) => async (dispatch) => {
 	console.log('VALUES', values);
 	const res = await axios.post('/hotels', values);
-	// history.push('/surveys');
+	history.push('/add/success');
 	dispatch({
 		type: 'SUBMIT_SURVEY',
 		payload: res.data.createdHotel
