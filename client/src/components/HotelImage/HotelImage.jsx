@@ -8,7 +8,6 @@ type Props = {
 }
 
 const HotelImage = (data: Props) => {
-	console.log(data);
 	return (<React.Fragment>
 		<div className="overlay" onClick={data.onClick}>
 			<span className="overlay__text">Click</span>

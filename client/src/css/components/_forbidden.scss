@@ -1,0 +1,14 @@
+.forbidden {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 100px;
+	}
+
+	&__text {
+		@include font-size(3.5);
+	}
+}

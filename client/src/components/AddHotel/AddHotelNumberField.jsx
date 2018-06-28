@@ -23,7 +23,7 @@ class AddHotelNumberField extends Component {
 					value={value}
 					onChange={this.onChange}
 				/>
-				<div className="red-text" style={{marginBottom: '20px'}}>
+				<div className="form-error">
 					{this.props.meta.touched && this.props.meta.error}
 				</div>
 			</React.Fragment>

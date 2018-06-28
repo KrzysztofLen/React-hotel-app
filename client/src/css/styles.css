@@ -1182,6 +1182,31 @@ body.ReactModal__Body--open {
     text-decoration: none; }
     .btn--close:hover {
       background-color: #777; }
+  .btn--cancel {
+    background-color: #ED5E68;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 17px;
+    font-size: 1.7rem;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+    padding: 10px 45px; }
+  .btn--next {
+    background-color: #8388A4;
+    color: #363B59;
+    border-radius: 4px;
+    font-size: 17px;
+    font-size: 1.7rem;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+    padding: 10px 45px; }
+    .btn--next:hover {
+      background-color: #363B59;
+      color: #fff; }
 
 .detail {
   display: flex;
@@ -1377,7 +1402,8 @@ body.ReactModal__Body--open {
 
 .login__container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 .login__profile {
   margin-right: 2rem;
@@ -1512,6 +1538,32 @@ body.ReactModal__Body--open {
 .form-style-6 input[type="button"]:hover {
   background: #2EBC99; }
 
+.form__buttons {
+  display: flex;
+  justify-content: space-between; }
+
+.hotel-form__review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  margin: 0 auto; }
+
+.hotel-form__header {
+  color: #fff;
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+.hotel-form__values {
+  margin: 10px 0; }
+  .hotel-form__values label {
+    color: #777; }
+
+.hotel-form__value {
+  font-size: 14px;
+  font-size: 1.4rem;
+  color: #777; }
+
 .success__container {
   display: flex;
   flex-direction: column;
@@ -1526,6 +1578,18 @@ body.ReactModal__Body--open {
 
 .success__icon {
   height: 6.25rem; }
+
+.forbidden__container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px; }
+
+.forbidden__text {
+  font-size: 35px;
+  font-size: 3.5rem; }
 
 /* ------------- */
 /*		LAYOUT    */
@@ -1584,6 +1648,10 @@ body.ReactModal__Body--open {
     color: #fff;
     font-size: 20px;
     font-size: 2rem; }
+
+.form-error {
+  margin-bottom: 20px;
+  color: #BC2026; }
 
 .btn-plus {
   height: 25px;

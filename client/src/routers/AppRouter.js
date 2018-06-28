@@ -13,24 +13,7 @@ import NoMatch404 from '../components/404/NoMatch404';
 import {connect} from "react-redux";
 import * as actions from "../actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
-
-//TODO Make private route with addHotel component
-const fakeAuth = {
-	isAuthenticated: true
-};
-
-class NotAuthenticate extends React.Component {
-	render() {
-		// debugger;
-		const {from} = this.props.location.state || {from: {pathname: "/"}};
-		return (
-			<div className="container">
-				<p>You must log in to view the page at {from.pathname}</p>
-				<button onClick={() => alert('forbidden')}>Log in</button>
-			</div>
-		);
-	}
-}
+import Forbidden from "../components/Forbidden/Forbidden";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
 	const fakeAuth = {
@@ -55,14 +38,12 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 	)
 };
 
-//#TODO After click on name ID is change so doesn't see single Hotel
 class AppRouter extends React.Component {
 	componentDidMount() {
 		this.props.fetchHotels();
 	}
 
 	render() {
-		console.log(this.props.auth);
 		return (
 			<BrowserRouter>
 				<div>
@@ -77,7 +58,7 @@ class AppRouter extends React.Component {
 					<Route path="/buy" component={BuyHotel}/>
 
 					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.auth} exact/>
-					<Route path="/forbidden" component={NotAuthenticate}/>
+					<Route path="/forbidden" component={Forbidden}/>
 					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}
 

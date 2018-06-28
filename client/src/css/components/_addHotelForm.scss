@@ -75,3 +75,36 @@
 .form-style-6 input[type="button"]:hover{
 	background: #2EBC99;
 }
+
+.form__buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.hotel-form {
+	&__review {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 500px;
+		margin: 0 auto;
+	}
+
+	&__header {
+		color: $color-white;
+		@include font-size(1.8);
+	}
+
+	&__values {
+		margin: 10px 0;
+
+		label {
+			color: $color-grey-dark-2;
+		}
+	}
+
+	&__value {
+		@include font-size(1.4);
+		color: $color-grey-dark-2;
+	}
+}

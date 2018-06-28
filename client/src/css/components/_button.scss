@@ -146,4 +146,33 @@
 			background-color: $color-grey-dark-2;
 		}
 	}
+
+	&--cancel {
+		background-color: #ED5E68;
+		color: $color-white;
+		border-radius: 4px;
+		@include font-size(1.7);
+		text-decoration: none;
+		text-transform: none;
+		font-weight: 400;
+		@include font-family($oswald);
+		padding: 10px 45px;
+	}
+
+	&--next {
+		background-color: #8388A4;
+		color: #363B59;
+		border-radius: 4px;
+		@include font-size(1.7);
+		text-decoration: none;
+		text-transform: none;
+		font-weight: 400;
+		@include font-family($oswald);
+		padding: 10px 45px;
+
+		&:hover {
+			background-color: #363B59;
+			color: $color-white;
+		}
+	}
 }

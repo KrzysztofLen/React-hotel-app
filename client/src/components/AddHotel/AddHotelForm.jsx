@@ -5,27 +5,9 @@ import {Link} from "react-router-dom";
 // Components
 import Rating from "../External/Rating/Rating";
 import AddHotelField from "./AddHotelField";
-import FIELDS from './formFields';
+import {FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import AddHotelNumberField from "./AddHotelNumberField";
 import AddHotelOptionField from "./AddHotelOptionField";
-
-const NUMBER_FIELDS = [
-	{ label: 'Hotel price', name: 'hotel_price' },
-	{ label: 'Hotel distance (from center)', name: 'hotel_distance' },
-	{ label: 'Hotel stars (max 5)', name: 'hotel_stars' },
-	{ label: 'Hotel rating', name: 'hotel_rating' },
-	{ label: 'Hotel reviews', name: 'hotel_reviews' }
-];
-
-const BOOLEAN_FIELDS = [
-	{ label: 'Is new?', name: 'is_new' },
-	{ label: 'Is apartment?', name: 'is_apartment' },
-	{ label: 'Restaurant?', name: 'facilities_restaurant' },
-	{ label: 'Gym?', name: 'facilities_gym' },
-	{ label: 'Wifi?', name: 'facilities_wifi' },
-	{ label: 'Card payment?', name: 'facilities_card_payment' },
-	{ label: 'Game room?', name: 'facilities_game_room' }
-];
 
 class AddHotelForm extends Component {
 	renderFields() {
@@ -57,8 +39,10 @@ class AddHotelForm extends Component {
 					<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
 					{/*<form onSubmit={this.testSending}>*/}
 						{this.renderFields()}
-						<Link to="/" className="">Cancel</Link>
-						<button type="submit" className="">Next</button>
+						<div className="form__buttons">
+							<Link to="/" className="btn btn--cancel">Cancel</Link>
+							<button type="submit" className="btn btn--next">Next</button>
+						</div>
 					</form>
 				</div>
 			</React.Fragment>
@@ -66,6 +50,32 @@ class AddHotelForm extends Component {
 	}
 }
 
+function validate(values) {
+	const errors = {};
+
+	FIELDS.forEach(({name}) => {
+		if(!values[name]) {
+			errors[name] = 'FAILURE! You must provide a value';
+		}
+	});
+
+	NUMBER_FIELDS.forEach(({name}) => {
+		if(!values[name]) {
+			errors[name] = 'FAILURE! You must provide a value';
+		}
+	});
+
+	BOOLEAN_FIELDS.forEach(({name}) => {
+		if(!values[name]) {
+			errors[name] = 'FAILURE! You must select a value';
+		}
+	});
+
+	return errors;
+}
+
 export default reduxForm({
-	form: 'addHotelForm'
+	validate,
+	form: 'addHotelForm',
+	destroyOnUnmount: false // prevent cleaning form
 })(AddHotelForm);

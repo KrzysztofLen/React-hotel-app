@@ -16,6 +16,5 @@ exports[`it should render HotelImage component correctly 1`] = `
     className="hotel__image"
     src="h"
   />
-  ;
 </React.Fragment>
 `;

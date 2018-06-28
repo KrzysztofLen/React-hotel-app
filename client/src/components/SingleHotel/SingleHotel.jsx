@@ -29,7 +29,7 @@ class SingleHotel extends React.Component {
 	}
 
 	render() {
-		const index = parseInt(this.props.match.params.id);
+		const index = this.props.match.params.id;
 		const value = this.state.data.filter(x => x.id === index);
 		const [desc] = value;
 
