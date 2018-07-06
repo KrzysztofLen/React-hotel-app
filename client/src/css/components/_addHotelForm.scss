@@ -83,28 +83,87 @@
 
 .hotel-form {
 	&__review {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 500px;
-		margin: 0 auto;
+		width: 90%;
+		height: 500px;
+		margin: 85px auto;
+		background: $color-grey-light-2;
+		border-radius: 5px;
+		padding: 10px 0 40px 40px;
+		box-sizing: border-box;
+		position: relative;
 	}
 
 	&__header {
-		color: $color-white;
+		color: $color-grey-dark-1;
 		@include font-size(1.8);
+		text-align: center;
 	}
 
 	&__values {
-		margin: 10px 0;
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 13px 0;
 
 		label {
-			color: $color-grey-dark-2;
+			color: $color-primary;
+			margin-bottom: 8px;
+			@include font-size(1.4);
 		}
 	}
 
 	&__value {
-		@include font-size(1.4);
+		@include font-size(1.9);
 		color: $color-grey-dark-2;
+		font-weight: 200;
+	}
+
+	&__valuesBox {
+		display: flex;
+		position: relative;
+	}
+
+	&__valueBox {
+		width: 25%;
+		margin-right: 25px;
+	}
+
+	&__close {
+		border-radius: 50%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: 20px;
+		background: rgba(0,0,0,.2);
+		text-decoration: none;
+		color: white;
+		font-size: 14px;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+	}
+
+	&__send {
+		background-color: $rate-very-good;
+		width: 25%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px;
+		color: $color-send;
+		text-transform: uppercase;
+	}
+
+	&__sendIcon {
+		width: 55px;
+		margin-bottom: 15px;
 	}
 }

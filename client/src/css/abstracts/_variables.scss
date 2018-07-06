@@ -42,7 +42,7 @@ $color-primary-light: lighten($color-primary, 30%);
 $color-primary-dark: darken($color-primary, 30%);
 
 $color-grey-light-1: #faf9f9;
-$color-grey-light-2: #f4f2f2;
+$color-grey-light-2: #f2f2f2;
 $color-grey-light-3: #f0eeee;
 $color-grey-light-4: #ccc;
 $color-grey-light-5: #eee;
@@ -55,9 +55,10 @@ $rate-bad: #BC2026;
 $rate-poor: #EF4723;
 $rate-fair: #F68E1F;
 $rate-good: #FECC09;
-$rate-very-good: #7DBB42;
+$rate-very-good: #B0DF60;
 $rate-excellent: #0F9246;
 
+$color-send: #C9E995;
 
 $line: 1px solid $color-grey-light-2;
 $oswald: 'Oswald', sans-serif;

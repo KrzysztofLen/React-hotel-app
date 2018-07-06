@@ -1,63 +1,29 @@
-.btn-plus {
-	height: 25px;
-	width: 25px;
-	border-radius: 50%;
-	background: $color-blue-plus;
-	border: none;
-	display: flex;
+$button-background-color: #fff !default;
+$button-border: 1px solid #dbdbdb !default;
+$button-color: #363636 !default;
+$button-padding-vertical: 1rem !default
+$button-padding-horizontal: 0.75em !default
 
-	svg {
-		fill: $color-white;
-	}
-}
-
-.btn-new-answer {
-	position: absolute;
-	bottom: -15px;
-	left: 40%;
-	background: $color-white;
-	border: 1px solid $color-searchBtn;
-	padding: 7px 40px;
-	font-weight: bold;
-	font-size: 14px;
-}
-
-.btn-count {
-	background: no-repeat;
-	border: none;
-
-	svg {
-		fill: $color-blue-plus;
-	}
-}
-
-.chevron-right {
-	transform: rotate(180deg);
-}
-
-.btn-new-comment {
-	position: absolute;
-	background: #fff;
-	border: 1px solid #a7a9ac;
-	padding: 7px 40px;
-	font-weight: bold;
-	font-size: 14px;
-	bottom: -13px;
-	margin: 0 auto;
+.button {
+	background-color: $button-background-color;
+	border: $button-border;
+	color: $button-color;
+	cursor: pointer;
+	justify-content: center;
+	padding: $button-padding-vertical $button-padding-horizontal;
 	text-align: center;
-	left: 40%;
+	white-space: nowrap;
+	border-radius: 4px;
 }
 
-.btn-continue-discussion {
-	opacity: 1;
-	position: absolute;
-	background: #fff;
-	border: 1px solid #a7a9ac;
-	padding: 7px 40px;
-	font-weight: bold;
-	font-size: 14px;
-	bottom: 8px;
-	margin: 0 auto;
-	text-align: center;
-	left: 43%;
+.is-primary {
+	background-color: #00d1b2;
+	border-color: transparent;
+	color: #fff;
+}
+
+.is-link {
+	background-color: #276cda;
+	border-color: transparent;
+	color: #fff;
 }

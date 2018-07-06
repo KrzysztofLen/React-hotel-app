@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import * as actions from '../../actions';
+import send from "../../assets/paper-plane.svg";
 
-
-const AddHotelReview = ({ onCancel, formValues, submitSurvey, history}) => {
+const AddHotelReview = ({onCancel, formValues, submitSurvey, history}) => {
 
 	const reviewFields = FIELDS.map(({name, label}, i) => {
 		return (
@@ -37,11 +37,23 @@ const AddHotelReview = ({ onCancel, formValues, submitSurvey, history}) => {
 	return (
 		<div className="hotel-form__review">
 			<h5 className="hotel-form__header">Please confirm your entries</h5>
-			{reviewFields}
-			{reviewFields1}
-			{reviewFields2}
-			<button className="yellow darken-3 btn-flat white-text" onClick={onCancel}>Back</button>
-			<button className="green btn-flat right white-text" onClick={() => submitSurvey(formValues, history)}>Send</button>
+			<div className="hotel-form__valuesBox">
+				<div className="hotel-form__valueBox">
+					{reviewFields}
+				</div>
+				<div className="hotel-form__valueBox">
+					{reviewFields1}
+				</div>
+				<div className="hotel-form__valueBox">
+					{reviewFields2}
+				</div>
+				<button className="yellow darken-3 btn-flat white-text" onClick={onCancel}>Back</button>
+			</div>
+			<div className="hotel-form__send" onClick={() => submitSurvey(formValues, history)}>
+				<img className="hotel-form__sendIcon" src={send} alt=""/>
+				Send
+			</div>
+			<Link to="/" className="hotel-form__close" onClick={onCancel}>&#x2715;</Link>
 		</div>
 	)
 };

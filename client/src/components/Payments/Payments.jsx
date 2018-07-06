@@ -14,7 +14,7 @@ class Payments extends Component {
 				description="5$ for 5 credits"
 				currency="USD"
 			>
-				<button className="btn btn--payment">Pay with credit card</button>
+				<button className="button is-link">Pay with credit card</button>
 			</StripeCheckout>
 		)
 	}
