@@ -1,29 +1,184 @@
 $button-background-color: #fff !default;
 $button-border: 1px solid #dbdbdb !default;
 $button-color: #363636 !default;
-$button-padding-vertical: 1rem !default
-$button-padding-horizontal: 0.75em !default
+$button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !default;
 
 .button {
 	background-color: $button-background-color;
 	border: $button-border;
 	color: $button-color;
 	cursor: pointer;
-	justify-content: center;
 	padding: $button-padding-vertical $button-padding-horizontal;
 	text-align: center;
 	white-space: nowrap;
 	border-radius: 4px;
+	text-decoration: none;
+	text-transform: none;
+	@include font-weight(400);
+	@include font-family($oswald);
+	@include font-size(1.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background .4s ease;
+	line-height: 22px;
+	outline: none;
 }
 
+//#################
+//#### PRIMARY ####
+//#################
 .is-primary {
 	background-color: #00d1b2;
 	border-color: transparent;
 	color: #fff;
+
+	&--is-outlined {
+		background-color: transparent;
+		border-color: #00d1b2;
+		color: #00d1b2;
+
+		&:hover {
+			background-color: #00d1b2;
+			border-color: #00d1b2;
+			color: #fff;
+		}
+	}
 }
 
+//#################
+//#### LINK #######
+//#################
 .is-link {
 	background-color: #276cda;
 	border-color: transparent;
 	color: #fff;
+
+	&:hover {
+		background: lighten(#276cda, 5%);
+	}
+
+	&--is-outlined {
+		background-color: transparent;
+		border-color: #276cda;
+		color: #276cda;
+
+		&:hover {
+			background-color: #276cda;
+			border-color: #276cda;
+			color: #fff;
+		}
+	}
+}
+
+//#################
+//#### DANGER #####
+//#################
+.is-danger {
+	background-color: #ED5E68;
+	border-color: transparent;
+	color: #fff;
+
+	&:hover {
+		background: lighten(#ED5E68, 5%);
+	}
+
+	svg {
+		fill: $color-white;
+		margin-left: 10px;
+		margin-top: 1px;
+	}
+
+	&--is-outlined {
+		background-color: transparent;
+		border-color: #ED5E68;
+		color: #ED5E68;
+
+		&:hover {
+			background-color: #ED5E68;
+			border-color: #ED5E68;
+			color: #fff;
+		}
+	}
+}
+
+//#################
+//#### SUCCESS ####
+//#################
+.is-success {
+	background: #B0DF60;
+	border-color: transparent;
+	color: #fff;
+
+	&:hover {
+		background: lighten(#B0DF60, 5%);
+	}
+
+	svg {
+		fill: $color-white;
+		margin-left: 10px;
+	}
+
+	&--is-outlined {
+		background-color: transparent;
+		border-color: #B0DF60;
+		color: #B0DF60;
+
+		&:hover {
+			background-color:  #B0DF60;
+			border-color:  #B0DF60;
+			color: #fff;
+		}
+	}
+}
+
+//#################
+//#### INFO #######
+//#################
+.is-info {
+	background-color: #8388A4;
+	border-color: transparent;
+	color: #363B59;
+
+	&:hover {
+		background-color: #363B59;
+		color: $color-white;
+	}
+
+	&--is-outlined {
+		background-color: transparent;
+		border-color: #363B59;
+		color: #363B59;
+
+		&:hover {
+			background-color: #363B59;
+			border-color: #363B59;
+			color: #fff;
+		}
+	}
+}
+
+//#################
+//#### WARNING ####
+//#################
+.is-warning {
+	background-color: #ffdd57;
+	border-color: transparent;
+	color: rgba(0, 0, 0, .7);
+
+	&:hover {
+		background: lighten(#ffdd57, 5%);
+	}
+
+	&--is-outlined {
+		background-color: transparent;
+		border-color: #ffdd57;
+		color: #ffdd57;
+
+		&:hover {
+			background-color: #ffdd57;
+			border-color: #ffdd57;
+			color: #fff;
+		}
+	}
 }

@@ -1024,6 +1024,10 @@ body.ReactModal__Body--open {
     color: #B0DF60;
     margin-left: 1rem; }
 
+.payments {
+  margin-right: 2rem;
+  margin-left: 2rem; }
+
 .filters {
   border-bottom: 1px solid #f2f2f2;
   display: flex;
@@ -1544,19 +1548,22 @@ body.ReactModal__Body--open {
 
 .hotel-form__review {
   width: 90%;
-  height: 500px;
+  height: 525px;
   margin: 85px auto;
   background: #f2f2f2;
   border-radius: 5px;
-  padding: 10px 0 40px 40px;
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  padding-left: 40px; }
 
 .hotel-form__header {
-  color: #333;
-  font-size: 18px;
-  font-size: 1.8rem;
-  text-align: center; }
+  color: #777;
+  font-size: 20px;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+  padding: 22px; }
 
 .hotel-form__values {
   display: flex;
@@ -1576,7 +1583,9 @@ body.ReactModal__Body--open {
 
 .hotel-form__valuesBox {
   display: flex;
-  position: relative; }
+  position: relative;
+  width: 75%;
+  box-sizing: border-box; }
 
 .hotel-form__valueBox {
   width: 25%;
@@ -1646,6 +1655,68 @@ body.ReactModal__Body--open {
   font-size: 35px;
   font-size: 3.5rem; }
 
+.icon {
+  color: #161616;
+  position: relative;
+  display: inline-block;
+  width: 12rem;
+  height: 10rem;
+  margin: 0 auto; }
+
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 12em;
+  height: 10em;
+  font-size: 1em;
+  /* control icon size here */ }
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  margin: -1.25em;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.375em #fff;
+  animation: spin 12s infinite linear; }
+
+.rays {
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  display: block;
+  width: 0.375em;
+  height: 1.125em;
+  margin-left: -0.1875em;
+  background: yellow;
+  border-radius: 0.25em;
+  box-shadow: 0 5.375em yellow; }
+
+.rays:before,
+.rays:after {
+  content: '';
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  display: block;
+  width: 0.375em;
+  height: 1.125em;
+  transform: rotate(60deg);
+  transform-origin: 50% 3.25em;
+  background: yellow;
+  border-radius: 0.25em;
+  box-shadow: 0 5.375em yellow; }
+
+.rays:before {
+  transform: rotate(120deg); }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
+
 /* ------------- */
 /*		LAYOUT    */
 /* ------------- */
@@ -1713,21 +1784,118 @@ body.ReactModal__Body--open {
   border: 1px solid #dbdbdb;
   color: #363636;
   cursor: pointer;
-  justify-content: center;
-  padding: calc(0.375em - 4px) 0.75em;
+  padding: 1rem 0.75em;
   text-align: center;
   white-space: nowrap;
-  border-radius: 4px; }
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background .4s ease;
+  line-height: 22px;
+  outline: none; }
 
 .is-primary {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff; }
+  .is-primary--is-outlined {
+    background-color: transparent;
+    border-color: #00d1b2;
+    color: #00d1b2; }
+    .is-primary--is-outlined:hover {
+      background-color: #00d1b2;
+      border-color: #00d1b2;
+      color: #fff; }
 
 .is-link {
   background-color: #276cda;
   border-color: transparent;
   color: #fff; }
+  .is-link:hover {
+    background: #3d7bde; }
+  .is-link--is-outlined {
+    background-color: transparent;
+    border-color: #276cda;
+    color: #276cda; }
+    .is-link--is-outlined:hover {
+      background-color: #276cda;
+      border-color: #276cda;
+      color: #fff; }
+
+.is-danger {
+  background-color: #ED5E68;
+  border-color: transparent;
+  color: #fff; }
+  .is-danger:hover {
+    background: #f0757e; }
+  .is-danger svg {
+    fill: #fff;
+    margin-left: 10px;
+    margin-top: 1px; }
+  .is-danger--is-outlined {
+    background-color: transparent;
+    border-color: #ED5E68;
+    color: #ED5E68; }
+    .is-danger--is-outlined:hover {
+      background-color: #ED5E68;
+      border-color: #ED5E68;
+      color: #fff; }
+
+.is-success {
+  background: #B0DF60;
+  border-color: transparent;
+  color: #fff; }
+  .is-success:hover {
+    background: #bbe375; }
+  .is-success svg {
+    fill: #fff;
+    margin-left: 10px; }
+  .is-success--is-outlined {
+    background-color: transparent;
+    border-color: #B0DF60;
+    color: #B0DF60; }
+    .is-success--is-outlined:hover {
+      background-color: #B0DF60;
+      border-color: #B0DF60;
+      color: #fff; }
+
+.is-info {
+  background-color: #8388A4;
+  border-color: transparent;
+  color: #363B59; }
+  .is-info:hover {
+    background-color: #363B59;
+    color: #fff; }
+  .is-info--is-outlined {
+    background-color: transparent;
+    border-color: #363B59;
+    color: #363B59; }
+    .is-info--is-outlined:hover {
+      background-color: #363B59;
+      border-color: #363B59;
+      color: #fff; }
+
+.is-warning {
+  background-color: #ffdd57;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7); }
+  .is-warning:hover {
+    background: #ffe271; }
+  .is-warning--is-outlined {
+    background-color: transparent;
+    border-color: #ffdd57;
+    color: #ffdd57; }
+    .is-warning--is-outlined:hover {
+      background-color: #ffdd57;
+      border-color: #ffdd57;
+      color: #fff; }
 
 .logo {
   height: 3.25rem;

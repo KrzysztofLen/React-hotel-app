@@ -40,8 +40,8 @@ class AddHotelForm extends Component {
 					{/*<form onSubmit={this.testSending}>*/}
 						{this.renderFields()}
 						<div className="form__buttons">
-							<Link to="/" className="btn btn--cancel">Cancel</Link>
-							<button type="submit" className="btn btn--next">Next</button>
+							<Link to="/" className="button is-danger">Cancel</Link>
+							<button type="submit" className="button is-info">Next</button>
 						</div>
 					</form>
 				</div>

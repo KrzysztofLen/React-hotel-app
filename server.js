@@ -14,11 +14,11 @@ const PORT = process.env.PORT || 5000;
 // MODELS ##############################################################################################################
 require('./API/models/Users');
 
-// CONFIGURATION #######################################################################################################
-mongoose.connect(keys.mongoURI); // connect to our database
-
 // SERVICES ############################################################################################################
 require('./API/services/passport')(passport); // pass passport for configuration
+
+// CONFIGURATION #######################################################################################################
+mongoose.connect(keys.mongoURI); // connect to our database
 
 // set up our express application ######################################################################################
 app.use(morgan('dev'));
@@ -35,11 +35,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // ROUTES ##############################################################################################################
-require('./API/routes/authRoutes')(app);
 require('./API/routes/hotelsRoutes')(app);
 require('./API/routes/billingRoutes')(app);
 require('./API/routes/countRoutes')(app);
 require('./API/routes/topRoutes')(app);
+require('./API/routes/authRoutes')(app);
 
 //#TODO on heroku is development so app doesn't showing
 if (process.env.NODE_ENV === 'production') {

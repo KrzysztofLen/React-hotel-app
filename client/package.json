@@ -22,6 +22,7 @@
     "enzyme-to-json": "^3.3.3",
     "firebase": "^4.11.0",
     "identity-obj-proxy": "^3.0.0",
+    "node-sass": "^4.9.2",
     "node-sass-chokidar": "^0.0.3",
     "normalize.css": "^7.0.0",
     "npm-run-all": "^4.1.2",
@@ -47,7 +48,7 @@
     "build": "npm-run-all build-css build-js",
     "eject": "react-scripts eject",
     "compile:sass": "node-sass src/css/styles.scss src/css/styles.css -w",
-    "generate:doc": "sassdoc src/css/abstracts/_mixins.scss",
+    "generate:doc": "sassdoc src/css/**/*.scss",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "test-coverage": "cross-env NODE_ENV=test jest --coverage --config=jest.config.json",
     "test-ci": "cross-env NODE_ENV=test jest --config=jest.config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

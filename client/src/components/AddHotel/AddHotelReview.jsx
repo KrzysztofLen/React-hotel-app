@@ -47,8 +47,8 @@ const AddHotelReview = ({onCancel, formValues, submitSurvey, history}) => {
 				<div className="hotel-form__valueBox">
 					{reviewFields2}
 				</div>
-				<button className="yellow darken-3 btn-flat white-text" onClick={onCancel}>Back</button>
 			</div>
+			<button className="button is-warning" onClick={onCancel}>Back</button>
 			<div className="hotel-form__send" onClick={() => submitSurvey(formValues, history)}>
 				<img className="hotel-form__sendIcon" src={send} alt=""/>
 				Send

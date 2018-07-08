@@ -17,7 +17,7 @@ class LoginSystem extends React.Component<Props> {
 				return;
 			case false:
 				return (
-					<a href="/auth/google" className="btn btn--login">Login<Check width={20} height={20}/></a>
+					<a href="/auth/google" className="button is-success">Login<Check width={20} height={20}/></a>
 				);
 			default:
 				return (
@@ -26,7 +26,7 @@ class LoginSystem extends React.Component<Props> {
 							className="credits__value">{this.props.auth.credits}</span>
 						</span>
 						<Payments/>
-						<a href="/api/logout" className="btn btn--logout">Logout<Cross width={20} height={20}/></a>
+						<a href="/api/logout" className="button is-danger">Logout<Cross width={20} height={20}/></a>
 					</React.Fragment>
 				)
 		}

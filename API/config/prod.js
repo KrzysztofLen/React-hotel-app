@@ -4,5 +4,6 @@ module.exports = {
 	mongoURI: 'mongodb+srv://admin:mJlDwfns90vYrRw5@react-hotel-app-4z48b.mongodb.net/test',
 	cookieKey: 'asdja3494oskofafas',
 	stripePublishableKey: 'pk_test_i4bqegkyrDpgLBnCSffyUbAV',
-	stripeSecretKey: 'sk_test_1i2DV8EEifoHdHRzR8CPT5G7'
+	stripeSecretKey: 'sk_test_1i2DV8EEifoHdHRzR8CPT5G7',
+	darkSkyWeather: 'b550800746bdcc9d39f7242b8c3a53e7'
 };

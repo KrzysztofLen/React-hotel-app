@@ -252,6 +252,11 @@ module.exports = (app) => {
 	/**
 	 * @type UPDATE/PATCH
 	 * @description Update hotel by ID
+	 * Schema to update
+	 * [
+		 {"propName": "hotel_adress", "value": "Kalifornia 92801, Stany Zjednoczone"},
+		 {"propName": "hotel_city", "value": "Anaheim"}
+	 *	 ]
 	 */
 	app.patch('/hotels/:hotelsId', (req, res, next) => {
 		const id = req.params.hotelsId;

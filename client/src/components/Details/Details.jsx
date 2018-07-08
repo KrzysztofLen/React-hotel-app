@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import user3 from './../../assets/img/user-3.jpg';
 
 export const Details = () => {
 	return (
@@ -25,10 +26,10 @@ export const Details = () => {
 						Lucy and 3 other friends recommend this hotel
 					</p>
 					<div className="recommend__friends">
-						<img src="./../assets/img/user-3.jpg" alt="Friend 1" className="recommend__photo"/>
-						<img src="../../assets/img/user-4.jpg" alt="Friend 2" className="recommend__photo"/>
-						<img src="../../assets/img/user-5.jpg" alt="Friend 3" className="recommend__photo"/>
-						<img src="../../assets/img/user-6.jpg" alt="Friend 4" className="recommend__photo"/>
+						{/*<img src={user3} alt="Friend 1" className="recommend__photo"/>*/}
+						{/*<img src="../../assets/img/user-4.jpg" alt="Friend 2" className="recommend__photo"/>*/}
+						{/*<img src="../../assets/img/user-5.jpg" alt="Friend 3" className="recommend__photo"/>*/}
+						{/*<img src="../../assets/img/user-6.jpg" alt="Friend 4" className="recommend__photo"/>*/}
 					</div>
 				</div>
 			</div>
@@ -39,7 +40,7 @@ export const Details = () => {
 						animi, totam, itaque officia ex.
 					</blockquote>
 					<figcaption className="review__user">
-						<img src="../../assets/img/user-1.jpg" alt="user 1" className="review__photo"/>
+						{/*<img src="../../assets/img/user-1.jpg" alt="user 1" className="review__photo"/>*/}
 						<div className="review__user-box">
 							<p className="review__user-name">Nick Smith</p>
 							<p className="review__user-date">Feb 23rd, 2017</p>
@@ -54,7 +55,7 @@ export const Details = () => {
 						animi.
 					</blockquote>
 					<figcaption className="review__user">
-						<img src="../../assets/img/user-2.jpg" alt="user 2" className="review__photo"/>
+						{/*<img src="../../assets/img/user-2.jpg" alt="user 2" className="review__photo"/>*/}
 						<div className="review__user-box">
 							<p className="review__user-name">Mary Thomas</p>
 							<p className="review__user-date">Sept 13th, 2017</p>

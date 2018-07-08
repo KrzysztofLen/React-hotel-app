@@ -74,7 +74,7 @@ class HotelListItem extends Component {
 						              index={this.props.index}
 						              activeIndex={this.state.activeIndex === this.props.index}
 						              onClick={this.onToggleButton}
-						              btnClass={"btn btn" + (this.state.activeIndex === this.props.index ? '--no-underline' : '--inline') + " hotel__details--moreBtn"}
+						              btnClass={"button" + (this.state.activeIndex === this.props.index ? ' is-link' : ' is-info') + "--is-outlined"}
 						/>
 					</div>
 				</div>
