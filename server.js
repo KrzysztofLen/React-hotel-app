@@ -18,16 +18,16 @@ require('./API/models/Users');
 require('./API/services/passport')(passport); // pass passport for configuration
 
 // CONFIGURATION #######################################################################################################
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI); // connect to our database
 
 // set up our express application ######################################################################################
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
 app.use(
 	cookieSession({
-		maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+		maxAge: 30 * 24 * 60 * 60 * 1000,
 		keys: [keys.cookieKey]
 	})
 );

@@ -14,7 +14,9 @@ class LoginSystem extends React.Component<Props> {
 	renderContent() {
 		switch (this.props.auth) {
 			case null:
-				return;
+				return (
+					<a href="/auth/google" className="button is-success">Login<Check width={20} height={20}/></a>
+				);
 			case false:
 				return (
 					<a href="/auth/google" className="button is-success">Login<Check width={20} height={20}/></a>
@@ -33,6 +35,7 @@ class LoginSystem extends React.Component<Props> {
 	}
 
 	render() {
+		console.log(this.props.auth);
 		return (
 			<div className="login__container">
 				{this.props.auth && <span className="login__profile">Hello

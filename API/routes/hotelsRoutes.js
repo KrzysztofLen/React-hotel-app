@@ -43,7 +43,7 @@ module.exports = (app) => {
 	 * @type GET
 	 * @description Get all hotel's
 	 */
-	app.get('/hotels', (req, res, next) => {
+	app.get('/api/hotels', (req, res, next) => {
 		Hotel.find()
 		// Select what values show
 			.select(properties)
@@ -156,7 +156,7 @@ module.exports = (app) => {
 	 * @type POST
 	 * @description Send new hotel to DB
 	 */
-	app.post('/hotels', (req, res, next) => {
+	app.post('/api/hotels', (req, res, next) => {
 		// const imageFiles = [];
 		// req.files.forEach(file => {
 		// 	imageFiles.push(file.path);
@@ -228,7 +228,7 @@ module.exports = (app) => {
 	 * @type GET
 	 * @description Get hotel by ID
 	 */
-	app.get('/hotels/:hotelsId', (req, res, next) => {
+	app.get('/api/hotels/:hotelsId', (req, res, next) => {
 		const id = req.params.hotelsId;
 
 		Hotel.findById(id)
@@ -258,7 +258,7 @@ module.exports = (app) => {
 		 {"propName": "hotel_city", "value": "Anaheim"}
 	 *	 ]
 	 */
-	app.patch('/hotels/:hotelsId', (req, res, next) => {
+	app.patch('/api/hotels/:hotelsId', (req, res, next) => {
 		const id = req.params.hotelsId;
 		const updateOps = {};
 		for (const ops of req.body) {
@@ -280,7 +280,7 @@ module.exports = (app) => {
 	 * @type DELETE
 	 * @description Delete hotel by ID
 	 */
-	app.delete('/hotels/:hotelsId', (req, res, next) => {
+	app.delete('/api/hotels/:hotelsId', (req, res, next) => {
 		const id = req.params.hotelsId;
 		Hotel.remove({
 			_id: id

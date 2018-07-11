@@ -90,7 +90,6 @@ class Weather extends Component {
 	}
 
 	render() {
-		console.log("Weather is: ", this.state.weather);
 		const celsius = Math.round(this.state.temperature - 273.15);
 
 		return (

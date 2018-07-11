@@ -55,7 +55,7 @@ class AppRouter extends React.Component {
 					       render={(props) => <SingleHotel {...props} />}
 					/>
 					<Route path="/cart" component={Cart}/>
-					<Route path="/buy" component={BuyHotel}/>
+					<Route path="/buy" component={BuyHotel} exact/>
 
 					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.auth} exact/>
 					<Route path="/forbidden" component={Forbidden}/>

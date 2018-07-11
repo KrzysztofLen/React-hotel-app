@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchHotels = () => async(dispatch) => {
-	const res = await axios.get('/hotels');
+	const res = await axios.get('/api/hotels');
 	dispatch({
 		type: 'FETCH_HOTELS',
 		payload: res.data.hotels
@@ -35,7 +35,7 @@ export const handleToken = (token) => async (dispatch) => {
 };
 
 export const fetchHotelsLength = () => async(dispatch) => {
-	const res = await axios.get('/count');
+	const res = await axios.get('/api/count');
 	dispatch({
 		type: 'HOTELS_LENGTH',
 		payload: res.data
@@ -44,7 +44,7 @@ export const fetchHotelsLength = () => async(dispatch) => {
 
 export const submitSurvey = (values, history) => async (dispatch) => {
 	console.log('VALUES', values);
-	const res = await axios.post('/hotels', values);
+	const res = await axios.post('/api/hotels', values);
 	history.push('/add/success');
 	dispatch({
 		type: 'SUBMIT_SURVEY',

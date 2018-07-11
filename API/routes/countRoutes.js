@@ -6,7 +6,7 @@ const chalk = require('../chalk');
  * @description GET top 15 hotel by
  */
 module.exports = (app) => {
-	app.get('/count', (req, res, next) => {
+	app.get('/api/count', (req, res, next) => {
 		Hotel.find().select()
 			.exec()
 			.then(docs => {
