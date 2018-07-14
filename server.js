@@ -50,6 +50,9 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
+// MIDDLEWARES #########################################################################################################
+require('./API/middlewares/serverLog.js')(app);
+
 // LAUNCH ##############################################################################################################
 app.listen(PORT, () => {
 	console.log(chalk.info(`==================Example app listening on port ${PORT}!==================`));
