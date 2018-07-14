@@ -51,7 +51,7 @@ class Weather extends Component {
 	}
 
 	async getWeather() {
-		const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${this
+		const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${this
 			.state.lat}&lon=${this.state.lng}&appid=${weatherKey}`;
 		await axios
 			.get(weatherUrl)

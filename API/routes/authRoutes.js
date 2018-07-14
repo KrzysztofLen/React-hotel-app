@@ -1,19 +1,14 @@
 const passport = require('passport');
 
 module.exports = (app) => {
-	//#TODO Make again auth google routh
-	// app.get('/auth/google', passport.authenticate('google', {
-	// 		scope: ['profile', 'email']
-	// 	})
-	// );
-
-	app.get('/auth/test', (req,res) => {
-		res.send({
-			message: 'Hello'
+	app.get('/auth/google', passport.authenticate('google', {
+			scope: ['profile', 'email']
 		})
-	});
+	);
 
-	app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
+	app.get('/auth/google/callback', passport.authenticate('google', {
+		failureRedirect: '/'
+	}), (req, res) => {
 		res.redirect('/');
 	});
 
