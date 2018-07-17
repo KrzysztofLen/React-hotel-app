@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import {connect} from "react-redux";
-import {Check} from '../SVG/Check';
+import {GooglePlus} from '../SVG/GooglePlus';
 import {Cross} from '../SVG/Cross';
 import Payments from "../Payments/Payments";
 
@@ -15,11 +15,11 @@ class LoginSystem extends React.Component<Props> {
 		switch (this.props.auth) {
 			case null:
 				return (
-					<a href="/auth/google" className="button is-success">Login<Check width={20} height={20}/></a>
+					<a href="/auth/google" className="button is-google">Sign in with Google<GooglePlus width={20} height={20}/></a>
 				);
 			case false:
 				return (
-					<a href="/auth/google" className="button is-success">Login<Check width={20} height={20}/></a>
+					<a href="/auth/google" className="button is-google">Sign in with Google<GooglePlus width={20} height={20}/></a>
 				);
 			default:
 				return (

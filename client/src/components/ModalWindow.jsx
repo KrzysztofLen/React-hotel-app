@@ -15,6 +15,7 @@ const customStyles = {
 };
 
 const ModalWindow = (props) => {
+	console.log(props.component);
 	return (
 		<Modal
 			isOpen={props.isOpen}
