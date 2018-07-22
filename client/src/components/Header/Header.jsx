@@ -33,8 +33,7 @@ export class Header extends Component {
 			<header className="header">
 				<Logo/>
 				<Search/>
-				<button className="button is-success" onClick={this.onModalOpen}>Login<Check width={20} height={20}/>
-				</button>
+				<button className="button is-success" onClick={this.onModalOpen}>Login<Check width={20} height={20} /></button>
 				<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<LoginSystem/>}/>
 			</header>
 		)

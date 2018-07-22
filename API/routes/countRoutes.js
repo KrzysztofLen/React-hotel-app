@@ -21,3 +21,16 @@ module.exports = (app) => {
 		});
 	});
 };
+
+//#TODO check it work?
+module.exports = (app) => {
+	app.get('/api/count', (req, res, next) => {
+		Hotel.find().count().then(count => {
+				res.status(200).json(count);
+				console.log(chalk.success(`[Success get data /count] Count: ${count}`));
+			}).catch(err => {
+			console.log(chalk.error('[Failure]', err));
+			res.status(500).json(err);
+		});
+	});
+};

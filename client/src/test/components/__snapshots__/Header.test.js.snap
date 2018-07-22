@@ -6,6 +6,20 @@ exports[`should render Header correctly 1`] = `
 >
   <Logo />
   <Connect(Search) />
-  <Connect(LoginSystem) />
+  <button
+    className="button is-success"
+    onClick={[Function]}
+  >
+    Login
+    <Check
+      height={20}
+      width={20}
+    />
+  </button>
+  <ModalWindow
+    closeModal={[Function]}
+    component={<Connect(LoginSystem) />}
+    isOpen={false}
+  />
 </header>
 `;

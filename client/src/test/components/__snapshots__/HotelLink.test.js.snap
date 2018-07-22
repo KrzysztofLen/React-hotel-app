@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render HotelRating Link correctly 1`] = `
+<div
+  className="hotel__details--name"
+>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    className="hotel__link"
+    to="/hotel/0"
+  >
+    Test Sunset Willow Resort
+  </NavLink>
+</div>
+`;

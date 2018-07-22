@@ -57,3 +57,5 @@ require('./API/middlewares/serverLog.js')(app);
 app.listen(PORT, () => {
 	console.log(chalk.info(`==================Example app listening on port ${PORT}!==================`));
 });
+
+module.exports = app;
