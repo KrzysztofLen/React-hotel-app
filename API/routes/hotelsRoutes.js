@@ -192,7 +192,7 @@ module.exports = (app) => {
 		hotel.save().then(result => {
 			res.status(201).json({
 				// showing hotel schema in Postman
-				message: "Handling POST request to /hotels",
+				message: "Hotel properly added to DB",
 				createdHotel: {
 					_id: result._id,
 					hotel_name: result.hotel_name,
@@ -236,16 +236,16 @@ module.exports = (app) => {
 			.select(properties)
 			.exec()
 			.then(doc => {
-				if (doc) {
-					res.status(200).json(doc);
-				} else {
-					res.status(404).json({
-						message: "No valid entry found for provided ID"
-					});
-				}
+				res.status(200).json(doc);
 			}).catch(err => {
-			console.log('\x1b[31m', '[Failure]', err);
-			res.status(500).json(err);
+			if (err.reason === undefined) {
+				res.status(404).json({
+					message: "No valid entry found for provided ID"
+				});
+			} else {
+				console.log('\x1b[31m', '[Failure]', err);
+				res.status(500).json(err);
+			}
 		});
 	});
 
