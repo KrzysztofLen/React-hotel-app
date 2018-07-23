@@ -11,6 +11,9 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install && yarn build"
   },
   "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "concurrently": "^3.6.0",
@@ -24,10 +27,5 @@
     "passport-google-oauth20": "^1.0.0",
     "stripe": "^6.1.1",
     "supertest": "^3.1.0"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
   }
 }
