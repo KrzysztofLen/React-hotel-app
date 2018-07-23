@@ -3,7 +3,7 @@
 exports[`should render Logo correctly 1`] = `
 <NavLink
   activeClassName="active"
-  ariaCurrent="true"
+  aria-current="page"
   to="/"
 >
   <img
