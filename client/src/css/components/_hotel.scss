@@ -159,6 +159,7 @@
 	}
 }
 
+// LIST VIEW STYLES
 .hotel__container--list {
 	grid-template-columns: 15rem 1fr 52rem;
 	grid-template-rows: 8rem auto;
@@ -177,7 +178,7 @@
 		right: 0;
 	}
 
-	.rate__color--fair {
+	.rate__color {
 		margin: 0;
 		margin-right: 10px;
 	}

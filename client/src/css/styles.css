@@ -764,7 +764,7 @@ body.ReactModal__Body--open {
     grid-row-end: 2; }
   .hotel__container--list .hotel__details--more {
     right: 0; }
-  .hotel__container--list .rate__color--fair {
+  .hotel__container--list .rate__color {
     margin: 0;
     margin-right: 10px; }
   .hotel__container--list .hotel__details--description {
