@@ -1,8 +1,17 @@
+// @flow
 import React from 'react';
 import HotelRating from '../HotelRating/HotelRating';
-import PropTypes from 'prop-types';
 
-export const HotelOverview = (props) => {
+type Props = {
+	hotel_name: string,
+	hotel_stars: number,
+	hotel_city: string,
+	hotel_province: string,
+	hotel_rating: number,
+	hotel_reviews: number
+}
+
+export const HotelOverview = (props: Props) => {
 	return (
 		<div className="overview">
 			<h1 className="overview__heading">
@@ -13,7 +22,7 @@ export const HotelOverview = (props) => {
 			</div>
 
 			<div className="overview__location">
-				<button className="btn btn--inline">{props.hotel_city}, {props.hotel_province}</button>
+				<button className="inline">{props.hotel_city}, {props.hotel_province}</button>
 			</div>
 
 			<div className="overview__rating">
@@ -22,8 +31,4 @@ export const HotelOverview = (props) => {
 			</div>
 		</div>
 	)
-};
-
-HotelOverview.propTypes = {
-	props: PropTypes.object
 };

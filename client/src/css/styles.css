@@ -1876,6 +1876,7 @@ body.ReactModal__Body--open {
 .is-google {
   color: #fff;
   background-color: #dd4b39;
+  max-width: 135px;
   position: relative;
   padding-left: 65px;
   text-align: left;
@@ -1902,6 +1903,21 @@ body.ReactModal__Body--open {
     font-size: 1.8em;
     align-items: center;
     height: 100%; }
+
+.inline {
+  border: none;
+  color: #17A5FD;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all .2s; }
+  .inline:hover {
+    color: #333;
+    background: transparent; }
 
 .logo {
   height: 3.25rem;

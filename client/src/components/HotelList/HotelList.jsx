@@ -23,8 +23,6 @@ class HotelsList extends React.Component<Props, State> {
 			page: 1,
 			spinner: true
 		};
-
-		this.onScroll = this.onScroll.bind(this);
 	}
 
 	componentDidMount() {
