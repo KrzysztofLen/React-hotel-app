@@ -131,260 +131,6 @@ body.ReactModal__Body--open {
       background-color: #17A5FD;
       color: #fff; }
 
-.question__container {
-  background-color: #fff;
-  display: flex;
-  box-shadow: 6px 2px 11px -4px rgba(0, 0, 0, 0.36);
-  border-bottom: 1px solid #cacbcd; }
-
-.question__avatar {
-  border-radius: 50%;
-  padding: 20px;
-  max-width: 50px;
-  cursor: pointer; }
-
-.question__avatar-panel {
-  background-color: #dff3fd;
-  height: 87%; }
-
-.question__avatar-container {
-  display: flex;
-  position: relative;
-  margin: 0;
-  width: 100%; }
-
-.question__asking {
-  bottom: 50px;
-  position: absolute;
-  font-size: 1.2rem;
-  color: #a7a9ac;
-  border-top: 1px solid #a7a9ac;
-  display: block;
-  text-align: center;
-  width: 55px;
-  padding: 8px;
-  box-sizing: content-box;
-  margin: 10px; }
-
-.question__side {
-  background: #fff;
-  margin: 0;
-  display: flex;
-  width: 22%; }
-  @media only screen and (max-width: 768px) {
-    .question__side {
-      justify-content: flex-end; } }
-  @media only screen and (max-width: 1024px) {
-    .question__side {
-      max-width: 100%;
-      width: auto; } }
-
-.question__question {
-  width: 100%; }
-  @media only screen and (max-width: 1024px) {
-    .question__question {
-      padding-bottom: 46px; } }
-  .question__question .question {
-    margin: 0;
-    color: #0266b3;
-    font-size: 1.6rem;
-    font-style: italic;
-    font-weight: bold;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    display: block;
-    text-decoration: none;
-    font-family: 'Quintessential'; }
-  .question__question .unfollow {
-    top: 0;
-    transform: translate(-50%, 50px);
-    display: flex;
-    position: absolute;
-    right: 0;
-    font-size: 13px;
-    font-weight: bold;
-    color: #0266b3;
-    text-decoration: none; }
-
-.question__connections-list {
-  align-self: flex-end; }
-  @media only screen and (max-width: 768px) {
-    .question__connections-list {
-      padding-right: 20px; } }
-  @media (min-width: 1015px) and (max-width: 1366px) {
-    .question__connections-list {
-      padding-left: 20px; } }
-
-.question__connections {
-  list-style-type: none;
-  padding: 28px 0px;
-  font-size: 14px;
-  font-style: italic; }
-  .question__connections span {
-    font-style: normal;
-    font-weight: bold;
-    padding-right: 10px; }
-
-.question__last-time {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Quintessential'; }
-  .question__last-time span {
-    font-style: normal;
-    font-weight: bold;
-    padding: 0 10px; }
-
-.person__container {
-  background: #fff;
-  height: 200px;
-  display: flex;
-  padding-top: 32px;
-  width: 78%;
-  float: left; }
-  @media (min-width: 1366px) {
-    .person__container {
-      padding-bottom: 51px; } }
-  @media only screen and (max-width: 768px) {
-    .person__container {
-      left: 0;
-      position: absolute; } }
-  @media only screen and (max-width: 1024px) {
-    .person__container {
-      width: 60%; } }
-
-.person__avatar {
-  margin: 20px auto;
-  display: block;
-  border-radius: 50%; }
-
-.person__asking, .more-activities__text {
-  bottom: 0;
-  position: absolute;
-  font-size: 1.2rem;
-  color: #a7a9ac;
-  border-top: 1px solid #a7a9ac;
-  display: flex;
-  text-align: center;
-  width: 80%;
-  padding: 8px 0;
-  box-sizing: border-box;
-  margin: 10px 10px;
-  justify-items: center;
-  justify-content: center;
-  word-wrap: break-word; }
-
-.person-panel, .more-activities__panel {
-  background-color: #eeeeee;
-  margin: 0;
-  position: relative;
-  margin-left: 10px;
-  width: 100px; }
-  .person-panel::before, .more-activities__panel::before {
-    position: absolute;
-    content: '';
-    height: 13px;
-    width: 13px;
-    background: #a7a9ac;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 50%;
-    left: 45%;
-    bottom: -7px; }
-
-.panel {
-  max-width: 78%;
-  background-color: #dff3fd; }
-  @media only screen and (max-width: 1024px) {
-    .panel {
-      max-width: 100%; } }
-
-.person-panel:last-child:before, .more-activities__panel:last-child:before {
-  background: #000; }
-
-.person-panel:last-child .person__asking, .more-activities__panel:last-child .person__asking, .person-panel:last-child .more-activities__text, .more-activities__panel:last-child .more-activities__text {
-  border-top: 1px solid #000; }
-
-.more-activities__panel {
-  background: #fff; }
-
-.more-activities__number {
-  padding: 20px;
-  display: flex;
-  transform: translateY(100%);
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold; }
-
-.more-activities__text {
-  border-top: none;
-  color: #2d2c2e;
-  font-family: 'Quintessential';
-  font-weight: 600; }
-
-@media (max-width: 685px) {
-  .question__connections-list {
-    padding-right: 35px;
-    padding-left: 0;
-    width: 30%; }
-  .question__avatar-panel {
-    height: 30%; }
-  .question__avatar-panel .question__asking {
-    display: none; } }
-
-.single-question__container {
-  box-shadow: 6px 2px 11px -4px rgba(0, 0, 0, 0.36); }
-
-.single-question__text {
-  background: #fff;
-  display: grid;
-  grid-template-columns: 70% 30%;
-  padding-top: 25px;
-  padding-bottom: 35px; }
-  .single-question__text--question {
-    padding: 0 20px;
-    font-size: 12px;
-    line-height: 1.6;
-    margin: 0; }
-
-.single-question__votes {
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Quintessential'; }
-
-.single-question__count-container {
-  display: flex;
-  margin-right: 80px;
-  justify-content: flex-end; }
-
-.single-question__counter {
-  font-size: 16px;
-  font-weight: bold;
-  padding-right: 10px; }
-
-.single-question__counter-btn-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 113px;
-  right: 25px; }
-
-.single-question__answered {
-  width: 100%;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Quintessential';
-  text-align: center;
-  margin-top: 50px; }
-  .single-question__answered span {
-    font-style: normal;
-    font-weight: bold;
-    padding: 0 10px; }
-
 .single-comment__container {
   display: flex;
   position: relative;
@@ -1006,6 +752,41 @@ body.ReactModal__Body--open {
   justify-content: flex-start;
   top: 0;
   position: absolute; }
+
+.hotel__container--list {
+  grid-template-columns: 15rem 1fr 52rem;
+  grid-template-rows: 8rem auto; }
+  .hotel__container--list .hotel__details-box {
+    display: flex;
+    align-items: center;
+    grid-row-end: 2; }
+  .hotel__container--list .hotel__image-container {
+    grid-row-end: 2; }
+  .hotel__container--list .hotel__details--more {
+    right: 0; }
+  .hotel__container--list .rate__color--fair {
+    margin: 0;
+    margin-right: 10px; }
+  .hotel__container--list .hotel__details--description {
+    grid-column-start: 2;
+    grid-row-start: 2; }
+  .hotel__container--list .facilities {
+    grid-column-start: 3; }
+  .hotel__container--list .hotel__details--price {
+    margin-right: 10px; }
+  .hotel__container--list .opinion__hotel-rating {
+    margin-right: 10px; }
+  .hotel__container--list .hotel__link {
+    font-size: 25px;
+    font-size: 2.5rem; }
+  .hotel__container--list .hotel__details--adress {
+    font-size: 16px;
+    font-size: 1.6rem; }
+  .hotel__container--list .hotel__details--adressBox {
+    margin-top: 3rem; }
+  .hotel__container--list .hotel__details--priceValue {
+    font-size: 30px;
+    font-size: 3rem; }
 
 @keyframes move {
   0% {

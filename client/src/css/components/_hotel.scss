@@ -159,6 +159,63 @@
 	}
 }
 
+.hotel__container--list {
+	grid-template-columns: 15rem 1fr 52rem;
+	grid-template-rows: 8rem auto;
+
+	.hotel__details-box {
+		display: flex;
+		align-items: center;
+		grid-row-end: 2;
+	}
+
+	.hotel__image-container {
+		grid-row-end: 2;
+	}
+
+	.hotel__details--more {
+		right: 0;
+	}
+
+	.rate__color--fair {
+		margin: 0;
+		margin-right: 10px;
+	}
+
+	.hotel__details--description {
+		grid-column-start: 2;
+		grid-row-start: 2;
+	}
+
+	.facilities {
+		grid-column-start: 3;
+	}
+
+	.hotel__details--price {
+		margin-right: 10px;
+	}
+
+	.opinion__hotel-rating {
+		margin-right: 10px;
+	}
+
+	.hotel__link {
+		@include font-size(2.5);
+	}
+
+	.hotel__details--adress {
+		@include font-size(1.6);
+	}
+
+	.hotel__details--adressBox {
+		margin-top: 3rem;
+	}
+
+	.hotel__details--priceValue {
+		@include font-size(3);
+	}
+}
+
 @keyframes move {
 	0% {
 		opacity: 0.5;
