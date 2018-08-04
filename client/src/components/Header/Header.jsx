@@ -4,9 +4,6 @@ import {Logo} from '../Logo/Logo';
 import {getFilteredHotels} from "../../selectors/getFilteredHotels";
 import {connect} from "react-redux";
 import Search from "../Search/Search";
-import ModalWindow from "../ModalWindow";
-import {Check} from "../SVG/Check";
-import Success from "../Success/Success";
 
 export class Header extends Component {
 	constructor(props) {
@@ -33,8 +30,7 @@ export class Header extends Component {
 			<header className="header">
 				<Logo/>
 				<Search/>
-				<button className="button is-success" onClick={this.onModalOpen}>Login<Check width={20} height={20} /></button>
-				<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<LoginSystem/>}/>
+				<LoginSystem/>
 			</header>
 		)
 	}

@@ -8,25 +8,26 @@ import AddHotelField from "./AddHotelField";
 import {FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import AddHotelNumberField from "./AddHotelNumberField";
 import AddHotelOptionField from "./AddHotelOptionField";
+import FileInput from "./FileInput";
 
 class AddHotelForm extends Component {
 	renderFields() {
 		return (
 			<React.Fragment>
-				<div className="hotel-form__formValueBox">
-					{FIELDS.map(({label, name}, i) => {
-						return (
-							<Field key={i} label={label} type="text" name={name} component={AddHotelField}/>
-						)
-					})}
-				</div>
-				<div className="hotel-form__formValueBox">
-					{NUMBER_FIELDS.map(({label, name}, i) => {
-						return (
-							<Field key={i} label={label} type="number" name={name} component={AddHotelNumberField}/>
-						)
-					})}
-				</div>
+				{/*<div className="hotel-form__formValueBox">*/}
+					{/*{FIELDS.map(({label, name}, i) => {*/}
+						{/*return (*/}
+							{/*<Field key={i} label={label} type="text" name={name} component={AddHotelField}/>*/}
+						{/*)*/}
+					{/*})}*/}
+				{/*</div>*/}
+				{/*<div className="hotel-form__formValueBox">*/}
+					{/*{NUMBER_FIELDS.map(({label, name}, i) => {*/}
+						{/*return (*/}
+							{/*<Field key={i} label={label} type="number" name={name} component={AddHotelNumberField}/>*/}
+						{/*)*/}
+					{/*})}*/}
+				{/*</div>*/}
 				<div className="hotel-form__formValueBox">
 					{BOOLEAN_FIELDS.map(({label, name}, i) => {
 						return (
@@ -34,6 +35,7 @@ class AddHotelForm extends Component {
 						)
 					})}
 				</div>
+				<Field type="file" name="hotel_images" component={FileInput} />
 			</React.Fragment>
 		)
 	}
@@ -43,7 +45,9 @@ class AddHotelForm extends Component {
 			<React.Fragment>
 				<div className="hotel-form__container">
 					<h5 className="hotel-form__header">Fill to submit</h5>
-					<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)} className="hotel-form__form">
+					<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)} className="hotel-form__form"
+					      encType="multipart/form-data"
+					      method="post">
 						<div className="hotel-form__formValuesBox">
 							{this.renderFields()}
 						</div>

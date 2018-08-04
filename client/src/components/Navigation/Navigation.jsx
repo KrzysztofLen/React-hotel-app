@@ -48,8 +48,8 @@ Navigation.defaultProps = {
 			path: "/buy"
 		},
 		{
-			link: "Cart",
-			path: "/cart"
+			link: "Reservation",
+			path: "/reservation"
 		},
 		{
 			link: "Add Hotel",

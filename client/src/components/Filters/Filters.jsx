@@ -3,6 +3,8 @@ import {List} from "../SVG/List";
 import {Full} from "../SVG/Full";
 import {connect} from "react-redux";
 import * as actions from '../../actions';
+import {switchView} from "../../actions";
+import {searchHotels} from "../../actions";
 
 
 class Filters extends Component {
@@ -28,10 +30,12 @@ class Filters extends Component {
 	}
 
 	setActive(id) {
-		this.setState({activeId: id})
+		this.setState({activeId: id});
+		this.props.switchView(id);
 	}
 
 	render() {
+		console.log(this.state);
 		return (
 			<div className="filters">
 				<div className="filters__views">
@@ -52,10 +56,13 @@ class Filters extends Component {
 }
 
 function mapStateToProps(state) {
+	console.log(state);
 	return {
-		state: state.viewSwitch,
+		viewSwitch: state.viewSwitch,
 		length: state.length.count
 	}
 }
 
-export default connect(mapStateToProps, actions)(Filters);
+const mapDispatchToProps = {switchView};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);

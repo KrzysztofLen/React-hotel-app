@@ -156,12 +156,14 @@ module.exports = (app) => {
 	 * @type POST
 	 * @description Send new hotel to DB
 	 */
-	app.post('/api/hotels', (req, res, next) => {
-		// const imageFiles = [];
-		// req.files.forEach(file => {
-		// 	imageFiles.push(file.path);
-		// });
-
+	app.post('/api/hotels', upload.array('hotel_images'), (req, res, next) => {
+		const imageFiles = [];
+		console.log('REQ FILES', req.files);
+		req.files.forEach(file => {
+			console.log(file);
+			//imageFiles.push(file.path);
+		});
+		console.log(imageFiles);
 		const {hotel_name, hotel_adress, hotel_city, hotel_province, hotel_price, hotel_distance, hotel_description,
 			hotel_stars, hotel_rating, hotel_reviews, is_new, is_apartment, facilities_restaurant, facilities_gym,
 			facilities_wifi, facilities_card_payment, facilities_game_room} = req.body;
@@ -184,8 +186,8 @@ module.exports = (app) => {
 			facilities_gym,
 			facilities_wifi,
 			facilities_card_payment,
-			facilities_game_room
-			// hotel_images
+			facilities_game_room,
+			hotel_images: imageFiles
 		});
 
 		// Save hotel based on hotel schema object
@@ -211,8 +213,8 @@ module.exports = (app) => {
 					facilities_gym: result.facilities_gym,
 					facilities_wifi: result.facilities_wifi,
 					facilities_card_payment: result.facilities_card_payment,
-					facilities_game_room: result.facilities_game_room
-					// hotel_images: result.hotel_images
+					facilities_game_room: result.facilities_game_room,
+					hotel_images: result.hotel_images
 				}
 			});
 		}).catch(err => {
@@ -220,9 +222,6 @@ module.exports = (app) => {
 			res.status(500).json(err);
 		});
 	});
-
-
-
 
 	/**
 	 * @type GET

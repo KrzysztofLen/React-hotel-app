@@ -1,5 +1,5 @@
+// @flow
 import React, {Component} from 'react';
-
 import HotelImage from '../HotelImage/HotelImage';
 import HotelLink from '../HotelLink/HotelLink';
 import HotelRating from '../HotelRating/HotelRating';
@@ -12,6 +12,7 @@ import HotelDescription from '../HotelDescription/HotelDescription';
 import isNew from '../../assets/new.svg';
 import Modal_OLD from "../Modal_OLD";
 import ModalWindow from "../ModalWindow";
+import {connect} from "react-redux";
 
 class HotelListItem extends Component {
 	constructor(props) {
@@ -47,7 +48,7 @@ class HotelListItem extends Component {
 
 	render() {
 		return (
-			<div className="hotel__container">
+			<div className={this.props.viewSwitch === 1 ? "hotel__container" : "hotel__container--list"}>
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
 					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={<Modal_OLD value={this.props}/>}/>
@@ -89,4 +90,14 @@ class HotelListItem extends Component {
 	}
 }
 
-export default HotelListItem;
+interface ViewSwitch {
+	viewSwitch: number
+}
+
+function mapStateToProps({viewSwitch}): ViewSwitch {
+	return {
+		viewSwitch
+	}
+}
+
+export default connect(mapStateToProps, null)(HotelListItem);

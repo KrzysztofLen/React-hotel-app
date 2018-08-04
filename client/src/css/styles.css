@@ -107,7 +107,8 @@ body.ReactModal__Body--open {
   border-bottom: 1px solid #f2f2f2;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
   @media only screen and (max-width: 31.25em) {
     .header {
       flex-wrap: wrap;
@@ -1407,7 +1408,8 @@ body.ReactModal__Body--open {
 .login__container {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-right: 10px; }
 
 .login__profile {
   margin-right: 2rem;

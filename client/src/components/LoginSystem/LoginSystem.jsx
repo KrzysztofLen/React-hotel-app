@@ -1,25 +1,50 @@
 // @flow
 import * as React from 'react';
 import {connect} from "react-redux";
-import {GooglePlus} from '../SVG/GooglePlus';
 import {Cross} from '../SVG/Cross';
 import Payments from "../Payments/Payments";
+import LoginModal from "./LoginModal";
 
 type Props = {
 	auth: Object,
 	dispatch: Function
 }
 
-class LoginSystem extends React.Component<Props> {
+type State = {
+	modalIsOpen: boolean
+}
+
+class LoginSystem extends React.Component<Props, State> {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			modalIsOpen: false
+		};
+
+		(this: any).onModalOpen = this.onModalOpen.bind(this);
+		(this: any).onCloseModal = this.onCloseModal.bind(this);
+	}
+
+	onModalOpen() {
+		this.setState({modalIsOpen: true});
+	}
+
+	onCloseModal() {
+		this.setState({modalIsOpen: false});
+	}
+
 	renderContent() {
 		switch (this.props.auth) {
 			case null:
 				return (
-					<a href="/auth/google" className="button is-google">Sign in with Google<GooglePlus width={20} height={20}/></a>
+					<LoginModal onModalOpen={this.onModalOpen} onCloseModal={this.onCloseModal}
+					            isOpen={this.state.modalIsOpen}/>
 				);
 			case false:
 				return (
-					<a href="/auth/google" className="button is-google">Sign in with Google<GooglePlus width={20} height={20}/></a>
+					<LoginModal onModalOpen={this.onModalOpen} onCloseModal={this.onCloseModal}
+					            isOpen={this.state.modalIsOpen}/>
 				);
 			default:
 				return (
@@ -35,7 +60,6 @@ class LoginSystem extends React.Component<Props> {
 	}
 
 	render() {
-		console.log(this.props.auth);
 		return (
 			<div className="login__container">
 				{this.props.auth && <span className="login__profile">Hello
