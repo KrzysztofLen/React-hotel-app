@@ -4,6 +4,10 @@
 		align-items: center;
 		justify-content: center;
 		padding-right: 10px;
+
+		@include media-queries(L) {
+			padding-bottom: 10px;
+		}
 	}
 
 	&__profile {

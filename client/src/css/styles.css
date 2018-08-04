@@ -109,6 +109,11 @@ body.ReactModal__Body--open {
   justify-content: space-between;
   align-items: center;
   position: relative; }
+  @media only screen and (max-width: 1024px) {
+    .header {
+      flex-direction: column;
+      height: 100%;
+      position: relative; } }
   @media only screen and (max-width: 31.25em) {
     .header {
       flex-wrap: wrap;
@@ -403,6 +408,11 @@ body.ReactModal__Body--open {
   align-items: center;
   justify-content: center;
   margin: 0 auto; }
+  @media only screen and (max-width: 1024px) {
+    .search {
+      flex: 0;
+      width: 50%;
+      padding: 20px; } }
   @media only screen and (max-width: 31.25em) {
     .search {
       order: 1;
@@ -421,6 +431,10 @@ body.ReactModal__Body--open {
     background-image: url("../assets/magnifying-glass.svg");
     background-repeat: no-repeat;
     background-position: 98%; }
+    @media only screen and (max-width: 1024px) {
+      .search__input {
+        padding: 1rem 2rem;
+        height: 17px; } }
     .search__input:focus {
       outline: none;
       width: 100%;
@@ -545,6 +559,9 @@ body.ReactModal__Body--open {
         height: 1.5rem; } }
   .side-nav__link span {
     margin-left: 8rem; }
+    @media only screen and (max-width: 1024px) {
+      .side-nav__link span {
+        margin-left: 2rem; } }
 
 .legal {
   font-size: 1.2rem;
@@ -1191,6 +1208,9 @@ body.ReactModal__Body--open {
   align-items: center;
   justify-content: center;
   padding-right: 10px; }
+  @media only screen and (max-width: 1024px) {
+    .login__container {
+      padding-bottom: 10px; } }
 
 .login__profile {
   margin-right: 2rem;
@@ -1886,6 +1906,11 @@ body.ReactModal__Body--open {
 .logo {
   height: 3.25rem;
   margin-left: 2rem; }
+  @media only screen and (max-width: 1024px) {
+    .logo {
+      position: absolute;
+      left: 0;
+      top: 20px; } }
 
 .fa-star {
   color: #014c7a;

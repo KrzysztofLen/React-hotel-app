@@ -8,6 +8,12 @@
 
 	margin: 0 auto;
 
+	@include media-queries(L) {
+		flex: 0;
+		width: 50%;
+		padding: 20px;
+	}
+
 	@media only screen and (max-width: $bp-smallest) {
 		order: 1;
 		flex: 0 0 100%;
@@ -27,6 +33,11 @@
 		background-image: url('../assets/magnifying-glass.svg');
 		background-repeat: no-repeat;
 		background-position: 98%;
+
+		@include media-queries(L) {
+			padding: 1rem 2rem;
+			height: 17px;
+		}
 
 		&:focus {
 			outline: none;

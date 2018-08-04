@@ -1,65 +1,50 @@
-import React, {Component} from 'react';
+// @flow
+import * as React from 'react';
 import {List} from "../SVG/List";
 import {Full} from "../SVG/Full";
 import {connect} from "react-redux";
-import * as actions from '../../actions';
 import {switchView} from "../../actions";
-import {searchHotels} from "../../actions";
 
+type Props = {
+	switchView: Function,
+	viewSwitch: number,
+	length: number
+}
 
-class Filters extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			activeId: 1,
-			hotelsLength: 0
-		};
-
-		this.setActive = this.setActive.bind(this);
-	}
-
-	componentDidMount() {
-		this._timer = setTimeout(() => {
-			this.setState({hotelsLength: this.props.length});
-		}, 1000);
-	}
-
-	componentWillUnmount() {
-		clearTimeout(this._timer);
-	}
-
-	setActive(id) {
-		this.setState({activeId: id});
+class Filters extends React.Component<Props> {
+	setActive = (id: number) => {
 		this.props.switchView(id);
-	}
+	};
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className="filters">
 				<div className="filters__views">
 					<div
-						className={this.state.activeId === 1 ? "filters__filter filters__filter--active" : "filters__filter"}
+						className={this.props.viewSwitch === 1 ? "filters__filter filters__filter--active" : "filters__filter"}
 						onClick={() => this.setActive(1)}><Full width="20" height="20"/></div>
 					<div
-						className={this.state.activeId === 2 ? "filters__filter filters__filter--active" : "filters__filter"}
+						className={this.props.viewSwitch === 2 ? "filters__filter filters__filter--active" : "filters__filter"}
 						onClick={() => this.setActive(2)}><List width="20" height="20"/></div>
 				</div>
 				<div className="filters__counter">
 					<span className="filters__counter-text">We've got : <span
-						className="filters__counter-number">{this.state.hotelsLength}</span> hotel's in our database</span>
+						className="filters__counter-number">{this.props.length}</span> hotel's in our database</span>
 				</div>
 			</div>
 		)
 	}
 }
 
-function mapStateToProps(state) {
-	console.log(state);
+interface viewSwitch {
+	viewSwitch: number,
+	length: number
+}
+
+function mapStateToProps({viewSwitch, length}): viewSwitch {
 	return {
-		viewSwitch: state.viewSwitch,
-		length: state.length.count
+		viewSwitch,
+		length: length.count
 	}
 }
 

@@ -1,4 +1,10 @@
 .logo {
 	height: 3.25rem;
 	margin-left: 2rem;
+
+	@include media-queries(L) {
+		position: absolute;
+		left: 0;
+		top: 20px;
+	}
 }

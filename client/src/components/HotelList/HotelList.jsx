@@ -34,14 +34,18 @@ class HotelsList extends React.Component<Props, State> {
 
 	onScroll = () => {
 		let windowHeight: number = window.innerHeight + window.scrollY;
-		let bodyOffset: number = document.body.offsetHeight;
 
-		if(windowHeight >= bodyOffset) {
-			this.setState((prevState): Object => {
-				return {
-					perpage: prevState.perpage + 3
-				}
-			});
+		// Flow fixed for document.body
+		if (document.body) {
+			let bodyOffset: number = document.body.offsetHeight;
+
+			if (windowHeight >= bodyOffset) {
+				this.setState((prevState): Object => {
+					return {
+						perpage: prevState.perpage + 3
+					}
+				});
+			}
 		}
 	};
 

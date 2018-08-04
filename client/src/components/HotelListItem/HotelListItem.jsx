@@ -1,5 +1,5 @@
 // @flow
-import React, {Component} from 'react';
+import * as React from 'react'
 import HotelImage from '../HotelImage/HotelImage';
 import HotelLink from '../HotelLink/HotelLink';
 import HotelRating from '../HotelRating/HotelRating';
@@ -14,12 +14,38 @@ import Modal_OLD from "../Modal_OLD";
 import ModalWindow from "../ModalWindow";
 import {connect} from "react-redux";
 
-class HotelListItem extends Component {
+type Props = {
+	viewSwitch: number,
+	data: data,
+	id: number,
+	index: number
+}
+
+interface data {
+	hotel_name: string,
+	hotel_distance: string,
+	hotel_adress: string,
+	hotel_stars: number,
+	hotel_price: number,
+	hotel_rating: number,
+	hotel_reviews: number,
+	hotel_description: string,
+	is_new: boolean,
+	hotel_images: Array<string>
+}
+
+type State = {
+	activeIndex: number | null,
+	modalIsOpen: boolean
+}
+
+class HotelListItem extends React.Component<Props, State> {
 	constructor(props) {
 		super(props);
-		this.onModalOpen = this.onModalOpen.bind(this);
-		this.onCloseModal = this.onCloseModal.bind(this);
-		this.onToggleButton = this.onToggleButton.bind(this);
+
+		(this: any).onModalOpen = this.onModalOpen.bind(this);
+		(this: any).onCloseModal = this.onCloseModal.bind(this);
+		(this: any).onToggleButton = this.onToggleButton.bind(this);
 
 		this.state = {
 			modalIsOpen: false,
@@ -35,7 +61,7 @@ class HotelListItem extends Component {
 		this.setState({modalIsOpen: false});
 	}
 
-	onToggleButton = (index) => {
+	onToggleButton = (index: number) => {
 		this.setState({
 			activeIndex: index
 		});

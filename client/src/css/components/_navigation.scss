@@ -131,6 +131,10 @@
 	&__link {
 		span {
 			margin-left: 8rem;
+
+			@include media-queries(L) {
+				margin-left: 2rem;
+			}
 		}
 	}
 }
