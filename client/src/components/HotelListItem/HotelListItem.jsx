@@ -30,7 +30,7 @@ interface data {
 	hotel_rating: number,
 	hotel_reviews: number,
 	hotel_description: string,
-	is_new: boolean,
+	is_new: boolean | string,
 	hotel_images: Array<string>
 }
 
@@ -73,6 +73,15 @@ class HotelListItem extends React.Component<Props, State> {
 	};
 
 	render() {
+		const now = (this.props.data.is_new) ? Date.now() - this.props.data.is_new : 0;
+
+
+		const duration: number = 7 * 24 * 60 * 60; // 7 days
+
+		console.log(this.props.data.is_new);
+		console.log(typeof this.props.data.is_new);
+		console.log(Date.now());
+		console.log(typeof Date.now());
 		return (
 			<div className={this.props.viewSwitch === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
@@ -110,7 +119,7 @@ class HotelListItem extends React.Component<Props, State> {
 					<HotelDescription description={this.props.data.hotel_description}/>
 					<HotelFacilities {...this.props.data}/>
 				</React.Fragment>}
-				{this.props.data.is_new ? <img src={isNew} alt="new" className="hotel__details--isNew"/> : null}
+				{now >= duration ? <img src={isNew} alt="new" className="hotel__details--isNew"/> : null}
 			</div>
 		)
 	}

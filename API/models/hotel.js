@@ -43,7 +43,7 @@ const hotelSchema = mongoose.Schema({
 		required: true
 	},
 	is_new: {
-		type: Boolean,
+		type: mongoose.Schema.Types.Mixed,
 		required: true
 	},
 	is_apartment: {
