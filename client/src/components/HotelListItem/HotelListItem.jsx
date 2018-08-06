@@ -9,7 +9,7 @@ import HotelOpinion from '../HotelOpinion/HotelOpinion';
 import HotelFacilities from '../HotelFacilities/HotelFacilities';
 import HotelDescription from '../HotelDescription/HotelDescription';
 
-import isNew from '../../assets/new.svg';
+import isNewIcon from '../../assets/new.svg';
 import Modal_OLD from "../Modal_OLD";
 import ModalWindow from "../ModalWindow";
 import {connect} from "react-redux";
@@ -73,15 +73,9 @@ class HotelListItem extends React.Component<Props, State> {
 	};
 
 	render() {
-		const now = (this.props.data.is_new) ? Date.now() - this.props.data.is_new : 0;
+		const isNew = (this.props.data.is_new) ? Date.now() - parseInt(this.props.data.is_new, 10) : 0;
+		const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
 
-
-		const duration: number = 7 * 24 * 60 * 60; // 7 days
-
-		console.log(this.props.data.is_new);
-		console.log(typeof this.props.data.is_new);
-		console.log(Date.now());
-		console.log(typeof Date.now());
 		return (
 			<div className={this.props.viewSwitch === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
@@ -119,7 +113,7 @@ class HotelListItem extends React.Component<Props, State> {
 					<HotelDescription description={this.props.data.hotel_description}/>
 					<HotelFacilities {...this.props.data}/>
 				</React.Fragment>}
-				{now >= duration ? <img src={isNew} alt="new" className="hotel__details--isNew"/> : null}
+				{(isNew >= isNewDuration || isNew === 0) ? null : <img src={isNewIcon} alt="new" className="hotel__details--isNew"/>}
 			</div>
 		)
 	}
