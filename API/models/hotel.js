@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const {Schema} = mongoose;
 
-const hotelSchema = mongoose.Schema({
+const hotelSchema = new Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 	hotel_name: {
 		type: String,
@@ -75,4 +76,4 @@ const hotelSchema = mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('Hotel', hotelSchema);
+mongoose.model('Hotel', hotelSchema);

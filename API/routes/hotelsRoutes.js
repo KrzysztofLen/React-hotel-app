@@ -3,7 +3,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const multer = require('multer');
 const pick = require('lodash.pick');
-const Hotel = require('../models/hotel');
+
+const Hotel = mongoose.model('Hotel');
 
 // Storage image file
 const storage = multer.diskStorage({

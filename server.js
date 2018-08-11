@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 5000;
 
 // MODELS ##############################################################################################################
 require('./API/models/Users');
+require('./API/models/hotel');
+require('./API/models/authenticate');
 
 // SERVICES ############################################################################################################
 require('./API/services/passport')(passport); // pass passport for configuration

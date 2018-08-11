@@ -1,4 +1,5 @@
-const Hotel = require("../models/hotel");
+const mongoose = require('mongoose');
+const Hotel = mongoose.model('Hotel');
 const chalk = require("../chalk");
 
 /**
