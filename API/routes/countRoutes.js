@@ -1,22 +1,12 @@
 const mongoose = require('mongoose');
 const Hotel = mongoose.model('Hotel');
-const chalk = require("../chalk");
+
+const {count_routes_get} = require("./../controllers/countRoutes");
 
 /**
  * @type GET
- * @description GET top 15 hotel by
+ * @description GET number of all hotels
  */
 module.exports = app => {
-	app.get("/api/count", (req, res, next) => {
-		Hotel.find()
-			.count()
-			.then(count => {
-				res.status(200).json({count});
-				console.log(chalk.success(`[Success get data /count] Count: ${count}`));
-			})
-			.catch(err => {
-				console.log(chalk.error("[Failure]", err));
-				res.status(500).json(err);
-			});
-	});
+	app.get("/api/count", count_routes_get);
 };
