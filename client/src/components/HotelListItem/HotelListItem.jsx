@@ -22,6 +22,7 @@ type Props = {
 }
 
 interface data {
+	_id: number,
 	hotel_name: string,
 	hotel_distance: string,
 	hotel_adress: string,
@@ -86,7 +87,7 @@ class HotelListItem extends React.Component<Props, State> {
 					<HotelLink hotelName={this.props.data.hotel_name}
 					           hotelDistance={this.props.data.hotel_distance}
 					           hotelAdress={this.props.data.hotel_adress}
-					           id={this.props.id}/>
+					           id={this.props.data._id}/>
 					<HotelRating rate={this.props.data.hotel_stars}/>
 				</div>
 				<div className="hotel__details--adressBox">

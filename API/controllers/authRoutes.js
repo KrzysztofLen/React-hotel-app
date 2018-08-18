@@ -3,6 +3,7 @@ const Authenticate = mongoose.model('authenticate');
 const pick = require('lodash.pick');
 const jwt = require('jsonwebtoken');
 const keys = require('../../API/config/keys');
+const bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
 	// Check if user email is already taken
@@ -75,7 +76,7 @@ exports.signup = (req, res) => {
 // })
 };
 
-exports.login =  (req, res) => {
+exports.login =  (req, res, next) => {
 	Authenticate.find({email: req.body.email}).exec().then(user => {
 		console.log(user);
 		if (user.length < 1) {
@@ -109,6 +110,7 @@ exports.login =  (req, res) => {
 };
 
 exports.users_get = (req, res, next) => {
+	console.log(res);
 	Authenticate.find()
 	// Select what values show
 		.exec()

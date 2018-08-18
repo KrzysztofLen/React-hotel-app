@@ -31,9 +31,9 @@ class SingleHotel extends React.Component {
 
 	render() {
 		const index = this.props.match.params.id;
-		const value = this.state.data.filter(x => x.id === index);
+		const value = this.state.data.filter(x => x._id === index);
 		const [desc] = value;
-		console.log(desc);
+
 		return (
 			<div className="content">
 				<div className="content__container">

@@ -58,8 +58,8 @@ class HotelsList extends React.Component<Props, State> {
 						{this.props.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
 								{elem.map((data: any, index: number): Object => <HotelListItem data={data}
-								                                                               key={data.id}
-								                                                               id={data.id}
+								                                                               key={data._id}
+								                                                               id={data._id}
 								                                                               index={index}/>
 								)}
 								<div className="hotel-list__more">

@@ -44,6 +44,7 @@ class AppRouter extends React.Component {
 	}
 
 	render() {
+		console.log("App router", this.props);
 		return (
 			<BrowserRouter>
 				<div>

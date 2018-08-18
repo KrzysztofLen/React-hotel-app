@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const multer = require('multer');
 const pick = require('lodash.pick');
+const {hotels_get, hotels_get_by_id} = require("./../controllers/hotelRoutes");
 
 const Hotel = mongoose.model('Hotel');
 
@@ -44,45 +45,7 @@ module.exports = (app) => {
 	 * @type GET
 	 * @description Get all hotel's
 	 */
-	app.get('/api/hotels', (req, res, next) => {
-		Hotel.find()
-		// Select what values show
-			.select(properties)
-			.exec()
-			.then(docs => {
-				// Create object hotels with hotels object inside
-				const response = {
-					hotels: docs.map(doc => {
-						return {
-							_id: doc._id,
-							id: doc.id,
-							hotel_name: doc.hotel_name,
-							hotel_adress: doc.hotel_adress,
-							hotel_city: doc.hotel_city,
-							hotel_province: doc.hotel_province,
-							hotel_price: doc.hotel_price,
-							hotel_distance: doc.hotel_distance,
-							hotel_description: doc.hotel_description,
-							hotel_stars: doc.hotel_stars,
-							hotel_rating: doc.hotel_rating,
-							hotel_reviews: doc.hotel_reviews,
-							is_new: doc.is_new,
-							is_apartment: doc.is_apartment,
-							facilities_restaurant: doc.facilities_restaurant,
-							facilities_gym: doc.facilities_gym,
-							facilities_wifi: doc.facilities_wifi,
-							facilities_card_payment: doc.facilities_card_payment,
-							facilities_game_room: doc.facilities_game_room,
-							hotel_images: doc.hotel_images
-						}
-					})
-				};
-				res.status(200).json(response);
-			}).catch(err => {
-			console.log('\x1b[31m', '[Failure]', err);
-			res.status(500).json(err);
-		});
-	});
+	app.get('/api/hotels', hotels_get);
 
 // /**
 //  * @type POST
@@ -211,26 +174,7 @@ module.exports = (app) => {
 	 * @type GET
 	 * @description Get hotel by ID
 	 */
-	app.get('/api/hotels/:hotelsId', (req, res, next) => {
-		const id = req.params.hotelsId;
-
-		Hotel.findById(id)
-		// Select which property show
-			.select(properties)
-			.exec()
-			.then(doc => {
-				res.status(200).json(doc);
-			}).catch(err => {
-			if (err.reason === undefined) {
-				res.status(404).json({
-					message: "No valid entry found for provided ID"
-				});
-			} else {
-				console.log('\x1b[31m', '[Failure]', err);
-				res.status(500).json(err);
-			}
-		});
-	});
+	app.get('/api/hotels/:hotelsId', hotels_get_by_id);
 
 	/**
 	 * @type UPDATE/PATCH
