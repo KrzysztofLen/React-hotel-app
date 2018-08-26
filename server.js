@@ -42,6 +42,7 @@ require('./API/routes/billingRoutes')(app);
 require('./API/routes/countRoutes')(app);
 require('./API/routes/topRoutes')(app);
 require('./API/routes/authRoutes')(app);
+require('./API/routes/userRoutes')(app);
 
 //#TODO on heroku is development so app doesn't showing
 if (process.env.NODE_ENV === 'production') {

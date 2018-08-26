@@ -1568,6 +1568,41 @@ body.ReactModal__Body--open {
     background: #fff;
     opacity: 0.2; } }
 
+.SignupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; }
+  .SignupForm h1 {
+    margin: 0 auto 20px; }
+  .SignupForm__formGroup {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center; }
+  .SignupForm__label {
+    font-size: 16px;
+    font-size: 1.6rem;
+    width: 70px; }
+  .SignupForm__input {
+    padding: 0 15px;
+    height: 3rem;
+    width: 20rem;
+    font-size: 14px;
+    font-size: 1.4rem; }
+
+.GoogleBtn__container {
+  border-top: 1px solid #ccc;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center; }
+  .GoogleBtn__container span {
+    position: absolute;
+    top: -10px;
+    left: 48%;
+    font-size: 15px;
+    background: white;
+    padding: 0 7px; }
+
 /* ------------- */
 /*		LAYOUT    */
 /* ------------- */

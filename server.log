@@ -98,3 +98,8 @@ Sat Aug 18 2018 10:26:59 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/go
 Sat Aug 18 2018 10:31:58 GMT+0200 (Środkowoeuropejski czas letni): GET /favicon.ico
 Sat Aug 18 2018 10:41:32 GMT+0200 (Środkowoeuropejski czas letni): GET /api/login
 Sat Aug 18 2018 10:41:43 GMT+0200 (Środkowoeuropejski czas letni): GET /api/signup
+Sun Aug 19 2018 19:46:45 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/QACvCzQYSR4tav77j1B88VLMyU7lj5Dx4YpLL4EfG62IaBPPkN1RWfi8zsIZ_MOUBao-yA3iVcCcu7KsGakpiEI
+Sun Aug 19 2018 20:22:56 GMT+0200 (Środkowoeuropejski czas letni): GET /api/auth/signup
+Sun Aug 19 2018 20:24:47 GMT+0200 (Środkowoeuropejski czas letni): GET /api/auth/signup
+Sun Aug 19 2018 20:28:35 GMT+0200 (Środkowoeuropejski czas letni): POST /api/auth/signup
+Sun Aug 19 2018 20:28:44 GMT+0200 (Środkowoeuropejski czas letni): GET /api/signup

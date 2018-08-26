@@ -2,13 +2,15 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const authenticateSchema = new Schema({
-	email: {
+	username: {
 		type: String,
-		isRequired: true
+		isRequired: true,
+		unique: false
 	},
 	password: {
 		type: String,
-		isRequired: true
+		isRequired: true,
+		unique: false
 	}
 });
 

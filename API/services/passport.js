@@ -1,10 +1,26 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
 const User = mongoose.model('users');
+const Authenticate = mongoose.model('authenticate');
 
 module.exports = (passport) => {
+	passport.use('local-login', new LocalStrategy({
+		message: 'Local login'
+	},  function(req, email, password, done) {
+
+	}));
+
+	passport.use('local-signup', new LocalStrategy({
+		usernameField : 'email',
+		passwordField : 'password',
+		passReqToCallback : true
+	}, function(req, email, password, done) {
+		console.log(email);
+	}));
+
 	passport.serializeUser((user, done) => {
 		console.log('This is user: ', user);
 		done(null, user.id);
