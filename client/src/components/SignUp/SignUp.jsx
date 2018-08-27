@@ -32,13 +32,17 @@ class SignupForm extends Component {
 			password: this.state.password
 		}).then(response => {
 			console.log(response);
-			if (!response.data.errmsg) {
+			if (!response.data.error) {
 				console.log('successful signup')
 				this.setState({
-					redirectTo: '/login'
+					redirectTo: '/login',
+					error: null
 				})
-			} else {
-				console.log('username already taken')
+			} else if (response.data.error) {
+				console.log('username already taken', response.data.error)
+				this.setState({
+					error: response.data.error
+				})
 			}
 		}).catch(err => {
 			console.log('Sing up server error', err);
@@ -59,6 +63,7 @@ class SignupForm extends Component {
 					<input type="password" name="password" value={this.state.password} onChange={this.handleChange}
 					       className="SignupForm__input"/>
 				</div>
+				{this.state.error && <p>{this.state.error}</p>}
 				<div className="SignupForm__formGroup">
 					<button className="button is-link" onClick={this.handleSubmit}>Sign Up</button>
 				</div>

@@ -9,6 +9,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const morgan = require('morgan');
 const keys = require('./API/config/keys');
+const session = require('express-session');
 const PORT = process.env.PORT || 5000;
 
 // MODELS ##############################################################################################################
@@ -33,6 +34,17 @@ app.use(
 		keys: [keys.cookieKey]
 	})
 );
+app.use(session({
+	secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
+	resave: false, //required
+	saveUninitialized: false //required
+}));
+
+app.use( (req, res, next) => {
+	console.log('req.session', req.session);
+	next();
+});
+
 app.use(passport.initialize());
 app.use(passport.session());
 

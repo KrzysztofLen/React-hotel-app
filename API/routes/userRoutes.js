@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 const Authenticate = mongoose.model('authenticate');
-const pick = require('lodash.pick');
-const jwt = require('jsonwebtoken');
-const keys = require('../../API/config/keys');
-const bcrypt = require("bcryptjs");
+
+const {users_get} = require("../controllers/authRoutes");
 
 module.exports = (app) => {
 	app.post('/api/signup', (req, res) => {
 		console.log('user signup');
+		req.session.username = req.body.username;
 
-		const {username, password} = req.body
+		const {username, password} = req.body;
 
 		// ADD VALIDATION
 		Authenticate.findOne({username: username}, (err, user) => {
@@ -36,5 +35,7 @@ module.exports = (app) => {
 				});
 			}
 		})
-	})
+	});
+
+	app.get('/api/users', users_get);
 };
