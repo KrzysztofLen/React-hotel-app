@@ -17,6 +17,7 @@ class App extends Component {
 			isLoading: false
 		};
 	}
+
 	componentDidMount() {
 		this.setState({isLoading: true});
 		this.props.fetchUser();

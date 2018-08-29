@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
 const Authenticate = mongoose.model('authenticate');
+const chalk = require('./../chalk');
+const passport = require('passport');
+require('./../services/passport')(passport);
 
 const {users_get} = require("../controllers/authRoutes");
 
 module.exports = (app) => {
 	app.post('/api/signup', (req, res) => {
-		console.log('user signup');
+		console.log(chalk.info('*** user signup ***'));
 		req.session.username = req.body.username;
 
 		const {username, password} = req.body;
@@ -35,6 +38,29 @@ module.exports = (app) => {
 				});
 			}
 		})
+	});
+
+	app.post('/api/login', (req, res, next) => {
+			console.log('routes/user.js, login, req.body: ');
+			console.log(req.body);
+			next();
+		}, passport.authenticate('local'),
+		(req, res) => {
+			console.log('logged in', req.user);
+			const userInfo = {
+				username: req.user.username
+			};
+			res.send(userInfo);
+		});
+
+	app.get('/api/user', (req, res, next) => {
+		console.log('===== user!!======');
+		console.log(req.user);
+		if (req.user) {
+			res.json({ user: req.user });
+		} else {
+			res.json({ user: null });
+		}
 	});
 
 	app.get('/api/users', users_get);
