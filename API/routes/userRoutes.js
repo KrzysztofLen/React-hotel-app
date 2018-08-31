@@ -46,10 +46,12 @@ module.exports = (app) => {
 			next();
 		}, passport.authenticate('local'),
 		(req, res) => {
-			console.log('logged in', req.user);
+			console.log('*** LOGGED IN ***', req.user);
 			const userInfo = {
-				username: req.user.username
+				username: req.user.username,
+				type: "local"
 			};
+			console.log(chalk.error(userInfo));
 			res.send(userInfo);
 		});
 

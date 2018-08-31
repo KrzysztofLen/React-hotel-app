@@ -108,3 +108,7 @@ Wed Aug 29 2018 17:40:33 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/go
 Wed Aug 29 2018 17:42:32 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SgDKNeCCVO50hfkH64ezi-Gql0VNpRJ5F-T7M_CjJvdjEcTfwj3Y6IywWK46-1w9j7_mJzAT8TELu2MYVsxGl1o
 Wed Aug 29 2018 19:12:13 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SgAjy6wEKjjOkLvCjS0g9np_0J4G6m3SIhxb7JWOfc5UwdtE3_e1SMfbJ9fOhVy56xSTODagHlsvh2Gj-79aVpE
 Wed Aug 29 2018 19:52:21 GMT+0200 (Środkowoeuropejski czas letni): POST /api/login
+Thu Aug 30 2018 18:46:38 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SwCqMp_LimKXGUb3nNee0yfg5d9nndXpWsvvVButOluBHFmeouzHFktDsZr6wsPYDKMMXFEVLwlYluWkA15K8ME
+Thu Aug 30 2018 18:48:34 GMT+0200 (Środkowoeuropejski czas letni): GET /api/current_user
+Thu Aug 30 2018 18:48:35 GMT+0200 (Środkowoeuropejski czas letni): GET /api/count
+Thu Aug 30 2018 18:48:35 GMT+0200 (Środkowoeuropejski czas letni): GET /api/hotels

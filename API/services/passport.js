@@ -18,7 +18,7 @@ module.exports = (passport) => {
 	// passport.deserializeUser((id, done) => {
 	// 	console.log('DeserializeUser called');
 	//
-	// 	User.findOne({_id: id}, 'username', (err, user) => {
+	// 	Authenticate.findOne({_id: id}, 'username', (err, user) => {
 	// 		console.log(chalk.success('*** Deserialize user, user:'));
 	// 		console.log(user);
 	// 		console.log('--------------');
@@ -37,6 +37,7 @@ module.exports = (passport) => {
 	});
 
 	passport.deserializeUser((id, done) => {
+		console.log(chalk.error('*** Deserialize user, user:', id));
 		User.findById(id).then(user => {
 			console.log(chalk.success('*** Deserialize user, user:'));
 			console.log(user);
