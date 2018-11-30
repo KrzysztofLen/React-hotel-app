@@ -6,7 +6,7 @@ import 'normalize.css/normalize.css';
 import './css/styles.css';
 
 import AppRouter from './routers/AppRouter';
-import configureStore from './store/configureStore';
+import configureStore from './Redux/store/configureStore';
 
 import registerServiceWorker from './registerServiceWorker';
 

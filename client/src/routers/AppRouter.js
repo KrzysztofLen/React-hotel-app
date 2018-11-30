@@ -11,7 +11,7 @@ import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import Footer from '../components/Footer/Footer';
 import NoMatch404 from '../components/404/NoMatch404';
 import {connect} from "react-redux";
-import * as actions from "../actions";
+import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import {Link, withRouter} from 'react-router-dom';
-import * as actions from '../../actions';
+import * as actions from '../../Redux/actions';
 import send from "../../assets/paper-plane.svg";
 
 const AddHotelReview = ({onCancel, formValues, submitSurvey, history}) => {

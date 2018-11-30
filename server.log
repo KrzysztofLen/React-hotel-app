@@ -112,3 +112,4 @@ Thu Aug 30 2018 18:46:38 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/go
 Thu Aug 30 2018 18:48:34 GMT+0200 (Środkowoeuropejski czas letni): GET /api/current_user
 Thu Aug 30 2018 18:48:35 GMT+0200 (Środkowoeuropejski czas letni): GET /api/count
 Thu Aug 30 2018 18:48:35 GMT+0200 (Środkowoeuropejski czas letni): GET /api/hotels
+Fri Nov 30 2018 21:35:43 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/pQC0tkeDa8WQAsMsvmmIKkprcpxGueaOHkuN6T9adT4Hh6CGjU322jUM0a8mcsgi8m6mt05Iil11eCq1lK3-h-w&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email

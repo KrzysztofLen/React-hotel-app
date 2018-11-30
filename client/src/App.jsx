@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import HotelsList from './components/HotelList/HotelList.jsx';
 
 import {connect} from 'react-redux';
-import * as actions from './actions';
+import * as actions from './Redux/actions';
 import {getFilteredHotels} from "./selectors/getFilteredHotels";
 import Filters from "./components/Filters/Filters";
 
