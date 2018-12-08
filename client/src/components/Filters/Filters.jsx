@@ -7,8 +7,8 @@ import {switchView} from "../../Redux/actions";
 
 type Props = {
 	switchView: Function,
-	viewSwitch: number,
-	length: number
+	viewTypeId: number,
+	hotelsNumberInDatabase: number
 }
 
 class Filters extends React.Component<Props> {
@@ -21,10 +21,10 @@ class Filters extends React.Component<Props> {
 			<div className="filters">
 				<div className="filters__views">
 					<div
-						className={this.props.viewSwitch === 1 ? "filters__filter filters__filter--active" : "filters__filter"}
+						className={this.props.viewTypeId === 1 ? "filters__filter filters__filter--active" : "filters__filter"}
 						onClick={() => this.setActive(1)}><Full width="20" height="20"/></div>
 					<div
-						className={this.props.viewSwitch === 2 ? "filters__filter filters__filter--active" : "filters__filter"}
+						className={this.props.viewTypeId === 2 ? "filters__filter filters__filter--active" : "filters__filter"}
 						onClick={() => this.setActive(2)}><List width="20" height="20"/></div>
 				</div>
 				<div className="filters__counter">
@@ -36,14 +36,14 @@ class Filters extends React.Component<Props> {
 	}
 }
 
-interface viewSwitch {
-	viewSwitch: number,
-	length: number
+interface viewTypeAndHotelLength {
+	viewTypeId: number,
+	hotelsNumberInDatabase: number
 }
 
-function mapStateToProps({viewSwitch, hotelsNumberInDatabase}): viewSwitch {
+function mapStateToProps({viewTypeId, hotelsNumberInDatabase}): viewTypeAndHotelLength {
 	return {
-		viewSwitch,
+		viewTypeId,
 		hotelsNumberInDatabase: hotelsNumberInDatabase.count
 	}
 }

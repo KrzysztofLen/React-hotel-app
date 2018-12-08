@@ -6,7 +6,7 @@ import Payments from "../Payments/Payments";
 import LoginModal from "./LoginModal";
 
 type Props = {
-	auth: Object,
+	currentUserAuth: Object,
 	dispatch: Function
 }
 
@@ -35,7 +35,7 @@ class LoginSystem extends React.Component<Props, State> {
 	}
 
 	renderContent() {
-		switch (this.props.auth) {
+		switch (this.props.currentUserAuth) {
 			case null:
 				return (
 					<LoginModal onModalOpen={this.onModalOpen} onCloseModal={this.onCloseModal}
@@ -50,7 +50,7 @@ class LoginSystem extends React.Component<Props, State> {
 				return (
 					<React.Fragment>
 						<span className="credits">Credits: <span
-							className="credits__value">{this.props.auth.credits}</span>
+							className="credits__value">{this.props.currentUserAuth.credits}</span>
 						</span>
 						<Payments/>
 						<a href="/api/logout" className="button is-danger">Logout<Cross width={20} height={20}/></a>
@@ -62,8 +62,8 @@ class LoginSystem extends React.Component<Props, State> {
 	render() {
 		return (
 			<div className="login__container">
-				{this.props.auth && <span className="login__profile">Hello
-					<span className="login__profile--name">{this.props.auth.name}</span>!</span>}
+				{this.props.currentUserAuth && <span className="login__profile">Hello
+					<span className="login__profile--name">{this.props.currentUserAuth.name}</span>!</span>}
 				{this.renderContent()}
 			</div>
 		)
@@ -71,15 +71,15 @@ class LoginSystem extends React.Component<Props, State> {
 }
 
 interface Auth {
-	auth: Object,
+	currentUserAuth: Object,
 	googleId: string,
 	name: string,
 	credits: number
 }
 
-function mapStateToProps({auth}: Auth) {
+function mapStateToProps({currentUserAuth}: Auth) {
 	return {
-		auth
+		currentUserAuth
 	}
 }
 

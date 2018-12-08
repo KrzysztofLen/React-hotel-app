@@ -1,9 +1,9 @@
 // @flow
-const FETCH_USER = 'FETCH_USER';
+import * as types from "../types";
 
-export default function(state = null, action) {
+export default (state = null, action) => {
 	switch (action.type) {
-    case FETCH_USER:
+    case types.FETCH_USER:
       return action.payload || false;
     default:
       return state;

@@ -1,9 +1,9 @@
 // @flow
-const SUBMIT_FORM = 'SUBMIT_FORM';
+import * as types from "../types";
 
 export default function (state = null, action) {
 	switch (action.type) {
-		case SUBMIT_FORM:
+		case types.SUBMIT_SURVEY:
 			return action.payload;
 		default:
 			return state

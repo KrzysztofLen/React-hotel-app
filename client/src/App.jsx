@@ -20,6 +20,7 @@ class App extends Component {
 
 	componentDidMount() {
 		this.setState({isLoading: true});
+		this.props.fetchHotels();
 		this.props.fetchUser();
 		this.props.fetchHotelsLength();
 		//Temp to see Loading
@@ -39,8 +40,8 @@ class App extends Component {
 			<div className="container">
 				<Filters/>
 				<div className="content">
-					{this.props.hotels.length === 0 && this.state.isLoading === false ? <span className="content__no-results">Sorry no results :(</span> :
-						<HotelsList isLoading={this.state.isLoading} data={this.props.hotels}/>
+					{this.props.hotelsList.length === 0 && this.state.isLoading === false ? <span className="content__no-results">Sorry no results :(</span> :
+						<HotelsList isLoading={this.state.isLoading} data={this.props.hotelsList}/>
 					}
 				</div>
 			</div>
@@ -48,9 +49,9 @@ class App extends Component {
 	}
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({hotelsList, filterHotels}) {
 	return {
-		hotels: getFilteredHotels(state.hotels, state.hotelsSearch)
+		hotelsList: getFilteredHotels(hotelsList, filterHotels)
 	}
 }
 

@@ -1,9 +1,9 @@
 // @flow
-const SEARCH_HOTELS = 'SEARCH_HOTELS';
+import * as types from "../types";
 
-export const hotelsSearch = (state = "", action) => {
+export default (state = "", action) => {
   switch (action.type) {
-    case SEARCH_HOTELS:
+    case types.SEARCH_HOTELS:
       return action.text;
     default:
       return state;

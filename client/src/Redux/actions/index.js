@@ -4,7 +4,7 @@ import * as types from "../types";
 export const fetchHotels = () => async(dispatch) => {
 	const res = await axios.get('/api/hotels');
 	dispatch({
-		type: 'FETCH_HOTELS',
+		type: types.FETCH_HOTELS,
 		payload: res.data.hotels
 	});
 };
@@ -12,25 +12,25 @@ export const fetchHotels = () => async(dispatch) => {
 export const fetchUser = () => async(dispatch) => {
 	const res = await axios.get('/api/current_user');
 	dispatch({
-		type: 'FETCH_USER',
+		type: types.FETCH_USER,
 		payload: res.data
 	});
 };
 
 export const searchHotels = (text) => ({
-	type: 'SEARCH_HOTELS',
+	type: types.SEARCH_HOTELS,
 	text
 });
 
 export const switchView = (id) => ({
-	type: 'SWITCH_VIEW',
+	type: types.SWITCH_VIEW,
 	id
 });
 
 export const handleToken = (token) => async (dispatch) => {
 	const res = await axios.post('/api/stripe', token);
 	dispatch({
-		type: 'FETCH_USER',
+		type: types.FETCH_CREDITS,
 		payload: res.data
 	});
 };
@@ -48,7 +48,7 @@ export const submitSurvey = (values, history) => async (dispatch) => {
 	const res = await axios.post('/api/hotels', values);
 	history.push('/add/success');
 	dispatch({
-		type: 'SUBMIT_SURVEY',
+		type: types.SUBMIT_SURVEY,
 		payload: res.data.createdHotel
 	});
 };

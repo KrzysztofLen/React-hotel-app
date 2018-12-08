@@ -40,10 +40,6 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 };
 
 class AppRouter extends React.Component {
-	componentDidMount() {
-		this.props.fetchHotels();
-	}
-
 	render() {
 		console.log("App router", this.props);
 		return (
@@ -59,7 +55,7 @@ class AppRouter extends React.Component {
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel} exact/>
 
-					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.auth} exact/>
+					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.currentUserAuth} exact/>
 					<Route path="/forbidden" component={Forbidden}/>
 					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}
@@ -71,9 +67,9 @@ class AppRouter extends React.Component {
 	}
 }
 
-function mapStateToProps({auth}) {
+function mapStateToProps({currentUserAuth}) {
 	return {
-		auth
+		currentUserAuth
 	};
 }
 
