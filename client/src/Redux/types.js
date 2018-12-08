@@ -1,0 +1,1 @@
+export const HOTELS_LENGTH = 'HOTELS_LENGTH';

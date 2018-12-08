@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
+import {onFetchUserEnter} from "./routesCallback";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
 	const fakeAuth = {
@@ -50,7 +51,7 @@ class AppRouter extends React.Component {
 				<div>
 					<Navigation/>
 					<Header/>
-
+					{/* TODO make onEnter fetch data on particular view/route */}
 					<Route path="/" component={App} exact/>
 					<Route path="/hotel/:id"
 					       render={(props) => <SingleHotel {...props} />}

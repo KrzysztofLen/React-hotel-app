@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as types from "../types";
 
 export const fetchHotels = () => async(dispatch) => {
 	const res = await axios.get('/api/hotels');
@@ -37,7 +38,7 @@ export const handleToken = (token) => async (dispatch) => {
 export const fetchHotelsLength = () => async(dispatch) => {
 	const res = await axios.get('/api/count');
 	dispatch({
-		type: 'HOTELS_LENGTH',
+		type: types.HOTELS_LENGTH,
 		payload: res.data
 	});
 };
