@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Authenticate = mongoose.model('authenticate');
 const pick = require('lodash.pick');
 const jwt = require('jsonwebtoken');
-const keys = require('../../API/config/keys');
+const keys = require('../config/keys');
 const bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {

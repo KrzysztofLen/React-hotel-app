@@ -2,23 +2,24 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const http = require('http');
-const chalk = require('./API/chalk');
+const chalk = require('./server/chalk');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const morgan = require('morgan');
-const keys = require('./API/config/keys');
+const keys = require('./server/config/keys');
 const session = require('express-session');
 const PORT = process.env.PORT || 5000;
 
 // MODELS ##############################################################################################################
-require('./API/models/Users');
-require('./API/models/hotel');
-require('./API/models/authenticate');
+require('./server/models/Users');
+require('./server/models/hotel');
+require('./server/models/localAuthenticateModel');
+// require('./server/models/authenticate[OLD]');
 
 // SERVICES ############################################################################################################
-require('./API/services/passport')(passport); // pass passport for configuration
+require('./server/services/passport')(passport); // pass passport for configuration
 
 // CONFIGURATION #######################################################################################################
 mongoose.Promise = global.Promise;
@@ -49,12 +50,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // ROUTES ##############################################################################################################
-require('./API/routes/hotelsRoutes')(app);
-require('./API/routes/billingRoutes')(app);
-require('./API/routes/countRoutes')(app);
-require('./API/routes/topRoutes')(app);
-require('./API/routes/authRoutes')(app);
-require('./API/routes/userRoutes')(app);
+require('./server/routes/hotelsRoutes')(app);
+require('./server/routes/billingRoutes')(app);
+require('./server/routes/countRoutes')(app);
+require('./server/routes/topRoutes')(app);
+require('./server/routes/authRoutes')(app);
+require('./server/routes/localAuthenticateRoute')(app);
+// require('./server/routes/userRoutes[OLD]')(app);
 
 //#TODO on heroku is development so app doesn't showing
 if (process.env.NODE_ENV === 'production') {
@@ -66,7 +68,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // MIDDLEWARES #########################################################################################################
-require('./API/middlewares/serverLog.js')(app);
+require('./server/middlewares/serverLog.js')(app);
 
 // LAUNCH ##############################################################################################################
 app.listen(PORT, () => {

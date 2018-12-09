@@ -4,7 +4,7 @@ const chalk = require('./../chalk');
 const passport = require('passport');
 require('./../services/passport')(passport);
 
-const {users_get} = require("../controllers/authRoutes");
+const {users_get} = require("../controllers/authRoutes[OLD]");
 
 module.exports = (app) => {
 	app.post('/api/signup', (req, res) => {
@@ -16,7 +16,7 @@ module.exports = (app) => {
 		// ADD VALIDATION
 		Authenticate.findOne({username: username}, (err, user) => {
 			if (err) {
-				console.log('userRoutes.js post error: ', err);
+				console.log('userRoutes[OLD].js post error: ', err);
 			} else if (user) {
 				res.json({
 					error: `Sorry, already a user with the username: ${username}`

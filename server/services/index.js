@@ -1,5 +1,5 @@
 const passport = require('passport');
-const LocalStrategy = require('./localStrategy');
+const LocalStrategy = require('./localStrategy[OLD]');
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
 const chalk = require('./../chalk');
