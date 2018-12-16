@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
 import {connect} from "react-redux";
-import {Cross} from '../SVG/Cross';
-import Payments from "../Payments/Payments";
+import {Cross} from '../../SVG/Cross';
+import Payments from "../../Payments/Payments";
 import LoginModal from "./LoginModal";
 
 type Props = {

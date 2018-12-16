@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const http = require('http');
+const cors = require('cors');
 const chalk = require('./server/chalk');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -27,6 +28,7 @@ mongoose.connect(keys.mongoURI); // connect to our database
 
 // set up our express application ######################################################################################
 app.use(morgan('dev'));
+app.use(cors());
 app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json());
 app.use(

@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
-import {Check} from "../SVG/Check";
-import GoogleBtn from "./LoginGoogleBtn";
-import ModalWindow from "../ModalWindow";
+import {Check} from "../../SVG/Check";
+import GoogleBtn from "./LoginSystemModal";
+import ModalWindow from "../../ModalWindow";
 
 type Props = {
 	onModalOpen: Function,

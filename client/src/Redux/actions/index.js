@@ -9,6 +9,23 @@ export const fetchHotels = () => async(dispatch) => {
 	});
 };
 
+//******* AUTH *********//
+export const signUpUser = (formProps, callback) => async (dispatch) => {
+	try {
+		const response = await axios.post("/api/signup", formProps);
+		dispatch({
+			type: types.AUTH_USER,
+			payload: response.data.token
+		});
+		callback();
+	} catch (e) {
+		dispatch({
+			type: types.AUTH_ERROR,
+			payload: 'Email is in use'
+		});
+	}
+};
+
 export const fetchUser = () => async(dispatch) => {
 	const res = await axios.get('/api/current_user');
 	dispatch({

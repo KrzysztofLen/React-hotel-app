@@ -49,9 +49,11 @@ class AppRouter extends React.Component {
 					<Header/>
 					{/* TODO make onEnter fetch data on particular view/route */}
 					<Route path="/" component={App} exact/>
-					<Route path="/hotel/:id"
-					       render={(props) => <SingleHotel {...props} />}
-					/>
+					{/*<Route path="/hotel/:id"*/}
+					       {/*render={(props) => <SingleHotel {...props} />}*/}
+					{/*/>*/}
+
+					<Route path={"/hotel/:id"} component={SingleHotel} />
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel} exact/>
 

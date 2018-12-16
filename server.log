@@ -128,3 +128,5 @@ Sun Dec 09 2018 19:59:38 GMT+0100 (Central European Standard Time): GET /api/sig
 Sun Dec 09 2018 20:05:28 GMT+0100 (Central European Standard Time): GET /
 Sun Dec 09 2018 20:05:29 GMT+0100 (Central European Standard Time): GET /favicon.ico
 Sun Dec 09 2018 20:05:43 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rgCw2LdFeoOesmSJIYuY45mqgJ90ocNoEmNWgMSJvHLZGsNUgrHS0FK6Nc2Z-Ng5pCQzRRNL_IWfGRUzGTBySvY&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Sun Dec 16 2018 13:06:04 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/tQAUlA16CYkp1vUpy6sH0jcq4F8a78j1yJh--pwCQoXvnS0prQwQoIBPKYjRTwhNtaWLmRFwIwoc4RYYFWhWb2A&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Sun Dec 16 2018 13:06:57 GMT+0100 (Central European Standard Time): POST /api/login

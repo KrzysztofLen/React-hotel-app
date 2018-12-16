@@ -1,17 +1,19 @@
 import {combineReducers} from "redux";
-import fetchHotelsReducers from "./fetchHotelsReducers";
+import fetchHotels from "./fetchHotelsReducers";
 import currentUserAuth from "./currentUserAuthReducers";
-import hotelSearchReducers from "./hotelSearchReducers";
-import switchViewReducers from "./switchViewReducers";
+import hotelSearch from "./hotelSearchReducers";
+import switchView from "./switchViewReducers";
 import fetchHotelsNumber from "./getHotelsLengthReducers";
-import {reducer as reduxForm} from "redux-form";
+import authUser from "./authUserReducers";
 import submitHotel from "./submitHotelReducers";
+import {reducer as reduxForm} from "redux-form";
 
 export default combineReducers({
 	currentUserAuth: currentUserAuth,
-	hotelsList: fetchHotelsReducers,
-	filterHotels: hotelSearchReducers,
-	viewTypeId: switchViewReducers,
+	authUser: authUser,
+	hotelsList: fetchHotels,
+	filterHotels: hotelSearch,
+	viewTypeId: switchView,
 	hotelsNumberInDatabase: fetchHotelsNumber,
 	form: reduxForm,
 	submitHotel
