@@ -17,6 +17,10 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
 	// Store creation
-	const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(reduxThunk)));
+	const store = createStore(reducers, {
+		auth: {
+			authenticated: localStorage.getItem('token')
+		}
+	}, composeEnhancers(applyMiddleware(reduxThunk)));
 	return store
 };

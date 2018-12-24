@@ -3,7 +3,9 @@ import * as React from 'react';
 import {connect} from "react-redux";
 import {Cross} from '../../SVG/Cross';
 import Payments from "../../Payments/Payments";
-import LoginModal from "./LoginModal";
+import {Check} from "../../SVG/Check";
+import ModalWindow from "../../ModalWindow";
+import Auth from "./../Auth";
 
 type Props = {
 	currentUserAuth: Object,
@@ -14,7 +16,7 @@ type State = {
 	modalIsOpen: boolean
 }
 
-class LoginSystem extends React.Component<Props, State> {
+class AuthSystem extends React.Component<Props, State> {
 	constructor(props) {
 		super(props);
 
@@ -38,13 +40,20 @@ class LoginSystem extends React.Component<Props, State> {
 		switch (this.props.currentUserAuth) {
 			case null:
 				return (
-					<LoginModal onModalOpen={this.onModalOpen} onCloseModal={this.onCloseModal}
-					            isOpen={this.state.modalIsOpen}/>
-				);
+				<React.Fragment>
+					<button className="button is-success"
+					        onClick={this.onModalOpen}>Login<Check width={20} height={20}/></button>
+					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<Auth/>}/>
+				</React.Fragment>
+			)
+				;
 			case false:
 				return (
-					<LoginModal onModalOpen={this.onModalOpen} onCloseModal={this.onCloseModal}
-					            isOpen={this.state.modalIsOpen}/>
+					<React.Fragment>
+						<button className="button is-success"
+						        onClick={this.onModalOpen}>Login<Check width={20} height={20}/></button>
+						<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<Auth/>}/>
+					</React.Fragment>
 				);
 			default:
 				return (
@@ -70,17 +79,17 @@ class LoginSystem extends React.Component<Props, State> {
 	}
 }
 
-interface Auth {
+interface AuthInterface {
 	currentUserAuth: Object,
 	googleId: string,
 	name: string,
 	credits: number
 }
 
-function mapStateToProps({currentUserAuth}: Auth) {
+function mapStateToProps({currentUserAuth}: AuthInterface) {
 	return {
 		currentUserAuth
 	}
 }
 
-export default connect(mapStateToProps)(LoginSystem)
+export default connect(mapStateToProps)(AuthSystem)

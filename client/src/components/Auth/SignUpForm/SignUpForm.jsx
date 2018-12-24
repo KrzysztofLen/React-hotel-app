@@ -16,7 +16,6 @@ class SignUpForm extends Component {
 
 		return (
 			<React.Fragment>
-				<h3>Sign Up!</h3>
 				<form onSubmit={handleSubmit(this.onSubmit)}>
 					<fieldset>
 						<label htmlFor="email">Email:</label>

@@ -18,7 +18,7 @@ exports[`should render Header correctly 1`] = `
   </button>
   <ModalWindow
     closeModal={[Function]}
-    component={<Connect(LoginSystem) />}
+    component={<Connect(AuthSystem) />}
     isOpen={false}
   />
 </header>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import LoginSystem from '../Auth/LoginSystem/LoginSystem';
+import LoginSystem from '../Auth/AuthSystem/AuthSystem';
 import {Logo} from '../Logo/Logo';
 import {getFilteredHotels} from "../../selectors/getFilteredHotels";
 import {connect} from "react-redux";

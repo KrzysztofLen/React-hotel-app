@@ -100,9 +100,9 @@
           <line num="11" count="1" type="stmt"/>
         </file>
       </package>
-      <package name="src.components.LoginSystem">
+      <package name="src.components.AuthSystem">
         <metrics statements="7" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <file name="LoginSystem.jsx" path="C:\Users\Hp\Documents\Projects\React-hotel-app\client\src\components\LoginSystem\LoginSystem.jsx">
+        <file name="AuthSystem.jsx path="C:\Users\Hp\Documents\Projects\React-hotel-app\client\src\components\AuthSystem\AuthSystemjsx">
           <metrics statements="7" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="3" coveredmethods="0"/>
           <line num="15" count="0" type="cond" truecount="0" falsecount="3"/>
           <line num="17" count="0" type="stmt"/>

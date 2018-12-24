@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from "../types";
 
-export const fetchHotels = () => async(dispatch) => {
+export const fetchHotels = () => async (dispatch) => {
 	const res = await axios.get('/api/hotels');
 	dispatch({
 		type: types.FETCH_HOTELS,
@@ -26,7 +26,32 @@ export const signUpUser = (formProps, callback) => async (dispatch) => {
 	}
 };
 
-export const fetchUser = () => async(dispatch) => {
+export const signInUser = (formProps, callback) => async (dispatch) => {
+	try {
+		const response = await axios.post("/api/signin", formProps);
+		dispatch({
+			type: types.AUTH_USER,
+			payload: response.data.token
+		});
+		localStorage.setItem('token', response.data.token);
+		callback();
+	} catch (e) {
+		dispatch({
+			type: types.AUTH_ERROR,
+			payload: 'Invalid credentials'
+		});
+	}
+};
+
+export const signout = () => {
+	localStorage.removeItem('token');
+	return {
+		type: types.AUTH_USER,
+		payload: ""
+	}
+};
+
+export const fetchUser = () => async (dispatch) => {
 	const res = await axios.get('/api/current_user');
 	dispatch({
 		type: types.FETCH_USER,
@@ -52,7 +77,7 @@ export const handleToken = (token) => async (dispatch) => {
 	});
 };
 
-export const fetchHotelsLength = () => async(dispatch) => {
+export const fetchHotelsLength = () => async (dispatch) => {
 	const res = await axios.get('/api/count');
 	dispatch({
 		type: types.HOTELS_LENGTH,

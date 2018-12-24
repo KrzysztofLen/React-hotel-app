@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import LoginSystem from "../Auth/LoginSystem/LoginSystem";
+import LoginSystem from "../Auth/AuthSystem/AuthSystem";
 
 class Forbidden extends Component {
 	render() {
