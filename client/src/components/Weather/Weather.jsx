@@ -43,7 +43,7 @@ class Weather extends Component {
 			})
 			.catch(error => {
 				if (error.code === "ENOTFOUND") {
-					console.log("Unable to connect to API");
+					console.log("Unable to connect to server");
 				} else {
 					console.log(error.message);
 				}

@@ -11,9 +11,10 @@ import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import Footer from '../components/Footer/Footer';
 import NoMatch404 from '../components/404/NoMatch404';
 import {connect} from "react-redux";
-import * as actions from "../actions";
+import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
+import {onFetchUserEnter} from "./routesCallback";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
 	const fakeAuth = {
@@ -39,25 +40,24 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 };
 
 class AppRouter extends React.Component {
-	componentDidMount() {
-		this.props.fetchHotels();
-	}
-
 	render() {
+		console.log("App router", this.props);
 		return (
 			<BrowserRouter>
 				<div>
 					<Navigation/>
 					<Header/>
-
+					{/* TODO make onEnter fetch data on particular view/route */}
 					<Route path="/" component={App} exact/>
-					<Route path="/hotel/:id"
-					       render={(props) => <SingleHotel {...props} />}
-					/>
+					{/*<Route path="/hotel/:id"*/}
+					       {/*render={(props) => <SingleHotel {...props} />}*/}
+					{/*/>*/}
+
+					<Route path={"/hotel/:id"} component={SingleHotel} />
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel} exact/>
 
-					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.auth} exact/>
+					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.currentUserAuth} exact/>
 					<Route path="/forbidden" component={Forbidden}/>
 					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}
@@ -69,9 +69,9 @@ class AppRouter extends React.Component {
 	}
 }
 
-function mapStateToProps({auth}) {
+function mapStateToProps({currentUserAuth}) {
 	return {
-		auth
+		currentUserAuth
 	};
 }
 

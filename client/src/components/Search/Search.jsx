@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 
-import {searchHotels} from "../../actions";
+import {searchHotels} from "../../Redux/actions";
 
 type Props = {
 	searchHotels: Function,

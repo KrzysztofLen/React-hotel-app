@@ -96,24 +96,6 @@
 		margin-bottom: 15px;
 	}
 
-	&__form {
-		input[type="text"],
-		input[type="number"],
-		select {
-			padding: 7px 22px;
-			border: 1px solid #ddd;
-			margin-bottom: 30px;
-			border-radius: 3px;
-			box-sizing: content-box;
-			height: 25px;
-			line-height: 25px;
-			width: 100%;
-			display: block;
-			outline: 0;
-			font-size: 16px;
-		}
-	}
-
 	&__formValuesBox {
 		display: flex;
 		position: relative;
@@ -124,21 +106,6 @@
 	&__formValueBox {
 		width: 33.3333%;
 		margin-right: 70px;
-
-		label {
-			display: block;
-			float: left;
-			height: 26px;
-			margin-top: -9px;
-			margin-left: 10px;
-			background: white;
-			padding: 2px 5px 2px 5px;
-			color: $color-primary;
-			font-size: 14px;
-			overflow: hidden;
-			font-weight: normal;
-			position: absolute;
-		}
 	}
 
 	&__buttons {

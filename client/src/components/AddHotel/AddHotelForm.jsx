@@ -14,20 +14,20 @@ class AddHotelForm extends Component {
 	renderFields() {
 		return (
 			<React.Fragment>
-				{/*<div className="hotel-form__formValueBox">*/}
-					{/*{FIELDS.map(({label, name}, i) => {*/}
-						{/*return (*/}
-							{/*<Field key={i} label={label} type="text" name={name} component={AddHotelField}/>*/}
-						{/*)*/}
-					{/*})}*/}
-				{/*</div>*/}
-				{/*<div className="hotel-form__formValueBox">*/}
-					{/*{NUMBER_FIELDS.map(({label, name}, i) => {*/}
-						{/*return (*/}
-							{/*<Field key={i} label={label} type="number" name={name} component={AddHotelNumberField}/>*/}
-						{/*)*/}
-					{/*})}*/}
-				{/*</div>*/}
+				<div className="hotel-form__formValueBox">
+					{FIELDS.map(({label, name}, i) => {
+						return (
+							<Field key={i} label={label} type="text" name={name} component={AddHotelField}/>
+						)
+					})}
+				</div>
+				<div className="hotel-form__formValueBox">
+					{NUMBER_FIELDS.map(({label, name}, i) => {
+						return (
+							<Field key={i} label={label} type="number" name={name} component={AddHotelNumberField}/>
+						)
+					})}
+				</div>
 				<div className="hotel-form__formValueBox">
 					{BOOLEAN_FIELDS.map(({label, name}, i) => {
 						return (

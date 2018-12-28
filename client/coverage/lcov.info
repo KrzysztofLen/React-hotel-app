@@ -181,8 +181,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\Hp\Documents\Projects\React-hotel-app\client\src\components\LoginSystem\LoginSystem.jsx
-FN:14,(anonymous_0)
+SF:C:\Users\Hp\Documents\Projects\React-hotel-app\client\src\components\AuthSystem\AuthSystem.jsxFN:14,(anonymous_0)
 FN:37,(anonymous_1)
 FN:56,mapStateToProps
 FNF:3

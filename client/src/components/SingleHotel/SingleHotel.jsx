@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loader from '../Loader/Loader';
+import * as actions from './../../Redux/actions';
 import Gallery from '../Gallery/Gallery';
 import {HotelOverview} from "../HotelOverview/HotelOverview";
 import {Details} from "../Details/Details";
@@ -17,9 +18,10 @@ class SingleHotel extends React.Component {
 	}
 
 	componentDidMount() {
+		this.props.fetchHotels();
 		this._timer = setTimeout(() => {
 			this.setState({
-				data: this.props.state.hotels,
+				data: this.props.hotelsList,
 				isLoading: false
 			});
 		}, 1500);
@@ -31,9 +33,9 @@ class SingleHotel extends React.Component {
 
 	render() {
 		const index = this.props.match.params.id;
-		const value = this.state.data.filter(x => x.id === index);
+		const value = this.state.data.filter(x => x._id === index);
 		const [desc] = value;
-		console.log(desc);
+
 		return (
 			<div className="content">
 				<div className="content__container">
@@ -53,10 +55,10 @@ class SingleHotel extends React.Component {
 	}
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({hotelsList}) {
 	return {
-		state
+		hotelsList
 	}
 }
 
-export default connect(mapStateToProps)(SingleHotel);
+export default connect(mapStateToProps, actions)(SingleHotel);

@@ -90,3 +90,52 @@ Sat Aug 04 2018 21:39:22 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/go
 Sat Aug 04 2018 21:55:54 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/MQCL9DVdknXiyW6zuhTQqkNpprZuMKgZmsOb7Zb8m87lkzgoStwGV8INrSRn60Si5X9UlEI_bsDDJ0fvmYBKpmw
 Sat Aug 04 2018 22:15:12 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/MQDdwyLMocDoNQEhhU0Rrb5gRLdY4jP2ZY6ZwTZCMzEKJ3d8lAYrNyWK9lu4phYc-h6nkacCu7xAl4lvI2X5JIs
 Mon Aug 06 2018 20:05:02 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/MwDzUJSj9urIq8WEMNYyr6bV4bOSxX1MaBywS1YB5bP8bgmqukPbZWHNdGnvP7khmCv-FChw2xlfUqqXb_yT8Yg
+Mon Aug 06 2018 20:19:37 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/MwA1HqOLpUP3E-tJwx4P7QkG3emUMsXrmr6rMoTGG8-4hMuduYtCpLHo3bLF9NktsqphvSuPJPyUF_cxtKLg0No
+Tue Aug 07 2018 18:43:37 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/NADUIFtkb6yXIUCGYhatb0vUJg7nUr5nM2PjdLRfneb0xSPS5aBEMuVMaM0KPZFKK_R8QN_CAd45Q51qzy0tdiQ
+Tue Aug 07 2018 18:48:37 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/NACC4s7LsUbRHYe63VOROvty21HZ9nTGbFppm2meNFaBFknCAPrWoR-1G9DOd1u5btLby8gZl2CzOrOXGQdDgvc
+Sat Aug 11 2018 21:27:04 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/OABXUqd_1gYfbbhOIL5OUQpl5y9_bWTYfoK3r5Pr1Sss0ROmOPxX3ifj1V769QbZYvL4_UsYY4NrvNdMS0bYpe0
+Sat Aug 18 2018 10:26:59 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/PwDsHAAduIdLn6F0xP1eBUzZJMS-ftjJJqCnO54yDrxXE7BNKMYy3fCcd7mTKh1SMd4elx-5BjzWDcM6tPgHO8Q
+Sat Aug 18 2018 10:31:58 GMT+0200 (Środkowoeuropejski czas letni): GET /favicon.ico
+Sat Aug 18 2018 10:41:32 GMT+0200 (Środkowoeuropejski czas letni): GET /api/login
+Sat Aug 18 2018 10:41:43 GMT+0200 (Środkowoeuropejski czas letni): GET /api/signup
+Sun Aug 19 2018 19:46:45 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/QACvCzQYSR4tav77j1B88VLMyU7lj5Dx4YpLL4EfG62IaBPPkN1RWfi8zsIZ_MOUBao-yA3iVcCcu7KsGakpiEI
+Sun Aug 19 2018 20:22:56 GMT+0200 (Środkowoeuropejski czas letni): GET /api/auth/signup
+Sun Aug 19 2018 20:24:47 GMT+0200 (Środkowoeuropejski czas letni): GET /api/auth/signup
+Sun Aug 19 2018 20:28:35 GMT+0200 (Środkowoeuropejski czas letni): POST /api/auth/signup
+Sun Aug 19 2018 20:28:44 GMT+0200 (Środkowoeuropejski czas letni): GET /api/signup
+Wed Aug 29 2018 17:39:00 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SgDeq3DLWTPXkBQHqOY9H8sZsx5j27f3ihO13TuaK0YYLjrCU0eZqO5AgWTQETWe7LxBapXSNS18b_jcLG7UEWU
+Wed Aug 29 2018 17:40:33 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SgBjaxti0FQz-cZDZAX7GFsJ3YgGwW5SLbjB6jqy_u5Zkj7k7VQlFVN2SZnEkCueHjZU6aHPIAIbRD9B0R3mJmw
+Wed Aug 29 2018 17:42:32 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SgDKNeCCVO50hfkH64ezi-Gql0VNpRJ5F-T7M_CjJvdjEcTfwj3Y6IywWK46-1w9j7_mJzAT8TELu2MYVsxGl1o
+Wed Aug 29 2018 19:12:13 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SgAjy6wEKjjOkLvCjS0g9np_0J4G6m3SIhxb7JWOfc5UwdtE3_e1SMfbJ9fOhVy56xSTODagHlsvh2Gj-79aVpE
+Wed Aug 29 2018 19:52:21 GMT+0200 (Środkowoeuropejski czas letni): POST /api/login
+Thu Aug 30 2018 18:46:38 GMT+0200 (Środkowoeuropejski czas letni): GET /auth/google/callback?code=4/SwCqMp_LimKXGUb3nNee0yfg5d9nndXpWsvvVButOluBHFmeouzHFktDsZr6wsPYDKMMXFEVLwlYluWkA15K8ME
+Thu Aug 30 2018 18:48:34 GMT+0200 (Środkowoeuropejski czas letni): GET /api/current_user
+Thu Aug 30 2018 18:48:35 GMT+0200 (Środkowoeuropejski czas letni): GET /api/count
+Thu Aug 30 2018 18:48:35 GMT+0200 (Środkowoeuropejski czas letni): GET /api/hotels
+Fri Nov 30 2018 21:35:43 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/pQC0tkeDa8WQAsMsvmmIKkprcpxGueaOHkuN6T9adT4Hh6CGjU322jUM0a8mcsgi8m6mt05Iil11eCq1lK3-h-w&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email
+Fri Dec 07 2018 13:56:20 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rAAZUcEUMo_iarwCu3nNd6INO7Ai7X6zUDZMbdPokjbgYUr6j2CLLYiPuptQBo0lipgkimAOkLci6CZu0svGSXQ&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Fri Dec 07 2018 14:00:51 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rADnWUm3kk7wqlBltUdoGwxv64F0f89Jiwv-MnftChAAr1i-o8sTC5DZFxHFLVRHTRCngWj2sDkSFwQEKuBwgnc&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Fri Dec 07 2018 14:05:27 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rAAhmWsId1rVhct1Dk8FuTyAGE_lXankkf_K569HFHJKxfWflcxaYIV9m0mVUCrrEFacx_uvSyEU-rucfI3Kxc8&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Fri Dec 07 2018 14:06:13 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rAD6kmi2eqwbDBmaUoVIc298qbcHOdzWI8gupcUp5im6-UFy5Z4aVzlc5nc-3BNRlDMTGhWUA7O8iN8Fd9INndU&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Sun Dec 09 2018 11:16:02 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rgBU8oDHdbaGYakfjtOrO91UPak3F4vmYJcJCwvnTRPh3A-Y1n9LGU_De3fjBiMVTNNC2TUvhmT6ZVpEz9ithYM&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Sun Dec 09 2018 17:40:23 GMT+0100 (Central European Standard Time): GET /api/signup
+Sun Dec 09 2018 17:40:38 GMT+0100 (Central European Standard Time): GET /api/signup
+Sun Dec 09 2018 19:58:10 GMT+0100 (Central European Standard Time): GET /api/signin
+Sun Dec 09 2018 19:58:43 GMT+0100 (Central European Standard Time): GET /api/signin
+Sun Dec 09 2018 19:58:56 GMT+0100 (Central European Standard Time): GET /api/signin
+Sun Dec 09 2018 19:59:24 GMT+0100 (Central European Standard Time): GET /api/signin
+Sun Dec 09 2018 19:59:38 GMT+0100 (Central European Standard Time): GET /api/signup
+Sun Dec 09 2018 20:05:28 GMT+0100 (Central European Standard Time): GET /
+Sun Dec 09 2018 20:05:29 GMT+0100 (Central European Standard Time): GET /favicon.ico
+Sun Dec 09 2018 20:05:43 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/rgCw2LdFeoOesmSJIYuY45mqgJ90ocNoEmNWgMSJvHLZGsNUgrHS0FK6Nc2Z-Ng5pCQzRRNL_IWfGRUzGTBySvY&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Sun Dec 16 2018 13:06:04 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/tQAUlA16CYkp1vUpy6sH0jcq4F8a78j1yJh--pwCQoXvnS0prQwQoIBPKYjRTwhNtaWLmRFwIwoc4RYYFWhWb2A&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Sun Dec 16 2018 13:06:57 GMT+0100 (Central European Standard Time): POST /api/login
+Tue Dec 25 2018 10:09:05 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgBmVMamvv_KiV9zG0Z9ZNfSTPRI88H77rVV2zCilJsxih96ETkymwAzzIhWR1BYoYUoZ0wS4qX0bZfjBoC9jV8&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Tue Dec 25 2018 10:18:33 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgC3vfUEWAhBbkOdEcgO_g-kZzCQ4HwrgZn8-L1rTmR0uA1kYYv8LmyYXp9sgQlXMin0fzShPLf0RmEcHcVEhxg&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Tue Dec 25 2018 10:26:21 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgCwGzB3Uxe119F9qW4cYkecJUTt5wFq2s5Tn5I9fiPFhQ0mnztSe0O6wWqoKc1Me696kxQf-flTqZAeP3I6Gbs&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Tue Dec 25 2018 10:27:47 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgASsPVnqVoXCCoKueYqmWHWv58e-z83A8STO8ag1A7uIZ-Uf7xZJ4gFKAn4yG2XaPveKZz_oW75blTMEDQUMqc&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
+Tue Dec 25 2018 10:40:41 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgBRjtW2txiKQ7-m02_rgGcT8v-2Gbewfobub6yMpGAViwdoA_Wl3ZIHJYv_6hkN6v-wQZQO0WarfbWBs88DH-o&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Tue Dec 25 2018 10:40:59 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgAaCbdj7vuuK8SxKl8NZLfZpuVnCHqFAYPDqsFFBQYz3naCigO6wcnrXvFU3N5hIxDUMGlj94OBWVHM1yDeMkc&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Tue Dec 25 2018 10:41:34 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgDH4LVVLT15-YqzR7abB48FgZvqcKVaDnEVhwTwQtGl3x9ZrBWiAZvD64eOPUm1Hzg9BoTKhVJTc6dBjWW4P5c&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Tue Dec 25 2018 10:42:04 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgA3XgrL2uV24d1kjXbpb0cS1RyzZYQLvSofyzKzG5MIOL_m48iB-Ub0vV-t5qoyMymvB1p8NlQI1GVXg3DShVA&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Tue Dec 25 2018 10:42:32 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/vgCg1GH4mW1GK8HrrEdJIllcztbiw8NDq9-Kq4YJddo-CHWBGu3y_fLJt_MUATxOv9oDIrUkJjvwowW0RO7VWRY&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile

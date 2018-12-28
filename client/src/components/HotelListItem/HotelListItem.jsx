@@ -15,13 +15,14 @@ import ModalWindow from "../ModalWindow";
 import {connect} from "react-redux";
 
 type Props = {
-	viewSwitch: number,
+	viewTypeId: number,
 	data: data,
 	id: number,
 	index: number
 }
 
 interface data {
+	_id: number,
 	hotel_name: string,
 	hotel_distance: string,
 	hotel_adress: string,
@@ -77,7 +78,7 @@ class HotelListItem extends React.Component<Props, State> {
 		const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
 
 		return (
-			<div className={this.props.viewSwitch === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
+			<div className={this.props.viewTypeId === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
 					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={<Modal_OLD value={this.props}/>}/>
@@ -86,7 +87,7 @@ class HotelListItem extends React.Component<Props, State> {
 					<HotelLink hotelName={this.props.data.hotel_name}
 					           hotelDistance={this.props.data.hotel_distance}
 					           hotelAdress={this.props.data.hotel_adress}
-					           id={this.props.id}/>
+					           id={this.props.data._id}/>
 					<HotelRating rate={this.props.data.hotel_stars}/>
 				</div>
 				<div className="hotel__details--adressBox">
@@ -119,13 +120,13 @@ class HotelListItem extends React.Component<Props, State> {
 	}
 }
 
-interface ViewSwitch {
-	viewSwitch: number
+interface viewType {
+	viewTypeId: number
 }
 
-function mapStateToProps({viewSwitch}): ViewSwitch {
+function mapStateToProps({viewTypeId}): viewType {
 	return {
-		viewSwitch
+		viewTypeId
 	}
 }
 

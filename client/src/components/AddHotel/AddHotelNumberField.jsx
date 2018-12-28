@@ -22,6 +22,7 @@ class AddHotelNumberField extends Component {
 					type="number"
 					value={value}
 					onChange={this.onChange}
+					className={"input"}
 				/>
 				<div className="form-error">
 					{this.props.meta.touched && this.props.meta.error}

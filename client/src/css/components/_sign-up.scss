@@ -1,0 +1,27 @@
+.SignupForm {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	h1 {
+		margin: 0 auto 20px;
+	}
+
+	&__formGroup {
+		display: flex;
+		margin-bottom: 20px;
+		align-items: center;
+	}
+
+	&__label {
+		@include font-size(1.6);
+		width: 70px;
+	}
+
+	&__input {
+		padding: 0 15px;
+		height: 3rem;
+		width: 20rem;
+		@include font-size(1.4);
+	}
+}
