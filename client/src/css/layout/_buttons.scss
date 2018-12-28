@@ -33,6 +33,10 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 	border-color: transparent;
 	color: #fff;
 
+	&:hover {
+		background: lighten(#00d1b2, 5%);
+	}
+
 	&--is-outlined {
 		background-color: transparent;
 		border-color: #00d1b2;
@@ -197,6 +201,10 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 	overflow: hidden;
 	text-overflow: ellipsis;
 
+	&:hover {
+		background: lighten(#dd4b39, 5%);
+	}
+
 	svg {
 		position: absolute;
 		left: 0;
@@ -226,8 +234,8 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 .inline {
 	border: none;
 	color: $color-primary;
-	font-size: inherit;
-	border-bottom: 1px solid currentColor;
+	@include font-size(1.4);
+	//border-bottom: 1px solid currentColor;
 	padding: 0;
 	padding-bottom: 2px;
 	display: inline-block;

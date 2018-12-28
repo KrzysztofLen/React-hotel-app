@@ -32,15 +32,15 @@ class Auth extends Component<State> {
 			<React.Fragment>
 				{this.state.onRegisterForm === true &&
 				<React.Fragment>
-					<h3>Sign Up for free!</h3>
+					<h3 className={"auth__header"}>Sign Up for free!</h3>
 					<SignUpForm/>
-					<button onClick={this.onClick}>Back</button>
+					<button className={"button inline"} onClick={this.onClick}>Back</button>
 				</React.Fragment>}
 				{this.state.onRegisterForm === false &&
 				<React.Fragment>
-					<h3>Welcome</h3>
+					<h3 className={"auth__header"}>Welcome</h3>
 					<LoginForm/>
-					<span>Don't have an account, <button onClick={this.onClick}>SignUp here!</button></span>
+					<span className={"auth__signup"}>Don't have an account?, <button className={"button inline"} onClick={this.onClick}>Create an account!</button></span>
 					<GoogleSignUp/>
 				</React.Fragment>}
 			</React.Fragment>

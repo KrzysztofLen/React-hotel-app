@@ -16,19 +16,19 @@ class SignUpForm extends Component {
 
 		return (
 			<React.Fragment>
-				<form onSubmit={handleSubmit(this.onSubmit)}>
+				<form onSubmit={handleSubmit(this.onSubmit)} className={"form"}>
 					<fieldset>
 						<label htmlFor="email">Email:</label>
 						<Field type={"text"} name={"email"} component={"input"}
-						       autoComplete={"none"}/>
+						       autoComplete={"none"} className={"input"}/>
 					</fieldset>
 					<fieldset>
 						<label htmlFor="password">Password:</label>
 						<Field type={"password"} name={"password"} component={"input"}
-						       autoComplete={"none"}/>
+						       autoComplete={"none"} className={"input"}/>
 					</fieldset>
-					<div>{this.props.errorMessage}</div>
-					<button>Sign Up!</button>
+					<div className={"form__error-msg"}>{this.props.errorMessage}</div>
+					<button className={"button is-success"}>Sign Up!</button>
 				</form>
 			</React.Fragment>
 		)

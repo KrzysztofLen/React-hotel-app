@@ -1,0 +1,15 @@
+.auth {
+	&__header {
+		@include font-size(2);
+		text-transform: uppercase;
+		@include font-weight(200);
+		text-align: center;
+	}
+
+	&__signup {
+		display: block;
+		@include font-size(1.4);
+		margin: 17px 0;
+		text-align: center;
+	}
+}

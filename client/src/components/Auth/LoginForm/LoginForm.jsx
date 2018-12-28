@@ -15,13 +15,14 @@ class LoginForm extends Component {
 		const {handleSubmit} = this.props;
 
 		return (
-			<form onSubmit={handleSubmit(this.onSubmit)}>
+			<form onSubmit={handleSubmit(this.onSubmit)} className={"form"}>
 				<fieldset>
 					<label htmlFor="email">Email:</label>
 					<Field name={"email"}
 					       type={"text"}
 					       component={"input"}
 					       autoComplete={"none"}
+					       className={"input"}
 					/>
 				</fieldset>
 				<fieldset>
@@ -30,9 +31,11 @@ class LoginForm extends Component {
 					       type={"password"}
 					       component={"input"}
 					       autoComplete={"none"}
+					       className={"input"}
 					/>
-				</fieldset><div>{this.props.errorMessage}</div>
-				<button>Sign In!</button>
+				</fieldset>
+				<div className={"form__error-msg"}>{this.props.errorMessage}</div>
+				<button className={"button is-primary"}>Sign In!</button>
 			</form>
 		)
 	}
@@ -40,7 +43,7 @@ class LoginForm extends Component {
 
 function mapStateToProps(state) {
 	return {
-		errorMesssage: state.authUser.errorMessage
+		errorMessage: state.authUser.errorMessage
 	}
 }
 

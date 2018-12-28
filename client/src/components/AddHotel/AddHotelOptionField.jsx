@@ -18,7 +18,7 @@ class AddHotelNumberField extends Component {
 		return (
 			<React.Fragment>
 				<label htmlFor="">{this.props.label}</label>
-				<select onChange={this.onChange}>
+				<select onChange={this.onChange} className={"select"}>
 					<option />
 					<option value="true" >TRUE</option>
 					<option value="false">FALSE</option>
