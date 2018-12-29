@@ -6,7 +6,7 @@ import LoginSystem from "../../components/Auth/AuthSystem/AuthSystem";
 import HotelsList from "../../components/HotelList/HotelList";
 import {getFilteredHotels} from "../../selectors/getFilteredHotels";
 import connect from "react-redux/es/connect/connect";
-import * as actions from "../../Redux/actions";
+import * as actions from "../../Redux/actions/index";
 import Boxes from "../../components/Boxes/Boxes";
 import ViewSwitcher from "../../components/ViewSwitcher/ViewSwitcher";
 import Loader from "../../components/Loader/Loader";
@@ -15,7 +15,7 @@ interface IState {
 	isLoading: boolean;
 }
 
-class AddHotelView extends Component<IState> {
+class HotelsView extends Component<IState> {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -60,7 +60,7 @@ class AddHotelView extends Component<IState> {
 							{this.state.isLoading === true ? <Loader text="Loading"/> : <React.Fragment>
 								<ViewSwitcher />
 								<Boxes/>
-								<HotelsList data={this.props.hotelsList}/>
+								<HotelsList hotels={this.props.hotelsList}/>
 							</React.Fragment>}
 						</React.Fragment>
 					}
@@ -76,4 +76,4 @@ function mapStateToProps({hotelsList, filterHotels}) {
 	}
 }
 
-export default connect(mapStateToProps, actions)(AddHotelView);
+export default connect(mapStateToProps, actions)(HotelsView);

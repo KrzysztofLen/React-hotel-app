@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Gallery = (props) => {
+const HotelGallery = (props) => {
 	return (
 		<div className="gallery__container">
 			{props.images.map((element, idx) => (
@@ -13,8 +13,8 @@ const Gallery = (props) => {
 	)
 };
 
-Gallery.propTypes = {
+HotelGallery.propTypes = {
 	images: PropTypes.arrayOf(PropTypes.string)
 };
 
-export default Gallery;
+export default HotelGallery;

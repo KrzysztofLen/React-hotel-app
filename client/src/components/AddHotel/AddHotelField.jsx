@@ -6,7 +6,7 @@ export default ({input, label, meta: {touched, error}}) => {
 		<React.Fragment>
 			<label htmlFor="">{label}</label>
 			<input type="text" {...input} className={"input"}/>
-			<div className="form-error">
+			<div className="form__error-msg">
 				{touched && error}
 			</div>
 		</React.Fragment>

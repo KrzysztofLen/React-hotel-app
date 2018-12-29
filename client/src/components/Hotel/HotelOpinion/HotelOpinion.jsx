@@ -32,7 +32,6 @@ class HotelOpinion extends Component {
 
 	render() {
 		return (
-
 			<React.Fragment>
 				<span className={'rate__color rate__color--' + this.range().replace(/ +/g, "").toLowerCase()}>{this.range()}</span>
 				<span className="opinion__hotel-rating">{this.props.hotelRating}</span><span className="opinion__hotel-reviews">({this.props.hotelReviews}) opinions</span>

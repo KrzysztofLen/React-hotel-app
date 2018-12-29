@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from '../Loader/Loader';
-import * as actions from './../../Redux/actions';
-import Gallery from '../Gallery/Gallery';
-import {HotelOverview} from "../HotelOverview/HotelOverview";
-import {Details} from "../Details/Details";
+import Loader from '../../components/Loader/Loader';
+import * as actions from '../../Redux/actions/index';
+import HotelGallery from '../../components/HotelGallery/HotelGallery';
+import {HotelOverview} from "../../components/Hotel/HotelOverview/HotelOverview";
+import {Details} from "../../components/Details/Details";
 import {connect} from "react-redux";
-import Weather from "../Weather/Weather";
+import Weather from "../../components/Weather/Weather";
 
-class SingleHotel extends React.Component {
+class SingleHotelView extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -42,7 +42,7 @@ class SingleHotel extends React.Component {
 					<main className="hotel-view">
 						{this.state.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
-								<Gallery images={desc.hotel_images}/>
+								<HotelGallery images={desc.hotel_images}/>
 								<HotelOverview {...desc} />
 								<Weather adress={desc.hotel_adress} city={desc.hotel_city}/>
 								<Details/>
@@ -61,4 +61,4 @@ function mapStateToProps({hotelsList}) {
 	}
 }
 
-export default connect(mapStateToProps, actions)(SingleHotel);
+export default connect(mapStateToProps, actions)(SingleHotelView);

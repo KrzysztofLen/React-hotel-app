@@ -1,4 +1,4 @@
-export const FIELDS = [
+export const TEXT_FIELDS = [
 	{ label: 'Hotel name', name: 'hotel_name' },
 	{ label: 'Hotel adress', name: 'hotel_adress' },
 	{ label: 'Hotel city', name: 'hotel_city' },

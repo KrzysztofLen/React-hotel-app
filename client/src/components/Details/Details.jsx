@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import user3 from './../../assets/img/user-3.jpg';
 
 export const Details = () => {
 	return (

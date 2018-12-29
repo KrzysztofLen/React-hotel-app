@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Success from "../Success/Success";
-import ModalWindow from "../ModalWindow";
+import ModalWindow from "../ModalWindow/ModalWindow";
 
 class AddHotelSuccess extends Component {
 	constructor(props) {

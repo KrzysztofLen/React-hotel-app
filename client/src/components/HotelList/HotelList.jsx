@@ -1,11 +1,10 @@
 // @flow
 import * as React from 'react'
 import HotelListItem from '../HotelListItem/HotelListItem';
-import Loader from '../Loader/Loader';
 import {Spinner} from "../Spinner/Spinner";
 
 type Props = {
-	data: Array<mixed>
+	hotels: Array<mixed>
 };
 
 type State = {
@@ -48,20 +47,20 @@ class HotelsList extends React.Component<Props, State> {
 
 	render() {
 		const count: number = this.state.page * this.state.perpage;
-		const elem: Array<mixed> = this.props.data.slice(0, count);
+		const visibleHotels: Array<mixed> = this.props.hotels.slice(0, count);
 
 		return (
 			<main className="hotel-list">
 				<div className="content__container">
 					<div className="column">
 						<React.Fragment>
-							{elem.map((data: any, index: number): Object => <HotelListItem data={data}
-							                                                               key={data._id}
-							                                                               id={data._id}
+							{visibleHotels.map((hotel: any, index: number): Object => <HotelListItem data={hotel}
+							                                                               key={hotel._id}
+							                                                               id={hotel._id}
 							                                                               index={index}/>
 							)}
 							<div className="hotel-list__more">
-								{!(elem.length === this.props.data.length) && <Spinner/>}
+								{!(visibleHotels.length === this.props.hotels.length) && <Spinner/>}
 							</div>
 						</React.Fragment>
 					</div>

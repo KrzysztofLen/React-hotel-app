@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {Cross} from '../../SVG/Cross';
 import Payments from "../../Payments/Payments";
 import {Check} from "../../SVG/Check";
-import ModalWindow from "../../ModalWindow";
+import ModalWindow from "../../ModalWindow/ModalWindow";
 import Auth from "./../Auth";
 
 type Props = {

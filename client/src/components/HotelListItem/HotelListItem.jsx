@@ -1,17 +1,16 @@
 // @flow
 import * as React from 'react'
-import HotelImage from '../HotelImage/HotelImage';
-import HotelLink from '../HotelLink/HotelLink';
-import HotelRating from '../HotelRating/HotelRating';
+import HotelImage from '../Hotel/HotelImage/HotelImage';
+import HotelLink from '../Hotel/HotelLink/HotelLink';
+import HotelRating from '../Hotel/HotelRating/HotelRating';
 import ToggleButton from '../External/ToggleButton/ToggleButton';
-import HotelPrice from '../HotelPrice/HotelPrice';
-import HotelOpinion from '../HotelOpinion/HotelOpinion';
-import HotelFacilities from '../HotelFacilities/HotelFacilities';
-import HotelDescription from '../HotelDescription/HotelDescription';
+import HotelPrice from '../Hotel/HotelPrice/HotelPrice';
+import HotelOpinion from '../Hotel/HotelOpinion/HotelOpinion';
+import HotelFacilities from '../Hotel/HotelFacilities/HotelFacilities';
+import HotelDescription from '../Hotel/HotelDescription/HotelDescription';
 
 import isNewIcon from '../../assets/new.svg';
-import Modal_OLD from "../Modal_OLD";
-import ModalWindow from "../ModalWindow";
+import ModalWindow from "../ModalWindow/ModalWindow";
 import {connect} from "react-redux";
 
 type Props = {
@@ -81,7 +80,7 @@ class HotelListItem extends React.Component<Props, State> {
 			<div className={this.props.viewTypeId === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
-					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={<Modal_OLD value={this.props}/>}/>
+					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={"Test"}/>
 				</div>
 				<div className="hotel__name-container">
 					<HotelLink hotelName={this.props.data.hotel_name}

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import AddHotelForm from "./AddHotelForm";
+import AddHotelForm from "../../components/AddHotel/AddHotelForm";
 import {reduxForm} from 'redux-form';
-import AddHotelReview from "./AddHotelReview";
+import AddHotelReview from "../../components/AddHotel/AddHotelReview";
 
 
-class AddHotelNew extends Component {
+class AddHotelsView extends Component {
 	state = {
 		showFormReview:  false
 	};
@@ -12,7 +12,7 @@ class AddHotelNew extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				{this.state.showFormReview ? <AddHotelReview onCancel={() => this.setState({showFormReview: false})}/> :
+				{this.state.showFormReview === true ? <AddHotelReview onCancel={() => this.setState({showFormReview: false})}/> :
 					<AddHotelForm onSurveySubmit={() => this.setState({showFormReview: true})}/>
 				}
 			</React.Fragment>
@@ -23,4 +23,4 @@ class AddHotelNew extends Component {
 export default reduxForm({
 	form: 'addHotelForm',
 	destroyOnUnmount: false // prevent cleaning form
-})(AddHotelNew);
+})(AddHotelsView);

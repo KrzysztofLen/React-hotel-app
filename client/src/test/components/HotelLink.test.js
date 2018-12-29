@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import HotelLink from '../../components/HotelLink/HotelLink';
+import HotelLink from '../../components/Hotel/HotelLink/HotelLink';
 import app_data from '../fixtures/app_data';
 
 test('should render HotelRating Link correctly', () => {

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import visa from '../../assets/cc-visa.svg';
-import cutlery from '../../assets/cutlery.svg';
-import gamepad from '../../assets/gamepad.svg';
-import heartbeat from '../../assets/heartbeat.svg';
-import wifi from '../../assets/wifi.svg';
+import visa from '../../../assets/cc-visa.svg';
+import cutlery from '../../../assets/cutlery.svg';
+import gamepad from '../../../assets/gamepad.svg';
+import heartbeat from '../../../assets/heartbeat.svg';
+import wifi from '../../../assets/wifi.svg';
 
 class HotelFacilities extends React.Component {
 	render() {

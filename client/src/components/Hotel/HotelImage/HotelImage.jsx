@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import noImage from '../../assets/img/No_Image_Available.jpg';
+import noImage from '../../../assets/img/No_Image_Available.jpg';
 
 type Props = {
 	onClick: Function,

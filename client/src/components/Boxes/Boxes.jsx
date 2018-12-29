@@ -8,38 +8,73 @@ type Props = {
 }
 
 class Boxes extends React.Component<Props> {
+	getOpinions = () => {
+		let opinions: number = 0;
+
+		this.props.hotelsList.map(({hotel_reviews}) => {
+			opinions += hotel_reviews;
+		});
+
+		return opinions;
+	}
+
+	getFiveStarsHotels = () => {
+		const fiveStarsHotels: Array<Object> = [];
+
+		this.props.hotelsList.map((hotel: Object) => {
+			if (hotel.hotel_stars === 5) {
+				fiveStarsHotels.push(hotel);
+			}
+		});
+
+		return fiveStarsHotels.length;
+	}
+
+	getNewHotels = () => {
+		const newHotel: Array<Object> = [];
+
+		this.props.hotelsList.map((hotel: Object) => {
+			const isNew = (hotel.is_new) ? Date.now() - parseInt(hotel.is_new, 10) : 0;
+			const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
+			(isNew >= isNewDuration || isNew === 0) ? false : newHotel.push(hotel);
+		});
+		return newHotel.length;
+	}
+
 	render() {
+		const boxesContent: Array<mixed> = [
+			{
+				title: "Total HotelsView:",
+				value: this.props.hotelsNumberInDatabase
+			},
+			{
+				title: "5 star's HotelsView:",
+				value: this.getFiveStarsHotels()
+			},
+			{
+				title: "Opinions:",
+				value: this.getOpinions()
+			},
+			{
+				title: "New hotel's:",
+				value: this.getNewHotels()
+			}
+		];
+
 		return (
 			<React.Fragment>
 				<div className={"box__container"}>
-					<div className={"box box--1"}>
-						<div className={"box__icon box__icon--1"}/>
-						<div className={"box__text"}>
-							<span className={"box__text--title"}>Total Hotels: </span>
-							<span className={"box__text--value"}>{this.props.hotelsNumberInDatabase}</span>
-						</div>
-					</div>
-					<div className={"box box--2"}>
-						<div className={"box__icon box__icon--2"}/>
-						<div className={"box__text"}>
-							<span className={"box__text--title"}>5 star's Hotels: </span>
-							<span className={"box__text--value"}>5</span>
-						</div>
-					</div>
-					<div className={"box box--3"}>
-						<div className={"box__icon box__icon--3"}/>
-						<div className={"box__text"}>
-							<span className={"box__text--title"}>Opinions: </span>
-							<span className={"box__text--value"}>53123</span>
-						</div>
-					</div>
-					<div className={"box box--4"}>
-						<div className={"box__icon box__icon--4"}/>
-						<div className={"box__text"}>
-							<span className={"box__text--title"}>New hotel's: </span>
-							<span className={"box__text--value"}>2</span>
-						</div>
-					</div>
+					{boxesContent.map((boxContent: Object, index: number) => {
+						return (
+							<div key={index} className={`box box--${index + 1}`}>
+								<div className={`box__icon box__icon--${index + 1}`}/>
+								<div className={"box__text"}>
+									<span className={"box__text--title"}>{boxContent.title}</span>
+									<span className={"box__text--value"}>{boxContent.value}</span>
+								</div>
+							</div>
+						)
+					})}
 				</div>
 			</React.Fragment>
 		)
@@ -47,12 +82,14 @@ class Boxes extends React.Component<Props> {
 }
 
 interface IHotelLength {
-	hotelsNumberInDatabase: number
+	hotelsNumberInDatabase: number,
+	hotelsList: Array<Object>
 }
 
-function mapStateToProps({hotelsNumberInDatabase}): IHotelLength {
+function mapStateToProps({hotelsNumberInDatabase, hotelsList}): IHotelLength {
 	return {
-		hotelsNumberInDatabase: hotelsNumberInDatabase.count
+		hotelsNumberInDatabase: hotelsNumberInDatabase.count,
+		hotelsList
 	}
 }
 

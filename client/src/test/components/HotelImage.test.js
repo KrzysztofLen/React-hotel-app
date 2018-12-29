@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import HotelImage from '../../components/HotelImage/HotelImage';
+import HotelImage from '../../components/Hotel/HotelImage/HotelImage';
 import app_data from '../fixtures/app_data';
 
 test('it should render HotelImage component correctly', () => {

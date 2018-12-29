@@ -24,7 +24,7 @@ class AddHotelNumberField extends Component {
 					onChange={this.onChange}
 					className={"input"}
 				/>
-				<div className="form-error">
+				<div className="form__error-msg">
 					{this.props.meta.touched && this.props.meta.error}
 				</div>
 			</React.Fragment>

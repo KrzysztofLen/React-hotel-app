@@ -23,7 +23,7 @@ class AddHotelNumberField extends Component {
 					<option value="true" >TRUE</option>
 					<option value="false">FALSE</option>
 				</select>
-				<div className="form-error">
+				<div className="form__error-msg">
 					{this.props.meta.touched && this.props.meta.error}
 				</div>
 			</React.Fragment>

@@ -3,9 +3,8 @@ import {Field, reduxForm} from 'redux-form';
 import {Link} from "react-router-dom";
 
 // Components
-import Rating from "../External/Rating/Rating";
 import AddHotelField from "./AddHotelField";
-import {FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
+import {TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import AddHotelNumberField from "./AddHotelNumberField";
 import AddHotelOptionField from "./AddHotelOptionField";
 import FileInput from "./FileInput";
@@ -15,7 +14,7 @@ class AddHotelForm extends Component {
 		return (
 			<React.Fragment>
 				<div className="hotel-form__formValueBox">
-					{FIELDS.map(({label, name}, i) => {
+					{TEXT_FIELDS.map(({label, name}, i) => {
 						return (
 							<Field key={i} label={label} type="text" name={name} component={AddHotelField}/>
 						)
@@ -42,7 +41,7 @@ class AddHotelForm extends Component {
 
 	render() {
 		return (
-			<React.Fragment>
+			<div className={"hotel-form"}>
 				<div className="hotel-form__container">
 					<h5 className="hotel-form__header">Fill to submit</h5>
 					<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)} className="hotel-form__form"
@@ -57,7 +56,7 @@ class AddHotelForm extends Component {
 						</div>
 					</form>
 				</div>
-			</React.Fragment>
+			</div>
 		)
 	}
 }
@@ -65,7 +64,7 @@ class AddHotelForm extends Component {
 function validate(values) {
 	const errors = {};
 
-	FIELDS.forEach(({name}) => {
+	TEXT_FIELDS.forEach(({name}) => {
 		if (!values[name]) {
 			errors[name] = 'FAILURE! You must provide a value';
 		}

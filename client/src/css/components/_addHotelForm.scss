@@ -1,9 +1,13 @@
 .hotel-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: lighten($color-primary, 20%);
+
 	&__review,
 	&__container {
 		width: 90%;
 		height: 525px;
-		margin: 85px auto;
 		background: $color-grey-light-2;
 		border-radius: 5px;
 		box-sizing: border-box;
