@@ -105,7 +105,7 @@ class HotelListItem extends React.Component<Props, State> {
 						              index={this.props.index}
 						              activeIndex={this.state.activeIndex === this.props.index}
 						              onClick={this.onToggleButton}
-						              btnClass={"button" + (this.state.activeIndex === this.props.index ? ' is-link' : ' is-info') + "--is-outlined"}
+						              btnClass={"button inline"}
 						/>
 					</div>
 				</div>

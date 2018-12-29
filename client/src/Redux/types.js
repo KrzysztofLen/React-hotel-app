@@ -10,3 +10,5 @@ export const FETCH_CREDITS: string = 'FETCH_CREDITS';
 export const SUBMIT_SURVEY: string = 'SUBMIT_SURVEY';
 export const AUTH_USER: string = 'AUTH_USER';
 export const AUTH_ERROR: string = 'AUTH_ERROR';
+
+// ENTRIES API URL'S

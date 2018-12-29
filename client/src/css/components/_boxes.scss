@@ -1,0 +1,81 @@
+.box {
+	width: 235px;
+	height: 85px;
+	background: white;
+	box-shadow: 2px 2px 19px -1px rgba(0, 0, 0, 0.2);
+	display: flex;
+
+	&__container {
+		display: flex;
+		margin: 10px 20px;
+		justify-content: space-between;
+	}
+
+	&__icon {
+		width: 40%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 45px;
+			height: 45px;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		&--1 {
+			background: $color-primary;
+
+			&::before {
+				background-image: url('../assets/SVG/office.svg');
+			}
+		}
+
+		&--2 {
+			background: $color-send;
+
+			&::before {
+				background-image: url('../assets/SVG/star-full.svg');
+			}
+		}
+
+		&--3 {
+			background: $rate-good;
+
+			&::before {
+				background-image: url('../assets/SVG/bubbles2.svg');
+			}
+		}
+
+		&--4 {
+			background: $rate-bad;
+
+			&::before {
+				background-image: url('../assets/SVG/pie-chart.svg');
+			}
+		}
+	}
+
+	&__text {
+		width : 60%;
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		box-sizing: border-box;
+
+		&--title {
+			@include font-size(1.6);
+			@include font-weight(200);
+		}
+
+		&--value {
+			@include font-size(2.6);
+			@include font-weight(800);
+			margin-top: 10px;
+		}
+	}
+}

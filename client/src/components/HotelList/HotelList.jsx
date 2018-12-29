@@ -5,8 +5,7 @@ import Loader from '../Loader/Loader';
 import {Spinner} from "../Spinner/Spinner";
 
 type Props = {
-	data: Array<mixed>,
-	isLoading: boolean
+	data: Array<mixed>
 };
 
 type State = {
@@ -55,17 +54,16 @@ class HotelsList extends React.Component<Props, State> {
 			<main className="hotel-list">
 				<div className="content__container">
 					<div className="column">
-						{this.props.isLoading ? <Loader text="Loading"/> :
-							<React.Fragment>
-								{elem.map((data: any, index: number): Object => <HotelListItem data={data}
-								                                                               key={data._id}
-								                                                               id={data._id}
-								                                                               index={index}/>
-								)}
-								<div className="hotel-list__more">
-									{!(elem.length === this.props.data.length) && <Spinner/>}
-								</div>
-							</React.Fragment>}
+						<React.Fragment>
+							{elem.map((data: any, index: number): Object => <HotelListItem data={data}
+							                                                               key={data._id}
+							                                                               id={data._id}
+							                                                               index={index}/>
+							)}
+							<div className="hotel-list__more">
+								{!(elem.length === this.props.data.length) && <Spinner/>}
+							</div>
+						</React.Fragment>
 					</div>
 				</div>
 			</main>
