@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import HotelsView from "../Views/HotelsView/HotelsView";
 import SingleHotelView from '../Views/SingleHotelView/SingleHotelView';
 import Navigation from '../components/Navigation/Navigation';
-import AddHotelNew from "../Views/AddHotelsView/AddHotelsView";
+import AddHotelsView from "../Views/AddHotelsView/AddHotelsView";
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import Footer from '../components/Footer/Footer';
@@ -56,7 +56,7 @@ class AppRouter extends React.Component {
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel} exact/>
 
-					<PrivateRoute path="/add" component={AddHotelNew} isAuth={this.props.currentUserAuth} exact/>
+					<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} exact/>
 					<Route path="/forbidden" component={Forbidden}/>
 					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}

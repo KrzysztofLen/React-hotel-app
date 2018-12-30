@@ -8,6 +8,7 @@ import {TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import AddHotelNumberField from "./AddHotelNumberField";
 import AddHotelOptionField from "./AddHotelOptionField";
 import FileInput from "./FileInput";
+import ToggleSwitch from "../External/ToggleSwitch/ToggleSwitch";
 
 class AddHotelForm extends Component {
 	renderFields() {
@@ -28,9 +29,10 @@ class AddHotelForm extends Component {
 					})}
 				</div>
 				<div className="hotel-form__formValueBox">
+					{/*<Field key={i} label={label} type="select" name={name} component={AddHotelOptionField}/>*/}
 					{BOOLEAN_FIELDS.map(({label, name}, i) => {
 						return (
-							<Field key={i} label={label} type="select" name={name} component={AddHotelOptionField}/>
+							<ToggleSwitch theme={"default"} className={"d-flex"} label={label}/>
 						)
 					})}
 				</div>
@@ -40,6 +42,7 @@ class AddHotelForm extends Component {
 	}
 
 	render() {
+		console.log(this.props);
 		return (
 			<div className={"hotel-form"}>
 				<div className="hotel-form__container">

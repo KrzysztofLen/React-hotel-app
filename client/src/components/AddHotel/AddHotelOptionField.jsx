@@ -13,7 +13,6 @@ class AddHotelNumberField extends Component {
 
 	render() {
 		const {input: {value}} = this.props;
-		console.log(this.props);
 
 		return (
 			<React.Fragment>
