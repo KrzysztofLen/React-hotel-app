@@ -6,6 +6,7 @@ import switchView from "./switchViewReducers";
 import fetchHotelsNumber from "./getHotelsLengthReducers";
 import authUser from "./authUserReducers";
 import submitHotel from "./submitHotelReducers";
+import addHotelForm from "./addHotelFormReducers";
 import {reducer as reduxForm} from "redux-form";
 
 export default combineReducers({
@@ -15,6 +16,7 @@ export default combineReducers({
 	filterHotels: hotelSearch,
 	viewTypeId: switchView,
 	hotelsNumberInDatabase: fetchHotelsNumber,
-	form: reduxForm,
+	addHotelFormValues: addHotelForm,
+	form: reduxForm, //TODO reduxForm use in auth system
 	submitHotel
 });

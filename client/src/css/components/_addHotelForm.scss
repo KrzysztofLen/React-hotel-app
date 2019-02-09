@@ -46,6 +46,9 @@
 		@include font-size(1.9);
 		color: $color-grey-dark-2;
 		font-weight: 200;
+		display: flex;
+		flex-direction: column;
+		width: 33.3334%;
 	}
 
 	&__valuesBox {
@@ -116,5 +119,31 @@
 		display: flex;
 		justify-content: space-between;
 		padding: 20px;
+	}
+
+	&__toggleInput {
+		display: flex;
+		align-items: center;
+		margin: 10px 0;
+
+			label {
+				margin-top: 0;
+				position: relative;
+				width: 100px;
+			}
+	}
+
+	&__reviewLabel {
+		color: $color-primary;
+		margin-bottom: 8px;
+		@include font-size(1.4);
+		font-weight: bold;
+	}
+
+	&__reviewValues {
+		flex-wrap: wrap;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
 	}
 }

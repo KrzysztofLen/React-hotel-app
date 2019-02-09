@@ -1233,7 +1233,10 @@ body.ReactModal__Body--open {
     font-size: 19px;
     font-size: 1.9rem;
     color: #777;
-    font-weight: 200; }
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    width: 33.3334%; }
   .hotel-form__valuesBox {
     display: flex;
     position: relative;
@@ -1288,6 +1291,25 @@ body.ReactModal__Body--open {
     display: flex;
     justify-content: space-between;
     padding: 20px; }
+  .hotel-form__toggleInput {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; }
+    .hotel-form__toggleInput label {
+      margin-top: 0;
+      position: relative;
+      width: 100px; }
+  .hotel-form__reviewLabel {
+    color: #17A5FD;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: bold; }
+  .hotel-form__reviewValues {
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    flex-direction: row; }
 
 .success__container {
   display: flex;

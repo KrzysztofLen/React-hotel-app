@@ -12,8 +12,8 @@ class SignUpForm extends Component {
 	};
 
 	render() {
-		const {handleSubmit} = this.props;
-
+		const {handleSubmit, errorMessage} = this.props;
+		//TODO fixed confirm password message
 		return (
 			<React.Fragment>
 				<form onSubmit={handleSubmit(this.onSubmit)} className={"form"}>
@@ -27,7 +27,12 @@ class SignUpForm extends Component {
 						<Field type={"password"} name={"password"} component={"input"}
 						       autoComplete={"none"} className={"input"}/>
 					</fieldset>
-					<div className={"form__error-msg"}>{this.props.errorMessage}</div>
+					<fieldset>
+						<label htmlFor="password">Confirm Password:</label>
+						<Field type={"password"} name={"passwordConfirm"} component={"input"}
+						       autoComplete={"none"} className={"input"}/>
+					</fieldset>
+					<div className={"form__error-msg"}>{errorMessage}</div>
 					<button className={"button is-success"}>Sign Up!</button>
 				</form>
 			</React.Fragment>
@@ -41,9 +46,20 @@ function mapStateToProps(state) {
 	}
 }
 
+function validate(formProps) {
+	const errors = {};
+
+	if(formProps.password !== formProps.passwordConfirm) {
+		errors.password = "Password must match!";
+	}
+
+	return errors;
+}
+
 export default compose(
 	connect(mapStateToProps, actions),
 	reduxForm({
-		form: 'signup'
+		form: 'signup',
+		validate
 	})
 )(SignUpForm);

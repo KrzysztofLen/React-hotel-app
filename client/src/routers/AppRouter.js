@@ -13,6 +13,7 @@ import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
 import {onFetchUserEnter} from "./routesCallback";
+import AddHotelReview from "../components/AddHotel/AddHotelReview";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
 	const fakeAuth = {
@@ -56,7 +57,9 @@ class AppRouter extends React.Component {
 					<Route path="/cart" component={Cart}/>
 					<Route path="/buy" component={BuyHotel} exact/>
 
-					<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} exact/>
+					{/*<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} exact/>*/}
+					<Route path="/add" component={AddHotelsView} />
+					<Route path="/send" component={AddHotelReview} />
 					<Route path="/forbidden" component={Forbidden}/>
 					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}

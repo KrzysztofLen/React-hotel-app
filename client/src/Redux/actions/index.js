@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as types from "../types";
+import {AUTH_ERROR} from "../types";
 
 export const fetchHotels = () => async (dispatch) => {
 	const res = await axios.get('/api/hotels');
@@ -21,10 +22,18 @@ export const signUpUser = (formProps, callback) => async (dispatch) => {
 	} catch (e) {
 		dispatch({
 			type: types.AUTH_ERROR,
-			payload: 'Email is in use'
+			payload: authErrors('Email is in use')
 		});
 	}
 };
+
+//TODO Use universal AC to send errors
+export const authErrors = (error) => {
+	return {
+		type: types.AUTH_ERROR,
+		payload: error
+	}
+}
 
 export const signInUser = (formProps, callback) => async (dispatch) => {
 	try {
@@ -94,3 +103,8 @@ export const submitSurvey = (values, history) => async (dispatch) => {
 		payload: res.data.createdHotel
 	});
 };
+
+export const addHotel = (values) => ({
+	type: types.ADD_HOTEL,
+	payload: values
+});

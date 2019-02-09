@@ -10,6 +10,7 @@ class AddHotelsView extends Component {
 	};
 
 	render() {
+
 		return (
 			<React.Fragment>
 				{this.state.showFormReview === true ? <AddHotelReview onCancel={() => this.setState({showFormReview: false})}/> :
@@ -20,7 +21,4 @@ class AddHotelsView extends Component {
 	}
 }
 
-export default reduxForm({
-	form: 'addHotelForm',
-	destroyOnUnmount: false // prevent cleaning form
-})(AddHotelsView);
+export default AddHotelsView;
