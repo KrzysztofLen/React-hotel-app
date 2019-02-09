@@ -33,16 +33,6 @@ class AddHotelForm extends Component<IState> {
 		super(props);
 
 		this.state = {
-			hotel_name: "",
-			hotel_adress: "",
-			hotel_city: "",
-			hotel_province: "",
-			hotel_price: 0,
-			hotel_distance: 0,
-			hotel_description: "",
-			hotel_stars: 0,
-			hotel_rating: 0,
-			hotel_reviews: 0,
 			is_new: false,
 			is_apartment: false,
 			facilities_restaurant: false,

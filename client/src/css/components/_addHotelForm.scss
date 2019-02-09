@@ -3,22 +3,21 @@
 	justify-content: center;
 	align-items: center;
 	background: lighten($color-primary, 20%);
+	padding: 0 40px;
 
 	&__review,
 	&__container {
-		width: 90%;
 		height: 525px;
 		background: $color-grey-light-2;
 		border-radius: 5px;
 		box-sizing: border-box;
 		position: relative;
-		padding-left: 40px;
 	}
 
 	&__container {
-		padding-right: 40px;
 		background: $color-white;
 		height: 100%;
+		padding: 20px 40px;
 	}
 
 	&__header {
@@ -27,7 +26,7 @@
 		text-align: center;
 		font-weight: 400;
 		margin: 0;
-		padding: 22px;
+		padding: 40px 0;
 	}
 
 	&__values {
@@ -49,6 +48,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 33.3334%;
+		margin-bottom: 20px;
 	}
 
 	&__valuesBox {
@@ -96,6 +96,11 @@
 		font-size: 20px;
 		color: $color-send;
 		text-transform: uppercase;
+		transition: all .4s ease-in;
+
+		&:hover {
+			background-color: darken($rate-very-good, 20%);
+		}
 	}
 
 	&__sendIcon {
@@ -118,7 +123,6 @@
 	&__buttons {
 		display: flex;
 		justify-content: space-between;
-		padding: 20px;
 	}
 
 	&__toggleInput {
