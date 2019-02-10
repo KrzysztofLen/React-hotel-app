@@ -6,6 +6,7 @@ import * as actions from "./../../Redux/actions";
 // Components
 import {TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import ToggleSwitch from "../External/ToggleSwitch/ToggleSwitch";
+import DropzoneElement from "../External/Dropzone/DropzoneElement";
 
 type IState = {
 	hotel_name: string,
@@ -136,6 +137,7 @@ class AddHotelForm extends Component<IState> {
 							{this.renderNumberFields()}
 							{this.renderBooleanFields()}
 						</div>
+						<DropzoneElement/>
 						<div className="hotel-form__buttons">
 							<Link to="/" className="button is-danger">Cancel</Link>
 							<button type="submit" className="button is-info">Next</button>

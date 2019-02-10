@@ -28,3 +28,7 @@ button:disabled {
 body.ReactModal__Body--open {
 	overflow: hidden;
 }
+
+#root {
+	position: relative; //Need for dropzone overlay
+}

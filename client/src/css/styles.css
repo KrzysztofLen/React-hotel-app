@@ -31,6 +31,9 @@ button:disabled {
 body.ReactModal__Body--open {
   overflow: hidden; }
 
+#root {
+  position: relative; }
+
 .container {
   background-color: #faf9f9;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
@@ -1205,8 +1208,7 @@ body.ReactModal__Body--open {
     height: 525px;
     background: #f2f2f2;
     border-radius: 5px;
-    box-sizing: border-box;
-    position: relative; }
+    box-sizing: border-box; }
   .hotel-form__container {
     background: #fff;
     height: 100%;
@@ -1700,6 +1702,53 @@ body.ReactModal__Body--open {
 
 .hotel-review__buttonWrapper {
   display: flex; }
+
+.dropzone__container {
+  height: 200px;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #666666;
+  border-style: dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px; }
+
+.dropzone__files-title {
+  color: #777;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0; }
+
+.dropzone__files-wrapper {
+  margin: 20px 0; }
+
+.dropzone__file {
+  font-size: 12px;
+  font-size: 1.2rem; }
+
+.dropzone__text {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+.dropzone__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 30px;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .dropzone__overlay--rejected {
+    border: 3px dashed #dc173f; }
 
 /* ------------- */
 /*		LAYOUT    */
