@@ -19,7 +19,7 @@ class AddHotelReview extends Component {
 				{test.map(({name, value}, idx) => {
 					return <div className="hotel-form__value" key={idx}>
 						<span className={"hotel-form__reviewLabel"}>{name}</span>
-						<span>{(value === null || value === "") ? "empty" : value.toString()}</span>
+						<span className={"hotel-form__reviewValue"}>{(value === null || value === "") ? "empty" : value.toString()}</span>
 					</div>
 				})}
 			</div>

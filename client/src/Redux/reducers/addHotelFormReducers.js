@@ -17,7 +17,8 @@ const INITIAL_STATE = {
 	facilities_gym: false,
 	facilities_wifi: false,
 	facilities_card_payment: false,
-	facilities_game_room: false
+	facilities_game_room: false,
+	hotel_images: []
 };
 
 export default function (state = INITIAL_STATE, action) {

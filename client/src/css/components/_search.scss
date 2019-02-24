@@ -1,12 +1,21 @@
-// SEARCH /////////////////////////////////
 .search {
-	flex: 0 0 40%;
+	flex: 0 0 60%;
 
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	height: 8rem;
+	margin-left: 8rem;
 
-	margin: 0 auto;
+	&::before {
+		content: "";
+		position: absolute;
+		background-image: url('../assets/magnifying-glass.svg');
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 27px;
+		width: 8rem;
+		height: 8rem;
+	}
 
 	@include media-queries(L) {
 		flex: 0;
@@ -22,17 +31,16 @@
 
 	&__input {
 		font-family: inherit;
-		font-size: 1.4rem;
-		background-color: $color-grey-light-2;
+		@include font-size(2.2);
+		background-color: $color-white;
 		border: none;
 		color: inherit;
-		padding: .7rem 2rem;
-		border-radius: 100px;
+		padding: .7rem 5rem;
 		width: 90%;
 		transition: all .2s;
-		background-image: url('../assets/magnifying-glass.svg');
-		background-repeat: no-repeat;
-		background-position: 98%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		@include media-queries(L) {
 			padding: 1rem 2rem;
@@ -42,8 +50,6 @@
 		&:focus {
 			outline: none;
 			width: 100%;
-			background-color: $color-grey-light-3;
-			border: 1px solid rgba($color-primary, 0.4);
 			transition: all .2s;
 		}
 

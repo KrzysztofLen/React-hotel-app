@@ -49,16 +49,18 @@ class HotelsView extends Component<IState> {
 		return (
 			<div className={"container"}>
 				<header className="header">
-					<Logo/>
 					<Search/>
 					<LoginSystem/>
 				</header>
 				<div className="content">
+					<div className={"content__header-wrapper"}>
+						<h1 className={"view-header"}>Hotels overview</h1>
+						<ViewSwitcher/>
+					</div>
 					{this.props.hotelsList.length === 0 && this.state.isLoading === false ?
 						<span className="content__no-results">Sorry no results :(</span> :
 						<React.Fragment>
 							{this.state.isLoading === true ? <Loader text="Loading"/> : <React.Fragment>
-								<ViewSwitcher />
 								<Boxes/>
 								<HotelsList hotels={this.props.hotelsList}/>
 							</React.Fragment>}

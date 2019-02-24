@@ -174,3 +174,17 @@ Sun Dec 30 2018 17:23:09 GMT+0100 (Central European Standard Time): GET /auth/go
 Sun Dec 30 2018 17:25:10 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/wwD6FDYPeTu5_kS-HUC2Ks3w-M1iLb1qq2cabPOw9A3-f2LnwQg16XZuLkWDJ78J4dT1Sin6YSTVCGhznh6kCtM&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
 Sun Dec 30 2018 17:30:12 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/wwDS5zn7fIkfHKEpzeDGzu3otODK2hw_rMvvHjTjBK75F4ArXud1Uv0GNsGSW7aXCZUMJV0JvMa72O20D_RPPqQ&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
 Sat Jan 19 2019 13:30:38 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/1wDRAUhqvbhpeSYh3x1Os9TxTlLu9A2m5If2pDJXMMXDOb1WSG9lMGPUWJ_BFy75_kxJwy9o5intVWSjxNhDHw8&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Sun Feb 17 2019 12:42:37 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 12:43:07 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 12:45:22 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 12:45:58 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 12:47:16 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 12:59:29 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:00:23 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:02:16 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:06:03 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:09:12 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:09:38 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:12:09 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 17 2019 13:14:18 GMT+0100 (Central European Standard Time): POST /api/hotels
+Sun Feb 24 2019 12:16:29 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/-wDRtxZIKF0g4CQWvMi9VnSOo5ne4m1r_wj1my491DKCvREWXHhjE83HBFQMze6yFfZn44D1XxPmrPilQXrsdRc&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile

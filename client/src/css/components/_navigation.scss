@@ -1,10 +1,9 @@
 .sidebar {
-	background-color: $color-grey-dark-1;
-	flex: 0 0 18%;
-
+	background-color: $color-white;
+	width: 8rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	border-right: 1px solid $color-grey-light-1;
 }
 
 .side-nav {
@@ -15,12 +14,15 @@
 	display: flex;
 	margin: 0;
 	padding: 0;
+	flex-direction: column;
+	margin-top: 40px;
 
 	&__item {
 		position: relative;
 		margin: 0;
 		cursor: pointer;
-		width: 20rem;
+		width: 8rem;
+		height: 8rem;
 
 		&:before {
 			content: '';
@@ -28,22 +30,27 @@
 			top: 0;
 			left: 0;
 			height: 100%;
-			width: 3px;
-			background-color: $color-primary-light;
-			transform: scaleY(0);
 			transition: transform .2s,
 			width .4s cubic-bezier(1, 0, 0, 1) .2s,
 			background-color .1s;
 			background-repeat: no-repeat;
 			background-position: 20px center;
+			transform: scaleY(1);
+			width: 100%;
+			border-left: 3px solid transparent;
 
 			@media only screen and (max-width: $bp-small) {
 				background-position: center top;
 			}
 		}
 
-		&--active::before {
-			background-color: $color-primary;
+		&:hover::before {
+			border-left: 3px solid $color-grey-light-4;
+		}
+
+		&--active::before,
+		&--active:hover::before {
+			border-left: 3px solid $color-primary;
 		}
 
 		@media only screen and (max-width: $bp-medium) {
@@ -76,22 +83,11 @@
 		}
 	}
 
-	&__item:hover::before,
-	&__item--active::before {
-		transform: scaleY(1);
-		width: 100%;
-	}
-
-	&__item:active::before {
-		background: $color-primary;
-	}
-
 	&__link:link,
 	&__link:visited {
 		color: $color-grey-light-1;
 		text-decoration: none;
 		text-transform: uppercase;
-		display: block;
 		padding: 0;
 		z-index: 10;
 		position: relative;

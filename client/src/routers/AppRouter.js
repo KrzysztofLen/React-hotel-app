@@ -7,12 +7,10 @@ import AddHotelsView from "../Views/AddHotelsView/AddHotelsView";
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';
 import Footer from '../components/Footer/Footer';
-import NoMatch404 from '../components/404/NoMatch404';
 import {connect} from "react-redux";
 import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
-import {onFetchUserEnter} from "./routesCallback";
 import AddHotelReview from "../components/AddHotel/AddHotelReview";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
@@ -40,10 +38,9 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 
 class AppRouter extends React.Component {
 	render() {
-		console.log("App router", this.props);
 		return (
 			<BrowserRouter>
-				<div>
+				<div className={"hotel-app"}>
 					<Navigation/>
 					{/*<Header/>*/}
 					{/* TODO make onEnter fetch data on particular view/route */}
@@ -64,7 +61,7 @@ class AppRouter extends React.Component {
 					<Route path="/add/success" component={AddHotelSuccess}/>
 					{/*<Route component={NoMatch404}/>*/}
 
-					<Footer/>
+					{/*<Footer/> */}
 				</div>
 			</BrowserRouter>
 		)

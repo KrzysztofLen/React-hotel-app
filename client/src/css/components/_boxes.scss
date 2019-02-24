@@ -1,19 +1,27 @@
 .box {
-	width: 235px;
-	height: 85px;
+	width: 175px;
+	height: 175px;
 	background: white;
-	box-shadow: 2px 2px 19px -1px rgba(0, 0, 0, 0.2);
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: all .4s linear;
+
+	&:hover {
+		box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
+	}
 
 	&__container {
 		display: flex;
-		margin: 10px 20px;
+		margin: 10px 8rem;
 		justify-content: space-between;
 	}
 
 	&__icon {
-		width: 40%;
-		height: 100%;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -21,8 +29,8 @@
 		&::before {
 			content: '';
 			position: absolute;
-			width: 45px;
-			height: 45px;
+			width: 18px;
+			height: 18px;
 			background-repeat: no-repeat;
 			background-size: contain;
 		}
@@ -66,6 +74,7 @@
 		flex-direction: column;
 		padding: 10px;
 		box-sizing: border-box;
+		text-align: center;
 
 		&--title {
 			@include font-size(1.6);
@@ -73,9 +82,10 @@
 		}
 
 		&--value {
-			@include font-size(2.6);
+			@include font-size(4.6);
 			@include font-weight(800);
-			margin-top: 10px;
+			margin-bottom: 10px;
+			color: $color-grey-dark-1;
 		}
 	}
 }

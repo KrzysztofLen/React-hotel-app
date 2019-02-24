@@ -42,6 +42,7 @@ class Boxes extends React.Component<Props> {
 	}
 
 	render() {
+		console.log(this.props)
 		const boxesContent: Array<mixed> = [
 			{
 				title: "Total HotelsView:",
@@ -69,8 +70,8 @@ class Boxes extends React.Component<Props> {
 							<div key={index} className={`box box--${index + 1}`}>
 								<div className={`box__icon box__icon--${index + 1}`}/>
 								<div className={"box__text"}>
-									<span className={"box__text--title"}>{boxContent.title}</span>
 									<span className={"box__text--value"}>{boxContent.value}</span>
+									<span className={"box__text--title"}>{boxContent.title}</span>
 								</div>
 							</div>
 						)
@@ -88,11 +89,9 @@ interface IHotelLength {
 
 function mapStateToProps({hotelsNumberInDatabase, hotelsList}): IHotelLength {
 	return {
-		hotelsNumberInDatabase: hotelsNumberInDatabase.count,
+		hotelsNumberInDatabase,
 		hotelsList
 	}
 }
 
-const mapDispatchToProps = {switchView};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Boxes);
+export default connect(mapStateToProps, switchView)(Boxes);

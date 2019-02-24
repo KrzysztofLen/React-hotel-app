@@ -1,16 +1,14 @@
 .viewSwitcher {
-	border-bottom: $line;
+	background: $color-white;
+	border-radius: 5px;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	position: relative;
-	border-bottom: 1px solid $color-grey-dark-1;
 
 	&__views {
 		padding: 1rem;
 		display: flex;
-		margin-right: 1rem;
-		//margin-left: 2rem;
 	}
 
 	&__filter {

@@ -1,6 +1,12 @@
 .content {
-	//background-color: $color-salomon;
-	//height: 100%;
+	background: $color-dash-background;
+
+	&__header-wrapper {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin: 0 8rem;
+	}
 
 	&__container {
 		width: calc(100% - 4rem);

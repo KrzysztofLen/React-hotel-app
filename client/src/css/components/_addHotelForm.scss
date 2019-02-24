@@ -2,27 +2,25 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: lighten($color-primary, 20%);
-	padding: 0 40px;
+	background: $color-dash-background;
+	width: 100%;
 
 	&__review,
 	&__container {
 		height: 525px;
-		background: $color-grey-light-2;
 		border-radius: 5px;
 		box-sizing: border-box;
-		//position: relative;
 	}
 
 	&__container {
-		background: $color-white;
 		height: 100%;
 		padding: 20px 40px;
+		position: relative;
 	}
 
 	&__header {
-		color: $color-grey-dark-2;
-		@include font-size(2);
+		color: $color-grey-dark-1;
+		@include font-size(2.4);
 		text-align: center;
 		font-weight: 400;
 		margin: 0;
@@ -35,7 +33,7 @@
 		margin: 0 0 13px 0;
 
 		label {
-			color: $color-primary;
+			color: $color-grey-dark-1;
 			margin-bottom: 8px;
 			@include font-size(1.4);
 		}
@@ -142,6 +140,12 @@
 		margin-bottom: 8px;
 		@include font-size(1.4);
 		font-weight: bold;
+	}
+
+	&__reviewValue {
+		text-overflow: ellipsis;
+		width: 100px;
+		overflow: hidden;
 	}
 
 	&__reviewValues {

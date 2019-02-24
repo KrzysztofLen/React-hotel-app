@@ -89,18 +89,18 @@ module.exports = (passport) => {
 	//passport.use(LocalStrategy);
 
 	passport.serializeUser((user, done) => {
-		console.log(chalk.info('*** serializeUser called, user: '));
-		console.log(user);  // the whole raw user object!
-		console.log('---------');
+		// console.log(chalk.info('*** serializeUser called, user: '));
+		// console.log(user);  // the whole raw user object!
+		// console.log('---------');
 		done(null, user.id);
 	});
 
 	passport.deserializeUser((id, done) => {
-		console.log(chalk.error('*** Deserialize user, user:', id));
+		//console.log(chalk.error('*** Deserialize user, user:', id));
 		User.findById(id).then(user => {
-			console.log(chalk.success('*** Deserialize user, user:'));
-			console.log(user);
-			console.log('--------------');
+			// console.log(chalk.success('*** Deserialize user, user:'));
+			// console.log(user);
+			// console.log('--------------');
 			done(null, user);
 		});
 	});

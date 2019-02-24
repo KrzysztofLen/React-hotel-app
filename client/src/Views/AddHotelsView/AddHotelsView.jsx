@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import AddHotelForm from "../../components/AddHotel/AddHotelForm";
-import {reduxForm} from 'redux-form';
 import AddHotelReview from "../../components/AddHotel/AddHotelReview";
 
 

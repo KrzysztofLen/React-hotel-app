@@ -2,23 +2,12 @@ import React, {Component} from "react";
 import Dropzone from "react-dropzone";
 
 class DropzoneElement extends Component {
-	constructor() {
-		super();
-		this.state = {
-			files: []
-		}
-	}
-
-	onDrop = (files) => {
-		this.setState({files});
-	}
-
 	render() {
-		const files = this.state.files.map(file => (
+		const files = this.props.files.map(file => (
 			<li key={file.name} className={"dropzone__file"}>
 				{file.name} - {file.size} bytes
 			</li>
-		))
+		));
 
 		return (
 			<React.Fragment>
@@ -26,7 +15,7 @@ class DropzoneElement extends Component {
 					<h4 className={"dropzone__files-title"}>Files</h4>
 					<ul>{files}</ul>
 				</aside>
-				<Dropzone onDrop={this.onDrop} accept="image/*">
+				<Dropzone onDrop={this.props.onDrop} accept="image/*" name={"hotel_images"}>
 					{({getRootProps, getInputProps, isDragActive, isDragReject}) => (
 						<div
 							className={"dropzone__container"} {...getRootProps()}>

@@ -30,13 +30,15 @@ mongoose.connect(keys.mongoURI); // connect to our database
 app.use(morgan('dev'));
 app.use(cors());
 app.use('/uploads', express.static('uploads'));
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use(
 	cookieSession({
 		maxAge: 30 * 24 * 60 * 60 * 1000,
 		keys: [keys.cookieKey]
 	})
 );
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(session({
 	secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
 	resave: false, //required

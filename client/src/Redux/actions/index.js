@@ -90,13 +90,21 @@ export const fetchHotelsLength = () => async (dispatch) => {
 	const res = await axios.get('/api/count');
 	dispatch({
 		type: types.HOTELS_LENGTH,
-		payload: res.data
+		payload: res.data.result
 	});
 };
 
 export const submitSurvey = (values, history) => async (dispatch) => {
-	console.log('VALUES', values);
-	const res = await axios.post('/api/hotels', values);
+	//#TODO create new FormData to able to send file into DB
+	// let form_data = new FormData();
+	// for (let key in values ) {
+	// 	console.log(values);
+	// 	form_data.append(key, values[key]);
+	// }
+
+	//const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+	//const res = await axios.post('/api/hotels', form_data, config);
+	const res = await axios.post('/api/hotels');
 	history.push('/add/success');
 	dispatch({
 		type: types.SUBMIT_SURVEY,

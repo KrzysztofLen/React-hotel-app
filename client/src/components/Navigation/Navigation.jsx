@@ -1,5 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {Logo} from "../Logo/Logo";
+import {home} from "../../assets/SVG/home.svg";
 
 class Navigation extends React.Component {
 	constructor(props) {
@@ -19,15 +21,14 @@ class Navigation extends React.Component {
 	render() {
 		return (
 			<nav className="sidebar">
+				<Logo/>
 				<ul className="side-nav">
-					{this.props.navlinks.map((element, index) => {
+					{this.props.navlinks.map(({path}, index) => {
 						return (
 							<li key={index}
 							    className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
 							    onClick={this.onSetActiveIndex.bind(this, index)}>
-								<NavLink to={`${element.path}`} className="side-nav__link">
-									<span>{element.link}</span>
-								</NavLink>
+								<NavLink to={`${path}`} className="side-nav__link" />
 							</li>
 						)
 					})}
@@ -40,19 +41,15 @@ class Navigation extends React.Component {
 Navigation.defaultProps = {
 	navlinks: [
 		{
-			link: "Hotel's",
 			path: "/"
 		},
 		{
-			link: "Buy Hotel",
 			path: "/buy"
 		},
 		{
-			link: "Reservation",
 			path: "/reservation"
 		},
 		{
-			link: "Add Hotel",
 			path: "/add"
 		}
 	]

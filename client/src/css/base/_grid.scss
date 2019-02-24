@@ -1,8 +1,7 @@
 .container {
 	//margin: 8rem auto;
 	background-color: $color-grey-light-1;
-	box-shadow: $shadow-dark;
-
+	width: 100%;
 	min-height: 100vh;
 
 	@media only screen and (max-width: $bp-largest) {
@@ -10,4 +9,8 @@
 		width: 100%;
 		max-width: 100%;
 	}
+}
+
+.hotel-app {
+	display: flex;
 }
