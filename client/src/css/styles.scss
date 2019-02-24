@@ -9,7 +9,6 @@
 /* ------------- */
 @import 'base/base';
 @import 'base/grid';
-@import 'base/settings';
 @import 'base/utilities';
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,400,700');
 
@@ -18,7 +17,6 @@
 /* ------------- */
 @import "components/_auth.scss";
 @import "components/header";
-@import "components/single-comment";
 @import "components/boxes";
 @import "components/modal";
 @import "components/search";

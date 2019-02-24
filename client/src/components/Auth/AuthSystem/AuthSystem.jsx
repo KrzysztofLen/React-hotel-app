@@ -73,7 +73,7 @@ class AuthSystem extends React.Component<Props, State> {
 			<div className="login__container">
 				{this.props.currentUserAuth && <span className="login__profile">Hello
 					<span className="login__profile--name">{this.props.currentUserAuth.name}</span>!</span>}
-				{this.renderContent()}
+				{/*	{this.renderContent()} */}
 			</div>
 		)
 	}

@@ -29,22 +29,12 @@
 .name {
 	display: inline-block;
 	font-size: 1.4rem;
-	color: $color-blue-plus;
+	color: $color-primary-dark;
 	padding-right: 10px;
 	margin: 0;
 	padding-left: 20px;
 	padding-top: 20px;
 	padding-bottom: 10px;
-}
-
-.who {
-	text-transform: uppercase;
-	color: $color-searchBtn;
-}
-
-.when {
-	display: inline-block;
-	font-style: italic;
 }
 
 .text {

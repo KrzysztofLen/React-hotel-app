@@ -11,7 +11,6 @@
 	&__container {
 		width: calc(100% - 4rem);
 		margin: 10px 20px 40px 20px;
-		background: $color-content;
 		box-shadow: 6px 2px 16px -6px rgba(0, 0, 0, 0.25);
 
 		&:after {
@@ -41,7 +40,7 @@
 		border: none;
 		font-size: 16px;
 		font-weight: bold;
-		color: $color-more;
+		color: $color-rejected;
 	}
 
 	&__comment-container {

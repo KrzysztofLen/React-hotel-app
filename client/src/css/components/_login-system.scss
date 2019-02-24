@@ -4,6 +4,8 @@
 		align-items: center;
 		justify-content: center;
 		padding-right: 10px;
+		padding-left: 65px;
+		border-left: 1px solid $color-grey-light-2;
 
 		@include media-queries(L) {
 			padding-bottom: 10px;
@@ -12,7 +14,23 @@
 
 	&__profile {
 		margin-right: 2rem;
+		display: flex;
+		position: relative;
+		align-items: center;
+		height: 4rem;
 		@include font-size(1.6);
+
+		&::before {
+			content: "";
+			position: absolute;
+			background-image: url("./../assets/SVG/user.svg");
+			width: 30px;
+			height: 30px;
+			background-color: $color-grey-avatar;
+			border-radius: 50%;
+			border: 1px solid $color-grey-avatar-border;
+			left: -45px;
+		}
 
 		&--name {
 			@include font-weight(200);

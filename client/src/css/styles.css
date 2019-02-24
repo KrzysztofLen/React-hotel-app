@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ------------- */
 /*		ABSTRACTS	 */
 /* ------------- */
@@ -47,8 +46,6 @@ body.ReactModal__Body--open {
 .hotel-app {
   display: flex; }
 
-/* COLORS */
-/* SPACING */
 .u-center-text {
   text-align: center; }
 
@@ -73,20 +70,12 @@ body.ReactModal__Body--open {
 .name {
   display: inline-block;
   font-size: 1.4rem;
-  color: #0266b3;
+  color: #014c7a;
   padding-right: 10px;
   margin: 0;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 10px; }
-
-.who {
-  text-transform: uppercase;
-  color: #a7a9ac; }
-
-.when {
-  display: inline-block;
-  font-style: italic; }
 
 .text {
   padding: 0 20px;
@@ -126,7 +115,7 @@ body.ReactModal__Body--open {
 
 .header {
   font-size: 1.4rem;
-  height: 7rem;
+  height: 8rem;
   background-color: #fff;
   border-bottom: 1px solid #f2f2f2;
   display: flex;
@@ -159,47 +148,6 @@ body.ReactModal__Body--open {
     .header__back:hover {
       background-color: #17A5FD;
       color: #fff; }
-
-.single-comment__container {
-  display: flex;
-  position: relative;
-  margin: 0;
-  width: 100%;
-  box-shadow: 4px -3px 9px 1px rgba(0, 0, 0, 0.15); }
-
-.single-comment__avatar-panel {
-  border: 1px solid #eeeeee;
-  background: #fff; }
-
-.single-comment__person-panel {
-  background: #fff; }
-  .single-comment__person-panel .when {
-    display: inline-block;
-    font-size: 14px;
-    font-family: 'Quintessential'; }
-    .single-comment__person-panel .when::before {
-      content: "• ";
-      padding: 0 10px; }
-
-.single-comment__content {
-  background: #fff;
-  display: grid;
-  grid-template-columns: 70% 30%;
-  padding-bottom: 35px; }
-
-.single-comment__counter-btn-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 33px;
-  right: 25px; }
-
-.single-comment__container:not(:first-of-type) {
-  width: 85%;
-  right: 0;
-  display: flex;
-  margin: 0;
-  float: right; }
 
 .box {
   width: 175px;
@@ -279,215 +227,6 @@ body.ReactModal__Body--open {
       width: 92%;
       padding: 15px;
       margin: 0 auto; } }
-  .modal__details {
-    text-align: center; }
-  .modal__avatar {
-    border-radius: 50%;
-    max-width: 70px; }
-  .modal__name {
-    color: #0266b3; }
-  .modal__close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 20px;
-    background-image: url("../assets/cross.svg");
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
-    padding: 10px; }
-  .modal__label {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #96989b;
-    font-weight: 600;
-    margin-right: 10px; }
-    .modal__label--value {
-      font-size: 10px;
-      font-weight: 600; }
-  .modal__activity {
-    display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%; }
-    @media only screen and (max-width: 480px) {
-      .modal__activity {
-        display: block; }
-        .modal__activity .modal__activity-box {
-          text-align: center;
-          display: grid; } }
-  @media only screen and (max-width: 480px) {
-    .modal__activity-box {
-      margin-bottom: 15px; } }
-  .modal__activity-box:nth-child(3) {
-    display: flex; }
-    @media only screen and (max-width: 480px) {
-      .modal__activity-box:nth-child(3) {
-        display: grid;
-        justify-content: center; } }
-  .modal__header-container {
-    width: 100%;
-    display: inline-flex;
-    margin-top: 20px;
-    border-top: 1px solid #cacbcd;
-    justify-content: center;
-    align-items: center; }
-    .modal__header-container button {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .modal__header-container button svg {
-        fill: #FFF; }
-    .modal__header-container button.chevron-right {
-      background-color: #0266b3; }
-    .modal__header-container button.chevron-left {
-      background-color: #a7a9ac; }
-  .modal__header {
-    width: 100%;
-    text-align: center;
-    font-family: 'Quintessential';
-    font-size: 30px;
-    color: #2d2c2e; }
-  .modal__subheader-container {
-    margin-bottom: 45px; }
-    @media only screen and (max-width: 480px) {
-      .modal__subheader-container {
-        max-width: 170px;
-        margin: 1px auto 20px auto;
-        display: flex; } }
-  .modal__subheader {
-    text-align: center;
-    text-transform: uppercase;
-    color: #96989b; }
-    @media only screen and (max-width: 480px) {
-      .modal__subheader {
-        margin: 40px 0; } }
-  .modal__numbers-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px; }
-    @media only screen and (max-width: 480px) {
-      .modal__numbers-wrapper {
-        flex-wrap: wrap;
-        max-width: 250px;
-        margin: 0 auto; } }
-  .modal__numbers-box {
-    width: 85px;
-    height: 85px;
-    background: #dff3fd;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: 0 10px;
-    text-align: center; }
-    .modal__numbers-box .numbers span {
-      display: block;
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 8px; }
-    .modal__numbers-box .numbers p {
-      font-family: 'Quintessential';
-      font-size: 12px;
-      margin: 0; }
-    .modal__numbers-box--box-1 {
-      transform: rotate(41deg); }
-      .modal__numbers-box--box-1 .numbers {
-        transform: rotate(-41deg); }
-    .modal__numbers-box--box-2 {
-      transform: rotate(78deg); }
-      .modal__numbers-box--box-2 .numbers {
-        transform: rotate(-78deg); }
-    .modal__numbers-box--box-3 {
-      transform: rotate(54deg); }
-      .modal__numbers-box--box-3 .numbers {
-        transform: rotate(-54deg); }
-    .modal__numbers-box--box-4 {
-      transform: rotate(15deg); }
-      .modal__numbers-box--box-4 .numbers {
-        transform: rotate(-15deg); }
-  .modal__related-people-image {
-    max-width: 50px; }
-
-.modal__related-people-wrapper {
-  display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  max-width: 300px;
-  margin: 0 auto;
-  margin-bottom: 40px; }
-
-.modal__related-people-box {
-  height: 85px;
-  width: 85px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  background: repeating-linear-gradient(45deg, #ccc, #fff 1px, #fff 1px, #fff 4px);
-  text-align: center; }
-
-.modal__related-people-person {
-  font-weight: bold;
-  font-size: 14px;
-  color: #0266b3; }
-
-.modal__hottest-wrapper {
-  margin-bottom: 40px; }
-
-.modal__person-activity {
-  background: repeating-linear-gradient(45deg, #ccc, #fff 1px, #fff 1px, #fff 4px);
-  width: 100%;
-  height: auto;
-  position: absolute;
-  left: 0;
-  display: flex;
-  justify-content: center; }
-  .modal__person-activity--name {
-    font-weight: bold;
-    font-size: 14px;
-    color: #0266b3;
-    padding-right: 10px; }
-  .modal__person-activity .column {
-    margin-top: 30px;
-    text-align: center; }
-    .modal__person-activity .column h4 {
-      display: inline-block; }
-    .modal__person-activity .column h5 {
-      font-size: 16px;
-      font-family: 'Quintessential';
-      color: #0266b3;
-      margin: 0; }
-  .modal__person-activity--img {
-    max-width: 50px;
-    position: absolute;
-    top: -25px; }
-
-.modal__stats {
-  display: inline-flex; }
-  .modal__stats--element {
-    list-style-type: none;
-    padding: 25px 20px;
-    font-size: 14px;
-    font-style: italic; }
-  .modal__stats--number {
-    color: #000;
-    font-weight: bold;
-    margin-right: 5px; }
-
-@media only screen and (max-width: 480px) {
-  .modal__activity-level {
-    display: flex; } }
-
-.modal__activity-box [class*="level-"] {
-  height: 18px;
-  width: 18px;
-  background: none;
-  display: inline-flex;
-  margin: 0 5px; }
-
-.modal [class*="level-"].active svg {
-  fill: #FD3A37; }
 
 .search {
   flex: 0 0 60%;
@@ -1157,15 +896,31 @@ body.ReactModal__Body--open {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 10px; }
+  padding-right: 10px;
+  padding-left: 65px;
+  border-left: 1px solid #f2f2f2; }
   @media only screen and (max-width: 1024px) {
     .login__container {
       padding-bottom: 10px; } }
 
 .login__profile {
   margin-right: 2rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 4rem;
   font-size: 16px;
   font-size: 1.6rem; }
+  .login__profile::before {
+    content: "";
+    position: absolute;
+    background-image: url("./../assets/SVG/user.svg");
+    width: 30px;
+    height: 30px;
+    background-color: #E7E7E7;
+    border-radius: 50%;
+    border: 1px solid #CECECE;
+    left: -45px; }
   .login__profile--name {
     font-weight: 200;
     margin: 0 .3rem; }
@@ -1789,7 +1544,6 @@ body.ReactModal__Body--open {
   .content__container {
     width: calc(100% - 4rem);
     margin: 10px 20px 40px 20px;
-    background: #fbfbfb;
     box-shadow: 6px 2px 16px -6px rgba(0, 0, 0, 0.25); }
     .content__container:after {
       content: "";
