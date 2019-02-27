@@ -113,6 +113,50 @@ body.ReactModal__Body--open {
   margin: 17px 0;
   text-align: center; }
 
+.dropdown__menu {
+  height: 100%;
+  padding: 0; }
+
+.dropdown__input {
+  display: none; }
+  .dropdown__input:checked ~ ul.dropdown__submenu {
+    max-height: 300px;
+    transition: max-height 0.5s ease-in; }
+
+.dropdown__menu-item {
+  list-style-type: none; }
+
+.dropdown__submenu {
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  border: 1px solid #f2f2f2;
+  transition: max-height 0.5s ease-out;
+  position: absolute;
+  min-width: 200px;
+  top: 100%;
+  z-index: 1;
+  right: 0; }
+
+.dropdown__submenu-item {
+  display: block;
+  padding: 12px;
+  color: #ddd;
+  text-decoration: none;
+  background: #fff;
+  transition: background .3s;
+  white-space: nowrap; }
+
+.dropdown__label {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  line-height: 3em;
+  transition: background 0.3s;
+  cursor: pointer; }
+
 .header {
   font-size: 1.4rem;
   height: 8rem;
@@ -134,7 +178,7 @@ body.ReactModal__Body--open {
       align-content: space-around; } }
   .header__back {
     background-color: transparent;
-    background-image: url("../assets/chevron-left.svg");
+    background-image: url("../assets/SVG/chevron-left.svg");
     background-repeat: no-repeat;
     background-position: center left;
     border: 1px solid #17A5FD;
@@ -237,7 +281,7 @@ body.ReactModal__Body--open {
   .search::before {
     content: "";
     position: absolute;
-    background-image: url("../assets/magnifying-glass.svg");
+    background-image: url("../assets/SVG/magnifying-glass.svg");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 27px;
@@ -553,7 +597,7 @@ body.ReactModal__Body--open {
   .hotel__details--adressBox::before {
     content: '';
     position: absolute;
-    background: url("../assets/room.svg");
+    background: url("../assets/SVG/room.svg");
     display: block;
     width: 20px;
     height: 20px;
@@ -734,7 +778,7 @@ body.ReactModal__Body--open {
         width: 1rem;
         margin-right: .7rem;
         background-color: #17A5FD;
-        -webkit-mask-image: url(../assets/chevron-thin-right.svg);
+        -webkit-mask-image: url(../assets/SVG/chevron-thin-right.svg);
         -webkit-mask-size: cover; }
   .detail .recommend {
     font-size: 1.3rem;
@@ -895,7 +939,6 @@ body.ReactModal__Body--open {
 .login__container {
   display: flex;
   align-items: center;
-  justify-content: center;
   padding-right: 10px;
   padding-left: 65px;
   border-left: 1px solid #f2f2f2; }

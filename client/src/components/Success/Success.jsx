@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import success from '../../assets/check-circle.svg';
+import success from '../../assets/SVG/check-circle.svg';
 import {Link} from "react-router-dom";
 
 class Success extends Component {

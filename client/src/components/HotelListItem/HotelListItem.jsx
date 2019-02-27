@@ -9,7 +9,7 @@ import HotelOpinion from '../Hotel/HotelOpinion/HotelOpinion';
 import HotelFacilities from '../Hotel/HotelFacilities/HotelFacilities';
 import HotelDescription from '../Hotel/HotelDescription/HotelDescription';
 
-import isNewIcon from '../../assets/new.svg';
+import isNewIcon from '../../assets/SVG/new.svg';
 import ModalWindow from "../ModalWindow/ModalWindow";
 import {connect} from "react-redux";
 

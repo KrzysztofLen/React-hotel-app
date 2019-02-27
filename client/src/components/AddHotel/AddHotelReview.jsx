@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 import * as actions from '../../Redux/actions';
-import send from "../../assets/paper-plane.svg";
+import send from "../../assets/SVG/paper-plane.svg";
 
 class AddHotelReview extends Component {
 	renderFieldsReview = () => {
