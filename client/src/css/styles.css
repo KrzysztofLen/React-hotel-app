@@ -70,7 +70,7 @@ body.ReactModal__Body--open {
 .name {
   display: inline-block;
   font-size: 1.4rem;
-  color: #014c7a;
+  color: #333;
   padding-right: 10px;
   margin: 0;
   padding-left: 20px;
@@ -181,16 +181,16 @@ body.ReactModal__Body--open {
     background-image: url("../assets/SVG/chevron-left.svg");
     background-repeat: no-repeat;
     background-position: center left;
-    border: 1px solid #17A5FD;
+    border: 1px solid #7498FB;
     text-transform: uppercase;
     text-decoration: none;
-    color: #17A5FD;
+    color: #7498FB;
     padding: .7rem 2rem;
     border-radius: 100px;
     margin-right: 2rem;
     transition: all .2s; }
     .header__back:hover {
-      background-color: #17A5FD;
+      background-color: #7498FB;
       color: #fff; }
 
 .box {
@@ -201,7 +201,8 @@ body.ReactModal__Body--open {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all .4s linear; }
+  transition: all .4s linear;
+  border-radius: 5px; }
   .box:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2); }
   .box__container {
@@ -223,19 +224,19 @@ body.ReactModal__Body--open {
       background-repeat: no-repeat;
       background-size: contain; }
     .box__icon--1 {
-      background: #17A5FD; }
+      background: #58E0C2; }
       .box__icon--1::before {
         background-image: url("../assets/SVG/office.svg"); }
     .box__icon--2 {
-      background: #C9E995; }
+      background: #7498FB; }
       .box__icon--2::before {
         background-image: url("../assets/SVG/star-full.svg"); }
     .box__icon--3 {
-      background: #FECC09; }
+      background: #F5A622; }
       .box__icon--3::before {
         background-image: url("../assets/SVG/bubbles2.svg"); }
     .box__icon--4 {
-      background: #BC2026; }
+      background: #FE8DB2; }
       .box__icon--4::before {
         background-image: url("../assets/SVG/pie-chart.svg"); }
   .box__text {
@@ -381,7 +382,7 @@ body.ReactModal__Body--open {
     .side-nav__item:hover::before {
       border-left: 3px solid #ccc; }
     .side-nav__item--active::before, .side-nav__item--active:hover::before {
-      border-left: 3px solid #17A5FD; }
+      border-left: 3px solid #7498FB; }
     @media only screen and (max-width: 56.25em) {
       .side-nav__item {
         width: 200px;
@@ -490,7 +491,7 @@ body.ReactModal__Body--open {
     font-size: 1.2rem;
     display: flex; }
   .overview__rating {
-    background-color: #17A5FD;
+    background-color: #333;
     margin-left: 3rem;
     color: #fff;
     padding: 0 2.25rem;
@@ -512,7 +513,7 @@ body.ReactModal__Body--open {
 .opinion__hotel-rating {
   font-size: 24px;
   font-size: 2.4rem;
-  color: #17A5FD;
+  color: #777;
   margin-right: 0.5rem; }
 
 .opinion__hotel-reviews {
@@ -525,12 +526,14 @@ body.ReactModal__Body--open {
   grid-template-rows: 8rem 8rem auto;
   display: grid;
   padding: 1.5rem;
-  background: #faf9f9;
+  transition: all .4s linear;
+  border-radius: 5px;
+  background: #fff;
   border-bottom: 1px solid #eee;
-  box-shadow: 2px 2px 19px -1px rgba(0, 0, 0, 0.2);
   margin-bottom: 3rem;
   position: relative; }
   .hotel__container:hover {
+    box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
     background: #f2f2f2; }
 
 .hotel__image-container {
@@ -626,16 +629,18 @@ body.ReactModal__Body--open {
   font-weight: 200;
   color: #777; }
   .hotel__details--priceValue span {
-    color: #014c7a; }
+    color: #7498FB; }
 
 .hotel__link {
   font-size: 20px;
   font-size: 2rem;
   text-decoration: none;
-  color: #014c7a;
-  font-weight: 400; }
+  color: #333;
+  font-weight: 400;
+  transition: all .4s linear; }
   .hotel__link:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #7498FB; }
 
 .hotel__name-container {
   display: flex;
@@ -777,7 +782,7 @@ body.ReactModal__Body--open {
         height: 1rem;
         width: 1rem;
         margin-right: .7rem;
-        background-color: #17A5FD;
+        background-color: #7498FB;
         -webkit-mask-image: url(../assets/SVG/chevron-thin-right.svg);
         -webkit-mask-size: cover; }
   .detail .recommend {
@@ -827,7 +832,7 @@ body.ReactModal__Body--open {
         font-size: 1rem;
         color: #999; }
       .detail .user-reviews .review__rating {
-        color: #17A5FD;
+        color: #7498FB;
         font-size: 2.2rem;
         font-weight: 300; }
 
@@ -858,7 +863,7 @@ body.ReactModal__Body--open {
     display: inline-block; }
     .cube-folding span::before {
       content: '';
-      background-color: #17A5FD;
+      background-color: #7498FB;
       position: absolute;
       left: 0;
       top: 0;
@@ -871,17 +876,17 @@ body.ReactModal__Body--open {
     transform: rotateZ(90deg) scale(1.1); }
     .cube-folding .leaf2::before {
       animation-delay: .30s;
-      background-color: #029af8; }
+      background-color: #5b86fa; }
   .cube-folding .leaf3 {
     transform: rotateZ(270deg) scale(1.1); }
     .cube-folding .leaf3::before {
       animation-delay: .90s;
-      background-color: #029af8; }
+      background-color: #5b86fa; }
   .cube-folding .leaf4 {
     transform: rotateZ(180deg) scale(1.1); }
     .cube-folding .leaf4::before {
       animation-delay: .60s;
-      background-color: #028adf; }
+      background-color: #4273fa; }
 
 @keyframes folding {
   0%, 10% {
@@ -921,7 +926,7 @@ body.ReactModal__Body--open {
     font-size: 12px;
     letter-spacing: 0.1em;
     display: block;
-    color: #17A5FD;
+    color: #7498FB;
     position: relative;
     top: 25px;
     z-index: 2;
@@ -939,8 +944,9 @@ body.ReactModal__Body--open {
 .login__container {
   display: flex;
   align-items: center;
-  padding-right: 10px;
-  padding-left: 65px;
+  justify-content: center;
+  min-width: 18.5rem;
+  margin-right: 15px;
   border-left: 1px solid #f2f2f2; }
   @media only screen and (max-width: 1024px) {
     .login__container {
@@ -952,6 +958,8 @@ body.ReactModal__Body--open {
   position: relative;
   align-items: center;
   height: 4rem;
+  min-width: 18.5rem;
+  justify-content: flex-end;
   font-size: 16px;
   font-size: 1.6rem; }
   .login__profile::before {
@@ -963,7 +971,7 @@ body.ReactModal__Body--open {
     background-color: #E7E7E7;
     border-radius: 50%;
     border: 1px solid #CECECE;
-    left: -45px; }
+    left: 15px; }
   .login__profile--name {
     font-weight: 200;
     margin: 0 .3rem; }
@@ -986,7 +994,7 @@ body.ReactModal__Body--open {
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #17A5FD;
+    background: #7498FB;
     animation-timing-function: cubic-bezier(0, 1, 1, 0); }
     .lds-ellipsis__item:nth-child(1) {
       left: 6px;
@@ -1124,7 +1132,7 @@ body.ReactModal__Body--open {
       position: relative;
       width: 100px; }
   .hotel-form__reviewLabel {
-    color: #17A5FD;
+    color: #7498FB;
     margin-bottom: 8px;
     font-size: 14px;
     font-size: 1.4rem;
@@ -1516,7 +1524,7 @@ body.ReactModal__Body--open {
     will-change: transform;
     transition: transform .4s ease-out; }
   .switch.switch--default > .switch-toggle.switch-toggle--on::before {
-    background: #17A5FD !important; }
+    background: #58E0C2 !important; }
   .switch.switch--default > .switch-toggle.switch-toggle--on::after {
     transform: translateX(22px); }
   .switch.switch--default > .switch-toggle.switch-toggle--off::before {
@@ -1585,9 +1593,7 @@ body.ReactModal__Body--open {
     justify-content: space-between;
     margin: 0 8rem; }
   .content__container {
-    width: calc(100% - 4rem);
-    margin: 10px 20px 40px 20px;
-    box-shadow: 6px 2px 16px -6px rgba(0, 0, 0, 0.25); }
+    margin: 10px 8rem; }
     .content__container:after {
       content: "";
       clear: both;
@@ -1597,7 +1603,7 @@ body.ReactModal__Body--open {
     justify-content: center;
     font-size: 26px;
     font-size: 2.6rem;
-    color: #014c7a;
+    color: #7498FB;
     margin: 5rem;
     width: 100%; }
   .content .more-container {
@@ -1658,33 +1664,33 @@ body.ReactModal__Body--open {
   outline: none; }
 
 .is-primary {
-  background-color: #00d1b2;
+  background-color: #58E0C2;
   border-color: transparent;
   color: #fff; }
   .is-primary:hover {
-    background: #00ebc8; }
+    background: #6ee4ca; }
   .is-primary--is-outlined {
     background-color: transparent;
-    border-color: #00d1b2;
-    color: #00d1b2; }
+    border-color: #58E0C2;
+    color: #58E0C2; }
     .is-primary--is-outlined:hover {
-      background-color: #00d1b2;
-      border-color: #00d1b2;
+      background-color: #58E0C2;
+      border-color: #58E0C2;
       color: #fff; }
 
 .is-link {
-  background-color: #276cda;
+  background-color: #7498FB;
   border-color: transparent;
   color: #fff; }
   .is-link:hover {
-    background: #3d7bde; }
+    background: #8daafc; }
   .is-link--is-outlined {
     background-color: transparent;
-    border-color: #276cda;
-    color: #276cda; }
+    border-color: #7498FB;
+    color: #7498FB; }
     .is-link--is-outlined:hover {
-      background-color: #276cda;
-      border-color: #276cda;
+      background-color: #7498FB;
+      border-color: #7498FB;
       color: #fff; }
 
 .is-danger {
@@ -1707,21 +1713,21 @@ body.ReactModal__Body--open {
       color: #fff; }
 
 .is-success {
-  background: #B0DF60;
+  background: #58E0C2;
   border-color: transparent;
   color: #fff; }
   .is-success:hover {
-    background: #bbe375; }
+    background: #6ee4ca; }
   .is-success svg {
     fill: #fff;
     margin-left: 10px; }
   .is-success--is-outlined {
     background-color: transparent;
-    border-color: #B0DF60;
-    color: #B0DF60; }
+    border-color: #58E0C2;
+    color: #58E0C2; }
     .is-success--is-outlined:hover {
-      background-color: #B0DF60;
-      border-color: #B0DF60;
+      background-color: #58E0C2;
+      border-color: #58E0C2;
       color: #fff; }
 
 .is-info {
@@ -1741,18 +1747,18 @@ body.ReactModal__Body--open {
       color: #fff; }
 
 .is-warning {
-  background-color: #ffdd57;
+  background-color: #F5A622;
   border-color: transparent;
   color: rgba(0, 0, 0, 0.7); }
   .is-warning:hover {
-    background: #ffe271; }
+    background: #f6b03a; }
   .is-warning--is-outlined {
     background-color: transparent;
-    border-color: #ffdd57;
-    color: #ffdd57; }
+    border-color: #F5A622;
+    color: #F5A622; }
     .is-warning--is-outlined:hover {
-      background-color: #ffdd57;
-      border-color: #ffdd57;
+      background-color: #F5A622;
+      border-color: #F5A622;
       color: #fff; }
 
 .is-google {
@@ -1790,7 +1796,7 @@ body.ReactModal__Body--open {
 
 .inline {
   border: none;
-  color: #17A5FD;
+  color: #7498FB;
   font-size: 14px;
   font-size: 1.4rem;
   padding: 0;
@@ -1818,7 +1824,7 @@ body.ReactModal__Body--open {
       top: 20px; } }
 
 .fa-star {
-  color: #014c7a;
+  color: #777;
   font-size: 12px;
   font-size: 1.2rem; }
 
@@ -1826,7 +1832,7 @@ body.ReactModal__Body--open {
   color: #faf9f9; }
 
 .fa-angle-down {
-  color: #014c7a; }
+  color: #7498FB; }
 
 .rate__color {
   display: block;

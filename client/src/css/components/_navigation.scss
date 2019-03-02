@@ -50,7 +50,7 @@
 
 		&--active::before,
 		&--active:hover::before {
-			border-left: 3px solid $color-primary;
+			border-left: 3px solid $material-color-blue;
 		}
 
 		@media only screen and (max-width: $bp-medium) {

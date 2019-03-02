@@ -7,6 +7,7 @@
 	justify-content: center;
 	align-items: center;
 	transition: all .4s linear;
+	border-radius: 5px;
 
 	&:hover {
 		box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
@@ -36,7 +37,7 @@
 		}
 
 		&--1 {
-			background: $color-primary;
+			background: $material-color-green;
 
 			&::before {
 				background-image: url('../assets/SVG/office.svg');
@@ -44,7 +45,7 @@
 		}
 
 		&--2 {
-			background: $color-send;
+			background: $material-color-blue;
 
 			&::before {
 				background-image: url('../assets/SVG/star-full.svg');
@@ -52,7 +53,7 @@
 		}
 
 		&--3 {
-			background: $rate-good;
+			background: $material-color-yellow;
 
 			&::before {
 				background-image: url('../assets/SVG/bubbles2.svg');
@@ -60,7 +61,7 @@
 		}
 
 		&--4 {
-			background: $rate-bad;
+			background: $material-color-pink;
 
 			&::before {
 				background-image: url('../assets/SVG/pie-chart.svg');

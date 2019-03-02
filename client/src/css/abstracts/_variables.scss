@@ -44,9 +44,15 @@ $color-black: #000;
 $color-rejected: #dc173f;
 
 // Secondary template
-$color-primary: #17A5FD;
-$color-primary-light: lighten($color-primary, 30%);
-$color-primary-dark: darken($color-primary, 30%);
+//$color-primary: #17A5FD;
+//$color-primary-light: lighten($color-primary, 30%);
+//$color-primary-dark: darken($color-primary, 30%);
+
+$material-color-green: #58E0C2;
+$material-color-blue: #7498FB;
+$material-color-yellow: #F5A622;
+$material-color-pink: #FE8DB2;
+$material-color-red: #ED5E68;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f2f2f2;

@@ -1,7 +1,8 @@
 $button-background-color: #fff !default;
 $button-border: 1px solid #dbdbdb !default;
 $button-color: #363636 !default;
-$button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !default;
+$button-padding-vertical: 1rem !default
+$button-padding-horizontal: 0.75em !default;
 
 .button {
 	background-color: $button-background-color;
@@ -29,23 +30,23 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 //#### PRIMARY ####
 //#################
 .is-primary {
-	background-color: #00d1b2;
+	background-color: $material-color-green;
 	border-color: transparent;
 	color: #fff;
 
 	&:hover {
-		background: lighten(#00d1b2, 5%);
+		background: lighten($material-color-green, 5%);
 	}
 
 	&--is-outlined {
 		background-color: transparent;
-		border-color: #00d1b2;
-		color: #00d1b2;
+		border-color: $material-color-green;
+		color: $material-color-green;
 
 		&:hover {
-			background-color: #00d1b2;
-			border-color: #00d1b2;
-			color: #fff;
+			background-color: $material-color-green;
+			border-color: $material-color-green;
+			color: $color-white;
 		}
 	}
 }
@@ -54,23 +55,23 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 //#### LINK #######
 //#################
 .is-link {
-	background-color: #276cda;
+	background-color: $material-color-blue;
 	border-color: transparent;
-	color: #fff;
+	color: $color-white;
 
 	&:hover {
-		background: lighten(#276cda, 5%);
+		background: lighten($material-color-blue, 5%);
 	}
 
 	&--is-outlined {
 		background-color: transparent;
-		border-color: #276cda;
-		color: #276cda;
+		border-color: $material-color-blue;
+		color: $material-color-blue;
 
 		&:hover {
-			background-color: #276cda;
-			border-color: #276cda;
-			color: #fff;
+			background-color: $material-color-blue;
+			border-color: $material-color-blue;
+			color: $color-white;
 		}
 	}
 }
@@ -79,12 +80,12 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 //#### DANGER #####
 //#################
 .is-danger {
-	background-color: #ED5E68;
+	background-color: $material-color-red;
 	border-color: transparent;
-	color: #fff;
+	color: $color-white;
 
 	&:hover {
-		background: lighten(#ED5E68, 5%);
+		background: lighten($material-color-red, 5%);
 	}
 
 	svg {
@@ -95,13 +96,13 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 
 	&--is-outlined {
 		background-color: transparent;
-		border-color: #ED5E68;
-		color: #ED5E68;
+		border-color: $material-color-red;
+		color: $material-color-red;
 
 		&:hover {
-			background-color: #ED5E68;
-			border-color: #ED5E68;
-			color: #fff;
+			background-color: $material-color-red;
+			border-color: $material-color-red;
+			color: $color-white;
 		}
 	}
 }
@@ -110,12 +111,12 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 //#### SUCCESS ####
 //#################
 .is-success {
-	background: #B0DF60;
+	background: $material-color-green;
 	border-color: transparent;
-	color: #fff;
+	color: $color-white;
 
 	&:hover {
-		background: lighten(#B0DF60, 5%);
+		background: lighten($material-color-green, 5%);
 	}
 
 	svg {
@@ -125,13 +126,13 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 
 	&--is-outlined {
 		background-color: transparent;
-		border-color: #B0DF60;
-		color: #B0DF60;
+		border-color: $material-color-green;
+		color: $material-color-green;
 
 		&:hover {
-			background-color:  #B0DF60;
-			border-color:  #B0DF60;
-			color: #fff;
+			background-color:  $material-color-green;
+			border-color:  $material-color-green;
+			color: $color-white;
 		}
 	}
 }
@@ -166,23 +167,23 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 //#### WARNING ####
 //#################
 .is-warning {
-	background-color: #ffdd57;
+	background-color: $material-color-yellow;
 	border-color: transparent;
 	color: rgba(0, 0, 0, .7);
 
 	&:hover {
-		background: lighten(#ffdd57, 5%);
+		background: lighten($material-color-yellow, 5%);
 	}
 
 	&--is-outlined {
 		background-color: transparent;
-		border-color: #ffdd57;
-		color: #ffdd57;
+		border-color: $material-color-yellow;
+		color: $material-color-yellow;
 
 		&:hover {
-			background-color: #ffdd57;
-			border-color: #ffdd57;
-			color: #fff;
+			background-color: $material-color-yellow;
+			border-color: $material-color-yellow;
+			color: $color-white;
 		}
 	}
 }
@@ -233,9 +234,8 @@ $button-padding-vertical: 1rem !default$button-padding-horizontal: 0.75em !defau
 //#####################
 .inline {
 	border: none;
-	color: $color-primary;
+	color: $material-color-blue;
 	@include font-size(1.4);
-	//border-bottom: 1px solid currentColor;
 	padding: 0;
 	padding-bottom: 2px;
 	display: inline-block;

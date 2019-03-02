@@ -1,6 +1,5 @@
 //variables
 $size: 50px;
-//$primary-color: $color-primary;
 
 //cube only
 .cube-folding {
@@ -16,9 +15,10 @@ $size: 50px;
 		height: $size/2;
 		transform: scale(1.1);
 		display: inline-block;
+
 		&::before {
 			content: '';
-			background-color: $color-primary;
+			background-color: $material-color-blue;
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -33,21 +33,21 @@ $size: 50px;
 		transform: rotateZ(90deg) scale(1.1);
 		&::before {
 			animation-delay: .30s;
-			background-color: darken($color-primary, 5%);
+			background-color: darken($material-color-blue, 5%);
 		}
 	}
 	.leaf3 {
 		transform: rotateZ(270deg) scale(1.1);
 		&::before {
 			animation-delay: .90s;
-			background-color: darken($color-primary, 5%);
+			background-color: darken($material-color-blue, 5%);
 		}
 	}
 	.leaf4 {
 		transform: rotateZ(180deg) scale(1.1);
 		&::before {
 			animation-delay: .60s;
-			background-color: darken($color-primary, 10%);
+			background-color: darken($material-color-blue, 10%);
 		}
 	}
 }
@@ -98,7 +98,7 @@ $size: 50px;
 		font-size: 12px;
 		letter-spacing: 0.1em;
 		display: block;
-		color: $color-primary;
+		color: $material-color-blue;
 		position: relative;
 		top: $size/2;
 		z-index: 2;

@@ -188,3 +188,5 @@ Sun Feb 17 2019 13:09:38 GMT+0100 (Central European Standard Time): POST /api/ho
 Sun Feb 17 2019 13:12:09 GMT+0100 (Central European Standard Time): POST /api/hotels
 Sun Feb 17 2019 13:14:18 GMT+0100 (Central European Standard Time): POST /api/hotels
 Sun Feb 24 2019 12:16:29 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/-wDRtxZIKF0g4CQWvMi9VnSOo5ne4m1r_wj1my491DKCvREWXHhjE83HBFQMze6yFfZn44D1XxPmrPilQXrsdRc&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Wed Feb 27 2019 19:08:14 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/_gAt4XlQgQiOrYJmrjW-kLDea2O4Xkaifkwjq2aFU9lkz8Hu8VzFuIYLpPRlMzDJe7jcn6pq4FEgLMF1C_4oxn0&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Sat Mar 02 2019 17:09:15 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/AQGCSPA02pFbNQ8LzsGiWf3txRGplCFlVPIFUTx9RS_yRvmCA1ximAj19wXG1Z9eTsGMiy0ijsF9jVqW41jWgbM&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile

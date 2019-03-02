@@ -9,9 +9,7 @@
 	}
 
 	&__container {
-		width: calc(100% - 4rem);
-		margin: 10px 20px 40px 20px;
-		box-shadow: 6px 2px 16px -6px rgba(0, 0, 0, 0.25);
+		margin: 10px 8rem;
 
 		&:after {
 			content: "";
@@ -24,7 +22,7 @@
 		display: flex;
 		justify-content: center;
 		@include font-size(2.6);
-		color: $color-primary-dark;
+		color: $material-color-blue;
 		margin: 5rem;
 		width: 100%;
 	}

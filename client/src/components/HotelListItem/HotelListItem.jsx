@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react'
+import { CSSTransitionGroup } from "react-transition-group";
 import HotelImage from '../Hotel/HotelImage/HotelImage';
 import HotelLink from '../Hotel/HotelLink/HotelLink';
 import HotelRating from '../Hotel/HotelRating/HotelRating';
@@ -39,6 +40,11 @@ type State = {
 	modalIsOpen: boolean
 }
 
+function FirstChild(props) {
+	const childrenArray = React.Children.toArray(props.children);
+	return childrenArray[0] || null;
+}
+
 class HotelListItem extends React.Component<Props, State> {
 	constructor(props) {
 		super(props);
@@ -75,7 +81,12 @@ class HotelListItem extends React.Component<Props, State> {
 	render() {
 		const isNew = (this.props.data.is_new) ? Date.now() - parseInt(this.props.data.is_new, 10) : 0;
 		const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
-
+		const test = ['hello', 'world', 'click', 'me'];
+		const items = test.map((item, i) => (
+			<div key={i}>
+				{item}
+			</div>
+		));
 		return (
 			<div className={this.props.viewTypeId === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
@@ -108,11 +119,17 @@ class HotelListItem extends React.Component<Props, State> {
 						/>
 					</div>
 				</div>
-				{this.state.activeIndex === this.props.index &&
-				<React.Fragment>
-					<HotelDescription description={this.props.data.hotel_description}/>
-					<HotelFacilities {...this.props.data}/>
-				</React.Fragment>}
+				<CSSTransitionGroup
+				transitionName="example"
+				transitionAppear={true}
+				transitionAppearTimeout={500}
+				transitionEnterTimeout={500}
+				transitionEnter={true}
+				transitionLeave={false}>
+				{this.state.activeIndex === this.props.index ? items : null}
+				</CSSTransitionGroup>
+					{/*<HotelDescription description={this.props.data.hotel_description}/>*/}
+					{/*<HotelFacilities {...this.props.data}/>*/}
 				{(isNew >= isNewDuration || isNew === 0) ? null : <img src={isNewIcon} alt="new" className="hotel__details--isNew"/>}
 			</div>
 		)

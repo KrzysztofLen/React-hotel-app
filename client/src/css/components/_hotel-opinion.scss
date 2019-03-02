@@ -1,7 +1,7 @@
 .opinion {
 	&__hotel-rating {
 		@include font-size(2.4);
-		color: $color-primary;
+		color: $color-grey-dark-2;
 		margin-right: 0.5rem;
 	}
 

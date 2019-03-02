@@ -2,8 +2,9 @@
 	&__container {
 		display: flex;
 		align-items: center;
-		padding-right: 10px;
-		padding-left: 65px;
+		justify-content: center;
+		min-width: 18.5rem;
+		margin-right: 15px;
 		border-left: 1px solid $color-grey-light-2;
 
 		@include media-queries(L) {
@@ -17,6 +18,8 @@
 		position: relative;
 		align-items: center;
 		height: 4rem;
+		min-width: 18.5rem;
+		justify-content: flex-end;
 		@include font-size(1.6);
 
 		&::before {
@@ -28,7 +31,7 @@
 			background-color: $color-grey-avatar;
 			border-radius: 50%;
 			border: 1px solid $color-grey-avatar-border;
-			left: -45px;
+			left: 15px;
 		}
 
 		&--name {
