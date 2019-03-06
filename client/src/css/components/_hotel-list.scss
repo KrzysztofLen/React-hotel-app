@@ -1,6 +1,10 @@
 .hotel-list {
 	width: 100%;
 
+	&__container {
+		margin: 10px 8rem;
+	}
+
 	&__more {
 		display: flex;
 		justify-content: center;

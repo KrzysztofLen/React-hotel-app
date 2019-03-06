@@ -1,0 +1,52 @@
+@keyframes animeSlideBottom {
+	0% {
+		transform: translate3d(0, 40px, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes animeSlideTop {
+	0% {
+		transform: translate3d(0, -80px, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes animeHeight {
+	0% {
+		opacity: 0;
+		height: 0;
+	}
+
+	100% {
+		opacity: 1;
+		height: 150px;
+	}
+
+	0% {
+		opacity: 0;
+		height: 0;
+	}
+}
+
+@keyframes animeHeightInverse {
+	0% {
+		opacity: 1;
+		height: 150px;
+	}
+
+	100% {
+		opacity: 0;
+		height: 0;
+	}
+}

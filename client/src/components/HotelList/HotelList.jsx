@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react'
+import * as React from 'react';
 import HotelListItem from '../HotelListItem/HotelListItem';
 import {Spinner} from "../Spinner/Spinner";
 
@@ -52,7 +52,7 @@ class HotelsList extends React.Component<Props, State> {
 		return (
 			<main className="hotel-list">
 				<div className="content__container">
-					<div className="column">
+					<div className={"hotel-list__container"}>
 						<React.Fragment>
 							{visibleHotels.map((hotel: any, index: number): Object => <HotelListItem data={hotel}
 							                                                               key={hotel._id}

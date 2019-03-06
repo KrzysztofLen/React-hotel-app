@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import {Spring, Transition} from 'react-spring/renderprops';
 import {connect} from "react-redux";
 import {switchView} from "../../Redux/actions";
 
@@ -19,12 +20,8 @@ class Boxes extends React.Component<Props> {
 	}
 
 	getFiveStarsHotels = () => {
-		const fiveStarsHotels: Array<Object> = [];
-
-		this.props.hotelsList.map((hotel: Object) => {
-			if (hotel.hotel_stars === 5) {
-				fiveStarsHotels.push(hotel);
-			}
+		const fiveStarsHotels = this.props.hotelsList.filter((hotel: Object) => {
+			return hotel.hotel_stars === 5;
 		});
 
 		return fiveStarsHotels.length;
@@ -42,7 +39,6 @@ class Boxes extends React.Component<Props> {
 	}
 
 	render() {
-		console.log(this.props)
 		const boxesContent: Array<mixed> = [
 			{
 				title: "Total HotelsView:",

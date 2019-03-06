@@ -4,10 +4,45 @@
 /*
 * SASS DOC
 */
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,400,700");
+@keyframes animeSlideBottom {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0; }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+
+@keyframes animeSlideTop {
+  0% {
+    transform: translate3d(0, -80px, 0);
+    opacity: 0; }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+
+@keyframes animeHeight {
+  0% {
+    opacity: 0;
+    height: 0; }
+  100% {
+    opacity: 1;
+    height: 150px; }
+  0% {
+    opacity: 0;
+    height: 0; } }
+
+@keyframes animeHeightInverse {
+  0% {
+    opacity: 1;
+    height: 150px; }
+  100% {
+    opacity: 0;
+    height: 0; } }
+
 /* ------------- */
 /*		BASE    */
 /* ------------- */
-@import url("https://fonts.googleapis.com/css?family=Oswald:200,400,700");
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
@@ -166,11 +201,6 @@ body.ReactModal__Body--open {
   justify-content: space-between;
   align-items: center;
   position: relative; }
-  @media only screen and (max-width: 1024px) {
-    .header {
-      flex-direction: column;
-      height: 100%;
-      position: relative; } }
   @media only screen and (max-width: 31.25em) {
     .header {
       flex-wrap: wrap;
@@ -249,13 +279,17 @@ body.ReactModal__Body--open {
     .box__text--title {
       font-size: 16px;
       font-size: 1.6rem;
-      font-weight: 200; }
+      font-weight: 200;
+      animation: animeSlideBottom;
+      animation-duration: 0.6s; }
     .box__text--value {
       font-size: 46px;
       font-size: 4.6rem;
       font-weight: 800;
       margin-bottom: 10px;
-      color: #333; }
+      color: #333;
+      animation: animeSlideTop;
+      animation-duration: 0.6s; }
 
 .modal {
   background: #fff;
@@ -451,6 +485,8 @@ body.ReactModal__Body--open {
 
 .hotel-list {
   width: 100%; }
+  .hotel-list__container {
+    margin: 10px 8rem; }
   .hotel-list__more {
     display: flex;
     justify-content: center; }
@@ -948,9 +984,6 @@ body.ReactModal__Body--open {
   min-width: 18.5rem;
   margin-right: 15px;
   border-left: 1px solid #f2f2f2; }
-  @media only screen and (max-width: 1024px) {
-    .login__container {
-      padding-bottom: 10px; } }
 
 .login__profile {
   margin-right: 2rem;
@@ -1586,14 +1619,22 @@ body.ReactModal__Body--open {
 /*		LAYOUT    */
 /* ------------- */
 .content {
-  background: #F5F8FD; }
+  background: #F5F8FD;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 65px); }
+  @media only screen and (max-width: 56.25em) {
+    .content {
+      flex-direction: column; } }
   .content__header-wrapper {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin: 0 8rem; }
   .content__container {
-    margin: 10px 8rem; }
+    height: 100vh;
+    min-height: calc(100vh - 65px); }
     .content__container:after {
       content: "";
       clear: both;
@@ -1601,11 +1642,15 @@ body.ReactModal__Body--open {
   .content__no-results {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 26px;
     font-size: 2.6rem;
     color: #7498FB;
-    margin: 5rem;
-    width: 100%; }
+    width: 50%;
+    height: 100px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 5rem auto; }
   .content .more-container {
     background: #fff; }
   .content .btn-more {
@@ -1618,13 +1663,6 @@ body.ReactModal__Body--open {
     color: #dc173f; }
   .content__comment-container {
     position: relative; }
-
-.content {
-  display: flex;
-  flex-direction: column; }
-  @media only screen and (max-width: 56.25em) {
-    .content {
-      flex-direction: column; } }
 
 .overlay {
   display: flex;

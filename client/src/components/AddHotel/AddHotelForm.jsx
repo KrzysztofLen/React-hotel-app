@@ -189,7 +189,7 @@ class AddHotelForm extends Component<IState> {
 						<div className="hotel-form__buttons">
 							<Link to="/" className="button is-danger">Cancel</Link>
 							{/*<button type="submit" className="button is-info">Next</button>*/}
-							<button type="submit" className="button is-info">Send</button>
+							<button type="submit" className="button is-link">Send</button>
 						</div>
 					</form>
 				</div>

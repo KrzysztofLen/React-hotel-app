@@ -1,8 +1,8 @@
 import React from 'react';
 
-const HotelDescription = (data) => (
+const HotelDescription = ({description}) => (
 	<div className="hotel__details--description">
-		<p className="hotel__details--text">{data.description}</p>
+		<p className="hotel__details--text">{description}</p>
 	</div>
 );
 

@@ -2,10 +2,16 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://react-hotel-app.herokuapp.com/)
 [![Coverage Status](https://coveralls.io/repos/github/KrzysztofLen/React-hotel-app/badge.svg?branch=master)](https://coveralls.io/github/KrzysztofLen/React-hotel-app?branch=master)
 
-# React Hotel AppDELETE
+# React Hotel App
 
-### AppDELETE demo
-AppDELETE is available at:
+### Tech stack
+Application is build in MERN stack (MongoDB, React, Node and Express)
+
+### Solutions
+- For performance reasons and not included any library to manage animations, details in table are already rendered in DOM without condition rendering. This allows to animate toggle details in CSS.  
+
+### App demo
+App is available at:
 https://react-hotel-app.herokuapp.com/
 
 ### Installation

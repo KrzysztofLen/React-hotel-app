@@ -10,11 +10,11 @@
 	align-items: center;
 	position: relative;
 
-	@include media-queries(L) {
-		flex-direction: column;
-		height: 100%;
-		position: relative;
-	}
+	//@include media-queries(L) {
+	//	flex-direction: column;
+	//	height: 100%;
+	//	position: relative;
+	//}
 
 	@media only screen and (max-width: $bp-smallest) {
 		flex-wrap: wrap;

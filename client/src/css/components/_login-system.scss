@@ -6,10 +6,6 @@
 		min-width: 18.5rem;
 		margin-right: 15px;
 		border-left: 1px solid $color-grey-light-2;
-
-		@include media-queries(L) {
-			padding-bottom: 10px;
-		}
 	}
 
 	&__profile {
