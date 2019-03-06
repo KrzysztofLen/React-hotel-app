@@ -1,14 +1,8 @@
 .container {
 	//margin: 8rem auto;
 	background-color: $color-grey-light-1;
-	width: 100%;
+	width: calc(100% - 8rem);
 	min-height: 100vh;
-
-	@media only screen and (max-width: $bp-largest) {
-		margin: 0;
-		width: 100%;
-		max-width: 100%;
-	}
 }
 
 .hotel-app {

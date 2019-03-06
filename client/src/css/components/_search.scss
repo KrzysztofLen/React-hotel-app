@@ -13,20 +13,8 @@
 		background-repeat: no-repeat;
 		background-position: left center;
 		background-size: 27px;
-		width: 8rem;
+		width: $navWidth;
 		height: 8rem;
-	}
-
-	@include media-queries(L) {
-		flex: 0;
-		width: 50%;
-		padding: 20px;
-	}
-
-	@media only screen and (max-width: $bp-smallest) {
-		order: 1;
-		flex: 0 0 100%;
-		background-color: $color-grey-light-2;
 	}
 
 	&__input {
@@ -41,11 +29,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
-		@include media-queries(L) {
-			padding: 1rem 2rem;
-			height: 17px;
-		}
 
 		&:focus {
 			outline: none;

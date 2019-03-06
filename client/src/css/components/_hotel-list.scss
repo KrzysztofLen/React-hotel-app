@@ -3,6 +3,10 @@
 
 	&__container {
 		margin: 10px 8rem;
+
+		@include media-queries(L) {
+			margin: 10px 5rem;
+		}
 	}
 
 	&__more {

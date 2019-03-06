@@ -10,18 +10,6 @@
 	align-items: center;
 	position: relative;
 
-	//@include media-queries(L) {
-	//	flex-direction: column;
-	//	height: 100%;
-	//	position: relative;
-	//}
-
-	@media only screen and (max-width: $bp-smallest) {
-		flex-wrap: wrap;
-		height: 11rem;
-		align-content: space-around;
-	}
-
 	&__back {
 		background-color: transparent;
 		background-image: url('../assets/SVG/chevron-left.svg');

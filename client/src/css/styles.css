@@ -70,13 +70,8 @@ body.ReactModal__Body--open {
 
 .container {
   background-color: #faf9f9;
-  width: 100%;
+  width: calc(100% - 8rem);
   min-height: 100vh; }
-  @media only screen and (max-width: 75em) {
-    .container {
-      margin: 0;
-      width: 100%;
-      max-width: 100%; } }
 
 .hotel-app {
   display: flex; }
@@ -201,11 +196,6 @@ body.ReactModal__Body--open {
   justify-content: space-between;
   align-items: center;
   position: relative; }
-  @media only screen and (max-width: 31.25em) {
-    .header {
-      flex-wrap: wrap;
-      height: 11rem;
-      align-content: space-around; } }
   .header__back {
     background-color: transparent;
     background-image: url("../assets/SVG/chevron-left.svg");
@@ -224,21 +214,36 @@ body.ReactModal__Body--open {
       color: #fff; }
 
 .box {
-  width: 175px;
-  height: 175px;
   background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transition: all .4s linear;
-  border-radius: 5px; }
+  border-radius: 5px;
+  display: block;
+  width: calc(25% - 10px);
+  max-width: 175px;
+  height: 100%;
+  position: relative; }
   .box:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2); }
+  .box:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%; }
   .box__container {
     display: flex;
     margin: 10px 8rem;
     justify-content: space-between; }
+    @media only screen and (max-width: 1024px) {
+      .box__container {
+        margin: 10px 5rem; } }
+  .box__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-evenly; }
   .box__icon {
     width: 40px;
     height: 40px;
@@ -270,12 +275,10 @@ body.ReactModal__Body--open {
       .box__icon--4::before {
         background-image: url("../assets/SVG/pie-chart.svg"); }
   .box__text {
-    width: 60%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center; }
+    text-align: center;
+    position: relative; }
     .box__text--title {
       font-size: 16px;
       font-size: 1.6rem;
@@ -322,16 +325,6 @@ body.ReactModal__Body--open {
     background-size: 27px;
     width: 8rem;
     height: 8rem; }
-  @media only screen and (max-width: 1024px) {
-    .search {
-      flex: 0;
-      width: 50%;
-      padding: 20px; } }
-  @media only screen and (max-width: 31.25em) {
-    .search {
-      order: 1;
-      flex: 0 0 100%;
-      background-color: #f2f2f2; } }
   .search__input {
     font-family: inherit;
     font-size: 22px;
@@ -345,10 +338,6 @@ body.ReactModal__Body--open {
     display: flex;
     align-items: center;
     justify-content: center; }
-    @media only screen and (max-width: 1024px) {
-      .search__input {
-        padding: 1rem 2rem;
-        height: 17px; } }
     .search__input:focus {
       outline: none;
       width: 100%;
@@ -487,6 +476,9 @@ body.ReactModal__Body--open {
   width: 100%; }
   .hotel-list__container {
     margin: 10px 8rem; }
+    @media only screen and (max-width: 1024px) {
+      .hotel-list__container {
+        margin: 10px 5rem; } }
   .hotel-list__more {
     display: flex;
     justify-content: center; }
@@ -1632,6 +1624,9 @@ body.ReactModal__Body--open {
     align-items: flex-end;
     justify-content: space-between;
     margin: 0 8rem; }
+    @media only screen and (max-width: 1024px) {
+      .content__header-wrapper {
+        margin: 0 5rem; } }
   .content__container {
     height: 100vh;
     min-height: calc(100vh - 65px); }
@@ -1855,11 +1850,6 @@ body.ReactModal__Body--open {
     display: flex;
     justify-content: center;
     align-items: center; }
-  @media only screen and (max-width: 1024px) {
-    .logo {
-      position: absolute;
-      left: 0;
-      top: 20px; } }
 
 .fa-star {
   color: #777;

@@ -1,6 +1,6 @@
 .sidebar {
 	background-color: $color-white;
-	width: 8rem;
+	width: $navWidth;
 	display: flex;
 	flex-direction: column;
 	border-right: 1px solid $color-grey-light-1;
@@ -21,7 +21,7 @@
 		position: relative;
 		margin: 0;
 		cursor: pointer;
-		width: 8rem;
+		width: $navWidth;
 		height: 8rem;
 
 		&:before {

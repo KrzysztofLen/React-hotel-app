@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import {Spring, Transition} from 'react-spring/renderprops';
 import {connect} from "react-redux";
 import {switchView} from "../../Redux/actions";
 
@@ -64,10 +63,12 @@ class Boxes extends React.Component<Props> {
 					{boxesContent.map((boxContent: Object, index: number) => {
 						return (
 							<div key={index} className={`box box--${index + 1}`}>
-								<div className={`box__icon box__icon--${index + 1}`}/>
-								<div className={"box__text"}>
-									<span className={"box__text--value"}>{boxContent.value}</span>
-									<span className={"box__text--title"}>{boxContent.title}</span>
+								<div className={"box__content"}>
+									<div className={`box__icon box__icon--${index + 1}`}/>
+									<div className={"box__text"}>
+										<span className={"box__text--value"}>{boxContent.value}</span>
+										<span className={"box__text--title"}>{boxContent.title}</span>
+									</div>
 								</div>
 							</div>
 						)
