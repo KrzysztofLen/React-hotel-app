@@ -1,9 +1,9 @@
 import React from 'react';
 
 const HotelPrice = (props) => (
-	<div className="hotel__details--price">
-		<p className="hotel__details--priceValue"><span>&#36;</span>{props.price}</p>
-	</div>
+	<React.Fragment>
+		<p className="hotel__price"><span>&#36;</span>{props.price}</p>
+	</React.Fragment>
 );
 
 export default HotelPrice;

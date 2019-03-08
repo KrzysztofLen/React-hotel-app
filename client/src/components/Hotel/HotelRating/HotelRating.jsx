@@ -29,7 +29,7 @@ class HotelRating extends Component {
 
 	render() {
 		return (
-			<div className="hotel__details--rate">
+			<div className="hotel__rate">
 				{this.state.indicator.map((item, i) => {
 					return (
 						<i key={i}

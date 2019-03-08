@@ -83,24 +83,25 @@ class HotelListItem extends React.Component<Props, State> {
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
 					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={"Test"}/>
 				</div>
-				<div className="hotel__name-container">
-					<HotelLink hotelName={this.props.data.hotel_name}
-					           hotelDistance={this.props.data.hotel_distance}
-					           hotelAdress={this.props.data.hotel_adress}
-					           id={this.props.data._id}/>
-					<HotelRating rate={this.props.data.hotel_stars}/>
-				</div>
-				<div className="hotel__details--adressBox">
-					<span className="hotel__details--adress">{this.props.data.hotel_adress}</span>
-					<p className="hotel__details--distance">(<span
-						className="hotel__details--distanceValue">{this.props.data.hotel_distance}</span> km from
-						center)</p>
+				<div className={"hotel__address-container"}>
+					<div className={"hotel__name-wrapper"}>
+						<HotelLink hotelName={this.props.data.hotel_name}
+						           hotelDistance={this.props.data.hotel_distance}
+						           hotelAdress={this.props.data.hotel_adress}
+						           id={this.props.data._id}/>
+						<HotelRating rate={this.props.data.hotel_stars}/>
+					</div>
+					<div className={"hotel__address-wrapper"}>
+						<span className={"hotel__address-value"}>{this.props.data.hotel_adress}</span>
+						<p className={"hotel__address-distance"}>(<span>{this.props.data.hotel_distance}</span> km from
+							center)</p>
+					</div>
 				</div>
 				<div className="hotel__details-box">
 					<HotelPrice price={this.props.data.hotel_price}/>
 					<HotelOpinion hotelRating={this.props.data.hotel_rating}
 					              hotelReviews={this.props.data.hotel_reviews}/>
-					<div className="hotel__details--more">
+					<div className={"hotel__more-details"}>
 						<ToggleButton key={this.props.index}
 						              index={this.props.index}
 						              activeIndex={this.state.activeIndex === this.props.index}
@@ -110,13 +111,13 @@ class HotelListItem extends React.Component<Props, State> {
 					</div>
 				</div>
 				{this.state.activeIndex === this.props.index &&
-					<React.Fragment>
-						<HotelDescription description={this.props.data.hotel_description}/>
-						<HotelFacilities {...this.props.data}/>
-					</React.Fragment>
+				<React.Fragment>
+					<HotelDescription description={this.props.data.hotel_description}/>
+					<HotelFacilities {...this.props.data}/>
+				</React.Fragment>
 				}
 				{(isNew >= isNewDuration || isNew === 0) ? null :
-					<img src={isNewIcon} alt="new" className="hotel__details--isNew"/>}
+					<img src={isNewIcon} alt="new" className="hotel__isNew"/>}
 			</div>
 		)
 	}

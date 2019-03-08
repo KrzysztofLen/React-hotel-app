@@ -567,6 +567,9 @@ body.ReactModal__Body--open {
   border-bottom: 1px solid #eee;
   margin-bottom: 3rem;
   position: relative; }
+  @media only screen and (max-width: 1024px) {
+    .hotel__container {
+      grid-template-columns: 1fr 1fr 15rem; } }
   .hotel__container:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
     background: #f2f2f2; }
@@ -596,43 +599,13 @@ body.ReactModal__Body--open {
   border-left: 1px solid #ccc;
   position: relative; }
 
-.hotel__details--name {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  grid-column-start: 2; }
-
-.hotel__details--description {
-  grid-column-start: 2;
-  grid-row-start: 2;
-  margin: 1.5rem;
-  align-self: center;
-  transition: all 4s; }
-
-.hotel__details--distance span {
-  font-weight: bold;
-  font-size: 12px;
-  font-size: 1.2rem; }
-
-.hotel__details--text {
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #777;
-  margin: 0;
-  font-weight: 200; }
-
-.hotel__details--isNew {
-  width: 55px;
-  position: absolute;
-  animation: move 0.7s ease infinite alternate-reverse; }
-
-.hotel__details--adressBox {
+.hotel__address-wrapper {
   display: flex;
   align-items: center;
   margin-top: 1rem;
   grid-column-start: 2;
-  grid-row-start: 1;
-  margin-left: 1.5rem; }
-  .hotel__details--adressBox::before {
+  grid-row-start: 1; }
+  .hotel__address-wrapper::before {
     content: '';
     position: absolute;
     background: url("../assets/SVG/room.svg");
@@ -642,29 +615,59 @@ body.ReactModal__Body--open {
     background-repeat: no-repeat;
     background-size: contain; }
 
-.hotel__details--adress {
+.hotel__address-value {
   margin-right: 5px;
   font-size: 11px;
   font-size: 1.1rem;
   position: relative;
   margin-left: 30px; }
 
-.hotel__details--more {
-  bottom: 0;
-  position: absolute; }
-  .hotel__details--more .btn {
-    display: flex; }
-    .hotel__details--more .btn svg {
-      margin-left: 8px; }
+.hotel__address-distance span {
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 1.2rem; }
 
-.hotel__details--priceValue {
+.hotel__name {
+  margin-right: 1.5rem;
+  grid-column-start: 2; }
+
+.hotel__rate {
+  min-width: 75px; }
+
+.hotel__description {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  margin: 1.5rem;
+  align-self: center;
+  transition: all 4s; }
+  .hotel__description--text {
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #777;
+    margin: 0;
+    font-weight: 200; }
+
+.hotel__price {
   margin: 0;
   font-size: 20px;
   font-size: 2rem;
   font-weight: 200;
   color: #777; }
-  .hotel__details--priceValue span {
+  .hotel__price span {
     color: #7498FB; }
+
+.hotel__isNew {
+  width: 55px;
+  position: absolute;
+  animation: move 0.7s ease infinite alternate-reverse; }
+
+.hotel__more-details {
+  bottom: 0;
+  position: absolute; }
+  .hotel__more-details .btn {
+    display: flex; }
+    .hotel__more-details .btn svg {
+      margin-left: 8px; }
 
 .hotel__link {
   font-size: 20px;
@@ -677,14 +680,16 @@ body.ReactModal__Body--open {
     text-decoration: underline;
     color: #7498FB; }
 
-.hotel__name-container {
+.hotel__address-container {
   display: flex;
   grid-column-start: 2;
   grid-row-start: 1;
-  align-items: center;
-  justify-content: flex-start;
-  top: 0;
-  position: absolute; }
+  flex-direction: column;
+  margin: 0 1.5rem; }
+
+.hotel__name-wrapper {
+  display: flex;
+  align-items: center; }
 
 .hotel__container--list {
   grid-template-columns: 15rem 1fr 52rem;

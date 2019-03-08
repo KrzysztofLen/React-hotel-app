@@ -12,6 +12,10 @@
 		margin-bottom: 3rem;
 		position: relative;
 
+		@include media-queries(L) {
+			grid-template-columns: 1fr 1fr 15rem;
+		}
+
 		&:hover {
 			box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
 			background: $color-grey-light-2;
@@ -50,29 +54,55 @@
 		position: relative;
 	}
 
-	&__details {
+	&__address-wrapper {
+		display: flex;
+		align-items: center;
+		margin-top: 1rem;
+		grid-column-start: 2;
+		grid-row-start: 1;
 
-		&--name {
-			margin-left: 1.5rem;
-			margin-right: 1.5rem;
-			grid-column-start: 2;
+		&::before {
+			content: '';
+			position: absolute;
+			background: url("../assets/SVG/room.svg");
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-repeat: no-repeat;
+			background-size: contain;
 		}
+	}
 
-		&--description {
-			grid-column-start: 2;
-			grid-row-start: 2;
-			margin: 1.5rem;
-			align-self: center;
+	&__address-value {
+		margin-right: 5px;
+		@include font-size(1.1);
+		position: relative;
+		margin-left: 30px;
+	}
 
-			transition: all 4s;
+	&__address-distance {
+		span {
+			font-weight: bold;
+			@include font-size(1.2);
 		}
+	}
 
-		&--distance {
-			span {
-				font-weight: bold;
-				@include font-size(1.2);
-			}
-		}
+	&__name {
+		margin-right: 1.5rem;
+		grid-column-start: 2;
+	}
+
+	&__rate {
+		min-width: 75px;
+	}
+
+	&__description {
+		grid-column-start: 2;
+		grid-row-start: 2;
+		margin: 1.5rem;
+		align-self: center;
+
+		transition: all 4s;
 
 		&--text {
 			@include font-size(1.6);
@@ -80,61 +110,34 @@
 			margin: 0;
 			@include font-weight(200);
 		}
+	}
 
-		&--isNew {
-			width: 55px;
-			position: absolute;
-			animation: move 0.7s ease infinite alternate-reverse;
+	&__price {
+		margin: 0;
+		@include font-size(2);
+		font-weight: 200;
+		color: $color-grey-dark-2;
+
+		span {
+			color: $material-color-blue;
 		}
+	}
 
-		&--adressBox {
+	&__isNew {
+		width: 55px;
+		position: absolute;
+		animation: move 0.7s ease infinite alternate-reverse;
+	}
+
+	&__more-details {
+		bottom: 0;
+		position: absolute;
+
+		.btn {
 			display: flex;
-			align-items: center;
-			margin-top: 1rem;
-			grid-column-start: 2;
-			grid-row-start: 1;
-			margin-left: 1.5rem;
 
-			&::before {
-				content: '';
-				position: absolute;
-				background: url("../assets/SVG/room.svg");
-				display: block;
-				width: 20px;
-				height: 20px;
-				background-repeat: no-repeat;
-				background-size: contain;
-			}
-		}
-
-		&--adress {
-			margin-right: 5px;
-			@include font-size(1.1);
-			position: relative;
-			margin-left: 30px;
-		}
-
-		&--more {
-			bottom: 0;
-			position: absolute;
-
-			.btn {
-				display: flex;
-
-				svg {
-					margin-left: 8px;
-				}
-			}
-		}
-
-		&--priceValue {
-			margin: 0;
-			@include font-size(2);
-			font-weight: 200;
-			color: $color-grey-dark-2;
-
-			span {
-				color: $material-color-blue;
+			svg {
+				margin-left: 8px;
 			}
 		}
 	}
@@ -152,14 +155,17 @@
 		}
 	}
 
-	&__name-container {
+	&__address-container {
 		display: flex;
 		grid-column-start: 2;
 		grid-row-start: 1;
+		flex-direction: column;
+		margin: 0 1.5rem;
+	}
+
+	&__name-wrapper {
+		display: flex;
 		align-items: center;
-		justify-content: flex-start;
-		top: 0;
-		position: absolute;
 	}
 }
 

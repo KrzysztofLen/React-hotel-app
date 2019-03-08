@@ -8,7 +8,7 @@ type Props = {
 }
 
 const HotelLink = (data: Props) => (
-	<div className="hotel__details--name">
+	<div className="hotel__name">
 		<NavLink to={"/hotel/" + data.id} className="hotel__link">{data.hotelName}</NavLink>
 	</div>
 );
