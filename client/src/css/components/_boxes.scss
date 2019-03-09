@@ -17,6 +17,16 @@
 		max-width: 175px;
 	}
 
+	@include media-queries(M) {
+		width: calc(50% - 10px);
+		max-width: 200px;
+
+		&:nth-child(odd) {
+			margin-bottom: 20px;
+			margin-right: 20px;
+		}
+	}
+
 	&:hover {
 		box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
 	}
@@ -34,6 +44,13 @@
 
 		@include media-queries(L) {
 			margin: 10px 5rem;
+		}
+
+		@include media-queries(M) {
+			flex-wrap: wrap;
+			width: 80%;
+			margin: 10px auto;
+			justify-content: center;
 		}
 	}
 

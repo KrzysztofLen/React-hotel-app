@@ -168,6 +168,9 @@ body.ReactModal__Body--open {
   top: 100%;
   z-index: 1;
   right: 0; }
+  @media M {
+    .dropdown__submenu {
+      width: 100%; } }
 
 .dropdown__submenu-item {
   display: block;
@@ -196,6 +199,10 @@ body.ReactModal__Body--open {
   justify-content: space-between;
   align-items: center;
   position: relative; }
+  @media only screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      height: auto; } }
   .header__back {
     background-color: transparent;
     background-image: url("../assets/SVG/chevron-left.svg");
@@ -229,6 +236,13 @@ body.ReactModal__Body--open {
     .box {
       width: calc(25% - 10px);
       max-width: 175px; } }
+  @media only screen and (max-width: 768px) {
+    .box {
+      width: calc(50% - 10px);
+      max-width: 200px; }
+      .box:nth-child(odd) {
+        margin-bottom: 20px;
+        margin-right: 20px; } }
   .box:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2); }
   .box:after {
@@ -242,6 +256,12 @@ body.ReactModal__Body--open {
     @media only screen and (max-width: 1024px) {
       .box__container {
         margin: 10px 5rem; } }
+    @media only screen and (max-width: 768px) {
+      .box__container {
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 10px auto;
+        justify-content: center; } }
   .box__content {
     position: absolute;
     width: 100%;
@@ -323,6 +343,11 @@ body.ReactModal__Body--open {
   align-items: center;
   height: 8rem;
   margin-left: 8rem; }
+  @media only screen and (max-width: 768px) {
+    .search {
+      flex: 0 0 100%;
+      margin: 0;
+      width: 100%; } }
   .search::before {
     content: "";
     position: absolute;
@@ -406,24 +431,10 @@ body.ReactModal__Body--open {
       transform: scaleY(1);
       width: 100%;
       border-left: 3px solid transparent; }
-      @media only screen and (max-width: 37.5em) {
-        .side-nav__item:before {
-          background-position: center top; } }
     .side-nav__item:hover::before {
       border-left: 3px solid #ccc; }
     .side-nav__item--active::before, .side-nav__item--active:hover::before {
       border-left: 3px solid #7498FB; }
-    @media only screen and (max-width: 56.25em) {
-      .side-nav__item {
-        width: 200px;
-        flex: 1; } }
-    @media only screen and (max-width: 68.75em) {
-      .side-nav__item {
-        flex: 1 1;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        display: flex; } }
     .side-nav__item:nth-child(1):before {
       background-image: url("../assets/SVG/home.svg"); }
     .side-nav__item:nth-child(2):before {
@@ -443,41 +454,16 @@ body.ReactModal__Body--open {
     height: 4.6rem;
     display: flex;
     align-items: center; }
-    @media only screen and (max-width: 68.75em) {
-      .side-nav__link:link, .side-nav__link:visited {
-        justify-content: center;
-        padding: 0;
-        width: 100%;
-        height: 44px; } }
-    @media only screen and (max-width: 37.5em) {
-      .side-nav__link:link, .side-nav__link:visited {
-        flex-direction: column;
-        padding: 1.5rem .5rem; } }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; }
-    @media only screen and (max-width: 37.5em) {
-      .side-nav__icon {
-        margin-right: 0;
-        margin-bottom: .7rem;
-        width: 1.5rem;
-        height: 1.5rem; } }
   .side-nav__link span {
     margin-left: 8rem; }
     @media only screen and (max-width: 1024px) {
       .side-nav__link span {
         margin-left: 2rem; } }
-
-.legal {
-  font-size: 1.2rem;
-  color: #ccc;
-  text-align: center;
-  padding: 2.5rem; }
-  @media only screen and (max-width: 56.25em) {
-    .legal {
-      display: none; } }
 
 .hotel-list {
   width: 100%; }
@@ -486,6 +472,9 @@ body.ReactModal__Body--open {
     @media only screen and (max-width: 1024px) {
       .hotel-list__container {
         margin: 10px 5rem; } }
+    @media only screen and (max-width: 768px) {
+      .hotel-list__container {
+        width: calc(100% - 10rem); } }
   .hotel-list__more {
     display: flex;
     justify-content: center; }
@@ -566,14 +555,19 @@ body.ReactModal__Body--open {
   background: #fff;
   border-bottom: 1px solid #eee;
   margin-bottom: 3rem;
-  position: relative; }
+  position: relative;
+  box-sizing: border-box; }
   @media only screen and (max-width: 1024px) {
     .hotel__container {
       grid-template-columns: 1fr 1fr 15rem; } }
   @media only screen and (max-width: 768px) {
     .hotel__container {
       grid-template-columns: 1fr;
-      grid-template-rows: 25rem 10rem 10rem; } }
+      grid-template-rows: 25rem 10rem 10rem;
+      width: calc(50% - 10px);
+      display: inline-grid; }
+      .hotel__container:nth-child(odd) {
+        margin-right: 10px; } }
   .hotel__container:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
     background: #f2f2f2; }
@@ -636,6 +630,9 @@ body.ReactModal__Body--open {
   position: relative;
   overflow: hidden;
   cursor: pointer; }
+  .hotel__image-container img {
+    width: 100%;
+    height: 100%; }
   .hotel__image-container:hover .overlay {
     left: 0; }
   @media only screen and (max-width: 768px) {
@@ -1023,6 +1020,14 @@ body.ReactModal__Body--open {
   min-width: 18.5rem;
   margin-right: 15px;
   border-left: 1px solid #f2f2f2; }
+  @media only screen and (max-width: 768px) {
+    .login__container {
+      width: 100%;
+      margin: 0;
+      height: auto;
+      border-top: 1px solid #f2f2f2;
+      border-left: none;
+      padding: 8px 0; } }
 
 .login__profile {
   margin-right: 2rem;

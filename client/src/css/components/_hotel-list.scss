@@ -7,6 +7,10 @@
 		@include media-queries(L) {
 			margin: 10px 5rem;
 		}
+
+		@include media-queries(M) {
+			width: calc(100% - 10rem);
+		}
 	}
 
 	&__more {

@@ -38,10 +38,6 @@
 			transform: scaleY(1);
 			width: 100%;
 			border-left: 3px solid transparent;
-
-			@media only screen and (max-width: $bp-small) {
-				background-position: center top;
-			}
 		}
 
 		&:hover::before {
@@ -51,19 +47,6 @@
 		&--active::before,
 		&--active:hover::before {
 			border-left: 3px solid $material-color-blue;
-		}
-
-		@media only screen and (max-width: $bp-medium) {
-			width: 200px;
-			flex: 1;
-		}
-
-		@media only screen and (max-width: $bp-large) {
-			flex: 1 1;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			display: flex;
 		}
 
 		&:nth-child(1):before {
@@ -96,18 +79,6 @@
 
 		display: flex;
 		align-items: center;
-
-		@media only screen and (max-width: $bp-large) {
-			justify-content: center;
-			padding: 0;
-			width: 100%;
-			height: 44px;
-		}
-
-		@media only screen and (max-width: $bp-small) {
-			flex-direction: column;
-			padding: 1.5rem .5rem;
-		}
 	}
 
 	&__icon {
@@ -115,13 +86,6 @@
 		height: 1.75rem;
 		margin-right: 2rem;
 		fill: currentColor;
-
-		@media only screen and (max-width: $bp-small) {
-			margin-right: 0;
-			margin-bottom: .7rem;
-			width: 1.5rem;
-			height: 1.5rem;
-		}
 	}
 
 	&__link {
@@ -132,16 +96,5 @@
 				margin-left: 2rem;
 			}
 		}
-	}
-}
-
-.legal {
-	font-size: 1.2rem;
-	color: $color-grey-light-4;
-	text-align: center;
-	padding: 2.5rem;
-
-	@media only screen and (max-width: $bp-medium) {
-		display: none;
 	}
 }

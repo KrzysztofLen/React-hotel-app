@@ -45,6 +45,10 @@
 		top: 100%;
 		z-index: 1;
 		right: 0;
+
+		@include media-queries(M) {
+			width: 100%;
+		}
 	}
 
 	&__submenu-item {

@@ -6,6 +6,12 @@
 	height: 8rem;
 	margin-left: 8rem;
 
+	@include media-queries(M) {
+		flex: 0 0 100%;
+		margin: 0;
+		width: 100%;
+	}
+
 	&::before {
 		content: "";
 		position: absolute;

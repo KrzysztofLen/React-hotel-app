@@ -6,6 +6,15 @@
 		min-width: 18.5rem;
 		margin-right: 15px;
 		border-left: 1px solid $color-grey-light-2;
+
+		@include media-queries(M) {
+			width: 100%;
+			margin: 0;
+			height: auto;
+			border-top: 1px solid $color-grey-light-2;
+			border-left: none;
+			padding: 8px 0;
+		}
 	}
 
 	&__profile {
