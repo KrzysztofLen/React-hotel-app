@@ -16,9 +16,89 @@
 			grid-template-columns: 1fr 1fr 15rem;
 		}
 
+		@include media-queries(M) {
+			grid-template-columns: 1fr;
+			grid-template-rows: 25rem 10rem 10rem;
+		}
+
 		&:hover {
 			box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
 			background: $color-grey-light-2;
+		}
+
+		// LIST VIEW STYLES
+		&--list {
+			grid-template-columns: 1fr 1fr 40rem;
+			grid-template-rows: 8rem auto;
+
+			@include media-queries(L) {
+				grid-template-columns: 1fr 1fr 21rem;
+			}
+
+			.hotel__details {
+				display: flex;
+				align-items: center;
+				grid-row-end: 2;
+
+				@include media-queries(L) {
+					align-items: baseline;
+					justify-content: space-around;
+				}
+			}
+
+			.hotel__image-container {
+				grid-row-end: 2;
+			}
+
+			.hotel__more-details {
+				right: 0;
+			}
+
+			.rate__color {
+				margin: 0;
+				margin-right: 10px;
+			}
+
+			.hotel__description {
+				grid-column-start: 2;
+				grid-row-start: 2;
+			}
+
+			.facilities {
+				grid-column-start: 3;
+			}
+
+			.hotel__price {
+				margin-right: 10px;
+				@include font-size(2.5);
+
+				@include media-queries(L) {
+					@include font-size(2);
+				}
+			}
+
+			.opinion__hotel-rating {
+				margin-right: 10px;
+			}
+
+			.hotel__link {
+				@include font-size(2.5);
+
+				@include media-queries(L) {
+					@include font-size(2);
+				}
+			}
+
+			.hotel__address {
+				@include font-size(1.6);
+			}
+		}
+
+		.facilities {
+			@include media-queries(M) {
+				grid-column-start: 1;
+				grid-row-start: 5;
+			}
 		}
 	}
 
@@ -36,6 +116,11 @@
 				left: 0;
 			}
 		}
+
+		@include media-queries(M) {
+			grid-column-start: 1;
+			grid-row-end: 1;
+		}
 	}
 
 	&__image {
@@ -45,13 +130,18 @@
 		object-fit: cover;
 	}
 
-	&__details-box {
+	&__details {
 		grid-column-start: 3;
 		grid-row-start: 1;
 		grid-row-end: 4;
 		padding: 0 1.5rem;
 		border-left: 1px solid $color-grey-light-4;
 		position: relative;
+
+		@include media-queries(M) {
+			grid-column-start: 1;
+			grid-row-start: 3;
+		}
 	}
 
 	&__address-wrapper {
@@ -103,6 +193,11 @@
 		align-self: center;
 
 		transition: all 4s;
+
+		@include media-queries(M) {
+			grid-column-start: 1;
+			grid-row-start: 4;
+		}
 
 		&--text {
 			@include font-size(1.6);
@@ -161,69 +256,16 @@
 		grid-row-start: 1;
 		flex-direction: column;
 		margin: 0 1.5rem;
+
+		@include media-queries(M) {
+			grid-column-start: 1;
+			grid-row-start: 2;
+		}
 	}
 
 	&__name-wrapper {
 		display: flex;
 		align-items: center;
-	}
-}
-
-// LIST VIEW STYLES
-.hotel__container--list {
-	grid-template-columns: 15rem 1fr 52rem;
-	grid-template-rows: 8rem auto;
-
-	.hotel__details-box {
-		display: flex;
-		align-items: center;
-		grid-row-end: 2;
-	}
-
-	.hotel__image-container {
-		grid-row-end: 2;
-	}
-
-	.hotel__details--more {
-		right: 0;
-	}
-
-	.rate__color {
-		margin: 0;
-		margin-right: 10px;
-	}
-
-	.hotel__details--description {
-		grid-column-start: 2;
-		grid-row-start: 2;
-	}
-
-	.facilities {
-		grid-column-start: 3;
-	}
-
-	.hotel__details--price {
-		margin-right: 10px;
-	}
-
-	.opinion__hotel-rating {
-		margin-right: 10px;
-	}
-
-	.hotel__link {
-		@include font-size(2.5);
-	}
-
-	.hotel__details--adress {
-		@include font-size(1.6);
-	}
-
-	.hotel__details--adressBox {
-		margin-top: 3rem;
-	}
-
-	.hotel__details--priceValue {
-		@include font-size(3);
 	}
 }
 

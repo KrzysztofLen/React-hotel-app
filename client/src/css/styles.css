@@ -570,9 +570,63 @@ body.ReactModal__Body--open {
   @media only screen and (max-width: 1024px) {
     .hotel__container {
       grid-template-columns: 1fr 1fr 15rem; } }
+  @media only screen and (max-width: 768px) {
+    .hotel__container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 25rem 10rem 10rem; } }
   .hotel__container:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
     background: #f2f2f2; }
+  .hotel__container--list {
+    grid-template-columns: 1fr 1fr 40rem;
+    grid-template-rows: 8rem auto; }
+    @media only screen and (max-width: 1024px) {
+      .hotel__container--list {
+        grid-template-columns: 1fr 1fr 21rem; } }
+    .hotel__container--list .hotel__details {
+      display: flex;
+      align-items: center;
+      grid-row-end: 2; }
+      @media only screen and (max-width: 1024px) {
+        .hotel__container--list .hotel__details {
+          align-items: baseline;
+          justify-content: space-around; } }
+    .hotel__container--list .hotel__image-container {
+      grid-row-end: 2; }
+    .hotel__container--list .hotel__more-details {
+      right: 0; }
+    .hotel__container--list .rate__color {
+      margin: 0;
+      margin-right: 10px; }
+    .hotel__container--list .hotel__description {
+      grid-column-start: 2;
+      grid-row-start: 2; }
+    .hotel__container--list .facilities {
+      grid-column-start: 3; }
+    .hotel__container--list .hotel__price {
+      margin-right: 10px;
+      font-size: 25px;
+      font-size: 2.5rem; }
+      @media only screen and (max-width: 1024px) {
+        .hotel__container--list .hotel__price {
+          font-size: 20px;
+          font-size: 2rem; } }
+    .hotel__container--list .opinion__hotel-rating {
+      margin-right: 10px; }
+    .hotel__container--list .hotel__link {
+      font-size: 25px;
+      font-size: 2.5rem; }
+      @media only screen and (max-width: 1024px) {
+        .hotel__container--list .hotel__link {
+          font-size: 20px;
+          font-size: 2rem; } }
+    .hotel__container--list .hotel__address {
+      font-size: 16px;
+      font-size: 1.6rem; }
+  @media only screen and (max-width: 768px) {
+    .hotel__container .facilities {
+      grid-column-start: 1;
+      grid-row-start: 5; } }
 
 .hotel__image-container {
   grid-column-start: 1;
@@ -584,6 +638,10 @@ body.ReactModal__Body--open {
   cursor: pointer; }
   .hotel__image-container:hover .overlay {
     left: 0; }
+  @media only screen and (max-width: 768px) {
+    .hotel__image-container {
+      grid-column-start: 1;
+      grid-row-end: 1; } }
 
 .hotel__image {
   cursor: pointer;
@@ -591,13 +649,17 @@ body.ReactModal__Body--open {
   height: 100%;
   object-fit: cover; }
 
-.hotel__details-box {
+.hotel__details {
   grid-column-start: 3;
   grid-row-start: 1;
   grid-row-end: 4;
   padding: 0 1.5rem;
   border-left: 1px solid #ccc;
   position: relative; }
+  @media only screen and (max-width: 768px) {
+    .hotel__details {
+      grid-column-start: 1;
+      grid-row-start: 3; } }
 
 .hotel__address-wrapper {
   display: flex;
@@ -640,6 +702,10 @@ body.ReactModal__Body--open {
   margin: 1.5rem;
   align-self: center;
   transition: all 4s; }
+  @media only screen and (max-width: 768px) {
+    .hotel__description {
+      grid-column-start: 1;
+      grid-row-start: 4; } }
   .hotel__description--text {
     font-size: 16px;
     font-size: 1.6rem;
@@ -686,45 +752,14 @@ body.ReactModal__Body--open {
   grid-row-start: 1;
   flex-direction: column;
   margin: 0 1.5rem; }
+  @media only screen and (max-width: 768px) {
+    .hotel__address-container {
+      grid-column-start: 1;
+      grid-row-start: 2; } }
 
 .hotel__name-wrapper {
   display: flex;
   align-items: center; }
-
-.hotel__container--list {
-  grid-template-columns: 15rem 1fr 52rem;
-  grid-template-rows: 8rem auto; }
-  .hotel__container--list .hotel__details-box {
-    display: flex;
-    align-items: center;
-    grid-row-end: 2; }
-  .hotel__container--list .hotel__image-container {
-    grid-row-end: 2; }
-  .hotel__container--list .hotel__details--more {
-    right: 0; }
-  .hotel__container--list .rate__color {
-    margin: 0;
-    margin-right: 10px; }
-  .hotel__container--list .hotel__details--description {
-    grid-column-start: 2;
-    grid-row-start: 2; }
-  .hotel__container--list .facilities {
-    grid-column-start: 3; }
-  .hotel__container--list .hotel__details--price {
-    margin-right: 10px; }
-  .hotel__container--list .opinion__hotel-rating {
-    margin-right: 10px; }
-  .hotel__container--list .hotel__link {
-    font-size: 25px;
-    font-size: 2.5rem; }
-  .hotel__container--list .hotel__details--adress {
-    font-size: 16px;
-    font-size: 1.6rem; }
-  .hotel__container--list .hotel__details--adressBox {
-    margin-top: 3rem; }
-  .hotel__container--list .hotel__details--priceValue {
-    font-size: 30px;
-    font-size: 3rem; }
 
 @keyframes move {
   0% {

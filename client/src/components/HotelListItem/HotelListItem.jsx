@@ -97,7 +97,7 @@ class HotelListItem extends React.Component<Props, State> {
 							center)</p>
 					</div>
 				</div>
-				<div className="hotel__details-box">
+				<div className="hotel__details">
 					<HotelPrice price={this.props.data.hotel_price}/>
 					<HotelOpinion hotelRating={this.props.data.hotel_rating}
 					              hotelReviews={this.props.data.hotel_reviews}/>
