@@ -74,6 +74,8 @@ const hotelSchema = new Schema({
 	hotel_images: {
 		type: Array
 	}
+}, {
+	timestamps: true
 });
 
 mongoose.model('Hotel', hotelSchema);

@@ -81,3 +81,13 @@
 		@include font-size(2);
 	}
 }
+
+.container {
+	background-color: $color-grey-light-1;
+	width: calc(100% - 8rem);
+	min-height: 100vh;
+
+	@include media-queries(M) {
+		width: 100%;
+	}
+}

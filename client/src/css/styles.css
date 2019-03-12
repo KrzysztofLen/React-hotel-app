@@ -68,14 +68,6 @@ body.ReactModal__Body--open {
 #root {
   position: relative; }
 
-.container {
-  background-color: #faf9f9;
-  width: calc(100% - 8rem);
-  min-height: 100vh; }
-
-.hotel-app {
-  display: flex; }
-
 .u-center-text {
   text-align: center; }
 
@@ -357,6 +349,9 @@ body.ReactModal__Body--open {
     background-size: 27px;
     width: 8rem;
     height: 8rem; }
+    @media only screen and (max-width: 768px) {
+      .search::before {
+        left: 4rem; } }
   .search__input {
     font-family: inherit;
     font-size: 22px;
@@ -370,6 +365,9 @@ body.ReactModal__Body--open {
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media only screen and (max-width: 768px) {
+      .search__input {
+        padding: 0 10rem; } }
     .search__input:focus {
       outline: none;
       width: 100%;
@@ -402,6 +400,11 @@ body.ReactModal__Body--open {
   display: flex;
   flex-direction: column;
   border-right: 1px solid #faf9f9; }
+  @media only screen and (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      border: none; } }
 
 .side-nav {
   font-size: 1.4rem;
@@ -413,6 +416,12 @@ body.ReactModal__Body--open {
   padding: 0;
   flex-direction: column;
   margin-top: 40px; }
+  @media only screen and (max-width: 768px) {
+    .side-nav {
+      flex-direction: row;
+      width: 100%;
+      margin: 0;
+      justify-content: space-around; } }
   .side-nav__item {
     position: relative;
     margin: 0;
@@ -584,7 +593,8 @@ body.ReactModal__Body--open {
       @media only screen and (max-width: 1024px) {
         .hotel__container--list .hotel__details {
           align-items: baseline;
-          justify-content: space-around; } }
+          flex-wrap: wrap;
+          justify-content: flex-start; } }
     .hotel__container--list .hotel__image-container {
       grid-row-end: 2; }
     .hotel__container--list .hotel__more-details {
@@ -603,6 +613,7 @@ body.ReactModal__Body--open {
       font-size: 2.5rem; }
       @media only screen and (max-width: 1024px) {
         .hotel__container--list .hotel__price {
+          width: 30%;
           font-size: 20px;
           font-size: 2rem; } }
     .hotel__container--list .opinion__hotel-rating {
@@ -656,7 +667,8 @@ body.ReactModal__Body--open {
   @media only screen and (max-width: 768px) {
     .hotel__details {
       grid-column-start: 1;
-      grid-row-start: 3; } }
+      grid-row-start: 3;
+      border-left: none; } }
 
 .hotel__address-wrapper {
   display: flex;
@@ -692,6 +704,9 @@ body.ReactModal__Body--open {
 
 .hotel__rate {
   min-width: 75px; }
+  @media only screen and (max-width: 768px) {
+    .hotel__rate {
+      min-width: auto; } }
 
 .hotel__description {
   grid-column-start: 2;
@@ -727,6 +742,9 @@ body.ReactModal__Body--open {
 .hotel__more-details {
   bottom: 0;
   position: absolute; }
+  @media only screen and (max-width: 768px) {
+    .hotel__more-details {
+      right: 0; } }
   .hotel__more-details .btn {
     display: flex; }
     .hotel__more-details .btn svg {
@@ -752,11 +770,13 @@ body.ReactModal__Body--open {
   @media only screen and (max-width: 768px) {
     .hotel__address-container {
       grid-column-start: 1;
-      grid-row-start: 2; } }
+      grid-row-start: 2;
+      margin: 1.5rem; } }
 
 .hotel__name-wrapper {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between; }
 
 @keyframes move {
   0% {
@@ -765,6 +785,12 @@ body.ReactModal__Body--open {
   100% {
     opacity: 1;
     transform: scale(1.3); } }
+
+.hotel-app {
+  display: flex; }
+  @media only screen and (max-width: 768px) {
+    .hotel-app {
+      flex-direction: column; } }
 
 .credits {
   text-transform: uppercase; }
@@ -1726,6 +1752,14 @@ body.ReactModal__Body--open {
     font-size: 20px;
     font-size: 2rem; }
 
+.container {
+  background-color: #faf9f9;
+  width: calc(100% - 8rem);
+  min-height: 100vh; }
+  @media only screen and (max-width: 768px) {
+    .container {
+      width: 100%; } }
+
 .button {
   background-color: #fff;
   border: 1px solid #dbdbdb;
@@ -1920,6 +1954,9 @@ body.ReactModal__Body--open {
   font-weight: 400;
   margin-top: 2rem;
   margin-bottom: 1rem; }
+  @media only screen and (max-width: 768px) {
+    .rate__color {
+      margin-top: 1rem; } }
   .rate__color--verybad {
     color: #BC2026; }
   .rate__color--poor {

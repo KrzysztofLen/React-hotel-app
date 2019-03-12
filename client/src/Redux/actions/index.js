@@ -96,15 +96,22 @@ export const fetchHotelsLength = () => async (dispatch) => {
 
 export const submitSurvey = (values, history) => async (dispatch) => {
 	//#TODO create new FormData to able to send file into DB
-	// let form_data = new FormData();
+	const data = new FormData();
+	data.append('file', JSON.stringify(values.hotel_images));
+	const newValues = {
+		...values,
+		hotel_images: data
+	};
+
 	// for (let key in values ) {
 	// 	console.log(values);
 	// 	form_data.append(key, values[key]);
 	// }
 
-	//const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-	//const res = await axios.post('/api/hotels', form_data, config);
-	const res = await axios.post('/api/hotels');
+	//const config = {headers: {'Content-Type': 'multipart/form-data'}};
+	const res = await axios.post('/api/hotels', newValues);
+	//const res = await axios.post('/api/hotels', values);
+	console.log(newValues);
 	history.push('/add/success');
 	dispatch({
 		type: types.SUBMIT_SURVEY,

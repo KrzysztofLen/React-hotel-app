@@ -5,6 +5,10 @@
 	margin-top: 2rem;
 	margin-bottom: 1rem;
 
+	@include media-queries(M) {
+		margin-top: 1rem;
+	}
+
 	&--verybad {
 		color: $rate-bad;
 	}

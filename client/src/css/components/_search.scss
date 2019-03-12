@@ -21,6 +21,10 @@
 		background-size: 27px;
 		width: $navWidth;
 		height: 8rem;
+
+		@include media-queries(M) {
+			left: 4rem;
+		}
 	}
 
 	&__input {
@@ -35,6 +39,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		@include media-queries(M) {
+			padding: 0 10rem;
+		}
 
 		&:focus {
 			outline: none;

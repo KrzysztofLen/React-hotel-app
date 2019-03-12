@@ -123,16 +123,7 @@ class AddHotelForm extends Component<IState> {
 			facilities_wifi: this.state.facilities_wifi,
 			facilities_card_payment: this.state.facilities_card_payment,
 			facilities_game_room: this.state.facilities_game_room,
-			hotel_images: [{
-				fieldname: 'hotel_images',
-				originalname: 'burjkalifa1_optimized.jpg',
-				encoding: '7bit',
-				mimetype: 'image/jpeg',
-				destination: './uploads/',
-				filename: '2019-02-17T10-30-43.042Zburjkalifa1_optimized.jpg',
-				path: 'uploads/2019-02-17T10-30-43.042Zburjkalifa1_optimized.jpg',
-				size: 353741
-			}]
+			hotel_images: this.state.hotel_images
 		};
 		this.props.submitSurvey(values, this.props.history)
 		this.props.addHotel(values);
@@ -152,7 +143,7 @@ class AddHotelForm extends Component<IState> {
 
 	encodeImageFileAsURL = (elements) => {
 		//#TODO try not send base64 because of optimalization
-		const fileList = [];
+
 		this.setState({
 			hotel_images: elements
 		});

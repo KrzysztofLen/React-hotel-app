@@ -1,10 +1,9 @@
 const express = require('express');
+require('./server/db/mongoose');
 const path = require('path');
 const app = express();
-const http = require('http');
 const cors = require('cors');
 const chalk = require('./server/chalk');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -21,10 +20,6 @@ require('./server/models/localAuthenticateModel');
 
 // SERVICES ############################################################################################################
 require('./server/services/passport')(passport); // pass passport for configuration
-
-// CONFIGURATION #######################################################################################################
-mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI); // connect to our database
 
 // set up our express application ######################################################################################
 app.use(morgan('dev'));

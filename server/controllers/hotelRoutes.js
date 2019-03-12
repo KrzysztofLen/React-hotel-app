@@ -84,13 +84,14 @@ exports.hotels_post = (req, res, next) => {
 
 	const setDate = is_new === "true" ? Date.now() : false;
 
+	//#TODO comment this to avoid 500
 	const imageFiles = [];
 
-	console.log("[*********REQ", req.files);
-	req.files.forEach(file => {
-		console.log(file);
-		imageFiles.push(file.path);
-	});
+	console.log("[*********REQ", req);
+	// req.files.forEach(file => {
+	// 	console.log(file);
+	// 	imageFiles.push(file.path);
+	// });
 
 	// Object values
 	const hotel = new Hotel({
