@@ -13,9 +13,20 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,400,700');
 
 /* ------------- */
+/*		LAYOUT    */
+/* ------------- */
+@import "layout/breakpoints";
+@import "layout/content";
+@import "layout/buttons";
+@import "layout/logo";
+@import "layout/icons";
+@import "layout/rate";
+@import "layout/form";
+
+/* ------------- */
 /*		COMPONENTS    */
 /* ------------- */
-@import "components/_auth.scss";
+@import "components/auth.scss";
 @import "components/header";
 @import "components/boxes";
 @import "components/modal";
@@ -46,17 +57,6 @@
 @import "components/toggleSwitch";
 @import "components/addHotelReview";
 @import "components/dropzone";
-
-/* ------------- */
-/*		LAYOUT    */
-/* ------------- */
-@import "layout/content";
-@import "layout/buttons";
-@import "layout/breakpoints";
-@import "layout/logo";
-@import "layout/icons";
-@import "layout/rate";
-@import "layout/form";
 
 /* ------------- */
 /*		PAGES    */

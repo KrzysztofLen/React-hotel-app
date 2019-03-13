@@ -24,6 +24,10 @@
 		height: 100vh;
 		min-height: calc(100vh - 65px);
 
+		@include media-queries(M) {
+			height: 100%;
+		}
+
 		&:after {
 			content: "";
 			clear: both;

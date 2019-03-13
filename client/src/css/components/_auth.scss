@@ -47,7 +47,7 @@
 		right: 0;
 
 		@include media-queries(M) {
-			width: 100%;
+			min-width: 100%;
 		}
 	}
 

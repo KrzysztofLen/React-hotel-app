@@ -25,9 +25,10 @@
 
 	@include media-queries(M) {
 		flex-direction: row;
-		width: 100%;
-		margin: 0;
+		width: 80%;
 		justify-content: space-around;
+		height: 9rem;
+		margin: 0 auto;
 	}
 
 	&__item {
@@ -36,6 +37,10 @@
 		cursor: pointer;
 		width: $navWidth;
 		height: 8rem;
+
+		@include media-queries(M) {
+			width: 100%;
+		}
 
 		&:before {
 			content: '';
@@ -51,15 +56,31 @@
 			transform: scaleY(1);
 			width: 100%;
 			border-left: 3px solid transparent;
+			background-position: center;
+
+			@include media-queries(M) {
+				border-left: none;
+				border-bottom: 3px solid transparent;
+			}
 		}
 
 		&:hover::before {
 			border-left: 3px solid $color-grey-light-4;
+
+			@include media-queries(M) {
+				border-left: none;
+				border-bottom: 3px solid $color-grey-light-4;
+			}
 		}
 
 		&--active::before,
 		&--active:hover::before {
 			border-left: 3px solid $material-color-blue;
+
+			@include media-queries(M) {
+				border-left: none;
+				border-bottom: 3px solid $material-color-blue;
+			}
 		}
 
 		&:nth-child(1):before {

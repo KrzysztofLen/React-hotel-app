@@ -43,6 +43,12 @@
 				grid-template-columns: 1fr 1fr 21rem;
 			}
 
+			@include media-queries(M) {
+				grid-template-columns: 1fr;
+				grid-template-rows: 8rem 1fr;
+				width: 100%;
+			}
+
 			.hotel__details {
 				display: flex;
 				align-items: center;
@@ -52,6 +58,10 @@
 					align-items: baseline;
 					flex-wrap: wrap;
 					justify-content: flex-start;
+				}
+
+				@include media-queries(M) {
+					grid-row-end: none;
 				}
 			}
 
@@ -71,10 +81,20 @@
 			.hotel__description {
 				grid-column-start: 2;
 				grid-row-start: 2;
+
+				@include media-queries(M) {
+					grid-column-start: 1;
+					grid-row-start: 6;
+					margin: 0;
+				}
 			}
 
 			.facilities {
 				grid-column-start: 3;
+
+				@include media-queries(M) {
+					margin: 1.5rem 0;
+				}
 			}
 
 			.hotel__price {
@@ -157,6 +177,7 @@
 			grid-column-start: 1;
 			grid-row-start: 3;
 			border-left: none;
+			padding: 0;
 		}
 	}
 
@@ -166,6 +187,10 @@
 		margin-top: 1rem;
 		grid-column-start: 2;
 		grid-row-start: 1;
+
+		@include media-queries(M) {
+			margin-top: 2rem;
+		}
 
 		&::before {
 			content: '';
@@ -196,6 +221,11 @@
 	&__name {
 		margin-right: 1.5rem;
 		grid-column-start: 2;
+
+		@include media-queries(M) {
+			margin: 0;
+			padding-bottom: 1rem;
+		}
 	}
 
 	&__rate {
@@ -284,7 +314,7 @@
 		@include media-queries(M) {
 			grid-column-start: 1;
 			grid-row-start: 2;
-			margin: 1.5rem;
+			margin: 1.5rem 0;
 		}
 	}
 
@@ -292,6 +322,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include media-queries(M) {
+			display: block;
+		}
 	}
 }
 
