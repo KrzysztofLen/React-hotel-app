@@ -1,10 +1,20 @@
-import React from 'react';
+//@Flow
+import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import {Logo} from "../Logo/Logo";
 import {home} from "../../assets/SVG/home.svg";
 
-class Navigation extends React.Component {
-	constructor(props) {
+interface IProps {
+	navlinks: Array<Object>
+}
+
+interface IState {
+	activeIndex: number,
+	isUnderBreakpoint: boolean
+}
+
+class Navigation extends Component<IState> {
+	constructor(props: IProps) {
 		super(props);
 
 		this.state = {
@@ -13,7 +23,7 @@ class Navigation extends React.Component {
 		};
 	}
 
-	onSetActiveIndex = (index) => {
+	onSetActiveIndex = (index: number) => {
 		this.setState({
 			activeIndex: index
 		});
