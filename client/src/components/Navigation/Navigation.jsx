@@ -8,7 +8,8 @@ class Navigation extends React.Component {
 		super(props);
 
 		this.state = {
-			activeIndex: 0
+			activeIndex: 0,
+			isUnderBreakpoint: false
 		};
 	}
 
@@ -18,22 +19,46 @@ class Navigation extends React.Component {
 		});
 	};
 
+	onCheckResolution = () => {
+		if (window.innerWidth < 480) {
+			this.setState({
+				isUnderBreakpoint: true
+			});
+		} else {
+			this.setState({
+				isUnderBreakpoint: false
+			});
+		}
+	}
+
+	componentDidMount() {
+		window.addEventListener("resize", () => {
+			this.onCheckResolution();
+		});
+
+		this.onCheckResolution();
+	}
+
 	render() {
 		return (
-			<nav className="sidebar">
-				<Logo/>
-				<ul className="side-nav">
-					{this.props.navlinks.map(({path}, index) => {
-						return (
-							<li key={index}
-							    className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
-							    onClick={this.onSetActiveIndex.bind(this, index)}>
-								<NavLink to={`${path}`} className="side-nav__link" />
-							</li>
-						)
-					})}
-				</ul>
-			</nav>
+			<React.Fragment>
+				{this.state.isUnderBreakpoint &&
+				<div className={"message__notSupported"}>Your device resolution is under supported value. Some content may not appear correctly</div>}
+				<nav className="sidebar">
+					<Logo/>
+					<ul className="side-nav">
+						{this.props.navlinks.map(({path}, index) => {
+							return (
+								<li key={index}
+								    className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
+								    onClick={this.onSetActiveIndex.bind(this, index)}>
+									<NavLink to={`${path}`} className="side-nav__link"/>
+								</li>
+							)
+						})}
+					</ul>
+				</nav>
+			</React.Fragment>
 		)
 	}
 }

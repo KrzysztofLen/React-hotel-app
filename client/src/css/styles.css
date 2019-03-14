@@ -196,6 +196,13 @@ body.ReactModal__Body--open {
     .container {
       width: 100%; } }
 
+.message__notSupported {
+  margin: 0 3rem;
+  text-align: center;
+  font-size: 25px;
+  font-size: 2.5rem;
+  color: #dc173f; }
+
 .button {
   background-color: #fff;
   border: 1px solid #dbdbdb;
@@ -938,6 +945,9 @@ select {
       display: inline-grid; }
       .hotel__container:nth-child(odd) {
         margin-right: 10px; } }
+  @media only screen and (max-width: 525px) {
+    .hotel__container {
+      width: 100%; } }
   .hotel__container:hover {
     box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
     background: #f2f2f2; }
@@ -1009,6 +1019,9 @@ select {
     .hotel__container .facilities {
       grid-column-start: 1;
       grid-row-start: 5; } }
+  @media only screen and (max-width: 525px) {
+    .hotel__container .facilities {
+      margin: 1.5rem 0; } }
 
 .hotel__image-container {
   grid-column-start: 1;
@@ -1103,6 +1116,9 @@ select {
     .hotel__description {
       grid-column-start: 1;
       grid-row-start: 4; } }
+  @media only screen and (max-width: 525px) {
+    .hotel__description {
+      margin: 1.5rem 0; } }
   .hotel__description--text {
     font-size: 16px;
     font-size: 1.6rem;

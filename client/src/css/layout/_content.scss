@@ -95,3 +95,12 @@
 		width: 100%;
 	}
 }
+
+.message {
+	&__notSupported {
+		margin: 0 3rem;
+		text-align: center;
+		@include font-size(2.5);
+		color: $color-rejected;
+	}
+}

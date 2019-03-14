@@ -29,6 +29,10 @@
 			}
 		}
 
+		@include media-queries(S) {
+			width: 100%;
+		}
+
 		&:hover {
 			box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
 			background: $color-grey-light-2;
@@ -128,6 +132,10 @@
 			@include media-queries(M) {
 				grid-column-start: 1;
 				grid-row-start: 5;
+			}
+
+			@include media-queries(S) {
+				margin: 1.5rem 0;
 			}
 		}
 	}
@@ -247,6 +255,10 @@
 		@include media-queries(M) {
 			grid-column-start: 1;
 			grid-row-start: 4;
+		}
+
+		@include media-queries(S) {
+			margin: 1.5rem 0;
 		}
 
 		&--text {
