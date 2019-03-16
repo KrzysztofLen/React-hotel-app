@@ -23,7 +23,7 @@ class AddHotelSuccess extends Component {
 	}
 
 	render() {
-		return <Messages type={"success"} message={"The operation ended with success"}/>
+		return <Messages type={"success"} duration={10000} message={"The operation ended with success"}/>
 	}
 }
 
