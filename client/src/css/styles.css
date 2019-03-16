@@ -1591,14 +1591,26 @@ select {
   align-items: center;
   background: #F5F8FD;
   width: 100%; }
+  .hotel-form__form {
+    margin: 0 8rem; }
+    @media only screen and (max-width: 1024px) {
+      .hotel-form__form {
+        margin: 0 5rem; } }
+    .hotel-form__form .dropzone__files-wrapper {
+      background: #fff;
+      border-radius: 5px;
+      margin-top: 0; }
+    .hotel-form__form .content__header-wrapper {
+      margin: 0; }
   .hotel-form__review, .hotel-form__container {
     height: 525px;
     border-radius: 5px;
     box-sizing: border-box; }
   .hotel-form__container {
+    background: #F5F8FD;
+    width: 100%;
     height: 100%;
-    padding: 20px 40px;
-    position: relative; }
+    min-height: 100vh; }
   .hotel-form__header {
     color: #333;
     font-size: 24px;
@@ -1674,10 +1686,46 @@ select {
     display: flex;
     position: relative;
     width: 100%;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    margin: 10px 0; }
+    @media only screen and (max-width: 768px) {
+      .hotel-form__formValuesBox {
+        flex-wrap: wrap; } }
   .hotel-form__formValueBox {
     width: 33.3333%;
-    margin-right: 70px; }
+    margin-right: 3rem;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px; }
+    @media only screen and (max-width: 768px) {
+      .hotel-form__formValueBox {
+        width: calc(50% - 1.5rem);
+        margin: 0;
+        box-sizing: border-box; } }
+    @media only screen and (max-width: 525px) {
+      .hotel-form__formValueBox {
+        width: 100%; } }
+    @media only screen and (max-width: 768px) {
+      .hotel-form__formValueBox:first-child {
+        margin-right: 3rem; } }
+    @media only screen and (max-width: 525px) {
+      .hotel-form__formValueBox:first-child {
+        margin-right: 0;
+        margin-bottom: 3rem; } }
+    .hotel-form__formValueBox:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 0; }
+      @media only screen and (max-width: 768px) {
+        .hotel-form__formValueBox:last-child {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          margin-top: 3rem; } }
+    .hotel-form__formValueBox div:last-child input {
+      margin-bottom: 0; }
   .hotel-form__buttons {
     display: flex;
     justify-content: space-between; }
@@ -1689,6 +1737,9 @@ select {
       margin-top: 0;
       position: relative;
       width: 100px; }
+      @media only screen and (max-width: 1024px) {
+        .hotel-form__toggleInput label {
+          width: 85px; } }
   .hotel-form__reviewLabel {
     color: #7498FB;
     margin-bottom: 8px;
@@ -1704,6 +1755,11 @@ select {
     width: 100%;
     display: flex;
     flex-direction: row; }
+  .hotel-form__dropzone {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0 8rem 0; }
 
 .success__container {
   display: flex;

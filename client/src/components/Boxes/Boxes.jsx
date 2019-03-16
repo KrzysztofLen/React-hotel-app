@@ -34,6 +34,7 @@ class Boxes extends React.Component<Props> {
 			const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
 			(isNew >= isNewDuration || isNew === 0) ? false : newHotel.push(hotel);
 		});
+
 		return newHotel.length;
 	}
 

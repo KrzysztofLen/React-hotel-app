@@ -96,26 +96,16 @@ class AddHotelForm extends Component<IState> {
 		e.preventDefault();
 
 		const values = {
-			// hotel_name: e.target[0].value,
-			// hotel_adress: e.target[1].value,
-			// hotel_city: e.target[2].value,
-			// hotel_province: e.target[3].value,
-			// hotel_price: e.target[5].value,
-			// hotel_distance: e.target[6].value,
-			// hotel_description: e.target[4].value,
-			// hotel_stars: e.target[7].value,
-			// hotel_rating: e.target[8].value,
-			// hotel_reviews: e.target[9].value,
-			hotel_name: "Test",
-			hotel_adress: "Test",
-			hotel_city: "Test",
-			hotel_province: "Test",
-			hotel_price: 0,
-			hotel_distance: 0,
-			hotel_description: "Test",
-			hotel_stars: 0,
-			hotel_rating: 0,
-			hotel_reviews: 0,
+			hotel_name: e.target[0].value,
+			hotel_adress: e.target[1].value,
+			hotel_city: e.target[2].value,
+			hotel_province: e.target[3].value,
+			hotel_price: e.target[5].value,
+			hotel_distance: e.target[6].value,
+			hotel_description: e.target[4].value,
+			hotel_stars: e.target[7].value,
+			hotel_rating: e.target[8].value,
+			hotel_reviews: e.target[9].value,
 			is_new: this.state.is_new,
 			is_apartment: this.state.is_apartment,
 			facilities_restaurant: this.state.facilities_restaurant,
@@ -125,7 +115,8 @@ class AddHotelForm extends Component<IState> {
 			facilities_game_room: this.state.facilities_game_room,
 			hotel_images: this.state.hotel_images
 		};
-		this.props.submitSurvey(values, this.props.history)
+
+		//this.props.submitSurvey(values, this.props.history);
 		this.props.addHotel(values);
 		this.props.history.push('/send');
 	}
@@ -167,7 +158,9 @@ class AddHotelForm extends Component<IState> {
 		return (
 			<div className={"hotel-form"}>
 				<div className="hotel-form__container">
-					<h5 className="hotel-form__header">Fill to submit</h5>
+					<div className={"content__header-wrapper"}>
+						<h1 className={"view-header"}>Fill to submit</h1>
+					</div>
 					<form onSubmit={this.handleSubmit} className="hotel-form__form"
 					      encType="multipart/form-data"
 					      method="post" id={"test-form"}>
@@ -176,11 +169,16 @@ class AddHotelForm extends Component<IState> {
 							{this.renderNumberFields()}
 							{this.renderBooleanFields()}
 						</div>
-						<DropzoneElement onDrop={this.onDrop} files={this.state.files}/>
-						<div className="hotel-form__buttons">
-							<Link to="/" className="button is-danger">Cancel</Link>
-							{/*<button type="submit" className="button is-info">Next</button>*/}
-							<button type="submit" className="button is-link">Send</button>
+
+						<div className={"content__header-wrapper"}>
+							<h1 className={"view-header"}>Add files</h1>
+						</div>
+						<div className={"hotel-form__dropzone"}>
+							<DropzoneElement onDrop={this.onDrop} files={this.state.files}/>
+							<div className="hotel-form__buttons">
+								<Link to="/" className="button is-danger">Cancel</Link>
+								<button type="submit" className="button is-info">Next</button>
+							</div>
 						</div>
 					</form>
 				</div>

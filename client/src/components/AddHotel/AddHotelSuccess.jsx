@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Success from "../Success/Success";
-import ModalWindow from "../ModalWindow/ModalWindow";
 import Messages from "../External/Messages/Messages";
 
 class AddHotelSuccess extends Component {

@@ -5,6 +5,24 @@
 	background: $color-dash-background;
 	width: 100%;
 
+	&__form {
+		margin: 0 8rem;
+
+		@include media-queries(L) {
+			margin: 0 5rem;
+		}
+
+		.dropzone__files-wrapper {
+			background: $color-white;
+			border-radius: 5px;
+			margin-top: 0;
+		}
+
+		.content__header-wrapper {
+			margin: 0;
+		}
+	}
+
 	&__review,
 	&__container {
 		height: 525px;
@@ -13,9 +31,10 @@
 	}
 
 	&__container {
+		background: $color-dash-background;
+		width: 100%;
 		height: 100%;
-		padding: 20px 40px;
-		position: relative;
+		min-height: 100vh;
 	}
 
 	&__header {
@@ -111,11 +130,61 @@
 		position: relative;
 		width: 100%;
 		box-sizing: border-box;
+		margin: 10px 0;
+
+		@include media-queries(M) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__formValueBox {
 		width: 33.3333%;
-		margin-right: 70px;
+		margin-right: 3rem;
+		background: $color-white;
+		padding: 20px;
+		border-radius: 5px;
+
+		@include media-queries(M) {
+			width: calc(50% - 1.5rem);
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		@include media-queries(S) {
+			width: 100%;
+		}
+
+		&:first-child {
+			@include media-queries(M) {
+				margin-right: 3rem;
+			}
+
+			@include media-queries(S) {
+				margin-right: 0;
+				margin-bottom: 3rem;
+			}
+		}
+
+		&:last-child {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-right: 0;
+
+			@include media-queries(M) {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				margin-top: 3rem;
+			}
+		}
+
+		div:last-child {
+			input {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&__buttons {
@@ -132,6 +201,10 @@
 				margin-top: 0;
 				position: relative;
 				width: 100px;
+
+				@include media-queries(L) {
+					width: 85px;
+				}
 			}
 	}
 
@@ -153,5 +226,12 @@
 		width: 100%;
 		display: flex;
 		flex-direction: row;
+	}
+
+	&__dropzone {
+		background: $color-white;
+		border-radius: 5px;
+		padding: 20px;
+		margin: 10px 0 8rem 0;
 	}
 }
