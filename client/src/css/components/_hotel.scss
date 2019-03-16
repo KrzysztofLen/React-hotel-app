@@ -132,9 +132,6 @@
 			@include media-queries(M) {
 				grid-column-start: 1;
 				grid-row-start: 5;
-			}
-
-			@include media-queries(S) {
 				margin: 1.5rem 0;
 			}
 		}
@@ -255,9 +252,6 @@
 		@include media-queries(M) {
 			grid-column-start: 1;
 			grid-row-start: 4;
-		}
-
-		@include media-queries(S) {
 			margin: 1.5rem 0;
 		}
 

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import {Logo} from "../Logo/Logo";
 import {home} from "../../assets/SVG/home.svg";
+import Messages from "../External/Messages/Messages";
 
 interface IProps {
 	navlinks: Array<Object>
@@ -53,16 +54,18 @@ class Navigation extends Component<IState> {
 		return (
 			<React.Fragment>
 				{this.state.isUnderBreakpoint &&
-				<div className={"message__notSupported"}>Your device resolution is under supported value. Some content may not appear correctly</div>}
-				<nav className="sidebar">
+				<Messages type={"danger"}
+				          message={"Your device resolution is under supported value. Some content may not appear correctly"}/>
+				}
+				<nav className={"side-navigation"}>
 					<Logo/>
-					<ul className="side-nav">
+					<ul className={"side-navigation__container"}>
 						{this.props.navlinks.map(({path}, index) => {
 							return (
 								<li key={index}
-								    className={this.state.activeIndex === index ? "side-nav__item side-nav__item--active" : "side-nav__item"}
+								    className={this.state.activeIndex === index ? "side-navigation__item side-navigation__item--active" : "side-navigation__item"}
 								    onClick={this.onSetActiveIndex.bind(this, index)}>
-									<NavLink to={`${path}`} className="side-nav__link"/>
+									<NavLink to={`${path}`} className={"side-navigation__link"}/>
 								</li>
 							)
 						})}

@@ -1,0 +1,64 @@
+.message {
+	padding: 15px 30px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	position: fixed;
+	right: 0;
+	min-width: 300px;
+	@include font-size(1.6);
+	z-index: 999;
+
+	&--static {
+		position: relative;
+	}
+
+	&__success{
+		color: darken($material-color-green, 40%);
+		background-color: lighten($material-color-green, 20%);
+		border-color: lighten($material-color-green, 20%);
+
+		.message__close {
+			color: darken($material-color-green, 40%);
+		}
+	}
+
+	&__danger {
+		color: darken($material-color-red, 40%);
+		background-color: lighten($material-color-red, 20%);
+		border-color: lighten($material-color-red, 20%);
+
+		.message__close {
+			color: darken($material-color-red, 40%);
+		}
+	}
+
+	&__warning {
+		color: darken($material-color-yellow, 40%);
+		background-color: lighten($material-color-yellow, 20%);
+		border-color: lighten($material-color-yellow, 20%);
+
+		.message__close {
+			color: darken($material-color-yellow, 40%);
+		}
+	}
+
+	&__info {
+		color: darken($material-color-blue, 40%);
+		background-color: lighten($material-color-blue, 20%);
+		border-color: lighten($material-color-blue, 20%);
+
+		.message__close {
+			color: darken($material-color-blue, 40%);
+		}
+	}
+
+	&__close {
+		background: none;
+		border: none;
+		font-size: 25px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 5px 10px;
+	}
+}

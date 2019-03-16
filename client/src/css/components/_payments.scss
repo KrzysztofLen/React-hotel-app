@@ -1,5 +1,6 @@
 .credits {
 	text-transform: uppercase;
+	margin-bottom: 1rem;
 
 	&__value {
 		@include font-size(1.8);
@@ -11,6 +12,5 @@
 }
 
 .payments {
-	margin-right: 2rem;
-	margin-left: 2rem;
+	margin-bottom: 1rem;
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Success from "../Success/Success";
 import ModalWindow from "../ModalWindow/ModalWindow";
+import Messages from "../External/Messages/Messages";
 
 class AddHotelSuccess extends Component {
 	constructor(props) {
@@ -22,13 +23,7 @@ class AddHotelSuccess extends Component {
 	}
 
 	render() {
-		return (
-			<React.Fragment>
-				<ModalWindow isOpen={this.state.modalIsOpen}
-				                      closeModal={this.onCloseModal}
-				                      component={<Success/>}/>
-			</React.Fragment>
-		)
+		return <Messages type={"success"} message={"The operation ended with success"}/>
 	}
 }
 

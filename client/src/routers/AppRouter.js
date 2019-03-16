@@ -51,7 +51,7 @@ class AppRouter extends React.Component {
 					{/*/>*/}
 
 					<Route path={"/hotel/:id"} component={SingleHotelView} />
-					<Route path="/cart" component={Cart}/>
+					<Route path="/reservation" component={Cart}/>
 					<Route path="/buy" component={BuyHotel} exact/>
 
 					{/* #TODO commented for development time */}
