@@ -192,3 +192,5 @@ Wed Feb 27 2019 19:08:14 GMT+0100 (Central European Standard Time): GET /auth/go
 Sat Mar 02 2019 17:09:15 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/AQGCSPA02pFbNQ8LzsGiWf3txRGplCFlVPIFUTx9RS_yRvmCA1ximAj19wXG1Z9eTsGMiy0ijsF9jVqW41jWgbM&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
 Wed Mar 06 2019 17:07:12 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/BQFoi6BkB8cr4wkssaQ3K0I-s08kv2uJAjcSJ_abjw0OOcxGM2wrvZy9EAHSZ1rC4ygM6tejyK_hzJ-qenPFkMI&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email
 Sat Mar 09 2019 09:36:21 GMT+0100 (Central European Standard Time): GET /auth/google/callback?code=4/CAFNE7jat6vV1vlzpYgnU1G0lTC7aa9VCGIP7KP0Sd3PypnksL13xrYxhzrQNmZkdJUi4DAvw3LQz7On_Cs0n1s&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile
+Sat Mar 16 2019 17:57:46 GMT+0100 (Central European Standard Time): GET /
+Sat Mar 16 2019 17:57:46 GMT+0100 (Central European Standard Time): GET /favicon.ico

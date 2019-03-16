@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Logo correctly 1`] = `
-<NavLink
-  activeClassName="active"
-  aria-current="page"
-  to="/"
+<div
+  className="logo__container"
 >
-  <img
-    alt="trillo logo"
-    className="logo"
-    src={null}
-  />
-</NavLink>
+  <NavLink
+    to="/"
+  >
+    <img
+      alt="trillo logo"
+      className="logo"
+      src={null}
+    />
+  </NavLink>
+</div>
 `;

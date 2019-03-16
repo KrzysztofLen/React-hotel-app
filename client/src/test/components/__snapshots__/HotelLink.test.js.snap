@@ -2,11 +2,9 @@
 
 exports[`should render HotelRating Link correctly 1`] = `
 <div
-  className="hotel__details--name"
+  className="hotel__name"
 >
   <NavLink
-    activeClassName="active"
-    aria-current="page"
     className="hotel__link"
     to="/hotel/0"
   >

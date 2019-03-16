@@ -32,7 +32,11 @@ class Boxes extends React.Component<Props> {
 		this.props.hotelsList.map((hotel: Object) => {
 			const isNew = (hotel.is_new) ? Date.now() - parseInt(hotel.is_new, 10) : 0;
 			const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
-			(isNew >= isNewDuration || isNew === 0) ? false : newHotel.push(hotel);
+			if(isNew >= isNewDuration || isNew === 0) {
+				return false;
+			} else {
+				newHotel.push(hotel);
+			}
 		});
 
 		return newHotel.length;

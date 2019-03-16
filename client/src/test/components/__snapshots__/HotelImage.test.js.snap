@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it should render HotelImage component correctly 1`] = `
-<React.Fragment>
+exports[`HotelImage component it should render HotelImage component correctly 1`] = `
+<Fragment>
   <div
     className="overlay"
   >
@@ -16,5 +16,5 @@ exports[`it should render HotelImage component correctly 1`] = `
     className="hotel__image"
     src="h"
   />
-</React.Fragment>
+</Fragment>
 `;

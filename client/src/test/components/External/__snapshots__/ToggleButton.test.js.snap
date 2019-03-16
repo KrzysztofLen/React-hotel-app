@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it should render ToggleButton component correctly 1`] = `
-<React.Fragment>
+exports[`Toggle button component it should render ToggleButton component correctly 1`] = `
+<Fragment>
   <button
     onClick={[Function]}
   >
     More info
   </button>
-</React.Fragment>
+</Fragment>
 `;
 
-exports[`it should render inside test with Less 1`] = `
-<React.Fragment>
+exports[`Toggle button component it should render inside test with Less 1`] = `
+<Fragment>
   <button
     onClick={[Function]}
   >
     Less
   </button>
-</React.Fragment>
+</Fragment>
 `;
 
-exports[`it should render inside test with More 1`] = `
-<React.Fragment>
+exports[`Toggle button component it should render inside test with More 1`] = `
+<Fragment>
   <button
     onClick={[Function]}
   >
     More info
   </button>
-</React.Fragment>
+</Fragment>
 `;
