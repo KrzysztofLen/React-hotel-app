@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SunShower = () => (
+export const SunShowerIcon = () => (
   <div className="icon sun-shower">
     <div className="cloud" />
     <div className="sun">

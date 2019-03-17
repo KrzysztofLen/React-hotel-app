@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {Sunny} from "./SunnyIcon";
-import {SunShower} from "./SunShowerIcon";
-import {ThunderStorm} from "./ThunderStormIcon";
+import {SunnyIcon} from "./SunnyIcon";
+import {SunShowerIcon} from "./SunShowerIcon";
+import {ThunderStormIcon} from "./ThunderStormIcon";
 import {CloudyIcon} from "./CloudyIcon";
 import {FlurriesIcon} from "./FlurriesIcon";
 import {RainyIcon} from "./RainyIcon";
@@ -73,13 +73,13 @@ class Weather extends Component {
 	setWeather() {
 		switch (this.state.weather) {
 			case "Dizzle":
-				return <SunShower/>;
+				return <SunShowerIcon/>;
 			case "Thunderstom":
-				return <ThunderStorm/>;
+				return <ThunderStormIcon/>;
 			case "Snow":
 				return <FlurriesIcon/>;
 			case "Clear":
-				return <Sunny/>;
+				return <SunnyIcon/>;
 			case "Rain":
 				return <RainyIcon/>;
 			case "Clouds":

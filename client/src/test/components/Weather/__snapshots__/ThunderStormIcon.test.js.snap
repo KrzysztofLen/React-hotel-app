@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: ThunderStormIcon should render ThunderStormIcon component correctly 1`] = `
+"<div className=\\"icon thunder-storm\\">
+  <div className=\\"cloud\\" />
+  <div className=\\"lightning\\">
+    <div className=\\"bolt\\" />
+    <div className=\\"bolt\\" />
+  </div>
+</div>"
+`;

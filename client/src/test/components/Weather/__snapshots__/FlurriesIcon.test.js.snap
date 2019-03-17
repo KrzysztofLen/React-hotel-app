@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: FlurriesIcon should render FlurriesIcon component correctly 1`] = `
+"<div className=\\"icon flurries\\">
+  <div className=\\"cloud\\" />
+  <div className=\\"snow\\">
+    <div className=\\"flake\\" />
+    <div className=\\"flake\\" />
+  </div>
+</div>"
+`;

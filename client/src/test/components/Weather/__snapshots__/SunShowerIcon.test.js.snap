@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: SunShowerIcon should render SunShowerIcon component correctly 1`] = `
+"<div className=\\"icon sun-shower\\">
+  <div className=\\"cloud\\" />
+  <div className=\\"sun\\">
+    <div className=\\"rays\\" />
+  </div>
+  <div className=\\"rain\\" />
+</div>"
+`;

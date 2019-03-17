@@ -6,7 +6,6 @@ import Navigation from '../components/Navigation/Navigation';
 import AddHotelsView from "../Views/AddHotelsView/AddHotelsView";
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';
-import Footer from '../components/Footer/Footer';
 import {connect} from "react-redux";
 import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";

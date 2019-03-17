@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: RainyIcon should render RainyIcon component correctly 1`] = `
+"<div className=\\"icon rainy\\">
+  <div className=\\"cloud\\" />
+  <div className=\\"rain\\" />
+</div>"
+`;
