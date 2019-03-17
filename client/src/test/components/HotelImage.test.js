@@ -6,7 +6,7 @@ import app_data from '../fixtures/app_data';
 describe('HotelImage component', () => {
 	test('it should render HotelImage component correctly', () => {
 		const wrapper = shallow(<HotelImage image={app_data[0].image}/>);
-		expect(wrapper).toMatchSnapshot();
+		expect(wrapper.debug()).toMatchSnapshot();
 	});
 
 	test('it should call onClick', () => {

@@ -5,8 +5,7 @@
     "@babel/preset-flow" // parse & remove flow types
   ],
   "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread"
   ]
 }

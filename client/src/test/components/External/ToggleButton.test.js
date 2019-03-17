@@ -6,19 +6,19 @@ describe('Toggle button component', () => {
 	test('it should render ToggleButton component correctly', () => {
 		const wrapper = shallow(<ToggleButton key={1} index={1} onClick={() => {
 		}}/>);
-		expect(wrapper).toMatchSnapshot();
+		expect(wrapper.debug()).toMatchSnapshot();
 	});
 
 	test('it should render inside test with More', () => {
 		const wrapper = shallow(<ToggleButton key={1} index={1} activeIndex={false}/>);
 		expect(wrapper.text()).toEqual('More info');
-		expect(wrapper).toMatchSnapshot();
+		expect(wrapper.debug()).toMatchSnapshot();
 	});
 
 	test('it should render inside test with Less', () => {
 		const wrapper = shallow(<ToggleButton key={1} index={1} activeIndex={true}/>);
 		expect(wrapper.text()).toEqual('Less');
-		expect(wrapper).toMatchSnapshot();
+		expect(wrapper.debug()).toMatchSnapshot();
 	});
 
 	test('it should call onToggleButton on button click', () => {

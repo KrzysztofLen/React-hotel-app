@@ -1,55 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Navigation component corectlly 1`] = `
-<Fragment>
-  <nav
-    className="side-navigation"
-  >
+"<Fragment>
+  <nav className=\\"side-navigation\\">
     <Logo />
-    <ul
-      className="side-navigation__container"
-    >
-      <li
-        className="side-navigation__item side-navigation__item--active"
-        key="0"
-        onClick={[Function]}
-      >
-        <NavLink
-          className="side-navigation__link"
-          to="/"
-        />
+    <ul className=\\"side-navigation__container\\">
+      <li className=\\"side-navigation__item side-navigation__item--active\\" onClick={[Function: bound ]}>
+        <NavLink to=\\"/\\" className=\\"side-navigation__link\\" />
       </li>
-      <li
-        className="side-navigation__item"
-        key="1"
-        onClick={[Function]}
-      >
-        <NavLink
-          className="side-navigation__link"
-          to="/buy"
-        />
+      <li className=\\"side-navigation__item\\" onClick={[Function: bound ]}>
+        <NavLink to=\\"/buy\\" className=\\"side-navigation__link\\" />
       </li>
-      <li
-        className="side-navigation__item"
-        key="2"
-        onClick={[Function]}
-      >
-        <NavLink
-          className="side-navigation__link"
-          to="/reservation"
-        />
+      <li className=\\"side-navigation__item\\" onClick={[Function: bound ]}>
+        <NavLink to=\\"/reservation\\" className=\\"side-navigation__link\\" />
       </li>
-      <li
-        className="side-navigation__item"
-        key="3"
-        onClick={[Function]}
-      >
-        <NavLink
-          className="side-navigation__link"
-          to="/add"
-        />
+      <li className=\\"side-navigation__item\\" onClick={[Function: bound ]}>
+        <NavLink to=\\"/add\\" className=\\"side-navigation__link\\" />
       </li>
     </ul>
   </nav>
-</Fragment>
+</Fragment>"
 `;

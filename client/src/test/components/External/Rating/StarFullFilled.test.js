@@ -5,5 +5,5 @@ import StarFullFilled from '../../../../components/External/Rating/StarFullFille
 test('it should render star correctly', () => {
 	const fillStar = "#BA265D";
 	const wrapper = shallow(<StarFullFilled fill={fillStar}/>);
-	expect(wrapper).toMatchSnapshot();
+	expect(wrapper.debug()).toMatchSnapshot();
 });
