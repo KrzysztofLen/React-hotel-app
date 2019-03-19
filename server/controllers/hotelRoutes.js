@@ -87,7 +87,7 @@ exports.hotels_post = (req, res, next) => {
 	//#TODO comment this to avoid 500
 	const imageFiles = [];
 
-	console.log("[*********REQ", req);
+	console.log("[*********REQ", req.files);
 	// req.files.forEach(file => {
 	// 	console.log(file);
 	// 	imageFiles.push(file.path);

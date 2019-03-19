@@ -9,20 +9,22 @@ class AddHotelReview extends Component {
 	renderFieldsReview = () => {
 		const entries = Object.entries(this.props.addHotelFormValues);
 
-		const test = [];
+		const labels = [];
 		for (const [name, value] of entries) {
-			test.push({name, value});
+			const labelsNames = name.replace("_", " ");
+			labels.push({labelsNames, value});
 		}
 
 		return (
-			<div className="hotel-form__reviewValues">
-				{test.map(({name, value}, idx) => {
+			<React.Fragment>
+				{labels.map(({labelsNames, value}, idx) => {
 					return <div className="hotel-form__value" key={idx}>
-						<span className={"hotel-form__reviewLabel"}>{name}</span>
-						<span className={"hotel-form__reviewValue"}>{(value === null || value === "") ? "empty" : value.toString()}</span>
+						<span className={"hotel-review__label"}>{labelsNames}</span>
+						<span
+							className={"hotel-review__value"}>{(value === null || value === "") ? "empty" : value.toString()}</span>
 					</div>
 				})}
-			</div>
+			</React.Fragment>
 		)
 	}
 
@@ -30,19 +32,23 @@ class AddHotelReview extends Component {
 		return (
 			<div className={"hotel-form"}>
 				<div className={"hotel-form__container"}>
-					<h5 className={"hotel-form__header"}>Please confirm your entries</h5>
-					<div className={"hotel-form__valuesBox"}>
-						{this.renderFieldsReview()}
+					<div className={"content__header-wrapper"}>
+						<h1 className={"view-header"}>Please confirm your entries</h1>
 					</div>
-					<div className={"hotel-review__buttonWrapper"}>
-						<Link to={"/add"} className="button is-warning">Back</Link>
+					<div className={"hotel-review__wrapper"}>
+						<div className={"hotel-review__values"}>
+							{this.renderFieldsReview()}
+							<div className={"hotel-review__buttonWrapper"}>
+								<Link to={"/add"} className="button is-warning">Back</Link>
+							</div>
+						</div>
+						<div className={"hotel-review__send"}
+						     onClick={() => this.props.submitSurvey(this.props.addHotelFormValues, this.props.history)}>
+							<img className={"hotel-review__sendIcon"} src={send} alt=""/>
+							Send
+							<Link to="/" className={"hotel-form__close"}>&#x2715;</Link>
+						</div>
 					</div>
-					<div className={"hotel-form__send"}
-					     onClick={() => this.props.submitSurvey(this.props.addHotelFormValues, this.props.history)}>
-						<img className={"hotel-form__sendIcon"} src={send} alt=""/>
-						Send
-					</div>
-					<Link to="/" className={"hotel-form__close"}>&#x2715;</Link>
 				</div>
 			</div>
 		)

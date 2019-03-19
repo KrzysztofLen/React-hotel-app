@@ -4,7 +4,7 @@ import {Logo} from "../../components/Logo/Logo";
 import Search from "../../components/Search/Search";
 import LoginSystem from "../../components/Auth/AuthSystem/AuthSystem";
 import HotelsList from "../../components/HotelList/HotelList";
-import {getFilteredHotels} from "../../selectors/getFilteredHotels";
+import {getFilteredHotels} from "../../utils/getFilteredHotels";
 import connect from "react-redux/es/connect/connect";
 import * as actions from "../../Redux/actions/index";
 import Boxes from "../../components/Boxes/Boxes";

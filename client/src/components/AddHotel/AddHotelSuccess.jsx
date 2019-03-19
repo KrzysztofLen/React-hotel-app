@@ -17,7 +17,10 @@ class AddHotelSuccess extends Component {
 
 	onCloseModal() {
 		this.setState({modalIsOpen: false});
+	}
 
+	componentDidMount() {
+		this.props.history.push('/');
 	}
 
 	render() {

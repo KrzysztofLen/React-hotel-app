@@ -98,33 +98,6 @@
 		z-index: 1;
 	}
 
-	&__send {
-		background-color: $rate-very-good;
-		width: 25%;
-		position: absolute;
-		right: 0;
-		top: 0;
-		height: 100%;
-		cursor: pointer;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		font-size: 20px;
-		color: $color-send;
-		text-transform: uppercase;
-		transition: all .4s ease-in;
-
-		&:hover {
-			background-color: darken($rate-very-good, 20%);
-		}
-	}
-
-	&__sendIcon {
-		width: 55px;
-		margin-bottom: 15px;
-	}
-
 	&__formValuesBox {
 		display: flex;
 		position: relative;
@@ -206,26 +179,6 @@
 					width: 85px;
 				}
 			}
-	}
-
-	&__reviewLabel {
-		color: $material-color-blue;
-		margin-bottom: 8px;
-		@include font-size(1.4);
-		font-weight: bold;
-	}
-
-	&__reviewValue {
-		text-overflow: ellipsis;
-		width: 100px;
-		overflow: hidden;
-	}
-
-	&__reviewValues {
-		flex-wrap: wrap;
-		width: 100%;
-		display: flex;
-		flex-direction: row;
 	}
 
 	&__dropzone {

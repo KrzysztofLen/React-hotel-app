@@ -79,7 +79,7 @@ $switch-class: 'switch-toggle';
 @function get-switch-class($selector) {
 	// First parse the selector using `selector-parse`
 	// Extract the first selector in the first list using `nth` twice
-	// Extract the first simple selector using `simple-selectors` and `nth`
+	// Extract the first simple selector using `simple-utils` and `nth`
 	// Extract the class name using `str-slice`
 	@return str-slice(nth(simple-selectors(nth(nth(selector-parse($selector), 1), 1)), 1), 2);
 }
