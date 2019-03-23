@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Weather should render Weather component corectlly 1`] = `
+"<div className=\\"weather\\">
+  <div id=\\"celcius\\" className=\\"weather__temperature\\">
+    <span className=\\"weather__currently\\">
+      It&#39;s currently
+    </span>
+    <h2 className=\\"weather__celcius\\">
+      -273
+    </h2>
+    <span className=\\"weather__degrees\\">
+      <sup>
+        o
+      </sup>
+      C
+    </span>
+  </div>
+</div>"
+`;

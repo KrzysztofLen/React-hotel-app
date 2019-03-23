@@ -930,7 +930,7 @@ select {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f2f2f2; }
+  margin: 10px 8rem; }
   .overview__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -1302,11 +1302,17 @@ select {
     margin: 0 10px;
     text-decoration: none; }
 
+.details {
+  margin: 10px 8rem; }
+  .details .facilities {
+    margin: 4rem 0; }
+  .details .content__header-wrapper {
+    margin: 0; }
+
 .detail {
   display: flex;
   font-size: 1.4rem;
-  padding: 4.5rem;
-  background-color: #faf9f9;
+  background-color: #F5F8FD;
   border-bottom: 1px solid #f2f2f2;
   font-weight: 200;
   font-size: 16px;
@@ -1314,7 +1320,6 @@ select {
   letter-spacing: 0.5px; }
   .detail .description {
     background-color: #fff;
-    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
     padding: 3rem;
     flex: 0 0 60%;
     margin-right: .5rem; }
@@ -1392,6 +1397,17 @@ select {
 .facilities {
   grid-column-start: 2;
   margin: 1.5rem; }
+  .facilities__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px; }
+    .facilities__wrapper .facilities__icon {
+      margin: 0; }
   .facilities__header {
     font-size: 15px;
     font-size: 1.5rem;
@@ -1400,6 +1416,7 @@ select {
     margin-right: 1.5rem;
     opacity: 0.6; }
   .facilities__container {
+    display: flex;
     margin-top: 1rem; }
 
 .cube-folding {
@@ -1755,8 +1772,11 @@ select {
 .weather {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f2f2f2;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  background: #fff;
+  width: 30%;
+  border-radius: 5px;
+  margin-left: calc(70% - 8rem); }
   .weather__currently {
     margin-right: 2rem;
     font-size: 19px;

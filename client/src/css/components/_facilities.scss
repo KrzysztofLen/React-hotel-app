@@ -2,6 +2,21 @@
 	grid-column-start: 2;
 	margin: 1.5rem;
 
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-right: 10px;
+		background: $color-white;
+		border-radius: 5px;
+		padding: 20px;
+
+		.facilities__icon {
+			margin: 0;
+		}
+	}
+
 	&__header {
 		@include font-size(1.5);
 		margin-bottom: 1.5rem;
@@ -13,6 +28,7 @@
 	}
 
 	&__container {
+		display: flex;
 		margin-top: 1rem;
 	}
 }

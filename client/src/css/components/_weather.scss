@@ -1,8 +1,11 @@
 .weather {
 	display: flex;
 	align-items: center;
-	border-bottom: 1px solid #f2f2f2;
 	justify-content: flex-end;
+	background: $color-white;
+	width: 30%;
+	border-radius: 5px;
+	margin-left: calc(70% - 8rem);
 
 	&__currently {
 		margin-right: 2rem;

@@ -26,33 +26,31 @@ class Weather extends Component {
 		const encodedAddress = encodeURIComponent(adress);
 		const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${geocodeKey}`;
 
-		await axios
+		const result = await axios
 			.get(geocodeUrl)
 			.then(response => {
 				if (response.data.status === "ZERO_RESULTS") {
 					console.log("Unable to find that address", response);
 				}
 
-				const lat = response.data.results[0].geometry.location.lat;
-				const lng = response.data.results[0].geometry.location.lng;
+				return {
+					lat: response.data.results[0].geometry.location.lat,
+					lng: response.data.results[0].geometry.location.lng
+				};
 
-				this.setState({lat, lng});
-			})
-			.then(res => {
-				this.getWeather();
-			})
-			.catch(error => {
+			}).catch(error => {
 				if (error.code === "ENOTFOUND") {
 					console.log("Unable to connect to server");
 				} else {
 					console.log(error.message);
 				}
 			});
+
+		this.getWeather(result);
 	}
 
-	async getWeather() {
-		const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${this
-			.state.lat}&lon=${this.state.lng}&appid=${weatherKey}`;
+	async getWeather({lat, lng}) {
+		const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${weatherKey}`;
 		await axios
 			.get(weatherUrl)
 			.then(response => {

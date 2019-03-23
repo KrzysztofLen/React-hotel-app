@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Loader from '../../components/Loader/Loader';
 import * as actions from '../../Redux/actions/index';
 import HotelGallery from '../../components/HotelGallery/HotelGallery';
 import {HotelOverview} from "../../components/Hotel/HotelOverview/HotelOverview";
-import {Details} from "../../components/Details/Details";
+import {HotelDetails} from "../../components/Hotel/HotelDetails/HotelDetails";
 import {connect} from "react-redux";
 import Weather from "../../components/Weather/Weather";
 
@@ -12,16 +11,15 @@ class SingleHotelView extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: [],
 			isLoading: true,
 		};
 	}
 
 	componentDidMount() {
 		this.props.fetchHotels();
+
 		this._timer = setTimeout(() => {
 			this.setState({
-				data: this.props.hotelsList,
 				isLoading: false
 			});
 		}, 1500);
@@ -32,9 +30,10 @@ class SingleHotelView extends React.Component {
 	}
 
 	render() {
-		const index = this.props.match.params.id;
-		const value = this.state.data.filter(x => x._id === index);
-		const [desc] = value;
+		const hotelID = this.props.match.params.id;
+		const hotelValues = this.props.hotelsList.filter(hotel => hotel._id === hotelID);
+		const [hotel] = hotelValues;
+
 
 		return (
 			<div className="content">
@@ -42,10 +41,10 @@ class SingleHotelView extends React.Component {
 					<main className="hotel-view">
 						{this.state.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
-								<HotelGallery images={desc.hotel_images}/>
-								<HotelOverview {...desc} />
-								<Weather adress={desc.hotel_adress} city={desc.hotel_city}/>
-								<Details/>
+								<HotelGallery images={hotel.hotel_images}/>
+								<HotelOverview {...hotel} />
+								<Weather adress={hotel.hotel_adress} city={hotel.hotel_city}/>
+								<HotelDetails {...hotel} />
 							</React.Fragment>
 						}
 					</main>
