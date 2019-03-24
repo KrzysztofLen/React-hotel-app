@@ -2,7 +2,6 @@ import React from 'react';
 import HotelFacilities from "../HotelFacilities/HotelFacilities";
 
 export const HotelDetails = (props) => {
-	console.log(props);
 	return (
 		<div className={"details"}>
 			<div className="content__header-wrapper">

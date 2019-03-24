@@ -21,9 +21,7 @@ const renderImageWithDescription = (image, alt, description) => (
 
 const HotelFacilities = (props) => (
 	<div className="facilities">
-		<div className="content__header-wrapper">
-			<h1 className="view-header">Facilities:</h1>
-		</div>
+		<span className="facilities__header">Facilities: </span>
 		<div className="facilities__container">
 			{(props.facilities_card_payment && props.withDescription) ?
 				renderImageWithDescription(visa, "visa", "Card payment") : props.facilities_card_payment && renderImage(visa, "visa")}

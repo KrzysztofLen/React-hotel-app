@@ -8,6 +8,7 @@ import HotelPrice from '../Hotel/HotelPrice/HotelPrice';
 import HotelOpinion from '../Hotel/HotelOpinion/HotelOpinion';
 import HotelFacilities from '../Hotel/HotelFacilities/HotelFacilities';
 import HotelDescription from '../Hotel/HotelDescription/HotelDescription';
+import Slider from '../External/Slider/Slider';
 
 import isNewIcon from '../../assets/SVG/new.svg';
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -81,7 +82,7 @@ class HotelListItem extends React.Component<Props, State> {
 				className={this.props.viewTypeId === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
-					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} element={"Test"}/>
+					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<Slider />}/>
 				</div>
 				<div className={"hotel__address-container"}>
 					<div className={"hotel__name-wrapper"}>

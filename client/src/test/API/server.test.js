@@ -1,17 +1,14 @@
 const request = require('supertest');
-const app = require('./../../../../server');
+const app = require('./../../../../App');
 
-describe.skip('GET/ hotels', () => {
+describe('GET/ hotels', () => {
 	let expectedProps = ["_id", "facilities_card_payment", "facilities_game_room", "facilities_gym", "facilities_restaurant", "facilities_wifi", "hotel_adress", "hotel_city", "hotel_description", "hotel_distance", "hotel_images", "hotel_name", "hotel_price", "hotel_province", "hotel_rating", "hotel_reviews", "hotel_stars", "id", "is_apartment", "is_new"];
 
-	test.skip('should return JSON array', (done) => {
-		return request(app).get('/api/hotels')
-			.expect(200)
-			.then((res) => {
-				expect(res.body.hotels).toBeInstanceOf(Array);
-				done();
-			});
+	test('should return JSON array', async() => {
+		const res = await request(app).get('/api/hotels').expect(200);
+		expect(res.body.hotels).toBeInstanceOf(Array);
 	});
+
 	test.skip('should get all hotels', (done) => {
 		return request(app).get('/api/hotels')
 			.expect(200)

@@ -13,7 +13,19 @@ const storage = multer.diskStorage({
 	}
 });
 
-const upload = multer({storage: storage});
+//const upload = multer({storage: storage});
+
+const upload = multer({
+	limits: {
+		fileSize: 10000000
+	},
+	fileFilter(req, file, cb) {
+		if(!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+			return cb(new Error("Please upload a Image"));
+		}
+		cb(undefined, true)
+	}
+});
 
 module.exports = (app) => {
 	/**

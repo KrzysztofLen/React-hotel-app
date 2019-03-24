@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const customStyles = {
 	overlay: {
 		position: 'fixed',
-		overflow: 'scroll',
+		overflow: 'hidden',
 		top: 0,
 		left: 0,
 		right: 0,
@@ -16,17 +16,20 @@ const customStyles = {
 
 const ModalWindow = (props) => {
 	return (
-		<Modal
-			isOpen={props.isOpen}
-			onRequestClose={props.closeModal}
-			contentLabel="Selected option"
-			className="modal"
-			style={customStyles}
-			ariaHideApp={false}
-		>
-			{props.component}
-			<Link to={"/"} onClick={props.closeModal} className="modal__close"></Link>
-		</Modal>)
+		<div>
+			<Modal
+				isOpen={props.isOpen}
+				onRequestClose={props.closeModal}
+				contentLabel="Selected option"
+				className="modal"
+				style={customStyles}
+				ariaHideApp={false}
+			>
+				{props.component}
+				<Link to={"/"} onClick={props.closeModal} className="modal__close"></Link>
+			</Modal>
+		</div>
+	)
 };
 
 export default ModalWindow;

@@ -11,7 +11,7 @@ class SingleHotelView extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isLoading: true,
+			isLoading: true
 		};
 	}
 
@@ -38,7 +38,7 @@ class SingleHotelView extends React.Component {
 		return (
 			<div className="content">
 				<div className="content__container">
-					<main className="hotel-view">
+					<main className="single-hotel">
 						{this.state.isLoading ? <Loader text="Loading"/> :
 							<React.Fragment>
 								<HotelGallery images={hotel.hotel_images}/>
