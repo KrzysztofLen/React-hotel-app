@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./../../../../App');
+const app = require('./../../../../App.js');
 
 let hotelID = null;
 
