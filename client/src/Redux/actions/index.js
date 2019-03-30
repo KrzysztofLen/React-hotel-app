@@ -1,6 +1,6 @@
 import axios from 'axios';
-import * as types from "../types";
-import {AUTH_ERROR} from "../types";
+import * as types from "../../types";
+import {AUTH_ERROR} from "../../types";
 
 export const fetchHotels = () => async (dispatch) => {
 	const res = await axios.get('/api/hotels');

@@ -1,8 +1,7 @@
-// @flow
 import React from 'react';
 import HotelRating from '../HotelRating/HotelRating';
 
-type Props = {
+interface IProps {
 	hotel_name: string,
 	hotel_stars: number,
 	hotel_city: string,
@@ -11,7 +10,7 @@ type Props = {
 	hotel_reviews: number
 }
 
-export const HotelOverview = (props: Props) => {
+export const HotelOverview = (props: IProps) => {
 	return (
 		<div className="overview">
 			<h1 className="overview__heading">

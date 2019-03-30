@@ -1,5 +1,3 @@
-// @flow
-
 // REDUX ACTIONS
 export const HOTELS_LENGTH: string = 'HOTELS_LENGTH';
 export const FETCH_HOTELS: string = 'FETCH_HOTELS';
@@ -13,3 +11,26 @@ export const AUTH_ERROR: string = 'AUTH_ERROR';
 export const ADD_HOTEL: string = 'ADD_HOTEL';
 
 // ENTRIES API URL'S
+
+// GLOBAL INTERFACE
+export interface IHotel {
+    _id: number,
+	hotel_name: string,
+	hotel_adress: string,
+	hotel_city: string,
+	hotel_province: string,
+	hotel_price: number,
+	hotel_distance: number,
+	hotel_description: string,
+	hotel_stars: number,
+	hotel_rating: number,
+	hotel_reviews: number,
+	is_new: any,
+	is_apartment: boolean,
+	facilities_restaurant: boolean,
+	facilities_gym: boolean,
+	facilities_wifi: boolean,
+	facilities_card_payment: boolean,
+	facilities_game_room: boolean,
+    hotel_images?: Array<string>
+}

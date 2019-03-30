@@ -9,6 +9,10 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.12.2",
+    "@types/react": "^16.8.10",
+    "@types/react-dom": "^16.8.3",
     "axios": "^0.18.0",
     "coveralls": "^3.0.0",
     "cross-env": "^5.1.4",
@@ -35,7 +39,8 @@
     "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-form": "^7.4.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "typescript": "^3.4.1"
   },
   "scripts": {
     "styleguide": "styleguidist server",

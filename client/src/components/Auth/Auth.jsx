@@ -4,11 +4,11 @@ import SignUpForm from "./SignUpForm/SignUpForm";
 import LoginForm from "./LoginForm/LoginForm";
 import GoogleSignUp from "./GoogleSignUp/GoogleSignUp";
 
-type State = {
-	onRegisterForm: boolean
-}
+// type State = {
+// 	onRegisterForm: boolean
+// }
 
-class Auth extends Component<State> {
+class Auth extends Component {
 	constructor(props) {
 		super(props);
 
@@ -16,11 +16,11 @@ class Auth extends Component<State> {
 			onRegisterForm: false
 		};
 
-		(this: any).onClick = this.onClick.bind(this);
+		this.onClick = this.onClick.bind(this);
 	}
 
 	onClick() {
-		this.setState((prevState): Object => {
+		this.setState((prevState) => {
 			return {
 				onRegisterForm: !prevState.onRegisterForm
 			}

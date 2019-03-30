@@ -1,16 +1,15 @@
-// @flow
-import * as React from 'react';
+import React, {Component} from 'react';
 import {List} from "../SVG/List";
 import {Full} from "../SVG/Full";
 import {connect} from "react-redux";
 import {switchView} from "../../Redux/actions";
 
-type Props = {
-	switchView: Function,
+interface IProps {
+	switchView: (id: number) => number,
 	viewTypeId: number
 }
 
-class ViewSwitcher extends React.Component<Props> {
+class ViewSwitcher extends Component<IProps, {}> {
 	setActive = (id: number) => {
 		this.props.switchView(id);
 	};
@@ -37,7 +36,7 @@ interface IViewType {
 	viewTypeId: number
 }
 
-function mapStateToProps({viewTypeId}): IViewType {
+function mapStateToProps({viewTypeId}: IViewType) {
 	return {
 		viewTypeId,
 	}

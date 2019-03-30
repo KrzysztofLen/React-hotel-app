@@ -1,9 +1,8 @@
-// @flow
 import React from 'react';
 
-type Props = {
+interface Props {
 	text: string
-};
+}
 
 const Loader = (props: Props) => {
 	return (

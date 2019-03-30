@@ -1,5 +1,5 @@
 import {fetchHotelsLength} from "../../../Redux/actions";
-import * as types from "../../../Redux/types";
+import * as types from "../../../types";
 
 describe.skip("Get hotels length", () => {
 	test("has the correct type", () => {

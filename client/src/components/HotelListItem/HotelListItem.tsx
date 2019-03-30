@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import HotelImage from '../Hotel/HotelImage/HotelImage';
 import HotelLink from '../Hotel/HotelLink/HotelLink';
@@ -13,40 +12,27 @@ import Slider from '../External/Slider/Slider';
 import isNewIcon from '../../assets/SVG/new.svg';
 import ModalWindow from "../ModalWindow/ModalWindow";
 import {connect} from "react-redux";
+import {IHotel} from "../../types";
 
-type Props = {
+interface IProps {
 	viewTypeId: number,
-	data: data,
+	data: IHotel,
 	id: number,
 	index: number
 }
 
-interface data {
-	_id: number,
-	hotel_name: string,
-	hotel_distance: string,
-	hotel_adress: string,
-	hotel_stars: number,
-	hotel_price: number,
-	hotel_rating: number,
-	hotel_reviews: number,
-	hotel_description: string,
-	is_new: boolean | string,
-	hotel_images: Array<string>
-}
-
-type State = {
+interface IState {
 	activeIndex: number | null,
 	modalIsOpen: boolean
 }
 
-class HotelListItem extends React.Component<Props, State> {
-	constructor(props) {
+class HotelListItem extends React.Component<IProps, IState> {
+	constructor(props: IProps) {
 		super(props);
 
-		(this: any).onModalOpen = this.onModalOpen.bind(this);
-		(this: any).onCloseModal = this.onCloseModal.bind(this);
-		(this: any).onToggleButton = this.onToggleButton.bind(this);
+		this.onModalOpen = this.onModalOpen.bind(this);
+		this.onCloseModal = this.onCloseModal.bind(this);
+		this.onToggleButton = this.onToggleButton.bind(this);
 
 		this.state = {
 			modalIsOpen: false,
@@ -77,7 +63,7 @@ class HotelListItem extends React.Component<Props, State> {
 		const isNew = (this.props.data.is_new) ? Date.now() - parseInt(this.props.data.is_new, 10) : 0;
 		const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
 
-		return (
+        return (
 			<div
 				className={this.props.viewTypeId === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
@@ -87,8 +73,6 @@ class HotelListItem extends React.Component<Props, State> {
 				<div className={"hotel__address-container"}>
 					<div className={"hotel__name-wrapper"}>
 						<HotelLink hotelName={this.props.data.hotel_name}
-						           hotelDistance={this.props.data.hotel_distance}
-						           hotelAdress={this.props.data.hotel_adress}
 						           id={this.props.data._id}/>
 						<HotelRating rate={this.props.data.hotel_stars}/>
 					</div>
@@ -124,11 +108,11 @@ class HotelListItem extends React.Component<Props, State> {
 	}
 }
 
-interface viewType {
+interface IViewTypeID {
 	viewTypeId: number
 }
 
-function mapStateToProps({viewTypeId}): viewType {
+function mapStateToProps({viewTypeId}: IViewTypeID) {
 	return {
 		viewTypeId
 	}

@@ -8,28 +8,7 @@ import {TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS} from './formFields';
 import ToggleSwitch from "../External/ToggleSwitch/ToggleSwitch";
 import DropzoneElement from "../External/Dropzone/DropzoneElement";
 
-type IState = {
-	hotel_name: string,
-	hotel_adress: string,
-	hotel_city: string,
-	hotel_province: string,
-	hotel_price: number,
-	hotel_distance: number,
-	hotel_description: string,
-	hotel_description: "",
-	hotel_stars: number,
-	hotel_rating: number,
-	hotel_reviews: number,
-	is_new: boolean,
-	is_apartment: boolean,
-	facilities_restaurant: boolean,
-	facilities_gym: boolean,
-	facilities_wifi: boolean,
-	facilities_card_payment: boolean,
-	facilities_game_room: boolean
-}
-
-class AddHotelForm extends Component<IState> {
+class AddHotelForm extends Component {
 	constructor(props) {
 		super(props);
 

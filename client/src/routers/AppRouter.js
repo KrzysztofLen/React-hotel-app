@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import HotelsView from "../Views/HotelsView/HotelsView";
 import SingleHotelView from '../Views/SingleHotelView/SingleHotelView';
-import Navigation from '../components/Navigation/Navigation';
+import Navigation from '../components/Navigation/Navigation.tsx';
 import AddHotelsView from "../Views/AddHotelsView/AddHotelsView";
 import {Cart} from '../components/Cart/Cart';
 import {BuyHotel} from '../components/BuyHotel/BuyHotel';

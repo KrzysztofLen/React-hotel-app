@@ -1,5 +1,5 @@
 // @flow
-import * as types from "../types";
+import * as types from "../../types";
 
 export default function (state = null, action) {
 	switch (action.type) {

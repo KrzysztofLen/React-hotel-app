@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../components/External/Loader/Loader';
 import * as actions from '../../Redux/actions/index';
 import HotelGallery from '../../components/HotelGallery/HotelGallery';
 import {HotelOverview} from "../../components/Hotel/HotelOverview/HotelOverview";

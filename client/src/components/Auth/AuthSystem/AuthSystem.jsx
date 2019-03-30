@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import {connect} from "react-redux";
 import {Cross} from '../../SVG/Cross';
@@ -6,18 +5,18 @@ import Payments from "../../Payments/Payments";
 import {Check} from "../../SVG/Check";
 import ModalWindow from "../../ModalWindow/ModalWindow";
 import Auth from "./../Auth";
-import Dropdown from "../../External/Dropdown/Dropdown";
+import Dropdown from "../../External/Dropdown/Dropdown.tsx";
 
-type Props = {
-	currentUserAuth: Object,
-	dispatch: Function
-}
+// type Props = {
+// 	currentUserAuth: Object,
+// 	dispatch: Function
+// }
+//
+// type State = {
+// 	modalIsOpen: boolean
+// }
 
-type State = {
-	modalIsOpen: boolean
-}
-
-class AuthSystem extends React.Component<Props, State> {
+class AuthSystem extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -25,8 +24,8 @@ class AuthSystem extends React.Component<Props, State> {
 			modalIsOpen: false
 		};
 
-		(this: any).onModalOpen = this.onModalOpen.bind(this);
-		(this: any).onCloseModal = this.onCloseModal.bind(this);
+		this.onModalOpen = this.onModalOpen.bind(this);
+		this.onCloseModal = this.onCloseModal.bind(this);
 	}
 
 	onModalOpen() {
@@ -81,14 +80,14 @@ class AuthSystem extends React.Component<Props, State> {
 	}
 }
 
-interface AuthInterface {
-	currentUserAuth: Object,
-	googleId: string,
-	name: string,
-	credits: number
-}
+// interface AuthInterface {
+// 	currentUserAuth: Object,
+// 	googleId: string,
+// 	name: string,
+// 	credits: number
+// }
 
-function mapStateToProps({currentUserAuth}: AuthInterface) {
+function mapStateToProps({currentUserAuth}) {
 	return {
 		currentUserAuth
 	}

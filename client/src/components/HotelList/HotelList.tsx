@@ -1,23 +1,24 @@
-// @flow
-import * as React from 'react';
+import React, {Component} from 'react';
 import HotelListItem from '../HotelListItem/HotelListItem';
 import {Spinner} from "../Spinner/Spinner";
+import {IHotel} from "../../types";
 
-type Props = {
-	hotels: Array<mixed>
-};
+interface IProps {
+	hotels: Array<IHotel>
+}
 
-type State = {
-	perpage: number,
+interface IState {
+    perPage: number,
 	page: number,
 	spinner: boolean
 }
 
-class HotelsList extends React.Component<Props, State> {
-	constructor(props: Props) {
+class HotelsList extends Component<IProps, IState> {
+	constructor(props: IProps) {
 		super(props);
+
 		this.state = {
-			perpage: 6,
+			perPage: 6,
 			page: 1,
 			spinner: true
 		};
@@ -36,9 +37,9 @@ class HotelsList extends React.Component<Props, State> {
 			let bodyOffset: number = document.body.offsetHeight;
 
 			if (windowHeight >= bodyOffset) {
-				this.setState((prevState): Object => {
+				this.setState((prevState: any) => {
 					return {
-						perpage: prevState.perpage + 3
+                        perPage: prevState.perPage + 3
 					}
 				});
 			}
@@ -46,8 +47,8 @@ class HotelsList extends React.Component<Props, State> {
 	};
 
 	render() {
-		const count: number = this.state.page * this.state.perpage;
-		const visibleHotels: Array<mixed> = this.props.hotels.slice(0, count);
+		const count: number = this.state.page * this.state.perPage;
+		const visibleHotels: Array<IHotel> = this.props.hotels.slice(0, count);
 
 		return (
 			<main className="hotel-list">

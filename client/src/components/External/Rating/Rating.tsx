@@ -1,14 +1,29 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
 import StarOutlined from './StarOutlined';
 import StarFullFilled from './StarFullFilled';
 
-class Rating extends Component {
-	constructor(props) {
+interface IProps {
+	max: number
+}
+
+interface IState {
+    rating: number,
+    max: number,
+    indicator: Array<boolean>
+}
+
+class Rating extends Component<IProps, IState> {
+    static defaultProps = {
+        defaultValue: 0,
+        max: 5
+    };
+
+	constructor(props: IProps) {
 		super(props);
+
 		this.state = {
-			rating: props.defaultValue,
-			max: props.max,
+			rating: Rating.defaultProps.defaultValue,
+			max: Rating.defaultProps.max,
 			indicator: []
 		};
 	}
@@ -19,25 +34,25 @@ class Rating extends Component {
 		});
 	}
 
-	onSetTempRate(rating) {
+	onSetTempRate(rating: number) {
 		this.setState({
 			indicator: this.setIndicator(rating)
 		});
 	};
 
-	onSetRating(rating) {
+	onSetRating(rating: number) {
 		this.setState({
 			rating: rating
 		});
 	}
 
-	setIndicator(rating) {
+	setIndicator(rating: number) {
 		return [...Array(rating + 1).fill(true), ...Array(this.state.max - rating - 1).fill(false)]
 	};
 
 	render() {
-		console.log(this.state.rating);
-		const fillStar = "#BA265D";
+		const fillStar: string = "#BA265D";
+
 		return (
 			<div className="rating">
 				{this.state.indicator.map((item, idx) => {
@@ -53,19 +68,5 @@ class Rating extends Component {
 		);
 	}
 }
-
-Rating.propTypes = {
-	/** defaultValue. */
-	defaultValue: PropTypes.number,
-	/** max value. */
-	max: PropTypes.number
-};
-
-Rating.defaultProps = {
-	/** Description of prop "defaultValue". */
-	defaultValue: 0,
-	/** Description of prop "max value". */
-	max: 5
-};
 
 export default Rating;

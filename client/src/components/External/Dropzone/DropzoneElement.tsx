@@ -1,9 +1,14 @@
 import React, {Component} from "react";
 import Dropzone from "react-dropzone";
 
-class DropzoneElement extends Component {
+interface IProps {
+    files: Array<File>,
+    onDrop: () => void
+}
+
+class DropzoneElement extends Component<IProps, {}> {
 	render() {
-		const files = this.props.files.map(file => (
+		const files = this.props.files.map((file: File) => (
 			<li key={file.name} className={"dropzone__file"}>
 				{file.name} - {file.size} bytes
 			</li>

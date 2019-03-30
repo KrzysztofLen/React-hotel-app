@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Messages from "../External/Messages/Messages";
+import Messages from "../External/Messages/Messages.tsx";
 
 class AddHotelSuccess extends Component {
 	constructor(props) {

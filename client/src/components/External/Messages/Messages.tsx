@@ -6,7 +6,11 @@ interface IProps {
 	duration?: number
 }
 
-class Messages extends Component {
+interface IState {
+    showMessage: boolean
+}
+
+class Messages extends Component<IProps, IState> {
 	constructor(props: IProps) {
 		super(props);
 
@@ -27,7 +31,7 @@ class Messages extends Component {
 		this.setState({showMessage: false});
 	}
 
-	renderMessage() {
+	renderMessage(): JSX.Element | boolean {
 		let message = {
 			bold: "",
 			text: this.props.message
@@ -61,7 +65,7 @@ class Messages extends Component {
 		)
 	};
 
-	render() {
+	render(): JSX.Element {
 		return <React.Fragment>{this.state.showMessage && this.renderMessage()}</React.Fragment>
 	}
 }

@@ -1,16 +1,15 @@
-// @flow
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import {searchHotels} from "../../Redux/actions";
 
-type Props = {
-	searchHotels: Function,
+interface IProps {
+	searchHotels: (value: string) => string,
 	hotelsSearch: string
 };
 
-class Search extends Component<Props> {
-	handleSearchChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
+class Search extends Component<IProps, {}> {
+	handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		this.props.searchHotels(e.currentTarget.value);
 	};
 

@@ -1,15 +1,14 @@
-// @flow
 import * as React from 'react';
 import {connect} from "react-redux";
 import {switchView} from "../../Redux/actions";
 
-type Props = {
-	hotelsNumberInDatabase: number
-}
+// type Props = {
+// 	hotelsNumberInDatabase: number
+// }
 
-class Boxes extends React.Component<Props> {
+class Boxes extends React.Component {
 	getOpinions = () => {
-		let opinions: number = 0;
+		let opinions = 0;
 
 		this.props.hotelsList.map(({hotel_reviews}) => {
 			opinions += hotel_reviews;
@@ -19,7 +18,7 @@ class Boxes extends React.Component<Props> {
 	}
 
 	getFiveStarsHotels = () => {
-		const fiveStarsHotels = this.props.hotelsList.filter((hotel: Object) => {
+		const fiveStarsHotels = this.props.hotelsList.filter((hotel) => {
 			return hotel.hotel_stars === 5;
 		});
 
@@ -27,11 +26,11 @@ class Boxes extends React.Component<Props> {
 	}
 
 	getNewHotels = () => {
-		const newHotel: Array<Object> = [];
+		const newHotel = [];
 
-		this.props.hotelsList.map((hotel: Object) => {
+		this.props.hotelsList.map((hotel) => {
 			const isNew = (hotel.is_new) ? Date.now() - parseInt(hotel.is_new, 10) : 0;
-			const isNewDuration: number = 24 * 60 * 60 * 1000 * 7; // 7 days
+			const isNewDuration = 24 * 60 * 60 * 1000 * 7; // 7 days
 			if(isNew >= isNewDuration || isNew === 0) {
 				return false;
 			} else {
@@ -43,7 +42,7 @@ class Boxes extends React.Component<Props> {
 	}
 
 	render() {
-		const boxesContent: Array<mixed> = [
+		const boxesContent = [
 			{
 				title: "Total HotelsView:",
 				value: this.props.hotelsNumberInDatabase
@@ -65,7 +64,7 @@ class Boxes extends React.Component<Props> {
 		return (
 			<React.Fragment>
 				<div className={"box__container"}>
-					{boxesContent.map((boxContent: Object, index: number) => {
+					{boxesContent.map((boxContent, index) => {
 						return (
 							<div key={index} className={`box box--${index + 1}`}>
 								<div className={"box__content"}>
@@ -84,12 +83,12 @@ class Boxes extends React.Component<Props> {
 	}
 }
 
-interface IHotelLength {
-	hotelsNumberInDatabase: number,
-	hotelsList: Array<Object>
-}
+// interface IHotelLength {
+// 	hotelsNumberInDatabase: number,
+// 	hotelsList: Array<Object>
+// }
 
-function mapStateToProps({hotelsNumberInDatabase, hotelsList}): IHotelLength {
+function mapStateToProps({hotelsNumberInDatabase, hotelsList}) {
 	return {
 		hotelsNumberInDatabase,
 		hotelsList
