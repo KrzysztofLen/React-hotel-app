@@ -3,7 +3,7 @@
 exports[`should render Logo correctly 1`] = `
 "<div className=\\"logo__container\\">
   <NavLink to=\\"/\\">
-    <img src={{...}} className=\\"logo\\" alt=\\"trillo logo\\" />
+    <img src=\\"logo.png\\" className=\\"logo\\" alt=\\"trillo logo\\" />
   </NavLink>
 </div>"
 `;

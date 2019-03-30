@@ -1,9 +1,10 @@
 const request = require('supertest');
-const app = require('./../../../../App.js');
+const mongoose = require('mongoose');
+const app = require('./../../../App.js');
 
 let hotelID = null;
 
-beforeAll(async() => {
+beforeAll(async () => {
 	const res = await request(app).get('/api/hotels').expect(200);
 	hotelID = res.body.hotels[1]._id;
 });
@@ -21,7 +22,7 @@ describe('GET/ hotels', () => {
 		expect(res.body.hotels.length).toBeGreaterThan(0);
 	});
 
-	test('should return hotels with correct properties', async() => {
+	test('should return hotels with correct properties', async () => {
 		const res = await request(app).get('/api/hotels').expect(200);
 		let hotelKeys = Object.keys(res.body.hotels[0]);
 
@@ -32,13 +33,17 @@ describe('GET/ hotels', () => {
 });
 
 describe("GET/ hotels/:id", () => {
-	test('should return 404 for non-objects ids', async() => {
+	test('should return 404 for non-objects ids', async () => {
 		const res = await request(app).get('/api/hotels/123abc').expect(404);
 		expect(res.status).toBe(404);
 	});
 
-	test('should return 200 for correct hotel id', async() => {
+	test('should return 200 for correct hotel id', async () => {
 		const res = await request(app).get(`/api/hotels/${hotelID}`).expect(200);
 		expect(res.body.hotel).not.toBeNull();
+	});
+
+	afterAll(async () => {
+		await mongoose.connection.close();
 	});
 });
