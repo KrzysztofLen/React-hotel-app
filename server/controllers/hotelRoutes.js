@@ -50,11 +50,9 @@ exports.hotels_get_by_id = (req, res, next) => {
 	// Select which property show
 		.select(properties)
 		.exec()
-		.then(result => {
-			result.status(200).json({
-				hotel: doc
-			});
-		}).catch(err => {
+		.then(result => res.status(200).json({
+				hotel: result
+		})).catch(err => {
 		if (err.reason === undefined) {
 			res.status(404).json({
 				message: "No valid entry found for provided ID"
@@ -144,7 +142,7 @@ exports.hotels_update = (req, res, next) => {
 		updateOps[ops.propName] = ops.value;
 	}
 	Hotel.update({_id: id}, {$set: updateOps}).exec().then(result => res.status(200).json({
-			message: 'Hotel properly updated'
+		message: 'Hotel properly updated'
 	})).catch(err => {
 		res.status(500).json({
 			error: err
@@ -161,7 +159,7 @@ exports.hotels_delete_by_id = (req, res, next) => {
 	Hotel.remove({
 		_id: id
 	}).exec().then(result => res.status(200).json({
-			message: 'Hotel properly deleted'
+		message: 'Hotel properly deleted'
 	})).catch(err => {
 		res.status(500).json({
 			error: err

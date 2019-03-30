@@ -1,6 +1,6 @@
 //@Flow
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Route, Link} from 'react-router-dom';
 import {Logo} from "../Logo/Logo";
 import {home} from "../../assets/SVG/home.svg";
 import Messages from "../External/Messages/Messages";
@@ -10,8 +10,20 @@ interface IProps {
 }
 
 interface IState {
-	activeIndex: number,
 	isUnderBreakpoint: boolean
+}
+
+const SideMenuLink = ({ to, activeOnlyWhenExact }) => {
+	return (
+		<Route path={to}
+		       exact={activeOnlyWhenExact}
+		       children={({ match }, index) => (
+			       <li key={index} className={match ? "side-navigation__item side-navigation__item--active" : "side-navigation__item"}>
+				       <NavLink to={to} className={"side-navigation__link"}/>
+			       </li>
+		       )}
+		/>
+	);
 }
 
 class Navigation extends Component<IState> {
@@ -19,16 +31,9 @@ class Navigation extends Component<IState> {
 		super(props);
 
 		this.state = {
-			activeIndex: 0,
 			isUnderBreakpoint: false
 		};
 	}
-
-	onSetActiveIndex = (index: number) => {
-		this.setState({
-			activeIndex: index
-		});
-	};
 
 	onCheckResolution = () => {
 		if (window.innerWidth < 480) {
@@ -60,37 +65,15 @@ class Navigation extends Component<IState> {
 				<nav className={"side-navigation"}>
 					<Logo/>
 					<ul className={"side-navigation__container"}>
-						{this.props.navlinks.map(({path}, index) => {
-							return (
-								<li key={index}
-								    className={this.state.activeIndex === index ? "side-navigation__item side-navigation__item--active" : "side-navigation__item"}
-								    onClick={this.onSetActiveIndex.bind(this, index)}>
-									<NavLink to={`${path}`} className={"side-navigation__link"}/>
-								</li>
-							)
-						})}
+						<SideMenuLink activeOnlyWhenExact={true} to="/" />
+						<SideMenuLink to="/buy" />
+						<SideMenuLink to="/reservation" />
+						<SideMenuLink to="/add" />
 					</ul>
 				</nav>
 			</React.Fragment>
 		)
 	}
 }
-
-Navigation.defaultProps = {
-	navlinks: [
-		{
-			path: "/"
-		},
-		{
-			path: "/buy"
-		},
-		{
-			path: "/reservation"
-		},
-		{
-			path: "/add"
-		}
-	]
-};
 
 export default Navigation;
