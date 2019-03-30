@@ -1,8 +1,7 @@
 //@Flow
 import React, {Component} from 'react';
-import {NavLink, Route, Link} from 'react-router-dom';
+import {NavLink, Route} from 'react-router-dom';
 import {Logo} from "../Logo/Logo";
-import {home} from "../../assets/SVG/home.svg";
 import Messages from "../External/Messages/Messages";
 
 interface IProps {
@@ -24,7 +23,7 @@ const SideMenuLink = ({ to, activeOnlyWhenExact }) => {
 		       )}
 		/>
 	);
-}
+};
 
 class Navigation extends Component<IState> {
 	constructor(props: IProps) {
@@ -36,15 +35,7 @@ class Navigation extends Component<IState> {
 	}
 
 	onCheckResolution = () => {
-		if (window.innerWidth < 480) {
-			this.setState({
-				isUnderBreakpoint: true
-			});
-		} else {
-			this.setState({
-				isUnderBreakpoint: false
-			});
-		}
+		this.setState({ isUnderBreakpoint: window.innerWidth < 480 });
 	}
 
 	componentDidMount() {

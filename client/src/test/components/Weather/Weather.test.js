@@ -15,7 +15,7 @@ describe("Component: Weather", () => {
 			lng: 50
 		};
 		const response = jest.fn(getWeather(geo));
-		console.log(response);
+		// console.log(response);
 		//expect(response).toHaveBeenCalled();
 	});
 });

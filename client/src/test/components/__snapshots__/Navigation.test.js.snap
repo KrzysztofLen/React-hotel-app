@@ -5,18 +5,10 @@ exports[`should render Navigation component corectlly 1`] = `
   <nav className=\\"side-navigation\\">
     <Logo />
     <ul className=\\"side-navigation__container\\">
-      <li className=\\"side-navigation__item side-navigation__item--active\\" onClick={[Function: bound ]}>
-        <NavLink to=\\"/\\" className=\\"side-navigation__link\\" />
-      </li>
-      <li className=\\"side-navigation__item\\" onClick={[Function: bound ]}>
-        <NavLink to=\\"/buy\\" className=\\"side-navigation__link\\" />
-      </li>
-      <li className=\\"side-navigation__item\\" onClick={[Function: bound ]}>
-        <NavLink to=\\"/reservation\\" className=\\"side-navigation__link\\" />
-      </li>
-      <li className=\\"side-navigation__item\\" onClick={[Function: bound ]}>
-        <NavLink to=\\"/add\\" className=\\"side-navigation__link\\" />
-      </li>
+      <SideMenuLink activeOnlyWhenExact={true} to=\\"/\\" />
+      <SideMenuLink to=\\"/buy\\" />
+      <SideMenuLink to=\\"/reservation\\" />
+      <SideMenuLink to=\\"/add\\" />
     </ul>
   </nav>
 </Fragment>"

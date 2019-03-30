@@ -21,18 +21,14 @@ describe('GET/ hotels', () => {
 		expect(res.body.hotels.length).toBeGreaterThan(0);
 	});
 
-	test.skip('should return hotels with correct properties', (done) => {
-		return request(app).get('/api/hotels')
-			.expect(200)
-			.then((res) => {
-				let sampleKeys = Object.keys(res.body.hotels[0]);
-				expectedProps.forEach((key) => {
-					expect(sampleKeys.includes(key)).toBe(true);
-					done();
-				});
-			});
-	});
+	test('should return hotels with correct properties', async() => {
+		const res = await request(app).get('/api/hotels').expect(200);
+		let hotelKeys = Object.keys(res.body.hotels[0]);
 
+		expectedProps.forEach((key) => {
+			expect(hotelKeys.includes(key)).toBe(true);
+		});
+	});
 });
 
 describe("GET/ hotels/:id", () => {
