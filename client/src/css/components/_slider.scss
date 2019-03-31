@@ -1,0 +1,53 @@
+.gallery-modal {
+	&__wrapper {
+		max-height: 50vh;
+		position: relative;
+	}
+
+	&__image {
+		width: 100%;
+		height: 50vh;
+	}
+}
+
+.modal-next,
+.modal-prev {
+	position: absolute;
+	display: inline;
+	color: black;
+	text-decoration: none;
+	line-height: 36px;
+	font-size: 30px;
+	font-weight: lighter;
+	background: #fff;
+	border-radius: 5px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+}
+.modal-body .modal-close {
+	right: 0;
+	top: 0;
+	border-radius: 0 0 0 5px;
+}
+
+.modal-next,
+.modal-prev {
+	top: calc(50% - 25px);
+	border-radius: 5px 0 0 5px;
+	height: 50px;
+	line-height: 40px;
+	font-size: 60px;
+}
+
+.modal-prev {
+	left: 0;
+}
+
+.modal-next {
+	right: 0
+}
+
+.modal-body {
+	position: relative;
+}

@@ -1,18 +1,22 @@
 .modal {
 	background: $color-white;
 	margin: 20px auto;
-	padding: 48px 90px;
-	width: 25%;
+	padding: 0;
+	width: 50vw;
+	max-width: 500px;
 	position: relative;
 
+	&:focus {
+		outline: none;
+	}
+
 	@include media-queries(L) {
-		padding: 40px 70px;
 		width: 60%;
 	}
 
 	@include media-queries(M) {
 		width: 92%;
-		padding: 15px;
 		margin: 0 auto;
+		top: 25%;
 	}
 }

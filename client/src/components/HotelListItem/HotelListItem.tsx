@@ -68,7 +68,7 @@ class HotelListItem extends React.Component<IProps, IState> {
 				className={this.props.viewTypeId === 1 ? "hotel__container" : "hotel__container hotel__container--list"}>
 				<div className="hotel__image-container">
 					<HotelImage onClick={this.onModalOpen} image={this.props.data.hotel_images}/>
-					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<Slider />}/>
+					<ModalWindow isOpen={this.state.modalIsOpen} closeModal={this.onCloseModal} component={<Slider images={this.props.data.hotel_images}/>}/>
 				</div>
 				<div className={"hotel__address-container"}>
 					<div className={"hotel__name-wrapper"}>
