@@ -13,7 +13,6 @@ interface IProps {
 
 class SliderItem extends Component<IProps, {}> {
     componentDidMount() {
-        console.log(this.props);
         document.body.addEventListener('keydown', this.handleKeyDown);
     }
 

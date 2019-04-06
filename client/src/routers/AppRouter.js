@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import HotelsView from "../Views/HotelsView/HotelsView";
 import SingleHotelView from '../Views/SingleHotelView/SingleHotelView';
 import Navigation from '../components/Navigation/Navigation.tsx';
@@ -11,6 +11,7 @@ import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
 import AddHotelReview from "../components/AddHotel/AddHotelReview";
+import NoMatch from "../components/NoMatch/NoMatch";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
 	const fakeAuth = {
@@ -38,32 +39,33 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 class AppRouter extends React.Component {
 	render() {
 		return (
-			<BrowserRouter>
+			<Router>
 				<div className={"hotel-app"}>
 					<Navigation/>
 					{/*<Header/>*/}
 					{/* TODO make onEnter fetch data on particular view/route */}
 					{/*<Route path="/" component={App} exact/>*/}
-					<Route path="/" component={HotelsView} exact/>
-					{/*<Route path="/hotel/:id"*/}
-					       {/*render={(props) => <SingleHotel {...props} />}*/}
-					{/*/>*/}
+					<Switch>
+						<Route path="/" exact component={HotelsView}/>
+						{/*<Route path="/hotel/:id"*/}
+						{/*render={(props) => <SingleHotel {...props} />}*/}
+						{/*/>*/}
 
-					<Route path={"/hotel/:id"} component={SingleHotelView} />
-					<Route path="/reservation" component={Cart}/>
-					<Route path="/buy" component={BuyHotel} exact/>
+						<Route path={"/hotel/:id"} component={SingleHotelView}/>
+						<Route path="/reservation" component={Cart}/>
+						<Route path="/buy" component={BuyHotel}/>
 
-					{/* #TODO commented for development time */}
-					{/*<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} exact/>*/}
-					<Route path="/add" component={AddHotelsView} />
-					<Route path="/send" component={AddHotelReview} />
-					<Route path="/forbidden" component={Forbidden}/>
-					<Route path="/add/success" component={AddHotelSuccess}/>
-					{/*<Route component={NoMatch404}/>*/}
-
+						{/* #TODO commented for development time */}
+						{/*<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} exact/>*/}
+						<Route path="/add" component={AddHotelsView}/>
+						<Route path="/send" component={AddHotelReview}/>
+						<Route path="/forbidden" component={Forbidden}/>
+						<Route path="/add/success" component={AddHotelSuccess}/>
+						<Route component={NoMatch}/>
+					</Switch>
 					{/*<Footer/> */}
 				</div>
-			</BrowserRouter>
+			</Router>
 		)
 	}
 }
