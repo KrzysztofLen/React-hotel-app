@@ -7,8 +7,8 @@ interface IProps {
 }
 
 const HotelImage = (data: IProps) => {
-    console.log(data);
-    return (<React.Fragment>
+    return (
+        <React.Fragment>
             <div className="overlay" onClick={data.onClick}>
                 <span className="overlay__text">Click</span>
             </div>
