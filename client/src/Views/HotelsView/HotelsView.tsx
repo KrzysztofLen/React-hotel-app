@@ -77,12 +77,14 @@ class HotelsView extends Component<IProps, IState> {
 
 interface IHotelsList {
     hotelsList: Array<IHotel>,
-    filterHotels: string
+    filterHotels: string,
+    errors: any
 }
 
-function mapStateToProps({hotelsList, filterHotels}: IHotelsList) {
+function mapStateToProps({hotelsList, filterHotels, errors}: IHotelsList) {
     return {
-        hotelsList: getFilteredHotels(hotelsList, filterHotels)
+        hotelsList: getFilteredHotels(hotelsList, filterHotels),
+        errors
     }
 }
 

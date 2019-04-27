@@ -7,9 +7,6 @@
 ### Tech stack
 Application is build in MERN stack (MongoDB, React, Node and Express)
 
-### Solutions
-- For performance reasons and not included any library to manage animations, details in table are already rendered in DOM without condition rendering. This allows to animate toggle details in CSS.  
-
 ### App demo
 App is available at:
 https://react-hotel-app.herokuapp.com/
@@ -21,26 +18,38 @@ Requires [Node.js](https://nodejs.org/) v4+ to run.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ yarn install
+$ npm run install
+
+In root and client directory
 ```
 
 For develop environment...
 
 ```sh
-$ yarn start && yarn compile:sass
+$ npm run dev
 ```
 
 ### Comands
 
 For create dist build
 ```sh
-$ yarn run build
+$ npm run build
 ```
 For create sass documentacion
 ```sh
-$ yarn generate:doc
+$ npm run generate:doc
 ```
-To run test's
+To run all test's
 ```sh
-$ yarn test
+$ npm run test
+```
+
+To run sever test's
+```sh
+$ npm run server:test
+```
+
+To run client test's
+```sh
+$ npm run client:test
 ```

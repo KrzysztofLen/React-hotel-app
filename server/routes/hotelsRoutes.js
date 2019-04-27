@@ -4,28 +4,26 @@ const {hotels_get, hotels_get_by_id, hotels_update, hotels_post, hotels_delete_b
 // Storage image file
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		console.log("$$$$$CB", cb);
 		cb(null, './uploads/');
 	},
 	filename: function (req, files, cb) {
-		console.log("$$$$$", files);
 		cb(null, new Date().toISOString().replace(/:/g, '-') + files.originalname);
 	}
 });
 
-//const upload = multer({storage: storage});
+const upload = multer({storage: storage});
 
-const upload = multer({
-	limits: {
-		fileSize: 10000000
-	},
-	fileFilter(req, file, cb) {
-		if(!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
-			return cb(new Error("Please upload a Image"));
-		}
-		cb(undefined, true)
-	}
-});
+// const upload = multer({
+// 	limits: {
+// 		fileSize: 10000000
+// 	},
+// 	fileFilter(req, file, cb) {
+// 		if(!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+// 			return cb(new Error("Please upload a Image"));
+// 		}
+// 		cb(undefined, true)
+// 	}
+// });
 
 module.exports = (app) => {
 	/**

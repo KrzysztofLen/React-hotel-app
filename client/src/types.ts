@@ -9,6 +9,7 @@ export const SUBMIT_SURVEY: string = 'SUBMIT_SURVEY';
 export const AUTH_USER: string = 'AUTH_USER';
 export const AUTH_ERROR: string = 'AUTH_ERROR';
 export const ADD_HOTEL: string = 'ADD_HOTEL';
+export const ERROR: string = 'ERROR';
 
 // ENTRIES API URL'S
 

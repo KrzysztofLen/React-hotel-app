@@ -42,7 +42,7 @@ class AppRouter extends React.Component {
 			<Router>
 				<div className={"hotel-app"}>
 					<Navigation/>
-					{/*<Header/>*/}
+
 					{/* TODO make onEnter fetch data on particular view/route */}
 					{/*<Route path="/" component={App} exact/>*/}
 					<Switch>
@@ -50,7 +50,6 @@ class AppRouter extends React.Component {
 						{/*<Route path="/hotel/:id"*/}
 						{/*render={(props) => <SingleHotel {...props} />}*/}
 						{/*/>*/}
-
 						<Route path={"/hotel/:id"} component={SingleHotelView}/>
 						<Route path="/reservation" component={Cart}/>
 						<Route path="/buy" component={BuyHotel}/>
@@ -63,7 +62,7 @@ class AppRouter extends React.Component {
 						<Route path="/add/success" component={AddHotelSuccess}/>
 						<Route component={NoMatch}/>
 					</Switch>
-					{/*<Footer/> */}
+
 				</div>
 			</Router>
 		)

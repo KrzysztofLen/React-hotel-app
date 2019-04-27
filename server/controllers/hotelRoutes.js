@@ -85,7 +85,7 @@ exports.hotels_post = (req, res, next) => {
 	//#TODO comment this to avoid 500
 	const imageFiles = [];
 
-	console.log("[*********REQ", req.files);
+	console.log("[*********REQ", req.body);
 	// req.files.forEach(file => {
 	// 	console.log(file);
 	// 	imageFiles.push(file.path);
@@ -111,7 +111,8 @@ exports.hotels_post = (req, res, next) => {
 		facilities_wifi,
 		facilities_card_payment,
 		facilities_game_room,
-		hotel_images: imageFiles
+		//hotel_images: req.body.hotel_images[0]
+		hotel_images: req.body.hotel_images
 	});
 
 	// Save hotel based on hotel schema object

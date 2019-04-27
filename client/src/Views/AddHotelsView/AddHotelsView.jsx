@@ -9,7 +9,6 @@ class AddHotelsView extends Component {
 	};
 
 	render() {
-
 		return (
 			<React.Fragment>
 				{this.state.showFormReview === true ? <AddHotelReview onCancel={() => this.setState({showFormReview: false})}/> :

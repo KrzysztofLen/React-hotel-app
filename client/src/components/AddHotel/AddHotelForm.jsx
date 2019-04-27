@@ -75,16 +75,27 @@ class AddHotelForm extends Component {
 		e.preventDefault();
 
 		const values = {
-			hotel_name: e.target[0].value,
-			hotel_adress: e.target[1].value,
-			hotel_city: e.target[2].value,
-			hotel_province: e.target[3].value,
-			hotel_price: e.target[5].value,
-			hotel_distance: e.target[6].value,
-			hotel_description: e.target[4].value,
-			hotel_stars: e.target[7].value,
-			hotel_rating: e.target[8].value,
-			hotel_reviews: e.target[9].value,
+			// hotel_name: e.target[0].value,
+			// hotel_adress: e.target[1].value,
+			// hotel_city: e.target[2].value,
+			// hotel_province: e.target[3].value,
+			// hotel_price: e.target[5].value,
+			// hotel_distance: e.target[6].value,
+			// hotel_description: e.target[4].value,
+			// hotel_stars: e.target[7].value,
+			// hotel_rating: e.target[8].value,
+			// hotel_reviews: e.target[9].value,
+			//TODO Temoporary
+			hotel_name: "test",
+			hotel_adress: "test",
+			hotel_city: "test",
+			hotel_province: "test",
+			hotel_price: 1,
+			hotel_distance: 1,
+			hotel_description: "test",
+			hotel_stars: 1,
+			hotel_rating: 1,
+			hotel_reviews: 1,
 			is_new: this.state.is_new,
 			is_apartment: this.state.is_apartment,
 			facilities_restaurant: this.state.facilities_restaurant,
@@ -95,7 +106,6 @@ class AddHotelForm extends Component {
 			hotel_images: this.state.hotel_images
 		};
 
-		//this.props.submitSurvey(values, this.props.history);
 		this.props.addHotel(values);
 		this.props.history.push('/send');
 	}
@@ -112,11 +122,13 @@ class AddHotelForm extends Component {
 	}
 
 	encodeImageFileAsURL = (elements) => {
-		//#TODO try not send base64 because of optimalization
-
 		this.setState({
 			hotel_images: elements
 		});
+
+		//TODO base64 works but freezing must by plain file
+		// let fileList = [];
+
 		// for(let i = 0; i < elements.length; i++) {
 		// 	const reader = new FileReader();
 		//
@@ -130,6 +142,7 @@ class AddHotelForm extends Component {
 		//
 		// 	reader.readAsDataURL(elements[i]);
 		// }
+		// console.log(fileList);
 	}
 
 	render() {

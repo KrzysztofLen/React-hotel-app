@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /client/node_modules/
+/client/build/
 
 # testing
 /coverage
@@ -22,6 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 .yarn.lock
+.package-lock.json.icloud
+.package-lock.json
 server/config/dev.js
 server/config/prod.js
 
