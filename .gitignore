@@ -25,7 +25,6 @@ yarn-error.log*
 .yarn.lock
 .package-lock.json.icloud
 .package-lock.json
-server/config/dev.js
-server/config/prod.js
+server/config/
 
 client/flow-typed

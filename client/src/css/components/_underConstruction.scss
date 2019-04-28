@@ -1,0 +1,41 @@
+.underConstruction {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0 auto;
+
+	&__header {
+		margin: 0 auto;
+		@include font-size(4);
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 50%;
+		border-radius: 20px;
+		background: $material-color-yellow;
+		color: $color-black;
+		border: 3px dashed $color-black;
+		transform: rotate(-10deg);
+		margin-bottom: 20px;
+		text-align: center;
+		padding: 15px;
+	}
+
+	&__subHeader {
+		margin: 0 auto;
+		@include font-size(2.5);
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: rotate(-10deg) translateX(20px);
+		border-top: 1px solid black;
+		padding: 20px;
+		color: $color-black;
+		margin-bottom: 50px;
+	}
+}

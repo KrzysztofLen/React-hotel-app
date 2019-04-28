@@ -4,8 +4,8 @@ import HotelsView from "../Views/HotelsView/HotelsView";
 import SingleHotelView from '../Views/SingleHotelView/SingleHotelView';
 import Navigation from '../components/Navigation/Navigation.tsx';
 import AddHotelsView from "../Views/AddHotelsView/AddHotelsView";
-import {Cart} from '../components/Cart/Cart';
-import {BuyHotel} from '../components/BuyHotel/BuyHotel';
+import BuyHotelsView from "../Views/BuyHotelsView/BuyHotelsView";
+import ReservationsView from "../Views/ReservationsView/ReservationsView";
 import {connect} from "react-redux";
 import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
@@ -17,6 +17,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 	const fakeAuth = {
 		isAuthenticated: rest.isAuth
 	};
+
 	return (
 		<Route
 			{...rest}
@@ -51,8 +52,8 @@ class AppRouter extends React.Component {
 						{/*render={(props) => <SingleHotel {...props} />}*/}
 						{/*/>*/}
 						<Route path={"/hotel/:id"} component={SingleHotelView}/>
-						<Route path="/reservation" component={Cart}/>
-						<Route path="/buy" component={BuyHotel}/>
+						<Route path="/reservation" component={ReservationsView}/>
+						<Route path="/buy" component={BuyHotelsView}/>
 
 						{/* #TODO commented for development time */}
 						<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} />
