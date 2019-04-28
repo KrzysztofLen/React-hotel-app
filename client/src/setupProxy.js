@@ -5,6 +5,8 @@ module.exports = function (app) {
 		{target: 'http://localhost:5000/'}
 	), proxy('/api/*',
 		{target: 'http://localhost:5000/'}
+	), proxy('/api/hotels/*',
+		{target: 'http://localhost:5000/'}
 	), proxy('/uploads/*',
 		{target: 'http://localhost:5000/'}
 	));

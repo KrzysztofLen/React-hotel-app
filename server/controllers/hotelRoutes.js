@@ -157,6 +157,7 @@ exports.hotels_update = (req, res, next) => {
  */
 exports.hotels_delete_by_id = (req, res, next) => {
 	const id = req.params.hotelsId;
+
 	Hotel.remove({
 		_id: id
 	}).exec().then(result => res.status(200).json({

@@ -9,16 +9,22 @@ import Boxes from "../../components/Boxes/Boxes";
 import ViewSwitcher from "../../components/ViewSwitcher/ViewSwitcher";
 import Loader from "../../components/External/Loader/Loader";
 import {IHotel} from "../../types";
+import Messages from "../../components/External/Messages/Messages";
 
 interface IState {
     isLoading: boolean;
+    data: any;
+    users: any,
+    hotelsLength: number
 }
 
 interface IProps {
     fetchHotels: () => Array<IHotel>,
     fetchUser: () => void,
     fetchHotelsLength: () => number,
-    hotelsList: Array<IHotel>
+    hotelsList: Array<IHotel>,
+    deletedHotel: any,
+    filterHotels: any
 }
 
 class HotelsView extends Component<IProps, IState> {
@@ -26,31 +32,36 @@ class HotelsView extends Component<IProps, IState> {
         super(props);
 
         this.state = {
-            isLoading: false
+            isLoading: false,
+            data: [],
+            users: null,
+            hotelsLength: 0
         };
     }
 
-    getData = async () => {
-        await this.props.fetchHotels();
-        await this.props.fetchUser();
-        await this.props.fetchHotelsLength();
-    }
-
-    componentDidMount() {
+    async componentDidMount() {
         this.setState({isLoading: true});
-        this.getData();
 
-        //Temp to see Loading
-        window.setTimeout(() => {
-            this.setState({
-                isLoading: false
-            });
-        }, 2000);
+        const hotelsList: Array<IHotel> = await this.props.fetchHotels();
+        const users = await this.props.fetchUser();
+        const hotelsLength: number = await this.props.fetchHotelsLength();
+
+        this.setState({
+            isLoading: false,
+            data: hotelsList,
+            users,
+            hotelsLength
+        });
     }
 
     render() {
         return (
             <div className={"container"}>
+                {this.props.deletedHotel &&
+				<Messages type={"success"} message={this.props.deletedHotel.message} duration={10000}/>}
+                {this.props.deletedHotel === false &&
+				<Messages type={"danger"} message={"Sorry you can't remove this item!"} duration={10000}/>}
+
                 <header className="header">
                     <Search/>
                     <LoginSystem/>
@@ -63,10 +74,12 @@ class HotelsView extends Component<IProps, IState> {
                     {this.props.hotelsList.length === 0 && this.state.isLoading === false ?
                         <span className="content__no-results">Sorry no results :(</span> :
                         <React.Fragment>
-                            {this.state.isLoading === true ? <Loader text="Loading"/> : <React.Fragment>
-                                <Boxes/>
-                                <HotelsList hotels={this.props.hotelsList}/>
-                            </React.Fragment>}
+                            {this.state.isLoading === true
+                                ? <Loader text="Loading"/>
+                                : <React.Fragment>
+                                    <Boxes/>
+                                    <HotelsList hotels={getFilteredHotels(this.state.data, this.props.filterHotels)}/>
+                                </React.Fragment>}
                         </React.Fragment>
                     }
                 </div>
@@ -78,13 +91,16 @@ class HotelsView extends Component<IProps, IState> {
 interface IHotelsList {
     hotelsList: Array<IHotel>,
     filterHotels: string,
-    errors: any
+    errors: any,
+    deletedHotel: any
 }
 
-function mapStateToProps({hotelsList, filterHotels, errors}: IHotelsList) {
+function mapStateToProps({hotelsList, filterHotels, errors, deletedHotel}: IHotelsList) {
     return {
         hotelsList: getFilteredHotels(hotelsList, filterHotels),
-        errors
+        filterHotels,
+        errors,
+        deletedHotel
     }
 }
 

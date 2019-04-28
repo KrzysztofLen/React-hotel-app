@@ -56,8 +56,8 @@ class AppRouter extends React.Component {
 						<Route path="/buy" component={BuyHotelsView}/>
 
 						{/* #TODO commented for development time */}
-						<PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} />
-						{/*<Route path="/add" component={AddHotelsView}/>*/}
+						{/* <PrivateRoute path="/add" component={AddHotelsView} isAuth={this.props.currentUserAuth} /> */}
+						<Route path="/add" component={AddHotelsView}/>
 						<Route path="/send" component={AddHotelReview}/>
 						<Route path="/forbidden" component={Forbidden}/>
 						<Route path="/add/success" component={AddHotelSuccess}/>

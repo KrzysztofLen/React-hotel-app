@@ -3,13 +3,18 @@ import * as types from "../../types";
 
 //******* HOTEL *********//
 export const fetchHotels = () => async (dispatch) => {
-	try  {
-		const response = await axios.get('/api/hotels');
+	function onSuccess(success) {
 		dispatch({
 			type: types.FETCH_HOTELS,
-			payload: response.data.hotels
+			payload: success
 		});
-	} catch(e) {
+		return success;
+	}
+
+	try {
+		const response = await axios.get('/api/hotels');
+		return onSuccess(response.data.hotels);
+	} catch (e) {
 		dispatch(systemError(e));
 	}
 };
@@ -20,13 +25,17 @@ export const searchHotels = (text) => ({
 });
 
 export const fetchHotelsLength = () => async (dispatch) => {
-	try {
-		const res = await axios.get('/api/count');
+	function onSuccess(success) {
 		dispatch({
 			type: types.HOTELS_LENGTH,
-			payload: res.data.result
+			payload: success
 		});
-	} catch(e) {
+		return success;
+	}
+	try {
+		const response = await axios.get('/api/count');
+		return onSuccess(response.data.result);
+	} catch (e) {
 		dispatch(systemError(e));
 	}
 };
@@ -35,6 +44,25 @@ export const addHotel = (values) => ({
 	type: types.ADD_HOTEL,
 	payload: values
 });
+
+export const deleteHotel = (id) => async (dispatch) => {
+	if (id === 0) {
+		dispatch({
+			type: types.DELETE_HOTEL,
+			payload: false
+		});
+	} else {
+		try {
+			const res = await axios.delete(`/api/hotels/${id}`);
+			dispatch({
+				type: types.DELETE_HOTEL,
+				payload: res.data
+			});
+		} catch (e) {
+			dispatch(systemError(e));
+		}
+	}
+}
 
 //******* AUTH *********//
 export const signUpUser = (formProps, callback) => async (dispatch) => {

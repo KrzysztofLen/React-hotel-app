@@ -1,9 +1,8 @@
-// @flow
 import * as types from "../../types";
 
-export default (state = 0, action) => {
+export default (state = null, action) => {
 	switch (action.type) {
-		case types.HOTELS_LENGTH:
+		case types.DELETE_HOTEL:
 			return action.payload;
 		default:
 			return state;

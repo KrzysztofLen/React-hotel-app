@@ -4,6 +4,7 @@ import currentUserAuth from "./currentUserAuthReducers";
 import hotelSearch from "./hotelSearchReducers";
 import switchView from "./switchViewReducers";
 import fetchHotelsNumber from "./getHotelsLengthReducers";
+import deleteHotel from "./deleteHotelReducers";
 import authUser from "./authUserReducers";
 import submitHotel from "./submitHotelReducers";
 import addHotelForm from "./addHotelFormReducers";
@@ -16,6 +17,7 @@ export default combineReducers({
 	hotelsList: fetchHotels,
 	filterHotels: hotelSearch,
 	viewTypeId: switchView,
+	deletedHotel: deleteHotel,
 	hotelsNumberInDatabase: fetchHotelsNumber,
 	addHotelFormValues: addHotelForm,
 	errors: systemReducer,
