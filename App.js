@@ -13,8 +13,6 @@ const session = require('express-session');
 // MODELS ##############################################################################################################
 require('./server/models/Users');
 require('./server/models/hotel');
-require('./server/models/localAuthenticateModel');
-// require('./server/models/authenticate[OLD]');
 
 // SERVICES ############################################################################################################
 require('./server/services/passport')(passport); // pass passport for configuration
@@ -51,10 +49,7 @@ require('./server/routes/billingRoutes')(app);
 require('./server/routes/countRoutes')(app);
 require('./server/routes/topRoutes')(app);
 require('./server/routes/authRoutes')(app);
-require('./server/routes/localAuthenticateRoute')(app);
-// require('./server/routes/userRoutes[OLD]')(app);
 
-//#TODO on heroku is development so app doesn't showing
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 

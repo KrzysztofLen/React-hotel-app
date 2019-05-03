@@ -6,36 +6,37 @@ import Navigation from '../components/Navigation/Navigation.tsx';
 import AddHotelsView from "../Views/AddHotelsView/AddHotelsView";
 import BuyHotelsView from "../Views/BuyHotelsView/BuyHotelsView";
 import ReservationsView from "../Views/ReservationsView/ReservationsView";
-import {connect} from "react-redux";
-import * as actions from "../Redux/actions";
+// import {connect} from "react-redux";
+// import * as actions from "../Redux/actions";
 import AddHotelSuccess from "../components/AddHotel/AddHotelSuccess";
 import Forbidden from "../components/Forbidden/Forbidden";
 import AddHotelReview from "../components/AddHotel/AddHotelReview";
 import NoMatch from "../components/NoMatch/NoMatch";
 
-const PrivateRoute = ({component: Component, ...rest}) => {
-	const fakeAuth = {
-		isAuthenticated: rest.isAuth
-	};
-
-	return (
-		<Route
-			{...rest}
-			render={props =>
-				fakeAuth.isAuthenticated ? (
-					<Component {...props} />
-				) : (
-					<Redirect
-						to={{
-							pathname: "/forbidden",
-							state: {from: props.location}
-						}}
-					/>
-				)
-			}
-		/>
-	)
-};
+//# TODO with correct auth system one route is available after login
+// const PrivateRoute = ({component: Component, ...rest}) => {
+// 	const fakeAuth = {
+// 		isAuthenticated: rest.isAuth
+// 	};
+//
+// 	return (
+// 		<Route
+// 			{...rest}
+// 			render={props =>
+// 				fakeAuth.isAuthenticated ? (
+// 					<Component {...props} />
+// 				) : (
+// 					<Redirect
+// 						to={{
+// 							pathname: "/forbidden",
+// 							state: {from: props.location}
+// 						}}
+// 					/>
+// 				)
+// 			}
+// 		/>
+// 	)
+// };
 
 class AppRouter extends React.Component {
 	render() {
@@ -43,14 +44,8 @@ class AppRouter extends React.Component {
 			<Router>
 				<div className={"hotel-app"}>
 					<Navigation/>
-
-					{/* TODO make onEnter fetch data on particular view/route */}
-					{/*<Route path="/" component={App} exact/>*/}
 					<Switch>
 						<Route path="/" exact component={HotelsView}/>
-						{/*<Route path="/hotel/:id"*/}
-						{/*render={(props) => <SingleHotel {...props} />}*/}
-						{/*/>*/}
 						<Route path={"/hotel/:id"} component={SingleHotelView}/>
 						<Route path="/reservation" component={ReservationsView}/>
 						<Route path="/buy" component={BuyHotelsView}/>
@@ -70,10 +65,11 @@ class AppRouter extends React.Component {
 	}
 }
 
-function mapStateToProps({currentUserAuth}) {
-	return {
-		currentUserAuth
-	};
-}
+// function mapStateToProps({currentUserAuth}) {
+// 	return {
+// 		currentUserAuth
+// 	};
+// }
 
-export default connect(mapStateToProps, actions)(AppRouter);
+//export default connect(null, actions)(AppRouter);
+export default AppRouter;

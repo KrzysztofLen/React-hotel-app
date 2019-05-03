@@ -5,6 +5,11 @@
 	background: $color-dash-background;
 	width: 100%;
 
+	.message__danger {
+		position: fixed;
+		top: 0;
+	}
+
 	&__form {
 		margin: 0 8rem;
 
@@ -116,6 +121,17 @@
 		background: $color-white;
 		padding: 20px;
 		border-radius: 5px;
+
+		.input {
+			&::placeholder {
+				@include font-size(1.2);
+				color: $color-grey-light-4;
+			}
+
+			&__error {
+				border: 1px solid $material-color-red;
+			}
+		}
 
 		@include media-queries(M) {
 			width: calc(50% - 1.5rem);

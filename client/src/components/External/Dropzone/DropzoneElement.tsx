@@ -3,7 +3,7 @@ import Dropzone from "react-dropzone";
 
 interface IProps {
     files: Array<File>,
-    onDrop: () => void
+    onDrop: (files: any) => void
 }
 
 class DropzoneElement extends Component<IProps, {}> {

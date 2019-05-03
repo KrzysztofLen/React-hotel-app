@@ -28,7 +28,6 @@ class AddHotelReview extends Component {
 	}
 
 	render() {
-		console.log(this.props.addHotelFormValues);
 		return (
 			<div className={"hotel-form"}>
 				<div className={"hotel-form__container"}>

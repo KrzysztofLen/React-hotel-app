@@ -107,7 +107,7 @@ class HotelListItem extends React.Component<IProps, IState> {
                         />
                     </div>
                     <DottedMenu>
-                        <button className={"dottedMenu__more-menu-btn"} onClick={this.onDeleteHotel}>Delete</button>
+                        <div className={"dottedMenu__more-menu-btn"} onClick={this.onDeleteHotel}>Delete</div>
                     </DottedMenu>
                 </div>
                 {this.state.activeIndex === this.props.index &&

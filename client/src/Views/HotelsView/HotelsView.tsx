@@ -64,7 +64,10 @@ class HotelsView extends Component<IProps, IState> {
 
                 <header className="header">
                     <Search/>
-                    <LoginSystem/>
+                    {/* //#TODO
+                        currently auth system doesn't work except google gmail passport authorization. Only localhost,
+                        on prod erorr with URI. Below component is commented to not show Login buttons */}
+                    {/*<LoginSystem/>*/}
                 </header>
                 <div className="content">
                     <div className={"content__header-wrapper"}>
