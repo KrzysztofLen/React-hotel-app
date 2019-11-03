@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {SunShowerIcon} from "./../../../components/Weather/SunShowerIcon";
+import {SunShowerIcon} from "../../../components/Weather/SunShowerIcon";
 
 describe("Component: SunShowerIcon", () => {
 	test("should render SunShowerIcon component correctly", () => {

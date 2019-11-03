@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import * as axios from "axios";
-import Weather from "./../../../components/Weather/Weather";
+import Weather from "../../../components/Weather/Weather";
 
 describe("Component: Weather", () => {
 	test("should render Weather component corectlly", () => {

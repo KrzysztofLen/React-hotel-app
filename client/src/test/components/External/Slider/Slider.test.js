@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import Slider from '../../../../../src/components/External/Slider/Slider';
+import Slider from '../../../../components/External/Slider/Slider';
 
 describe("Component: Slider", () => {
 	test("it should render Slider component correctly", () => {

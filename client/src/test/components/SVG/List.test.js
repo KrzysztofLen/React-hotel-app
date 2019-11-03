@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {List} from "./../../../components/SVG/List";
+import {List} from "../../../components/SVG/List";
 
 describe("Component: List", () => {
 	test("should render List component correctly", () => {

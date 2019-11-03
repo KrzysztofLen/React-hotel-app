@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {Full} from "./../../../components/SVG/Full";
+import {Full} from "../../../components/SVG/Full";
 
 describe("Component: Full", () => {
 	test("should render Full component correctly", () => {

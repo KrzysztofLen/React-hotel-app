@@ -1,35 +1,33 @@
 .rate__color {
-	display: block;
-	font-size: 20px;
-	font-weight: 400;
-	margin-top: 2rem;
-	margin-bottom: 1rem;
+    display: block;
+    @include font-size(2);
+    @include font-weight(400);
 
 	@include media-queries(M) {
 		margin-top: 1rem;
 	}
 
 	&--verybad {
-		color: $rate-bad;
+		color: $material-color-red;
 	}
 
 	&--poor {
-		color: $rate-poor;
+		color: $material-color-pink;
 	}
 
 	&--fair {
-		color: $rate-fair;
+		color: $material-color-yellow;
 	}
 
 	&--good {
-		color: $rate-good;
+		color: $material-color-blue;
 	}
 
 	&--verygood {
-		color: $rate-very-good;
+		color: $material-color-green;
 	}
 
 	&--excellent {
-		color: $rate-excellent;
+		color: $material-color-light-green;
 	}
 }

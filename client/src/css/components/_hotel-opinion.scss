@@ -1,12 +1,21 @@
-.opinion {
-	&__hotel-rating {
-		@include font-size(2.4);
-		color: $color-grey-dark-2;
-		margin-right: 0.5rem;
-	}
+.hotel__opinion {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
 
-	&__hotel-reviews {
-		@include font-size(1.8);
-		@include font-weight(200);
-	}
+  @include media-queries(M) {
+    margin: 0;
+  }
+
+  &--rating {
+    color: $color-grey-dark-2;
+    @include font-size(2);
+    @include font-weight(400);
+    margin-right: 2rem;
+  }
+
+  &--reviews {
+    @include font-size(1.8);
+    @include font-weight(200);
+  }
 }

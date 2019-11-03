@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {Check} from "./../../../components/SVG/Check";
+import {Check} from "../../../components/SVG/Check";
 
 describe("Component: Check", () => {
 	test("should render Check component correctly", () => {

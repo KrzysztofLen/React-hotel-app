@@ -25,6 +25,8 @@ yarn-error.log*
 .yarn.lock
 .package-lock.json.icloud
 .package-lock.json
-server/config/
+server/config/*
 
 client/flow-typed
+
+.env

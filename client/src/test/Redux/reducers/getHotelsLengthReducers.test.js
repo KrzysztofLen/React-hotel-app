@@ -1,4 +1,4 @@
-import getHotelsLengthReducers, {HOTELS_LENGTH} from "./../../../Redux/reducers/getHotelsLengthReducers";
+import getHotelsLengthReducers, {HOTELS_LENGTH} from "../../../Redux/reducers/getHotelsLengthReducers";
 
 test.skip("handles actions of type HOTELS_LENGTH", () => {
 	const action = {

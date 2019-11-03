@@ -4,12 +4,8 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	position: relative;
-
-	&__views {
-		padding: 1rem;
-		display: flex;
-	}
+    position: relative;
+    padding: 1rem;
 
 	&__filter {
 		display: inline-block;

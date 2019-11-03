@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,400,700");
+@import-normalize;
 /* ------------- */
 /*		ABSTRACTS	 */
 /* ------------- */
 /*
 * SASS DOC
 */
-@import url("https://fonts.googleapis.com/css?family=Oswald:200,400,700");
 @keyframes animeSlideBottom {
   0% {
     transform: translate3d(0, 40px, 0);
@@ -162,7 +163,7 @@ body.ReactModal__Body--open {
   align-items: center;
   font-size: 26px;
   font-size: 2.6rem;
-  color: #7498FB;
+  color: #82aaff;
   width: 50%;
   height: 100px;
   background: #fff;
@@ -257,21 +258,21 @@ body.ReactModal__Body--open {
   color: #fff; }
 
 .is-link {
-  background-color: #7498FB;
+  background-color: #82aaff;
   border-color: transparent;
   color: #fff; }
 
 .is-link:hover {
-  background: #8daafc; }
+  background: #9cbbff; }
 
 .is-link--is-outlined {
   background-color: transparent;
-  border-color: #7498FB;
-  color: #7498FB; }
+  border-color: #82aaff;
+  color: #82aaff; }
 
 .is-link--is-outlined:hover {
-  background-color: #7498FB;
-  border-color: #7498FB;
+  background-color: #82aaff;
+  border-color: #82aaff;
   color: #fff; }
 
 .is-danger {
@@ -393,7 +394,7 @@ body.ReactModal__Body--open {
 
 .inline {
   border: none;
-  color: #7498FB;
+  color: #82aaff;
   font-size: 14px;
   font-size: 1.4rem;
   padding: 0;
@@ -426,36 +427,35 @@ body.ReactModal__Body--open {
   color: #faf9f9; }
 
 .fa-angle-down {
-  color: #7498FB; }
+  color: #82aaff; }
 
 .rate__color {
   display: block;
   font-size: 20px;
-  font-weight: 400;
-  margin-top: 2rem;
-  margin-bottom: 1rem; }
+  font-size: 2rem;
+  font-weight: 400; }
 
 @media only screen and (max-width: 768px) {
   .rate__color {
     margin-top: 1rem; } }
 
 .rate__color--verybad {
-  color: #BC2026; }
+  color: #ED5E68; }
 
 .rate__color--poor {
-  color: #EF4723; }
+  color: #FE8DB2; }
 
 .rate__color--fair {
-  color: #F68E1F; }
+  color: #F5A622; }
 
 .rate__color--good {
-  color: #FECC09; }
+  color: #82aaff; }
 
 .rate__color--verygood {
-  color: #B0DF60; }
+  color: #58E0C2; }
 
 .rate__color--excellent {
-  color: #0F9246; }
+  color: #c3e88d; }
 
 fieldset {
   border: none;
@@ -513,7 +513,7 @@ select {
   margin-bottom: 20px;
   font-size: 14px;
   font-size: 1.4rem;
-  color: #BC2026; }
+  color: #ED5E68; }
 
 .message {
   padding: 15px 30px;
@@ -554,12 +554,12 @@ select {
   color: #482e03; }
 
 .message__info {
-  color: #052e9e;
-  background-color: #d7e1fe;
-  border-color: #d7e1fe; }
+  color: #003ab5;
+  background-color: #e8efff;
+  border-color: #e8efff; }
 
 .message__info .message__close {
-  color: #052e9e; }
+  color: #003ab5; }
 
 .message__close {
   background: none;
@@ -668,17 +668,17 @@ select {
   background-image: url("../assets/SVG/chevron-left.svg");
   background-repeat: no-repeat;
   background-position: center left;
-  border: 1px solid #7498FB;
+  border: 1px solid #82aaff;
   text-transform: uppercase;
   text-decoration: none;
-  color: #7498FB;
+  color: #82aaff;
   padding: .7rem 2rem;
   border-radius: 100px;
   margin-right: 2rem;
   transition: all .2s; }
 
 .header__back:hover {
-  background-color: #7498FB;
+  background-color: #82aaff;
   color: #fff; }
 
 .box {
@@ -765,7 +765,7 @@ select {
   background-image: url("../assets/SVG/office.svg"); }
 
 .box__icon--2 {
-  background: #7498FB; }
+  background: #82aaff; }
 
 .box__icon--2::before {
   background-image: url("../assets/SVG/star-full.svg"); }
@@ -974,12 +974,12 @@ select {
     border-bottom: 3px solid #ccc; } }
 
 .side-navigation__item--active::before, .side-navigation__item--active:hover::before {
-  border-left: 3px solid #7498FB; }
+  border-left: 3px solid #82aaff; }
 
 @media only screen and (max-width: 768px) {
   .side-navigation__item--active::before, .side-navigation__item--active:hover::before {
     border-left: none;
-    border-bottom: 3px solid #7498FB; } }
+    border-bottom: 3px solid #82aaff; } }
 
 .side-navigation__item:nth-child(1):before {
   background-image: url("../assets/SVG/home.svg"); }
@@ -1098,13 +1098,23 @@ select {
   text-transform: uppercase;
   font-weight: 200; }
 
-.opinion__hotel-rating {
-  font-size: 24px;
-  font-size: 2.4rem;
-  color: #777;
-  margin-right: 0.5rem; }
+.hotel__opinion {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0; }
 
-.opinion__hotel-reviews {
+@media only screen and (max-width: 768px) {
+  .hotel__opinion {
+    margin: 0; } }
+
+.hotel__opinion--rating {
+  color: #777;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-right: 2rem; }
+
+.hotel__opinion--reviews {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 200; }
@@ -1178,10 +1188,6 @@ select {
 .hotel__container--list .hotel__more-details {
   right: 0; }
 
-.hotel__container--list .rate__color {
-  margin: 0;
-  margin-right: 10px; }
-
 .hotel__container--list .hotel__description {
   grid-column-start: 2;
   grid-row-start: 2; }
@@ -1200,7 +1206,6 @@ select {
     margin: 1.5rem 0; } }
 
 .hotel__container--list .hotel__price {
-  margin-right: 10px;
   font-size: 25px;
   font-size: 2.5rem; }
 
@@ -1210,8 +1215,8 @@ select {
     font-size: 20px;
     font-size: 2rem; } }
 
-.hotel__container--list .opinion__hotel-rating {
-  margin-right: 10px; }
+.hotel__container--list .hotel__opinion {
+  margin: 0; }
 
 .hotel__container--list .hotel__link {
   font-size: 15px;
@@ -1351,7 +1356,7 @@ select {
   color: #777; }
 
 .hotel__price span {
-  color: #7498FB; }
+  color: #82aaff; }
 
 .hotel__isNew {
   width: 55px;
@@ -1382,7 +1387,7 @@ select {
 
 .hotel__link:hover {
   text-decoration: underline;
-  color: #7498FB; }
+  color: #82aaff; }
 
 .hotel__address-container {
   display: flex;
@@ -1430,7 +1435,7 @@ select {
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: underline;
-  color: #B0DF60;
+  color: #c3e88d;
   margin-left: 1rem; }
 
 .payments {
@@ -1442,11 +1447,8 @@ select {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: relative; }
-
-.viewSwitcher__views {
-  padding: 1rem;
-  display: flex; }
+  position: relative;
+  padding: 1rem; }
 
 .viewSwitcher__filter {
   display: inline-block;
@@ -1529,7 +1531,7 @@ select {
   height: 1rem;
   width: 1rem;
   margin-right: .7rem;
-  background-color: #7498FB;
+  background-color: #82aaff;
   -webkit-mask-image: url(../assets/SVG/chevron-thin-right.svg);
   -webkit-mask-size: cover; }
 
@@ -1589,7 +1591,7 @@ select {
   color: #999; }
 
 .detail .user-reviews .review__rating {
-  color: #7498FB;
+  color: #82aaff;
   font-size: 2.2rem;
   font-weight: 300; }
 
@@ -1639,7 +1641,7 @@ select {
 
 .cube-folding span::before {
   content: '';
-  background-color: #7498FB;
+  background-color: #82aaff;
   position: absolute;
   left: 0;
   top: 0;
@@ -1654,21 +1656,21 @@ select {
 
 .cube-folding .leaf2::before {
   animation-delay: .30s;
-  background-color: #5b86fa; }
+  background-color: #6999ff; }
 
 .cube-folding .leaf3 {
   transform: rotateZ(270deg) scale(1.1); }
 
 .cube-folding .leaf3::before {
   animation-delay: .90s;
-  background-color: #5b86fa; }
+  background-color: #6999ff; }
 
 .cube-folding .leaf4 {
   transform: rotateZ(180deg) scale(1.1); }
 
 .cube-folding .leaf4::before {
   animation-delay: .60s;
-  background-color: #4273fa; }
+  background-color: #4f87ff; }
 
 @keyframes folding {
   0%, 10% {
@@ -1709,7 +1711,7 @@ select {
   font-size: 12px;
   letter-spacing: 0.1em;
   display: block;
-  color: #7498FB;
+  color: #82aaff;
   position: relative;
   top: 25px;
   z-index: 2;
@@ -1786,7 +1788,7 @@ select {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #7498FB;
+  background: #82aaff;
   animation-timing-function: cubic-bezier(0, 1, 1, 0); }
 
 .lds-ellipsis__item:nth-child(1) {
@@ -2425,7 +2427,7 @@ select {
   width: 75%; }
 
 .hotel-review__send {
-  background-color: #B0DF60;
+  background-color: #c3e88d;
   width: 25%;
   position: relative;
   right: 0;
@@ -2436,19 +2438,19 @@ select {
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: #C9E995;
+  color: #c3e88d;
   text-transform: uppercase;
   transition: all .4s ease-in; }
 
 .hotel-review__send:hover {
-  background-color: #7fb524; }
+  background-color: #96d738; }
 
 .hotel-review__sendIcon {
   width: 55px;
   margin-bottom: 15px; }
 
 .hotel-review__label {
-  color: #7498FB;
+  color: #82aaff;
   margin-bottom: 8px;
   font-size: 14px;
   font-size: 1.4rem;

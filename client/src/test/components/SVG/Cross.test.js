@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {Cross} from "./../../../components/SVG/Cross";
+import {Cross} from "../../../components/SVG/Cross";
 
 describe("Component: Cross", () => {
 	test("should render Cross component correctly", () => {

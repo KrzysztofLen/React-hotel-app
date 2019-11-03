@@ -77,11 +77,6 @@
 				right: 0;
 			}
 
-			.rate__color {
-				margin: 0;
-				margin-right: 10px;
-			}
-
 			.hotel__description {
 				grid-column-start: 2;
 				grid-row-start: 2;
@@ -102,18 +97,17 @@
 			}
 
 			.hotel__price {
-				margin-right: 10px;
 				@include font-size(2.5);
 
 				@include media-queries(L) {
 					width: 30%;
 					@include font-size(2);
 				}
-			}
-
-			.opinion__hotel-rating {
-				margin-right: 10px;
-			}
+            }
+            
+            .hotel__opinion {
+                margin: 0;
+            }
 
 			.hotel__link {
 				@include font-size(1.5);

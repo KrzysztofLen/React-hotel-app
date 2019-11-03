@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {GooglePlus} from "./../../../components/SVG/GooglePlus";
+import {GooglePlus} from "../../../components/SVG/GooglePlus";
 
 describe("Component: GooglePlus", () => {
 	test("should render GooglePlus component correctly", () => {

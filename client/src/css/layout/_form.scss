@@ -56,6 +56,6 @@ select {
 	&__error-msg {
 		margin-bottom: 20px;
 		@include font-size(1.4);
-		color: $rate-bad;
+		color: $material-color-red;
 	}
 }

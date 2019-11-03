@@ -1,47 +1,53 @@
-import React, {Component} from 'react';
-import {List} from "../SVG/List";
-import {Full} from "../SVG/Full";
-import {connect} from "react-redux";
-import {switchView} from "../../Redux/actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-interface IProps {
-	switchView: (id: number) => number,
-	viewTypeId: number
+import { switchView } from '../../Redux/actions';
+
+import list from './../../assets/SVG/list.svg';
+import listGrey from './../../assets/SVG/list-grey.svg';
+import alignJustify from './../../assets/SVG/align-justify.svg';
+import alignJustifyGrey from './../../assets/SVG/align-justify-grey.svg';
+
+import { Props, ViewType } from './types';
+
+class ViewSwitcher extends Component<Props, {}> {
+  private setActive = (id: number) => {
+    this.props.switchView(id);
+  };
+
+  render() {
+    return (
+      <div className="viewSwitcher">
+        <div
+          className={'viewSwitcher__filter'}
+          onClick={() => this.setActive(1)}>
+          <img
+            src={this.props.viewTypeId === 1 ? alignJustify : alignJustifyGrey}
+            style={{ width: 20, height: 20 }}
+          />
+        </div>
+        <div
+          className={'viewSwitcher__filter'}
+          onClick={() => this.setActive(2)}>
+          <img
+            src={this.props.viewTypeId === 2 ? list : listGrey}
+            style={{ width: 20, height: 20 }}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
-class ViewSwitcher extends Component<IProps, {}> {
-	setActive = (id: number) => {
-		this.props.switchView(id);
-	};
+const mapStateToProps = ({ viewTypeId }: ViewType) => {
+  return {
+    viewTypeId,
+  };
+};
 
-	render() {
-		return (
-			<React.Fragment>
-				<div className="viewSwitcher">
-					<div className="viewSwitcher__views">
-						<div
-							className={this.props.viewTypeId === 1 ? "viewSwitcher__filter viewSwitcher__filter--active" : "viewSwitcher__filter"}
-							onClick={() => this.setActive(1)}><Full width="20" height="20"/></div>
-						<div
-							className={this.props.viewTypeId === 2 ? "viewSwitcher__filter viewSwitcher__filter--active" : "viewSwitcher__filter"}
-							onClick={() => this.setActive(2)}><List width="20" height="20"/></div>
-					</div>
-				</div>
-			</React.Fragment>
-		)
-	}
-}
+const mapDispatchToProps = { switchView };
 
-interface IViewType {
-	viewTypeId: number
-}
-
-function mapStateToProps({viewTypeId}: IViewType) {
-	return {
-		viewTypeId,
-	}
-}
-
-const mapDispatchToProps = {switchView};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ViewSwitcher);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ViewSwitcher);
