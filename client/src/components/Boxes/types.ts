@@ -1,6 +1,6 @@
-import { IHotel } from '../../types';
+import { Hotel } from '../../types';
 
 export type Props = {
   hotelsNumberInDatabase: number;
-  hotelsList: IHotel[];
+  hotelsList: Hotel[];
 };

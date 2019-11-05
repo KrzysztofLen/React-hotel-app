@@ -46,7 +46,7 @@ class Boxes extends PureComponent<Props, {}> {
         <Box
           index={1}
           title={'Total Hotels'}
-          value={this.props.hotelsNumberInDatabase}
+          value={this.props.hotelsList.length}
         />
         <Box
           index={2}
@@ -62,7 +62,6 @@ class Boxes extends PureComponent<Props, {}> {
 
 const mapStateToProps = (state: any) => {
   return {
-    hotelsNumberInDatabase: state.hotelsNumberInDatabase,
     hotelsList: state.hotelsList,
   };
 };

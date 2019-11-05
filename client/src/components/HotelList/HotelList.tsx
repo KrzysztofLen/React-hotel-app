@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HotelListItem from '../HotelListItem/HotelListItem';
 import { Spinner } from '../Spinner/Spinner';
 
-import { IHotel } from '../../types';
+import { Hotel } from '../../types';
 import { Props, State } from './types';
 
 class HotelsList extends Component<Props, State> {
@@ -34,14 +34,14 @@ class HotelsList extends Component<Props, State> {
 
   render() {
     const count: number = this.state.page * this.state.perPage;
-    const visibleHotels: Array<IHotel> = this.props.hotels.slice(0, count);
+    const visibleHotels: Array<Hotel> = this.props.hotels.slice(0, count);
 
     return (
       <main className="hotel-list">
         <div className="content__container">
           <div className={'hotel-list__container'}>
             {visibleHotels.map(
-              (hotel: IHotel, index: number): Object => (
+              (hotel: Hotel, index: number): Object => (
                 <HotelListItem
                   data={hotel}
                   key={hotel._id}

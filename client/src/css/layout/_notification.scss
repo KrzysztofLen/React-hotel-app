@@ -1,23 +1,21 @@
-.message {
-	padding: 15px 30px;
+.notification {
 	border: 1px solid transparent;
 	border-radius: 4px;
 	position: fixed;
 	right: 0;
 	min-width: 300px;
 	@include font-size(1.6);
-	z-index: 999;
-
-	&--static {
-		position: relative;
-	}
+    z-index: 999;
+    cursor: pointer;
+    right: 18px;
+    top: 18px;
 
 	&__success{
 		color: darken($material-color-green, 40%);
 		background-color: lighten($material-color-green, 20%);
 		border-color: lighten($material-color-green, 20%);
 
-		.message__close {
+		.notification__close {
 			color: darken($material-color-green, 40%);
 		}
 	}
@@ -27,7 +25,7 @@
 		background-color: lighten($material-color-red, 20%);
 		border-color: lighten($material-color-red, 20%);
 
-		.message__close {
+		.notification__close {
 			color: darken($material-color-red, 40%);
 		}
 	}
@@ -37,7 +35,7 @@
 		background-color: lighten($material-color-yellow, 20%);
 		border-color: lighten($material-color-yellow, 20%);
 
-		.message__close {
+		.notification__close {
 			color: darken($material-color-yellow, 40%);
 		}
 	}
@@ -47,7 +45,7 @@
 		background-color: lighten($material-color-blue, 20%);
 		border-color: lighten($material-color-blue, 20%);
 
-		.message__close {
+		.notification__close {
 			color: darken($material-color-blue, 40%);
 		}
 	}
@@ -60,5 +58,14 @@
 		top: 0;
 		right: 0;
 		padding: 5px 10px;
-	}
+    }
+    
+    &__progressBar {
+        height: 5px;
+        background-color: red;
+    }
+
+    &__text {
+        padding: 15px 30px;
+    }
 }

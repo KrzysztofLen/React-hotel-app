@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import * as actions from '../../Redux/actions';
-import { IHotel } from '../../types';
+import { Hotel } from '../../types';
 
 // Components
 import { TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS } from './formFields';
 import ToggleSwitch from '../External/ToggleSwitch/ToggleSwitch';
 import DropzoneElement from '../External/Dropzone/DropzoneElement';
-import Messages from '../External/Messages/Messages';
+import Notification from '../External/Notification/Notification';
 
 interface IState {
   files: Array<any>;
-  fields: Partial<IHotel>;
+  fields: Partial<Hotel>;
   errors: any;
   hotel_images: any;
 }
@@ -282,7 +282,7 @@ class AddHotelForm extends Component<IProps, IState> {
     return (
       <div className={'hotel-form'}>
         {isErrors !== true && (
-          <Messages type={'danger'} message={ErrorMessageEnum.provideValue} />
+          <Notification type={'danger'} text={ErrorMessageEnum.provideValue} />
         )}
         <div className="hotel-form__container">
           <div className={'content__header-wrapper'}>

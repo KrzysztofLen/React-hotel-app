@@ -24,22 +24,6 @@ export const searchHotels = (text) => ({
   text,
 });
 
-export const fetchHotelsLength = () => async (dispatch) => {
-  function onSuccess(success) {
-    dispatch({
-      type: types.HOTELS_LENGTH,
-      payload: success,
-    });
-    return success;
-  }
-  try {
-    const response = await axios.get('/api/count');
-    return onSuccess(response.data.result);
-  } catch (e) {
-    dispatch(systemError(e));
-  }
-};
-
 export const addHotel = (values) => ({
   type: types.ADD_HOTEL,
   payload: values,

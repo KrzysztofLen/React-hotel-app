@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import { Logo } from '../Logo/Logo';
-import Messages from '../External/Messages/Messages';
+import Notification from '../External/Notification/Notification';
 
 interface IProps {
   to: string;
@@ -53,9 +53,9 @@ class Navigation extends React.Component<{}, IState> {
     return (
       <React.Fragment>
         {this.state.isUnderBreakpoint && (
-          <Messages
+          <Notification
             type={'danger'}
-            message={
+            text={
               'Your device resolution is under supported value. Some content may not appear correctly'
             }
           />

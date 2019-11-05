@@ -409,7 +409,7 @@ body.ReactModal__Body--open {
   background: transparent; }
 
 .logo {
-  height: 3.25rem; }
+  height: 7.25rem; }
 
 .logo__container {
   width: 8rem;
@@ -515,8 +515,7 @@ select {
   font-size: 1.4rem;
   color: #ED5E68; }
 
-.message {
-  padding: 15px 30px;
+.notification {
   border: 1px solid transparent;
   border-radius: 4px;
   position: fixed;
@@ -524,44 +523,44 @@ select {
   min-width: 300px;
   font-size: 16px;
   font-size: 1.6rem;
-  z-index: 999; }
+  z-index: 999;
+  cursor: pointer;
+  right: 18px;
+  top: 18px; }
 
-.message--static {
-  position: relative; }
-
-.message__success {
+.notification__success {
   color: #115b4b;
   background-color: #aef0e1;
   border-color: #aef0e1; }
 
-.message__success .message__close {
+.notification__success .notification__close {
   color: #115b4b; }
 
-.message__danger {
+.notification__danger {
   color: #720d14;
   background-color: #f7babe;
   border-color: #f7babe; }
 
-.message__danger .message__close {
+.notification__danger .notification__close {
   color: #720d14; }
 
-.message__warning {
+.notification__warning {
   color: #482e03;
   background-color: #f9cd84;
   border-color: #f9cd84; }
 
-.message__warning .message__close {
+.notification__warning .notification__close {
   color: #482e03; }
 
-.message__info {
+.notification__info {
   color: #003ab5;
   background-color: #e8efff;
   border-color: #e8efff; }
 
-.message__info .message__close {
+.notification__info .notification__close {
   color: #003ab5; }
 
-.message__close {
+.notification__close {
   background: none;
   border: none;
   font-size: 25px;
@@ -569,6 +568,13 @@ select {
   top: 0;
   right: 0;
   padding: 5px 10px; }
+
+.notification__progressBar {
+  height: 5px;
+  background-color: red; }
+
+.notification__text {
+  padding: 15px 30px; }
 
 .dropdown__menu {
   display: flex;

@@ -48,7 +48,6 @@ app.use(passport.session());
 
 // ROUTES ##############################################################################################################
 require("./server/routes/hotelsRoutes")(app);
-require("./server/routes/countRoutes")(app);
 require("./server/routes/topRoutes")(app);
 require("./server/routes/authRoutes")(app);
 

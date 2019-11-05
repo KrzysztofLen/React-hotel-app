@@ -15,7 +15,7 @@ export const ERROR: string = 'ERROR';
 // ENTRIES API URL'S
 
 // GLOBAL INTERFACE
-export interface IHotel {
+export type Hotel = {
   _id: number;
   hotel_name: string;
   hotel_adress: string;
@@ -35,4 +35,4 @@ export interface IHotel {
   facilities_card_payment: boolean;
   facilities_game_room: boolean;
   hotel_images?: Array<string>;
-}
+};

@@ -1,9 +1,9 @@
-import { IHotel } from '../../types';
+import { Hotel } from '../../types';
 
 export type Props = {
   readonly viewTypeId: number;
   readonly deleteHotel: (id: any) => any;
-  readonly data: IHotel;
+  readonly data: Hotel;
   readonly id: number;
   readonly index: number;
 };
