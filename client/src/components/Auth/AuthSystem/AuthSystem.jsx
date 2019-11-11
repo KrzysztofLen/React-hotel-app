@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Cross } from '../../SVG/Cross';
-import Payments from '../../Payments/Payments';
 import { Check } from '../../SVG/Check';
 import ModalWindow from '../../ModalWindow/ModalWindow';
 import Auth from '../Auth';
@@ -56,13 +55,6 @@ class AuthSystem extends React.Component {
       default:
         return (
           <Dropdown>
-            <span className="credits">
-              Credits:{' '}
-              <span className="credits__value">
-                {this.props.currentUserAuth.credits}
-              </span>
-            </span>
-            <Payments />
             <a href="/api/logout" className="button is-danger">
               Logout
               <Cross width={20} height={20} />

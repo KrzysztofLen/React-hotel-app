@@ -1,5 +1,5 @@
 const express = require("express");
-require("./server/db/mongoose");
+require("./db/mongoose");
 const path = require("path");
 const app = express();
 const cors = require("cors");
@@ -7,15 +7,15 @@ const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const morgan = require("morgan");
-const keys = require("./server/config/keys");
+const keys = require("./config/keys");
 const session = require("express-session");
 
 // MODELS ##############################################################################################################
-require("./server/models/Users");
-require("./server/models/hotel");
+require("./models/Users");
+require("./models/hotel");
 
 // SERVICES ############################################################################################################
-require("./server/services/passport")(passport); // pass passport for configuration
+require("./services/passport")(passport); // pass passport for configuration
 
 // set up our express application ######################################################################################
 app.use(morgan("dev"));
@@ -47,9 +47,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // ROUTES ##############################################################################################################
-require("./server/routes/hotelsRoutes")(app);
-require("./server/routes/topRoutes")(app);
-require("./server/routes/authRoutes")(app);
+require("./routes/hotelsRoutes")(app);
+require("./routes/topRoutes")(app);
+require("./routes/authRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
@@ -60,6 +60,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // MIDDLEWARES #########################################################################################################
-require("./server/middlewares/serverLog.js")(app);
+require("./middlewares/serverLog.js")(app);
 
 module.exports = app;

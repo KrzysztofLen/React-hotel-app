@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Search from '../../components/Search/Search';
-// import LoginSystem from '../../components/Auth/AuthSystem/AuthSystem';
+import LoginSystem from '../../components/Auth/AuthSystem/AuthSystem';
 import HotelsList from '../../components/HotelList/HotelList';
 import { getFilteredHotels } from '../../utils/getFilteredHotels';
 import { connect } from 'react-redux';
@@ -45,7 +45,7 @@ class HotelsView extends Component<Props, State> {
           {/* //#TODO
                         currently auth system doesn't work except google gmail passport authorization. Only localhost,
                         on prod erorr with URI. Below component is commented to not show Login buttons */}
-          {/*<LoginSystem/>*/}
+          <LoginSystem />
         </header>
         <div className="content">
           <div className={'content__header-wrapper'}>
