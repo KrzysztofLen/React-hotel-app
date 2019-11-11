@@ -7,6 +7,6 @@ exports[`HotelImage component it should render HotelImage component correctly 1`
       Click
     </span>
   </div>
-  <img className=\\"hotel__image\\" src=\\"h\\" alt=\\"xyz\\" />
+  <img className=\\"hotel__image\\" src=\\"h\\" alt=\\"zyx\\" />
 </Fragment>"
 `;

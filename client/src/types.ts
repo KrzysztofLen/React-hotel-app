@@ -36,3 +36,20 @@ export type Hotel = {
   facilities_game_room: boolean;
   hotel_images?: Array<string>;
 };
+
+export type User = {
+  readonly googleId: string;
+  readonly name: string;
+  readonly id: string;
+  readonly emails: Array<UserEmails>;
+  readonly photos: Array<UserPhotos>;
+};
+
+export type UserEmails = {
+  value: string;
+  verified: boolean;
+};
+
+export type UserPhotos = {
+  value: string;
+};

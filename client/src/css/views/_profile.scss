@@ -1,0 +1,53 @@
+.profile {
+  background: $color-dash-background;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+
+  &__content {
+    margin: 10px 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background: $color-white;
+    padding: 20px;
+    border-radius: 5px;
+
+    @include media-queries(M) {
+        width: calc(100% - 15rem);
+      }
+  }
+
+  &__label {
+    @include font-weight(200);
+  }
+
+  &__photos {
+    margin-bottom: 2rem;
+  }
+
+  &__photo {
+    max-width: 100px;
+    width: 100px;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    @include font-size(2);
+    margin-bottom: 2rem;
+  }
+
+  &__email {
+    display: flex;
+    justify-content: space-between;
+    @include font-size(2);
+    margin-bottom: 2rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
