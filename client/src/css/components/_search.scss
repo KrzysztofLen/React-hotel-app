@@ -1,6 +1,6 @@
 .search {
   flex: 0 0 calc(60% - 8rem);
-
+  height: 8rem;
   display: flex;
   align-items: center;
   margin-left: 8rem;
@@ -15,8 +15,8 @@
     position: absolute;
     background-image: url('../assets/SVG/magnifying-glass.svg');
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 27px;
+    background-position: 1.2rem center;
+    background-size: 2.7rem;
     width: $navWidth;
     height: 8rem;
 
@@ -28,14 +28,17 @@
   }
 
   &__input {
+    @include themify($themes) {
+      background-color: themed('search-background');
+    }
     font-family: inherit;
     @include font-size(2.2);
-    background-color: $color-white;
     border: none;
     color: inherit;
-    padding-left: 4rem;
-    height: 8rem;
-    width: 90%;
+    padding-left: 6rem;
+    width: 60%;
+    border-radius: 2rem;
+    line-height: 4rem;
     transition: all 0.2s;
     display: flex;
     align-items: center;

@@ -19,7 +19,6 @@
 @import "layout/breakpoints";
 @import "layout/content";
 @import "layout/buttons";
-@import "layout/logo";
 @import "layout/icons";
 @import "layout/rate";
 @import "layout/form";
@@ -41,14 +40,12 @@
 @import "components/hotel-overview";
 @import "components/hotel-opinion";
 @import "components/hotel";
-@import "components/payments";
 @import "components/viewSwitcher";
 @import "components/hotel-details";
 @import "components/facilities";
 @import "components/loader";
 @import "components/login-system";
 @import "components/rating";
-@import "components/footer";
 @import "components/spinner";
 @import "components/addHotelForm";
 @import "components/success";
@@ -77,7 +74,7 @@
 /* ------------- */
 /*		THEMES    */
 /* ------------- */
-
+@import "themes/theme";
 
 /* ------------- */
 /*		VENDORS    */

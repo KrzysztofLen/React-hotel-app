@@ -1,5 +1,10 @@
+@import "../themes/theme.scss";
+
 .content {
-	background: $color-dash-background;
+    @include themify($themes) {
+        background: themed('color-dash-background');
+    }
+
 	display: flex;
 	flex-direction: column;
 	width: 100%;

@@ -11,6 +11,7 @@ export const AUTH_USER: string = 'AUTH_USER';
 export const AUTH_ERROR: string = 'AUTH_ERROR';
 export const ADD_HOTEL: string = 'ADD_HOTEL';
 export const ERROR: string = 'ERROR';
+export const SET_THEME: string = 'SET_THEME';
 
 // ENTRIES API URL'S
 

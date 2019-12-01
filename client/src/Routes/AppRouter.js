@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +12,7 @@ import AddHotelsView from '../Views/AddHotelsView/AddHotelsView';
 import BuyHotelsView from '../Views/BuyHotelsView/BuyHotelsView';
 import ReservationsView from '../Views/ReservationsView/ReservationsView';
 import ProfileView from '../Views/ProfileView/ProfileView';
-// import {connect} from "react-redux";
+import { connect } from 'react-redux';
 // import * as actions from "../Redux/actions";
 import AddHotelSuccess from '../components/AddHotel/AddHotelSuccess';
 import Forbidden from '../components/Forbidden/Forbidden';
@@ -44,11 +44,11 @@ import NoMatch from '../components/NoMatch/NoMatch';
 // 	)
 // };
 
-class AppRouter extends React.Component {
+class AppRouter extends PureComponent {
   render() {
     return (
       <Router>
-        <div className={'hotel-app'}>
+        <div className={`hotel-app ${this.props.system.theme}`}>
           <Navigation />
           <Switch>
             <Route path="/" exact component={HotelsView} />
@@ -71,11 +71,13 @@ class AppRouter extends React.Component {
   }
 }
 
-// function mapStateToProps({currentUserAuth}) {
-// 	return {
-// 		currentUserAuth
-// 	};
-// }
+const mapStateToProps = (state) => {
+  return {
+    system: state.system,
+  };
+};
 
-//export default connect(null, actions)(AppRouter);
-export default AppRouter;
+export default connect(
+  mapStateToProps,
+  null,
+)(AppRouter);

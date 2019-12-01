@@ -1,0 +1,22 @@
+$themes: (
+  light: (
+    color-dash-background: #f5f8fd,
+    header-background: $color-white,
+    search-background: $color-white,
+    label-color: $color-grey-dark-1,
+    profile-name-color: $color-grey-dark-2,
+    side-navigation-background: $color-white,
+    view-header-color: $color-grey-dark-1,
+    side-nav-active: 3px solid $material-color-blue
+  ),
+  dark: (
+    color-dash-background: #1f2327,
+    header-background: #33363b,
+    search-background: #484a4f,
+    label-color: $color-white,
+    profile-name-color: $color-white,
+    side-navigation-background: #33363b,
+    view-header-color: $color-white,
+    side-nav-active: 3px solid #09d3ac,
+  ),
+);

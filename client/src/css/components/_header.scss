@@ -1,31 +1,48 @@
 @import '../layout/breakpoints';
 
 .header {
-	font-size: 1.4rem;
-	height: $base-height-space;
-	background-color: $color-white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
+  font-size: 1.4rem;
+  height: $base-height-space;
+  background-color: $color-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 
-	&__back {
-		background-color: transparent;
-		background-image: url('../assets/SVG/chevron-left.svg');
-		background-repeat: no-repeat;
-		background-position: center left;
-		border: 1px solid $material-color-blue;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: $material-color-blue;
-		padding: .7rem 2rem;
-		border-radius: 100px;
-		margin-right: 2rem;
-		transition: all .2s;
+  @include themify($themes) {
+    background-color: themed('header-background');
+  }
 
-		&:hover {
-			background-color: $material-color-blue;
-			color: $color-white;
-		}
-	}
+  &__back {
+    background-color: transparent;
+    background-image: url('../assets/SVG/chevron-left.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    border: 1px solid $material-color-blue;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $material-color-blue;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    margin-right: 2rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $material-color-blue;
+      color: $color-white;
+    }
+  }
+
+  &__darkMode {
+    display: flex;
+    align-items: center;
+    flex-basis: calc(20% - 8rem);
+    height: 100%;
+
+    label {
+      position: relative;
+      padding: 0;
+      margin: 0 1rem;
+    }
+  }
 }

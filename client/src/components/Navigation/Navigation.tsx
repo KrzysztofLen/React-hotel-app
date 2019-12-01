@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { NavLink, Route } from 'react-router-dom';
-import { Logo } from '../Logo/Logo';
 import Notification from '../External/Notification/Notification';
 
 interface IProps {
@@ -61,7 +60,6 @@ class Navigation extends React.Component<{}, IState> {
           />
         )}
         <nav className={'side-navigation'}>
-          <Logo />
           <ul className={'side-navigation__container'}>
             <SideMenuLink activeOnlyWhenExact={true} to="/" />
             <SideMenuLink to="/buy" />

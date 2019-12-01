@@ -6,7 +6,7 @@ class Notification extends Component<Props, State> {
   private myInterval: any;
 
   static defaultProps: defaultProps = {
-    autoClose: 50000,
+    autoClose: 5000,
     closeOnClick: true,
     type: 'default',
   };

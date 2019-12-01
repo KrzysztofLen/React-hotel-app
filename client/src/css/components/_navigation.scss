@@ -1,135 +1,137 @@
 .side-navigation {
-	background-color: $color-white;
-	width: $navWidth;
-	display: flex;
-	flex-direction: column;
-	border-right: 1px solid $color-grey-light-1;
+  @include themify($themes) {
+    background-color: themed('side-navigation-background');
+  }
+  width: $navWidth;
+  display: flex;
+  flex-direction: column;
 
-	@include media-queries(M) {
-		width: 100%;
-		flex-direction: row;
-		border: none;
-		height: $base-height-space;
-	}
+  @include media-queries(M) {
+    width: 100%;
+    flex-direction: row;
+    border: none;
+    height: $base-height-space;
+  }
 
-	&__container {
-		font-size: 1.4rem;
-		list-style: none;
-		margin-top: 3.5rem;
-		padding: 0;
-		display: flex;
-		margin: 0;
-		padding: 0;
-		flex-direction: column;
-		margin-top: 40px;
+  &__container {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin-top: 8rem;
 
-		@include media-queries(M) {
-			flex-direction: row;
-			width: 80%;
-			justify-content: space-around;
-			height: $base-height-space;
-			margin: 0 auto;
-		}
-	}
+    @include media-queries(M) {
+      flex-direction: row;
+      width: 80%;
+      justify-content: space-around;
+      height: $base-height-space;
+      margin: 0 auto;
+    }
+  }
 
-	&__item {
-		position: relative;
-		margin: 0;
-		cursor: pointer;
-		width: $navWidth;
-		height: calc(8rem - 3px);
+  &__item {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    width: $navWidth;
+    height: calc(8rem - 3px);
 
-		@include media-queries(M) {
-			width: 100%;
-		}
+    @include media-queries(M) {
+      width: 100%;
+    }
 
-		&:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			transition: transform .2s,
-			width .4s cubic-bezier(1, 0, 0, 1) .2s,
-			background-color .1s;
-			background-repeat: no-repeat;
-			background-position: 20px center;
-			transform: scaleY(1);
-			width: 100%;
-			border-left: 3px solid transparent;
-			background-position: center;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+        background-color 0.1s;
+      background-repeat: no-repeat;
+      background-position: 20px center;
+      transform: scaleY(1);
+      width: 100%;
+      border-left: 3px solid transparent;
+      background-position: center;
 
-			@include media-queries(M) {
-				border-left: none;
-				border-bottom: 3px solid transparent;
-			}
-		}
+      @include media-queries(M) {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+      }
+    }
 
-		&:hover::before {
-			border-left: 3px solid $color-grey-light-4;
+    &:hover::before {
+      border-left: 3px solid $color-grey-light-4;
 
-			@include media-queries(M) {
-				border-left: none;
-				border-bottom: 3px solid $color-grey-light-4;
-			}
-		}
+      @include media-queries(M) {
+        border-left: none;
+        border-bottom: 3px solid $color-grey-light-4;
+      }
+    }
 
-		&--active::before,
-		&--active:hover::before {
-			border-left: 3px solid $material-color-blue;
+    &--active::before,
+    &--active:hover::before {
+      @include themify($themes) {
+        border-left: themed('side-nav-active');
+      }
 
-			@include media-queries(M) {
-				border-left: none;
-				border-bottom: 3px solid $material-color-blue;
-			}
-		}
+      @include media-queries(M) {
+        border-left: none;
+        border-bottom: 3px solid $material-color-blue;
+      }
+    }
 
-		&:nth-child(1):before {
-			background-image: url('../assets/SVG/home.svg');
-		}
+    &:nth-child(1):before {
+      background-image: url('../assets/SVG/home.svg');
+    }
 
-		&:nth-child(2):before {
-			background-image: url('../assets/SVG/paypal.svg');
-		}
+    &:nth-child(2):before {
+      background-image: url('../assets/SVG/paypal.svg');
+    }
 
-		&:nth-child(3):before {
-			background-image: url('../assets/SVG/shopping-cart.svg');
-		}
+    &:nth-child(3):before {
+      background-image: url('../assets/SVG/shopping-cart.svg');
+    }
 
-		&:nth-child(4):before {
-			background-image: url('../assets/SVG/folder.svg');
-		}
-	}
+    &:nth-child(4):before {
+      background-image: url('../assets/SVG/folder.svg');
+    }
+  }
 
-	&__link:link,
-	&__link:visited {
-		color: $color-grey-light-1;
-		text-decoration: none;
-		text-transform: uppercase;
-		padding: 0;
-		z-index: 10;
-		position: relative;
-		width: 100%;
-		height: 100%;
+  &__link:link,
+  &__link:visited {
+    color: $color-grey-light-1;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-		display: flex;
-		align-items: center;
-	}
+    display: flex;
+    align-items: center;
+  }
 
-	&__icon {
-		width: 1.75rem;
-		height: 1.75rem;
-		margin-right: 2rem;
-		fill: currentColor;
-	}
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor;
+  }
 
-	&__link {
-		span {
-			margin-left: 8rem;
+  &__link {
+    span {
+      margin-left: 8rem;
 
-			@include media-queries(L) {
-				margin-left: 2rem;
-			}
-		}
-	}
+      @include media-queries(L) {
+        margin-left: 2rem;
+      }
+    }
+  }
 }
