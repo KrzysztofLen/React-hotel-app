@@ -1,10 +1,23 @@
 {
-  "setupFiles": [
-    "raf/polyfill",
-    "<rootDir>/src/setupTests.js"
-  ],
-  "snapshotSerializers": ["enzyme-to-json/serializer"],
-  "moduleNameMapper": {
-    ".+\\.(css|styl|svg|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
-  }
+    "setupFiles": [
+        "raf/polyfill",
+        "<rootDir>/src/setupEnzyme.ts"
+    ],
+    "snapshotSerializers": [
+        "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+        ".+\\.(css|styl|svg|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
+    "transform": {
+        "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ]
 }

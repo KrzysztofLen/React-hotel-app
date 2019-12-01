@@ -2623,7 +2623,7 @@ select {
   min-height: 100vh; }
 
 .profile__content {
-  margin: 10px 5rem;
+  margin: 0 8rem;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -2634,6 +2634,10 @@ select {
 @media only screen and (max-width: 768px) {
   .profile__content {
     width: calc(100% - 15rem); } }
+
+@media only screen and (max-width: 1024px) {
+  .profile__content {
+    margin: 0 5rem; } }
 
 .profile__label {
   font-weight: 200; }

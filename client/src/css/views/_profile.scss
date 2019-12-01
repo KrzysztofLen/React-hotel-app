@@ -6,7 +6,7 @@
   min-height: 100vh;
 
   &__content {
-    margin: 10px 5rem;
+    margin: 0 8rem;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -15,8 +15,12 @@
     border-radius: 5px;
 
     @include media-queries(M) {
-        width: calc(100% - 15rem);
-      }
+      width: calc(100% - 15rem);
+    }
+
+    @include media-queries(L) {
+      margin: 0 5rem;
+    }
   }
 
   &__label {

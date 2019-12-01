@@ -51,9 +51,11 @@ class ProfileView extends PureComponent<Props, {}> {
             <Link to={'/'} className="button is-primary">
               Back
             </Link>
-            <a href={'/api/logout'} className="button is-danger">
-              Logout
-            </a>
+            {this.props.currentUserAuth && (
+              <a href={'/api/logout'} className="button is-danger">
+                Logout
+              </a>
+            )}
           </div>
         </div>
       </div>
