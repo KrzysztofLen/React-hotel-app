@@ -1,11 +1,11 @@
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const mongoose = require('mongoose');
-const keys = require('../config/keys');
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const mongoose = require("mongoose");
+const keys = require("../config/keys");
 
-const User = mongoose.model('users');
+const User = mongoose.model("users");
 
 //===============//
-module.exports = (passport) => {
+module.exports = passport => {
 	passport.serializeUser((user, done) => {
 		done(null, user.id);
 	});
@@ -17,32 +17,37 @@ module.exports = (passport) => {
 	});
 
 	//  Use Strategies
-	passport.use(new GoogleStrategy({
-			clientID: keys.googleClientID,
-			clientSecret: keys.googleClientSecret,
-			callbackURL: '/auth/google/callback',
-			userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
-			proxy: true
-		},
-		async (accessToken, refreshToken, profile, done) => {
-			const existingUser = await User.findOne({
-				googleId: profile.id,
-				name: profile.displayName
-			});
+	passport.use(
+		new GoogleStrategy(
+			{
+				clientID: keys.googleClientID,
+				clientSecret: keys.googleClientSecret,
+				callbackURL: "/auth/google/callback",
+				userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+				proxy: true
+			},
+			async (accessToken, refreshToken, profile, done) => {
+				const existingUser = await User.findOne({
+					googleId: profile.id,
+					name: profile.displayName,
+					emails: profile.emails,
+					photos: profile.photos
+				});
 
-			if (existingUser) {
-				// we already have a record with the given profile Id
-				done(null, existingUser);
+				if (existingUser) {
+					// we already have a record with the given profile Id
+					done(null, existingUser);
+				}
+
+				// we dont't have a user record with this ID, make a new record
+				const user = await new User({
+					googleId: profile.id,
+					name: profile.displayName,
+					emails: profile.emails,
+					photos: profile.photos
+				}).save();
+				done(null, user);
 			}
-
-			// we dont't have a user record with this ID, make a new record
-			const user = await new User({
-				googleId: profile.id,
-				name: profile.displayName
-			}).save();
-			done(null, user);
-		})
+		)
 	);
 };
-
-

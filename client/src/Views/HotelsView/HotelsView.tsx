@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Search from '../../components/Search/Search';
-import LoginSystem from '../../components/Auth/AuthSystem/AuthSystem';
+import LoginSystem from '../../components/Profile/Profile';
 import HotelsList from '../../components/HotelList/HotelList';
 import { getFilteredHotels } from '../../utils/getFilteredHotels';
 import { connect } from 'react-redux';

@@ -4,16 +4,10 @@
 	font-size: 1.4rem;
 	height: $base-height-space;
 	background-color: $color-white;
-	border-bottom: 1px solid $color-grey-light-2;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-
-	@include media-queries(M) {
-		flex-direction: column;
-		height: auto;
-	}
 
 	&__back {
 		background-color: transparent;
