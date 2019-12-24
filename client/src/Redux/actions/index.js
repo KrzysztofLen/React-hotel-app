@@ -146,6 +146,8 @@ export const switchView = (id) => ({
 });
 
 export const setTheme = (value) => {
+  console.log(value);
+
   const theme = value ? 'theme-dark' : 'theme-light';
   localStorage.setItem('theme', theme);
 

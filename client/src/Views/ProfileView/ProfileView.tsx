@@ -4,7 +4,7 @@ import * as actions from '../../Redux/actions/index';
 import { Link } from 'react-router-dom';
 import user from './../../assets/SVG/user.svg';
 
-import GoogleSignUp from '../../components/Auth/GoogleSignUp/GoogleSignUp';
+import GoogleSignUp from '../../components/GoogleSignUp/GoogleSignUp';
 
 import { Props } from './types';
 
@@ -69,7 +69,4 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  actions,
-)(ProfileView);
+export default connect(mapStateToProps, actions)(ProfileView);

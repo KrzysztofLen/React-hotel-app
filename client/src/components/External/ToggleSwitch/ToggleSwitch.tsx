@@ -1,33 +1,38 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { State, Props } from './types';
+import { Props } from './types';
 
-class ToggleSwitch extends PureComponent<Props, State> {
-  state: State = {
-    enabled: true,
+const ToggleSwitch = (props: Props) => {
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const storageObject = localStorage.getItem(props.localStorageKey);
+    if (storageObject === props.localStorageValue) {
+      setEnabled(true);
+    }
+  });
+
+  const onToggle = (event: any) => {
+    event.persist();
+
+    setEnabled((prevEnabled) => !prevEnabled);
+    props.onClick(!enabled, event.target.id);
   };
 
-  private toggle = (e: any) => {
-    this.setState({ enabled: !this.state.enabled });
-    this.props.onClick(this.state.enabled, e.target.id);
-  };
+  return (
+    <React.Fragment>
+      <label htmlFor="">{props.label}</label>
+      <div
+        className={`switch switch--${props.theme} ${props.className}`}
+        onClick={onToggle}>
+        <div
+          className={`switch-toggle switch-toggle--${enabled ? 'on' : 'off'}`}
+          id={props.id}
+        />
+      </div>
+    </React.Fragment>
+  );
+};
 
-  render() {
-    const switchClasses = `switch switch--${this.props.theme} ${this.props.className}`;
-
-    const className = `switch-toggle switch-toggle--${
-      this.state.enabled === false ? 'on' : 'off'
-    }`;
-
-    return (
-      <React.Fragment>
-        <label htmlFor="">{this.props.label}</label>
-        <div className={switchClasses} onClick={this.toggle}>
-          <div className={className} id={this.props.id} />
-        </div>
-      </React.Fragment>
-    );
-  }
-}
-
-export default ToggleSwitch;
+const MemoizedToggleSwitch = React.memo(ToggleSwitch);
+export { MemoizedToggleSwitch as ToggleSwitch };

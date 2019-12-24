@@ -7,11 +7,11 @@ import { connect } from 'react-redux';
 import * as actions from '../../Redux/actions/index';
 import Boxes from '../../components/Boxes/Boxes';
 import ViewSwitcher from '../../components/ViewSwitcher/ViewSwitcher';
-import Loader from '../../components/External/Loader/Loader';
+import { Loader } from '../../components/External/Loader/Loader';
 import Notification from '../../components/External/Notification/Notification';
 
 import { Props, State } from './types';
-import ToggleSwitch from '../../components/External/ToggleSwitch/ToggleSwitch';
+import { ToggleSwitch } from '../../components/External/ToggleSwitch/ToggleSwitch';
 
 class HotelsView extends PureComponent<Props, State> {
   state: State = {
@@ -26,9 +26,13 @@ class HotelsView extends PureComponent<Props, State> {
         isLoading: false,
       });
     }, 1500);
+
+    if (localStorage.getItem('theme') === 'theme-dark') {
+      this.props.setTheme(true);
+    }
   }
 
-  private setToggleValues = (value = false, id: string) => {
+  private setToggleValues = (value: boolean) => {
     this.props.setTheme(value);
   };
 
@@ -44,6 +48,8 @@ class HotelsView extends PureComponent<Props, State> {
           <div className={'header__darkMode'}>
             <ToggleSwitch
               onClick={this.setToggleValues}
+              localStorageKey={'theme'}
+              localStorageValue={'theme-dark'}
               theme={'default'}
               className={'d-flex'}
               label={'Dark mode'}
@@ -91,7 +97,4 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  actions,
-)(HotelsView);
+export default connect(mapStateToProps, actions)(HotelsView);

@@ -1,34 +1,38 @@
 .facilities {
-	grid-column-start: 2;
-	margin: 1.5rem;
+  grid-column-start: 2;
+  margin: 1.5rem;
 
-	&__wrapper {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-right: 10px;
-		background: $color-white;
-		border-radius: 5px;
-		padding: 20px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background: $color-white;
+    border-radius: 5px;
+    padding: 20px;
 
-		.facilities__icon {
-			margin: 0;
-		}
-	}
+    .facilities__icon {
+      margin: 0;
+    }
+  }
 
-	&__header {
-		@include font-size(1.5);
-		margin-bottom: 1.5rem;
-	}
+  &__header {
+    @include font-size(1.5);
+    margin-bottom: 1.5rem;
 
-	&__icon {
-		margin-right: 1.5rem;
-		opacity: 0.6;
-	}
+    @include themify($themes) {
+      color: themed('box-primary-text');
+    }
+  }
 
-	&__container {
-		display: flex;
-		margin-top: 1rem;
-	}
+  &__icon {
+    margin-right: 1.5rem;
+    opacity: 0.6;
+  }
+
+  &__container {
+    display: flex;
+    margin-top: 1rem;
+  }
 }

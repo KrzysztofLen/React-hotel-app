@@ -21,9 +21,9 @@ class AddHotelReview extends Component<Props, {}> {
           return (
             <div className="hotel-form__value" key={idx}>
               <span className={'hotel-review__label'}>{labelsNames}</span>
-              <span className={'hotel-review__value'}>
+              {/* <span className={'hotel-review__value'}>
                 {value === null || value === '' ? 'empty' : value.toString()}
-              </span>
+              </span> */}
             </div>
           );
         })}
@@ -71,7 +71,4 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  actions,
-)(withRouter(AddHotelReview));
+export default connect(mapStateToProps, actions)(withRouter(AddHotelReview));

@@ -1,55 +1,58 @@
 .viewSwitcher {
-	background: $color-white;
-	border-radius: 5px;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-    position: relative;
-    padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
 
-	&__filter {
-		display: inline-block;
-		margin-right: 1rem;
-		cursor: pointer;
-		transition: all .4s;
+  @include themify($themes) {
+    background: themed('switcher-background');
+  }
 
-		svg {
-			fill: $color-grey-light-4;
-		}
+  &__filter {
+    display: inline-block;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: all 0.4s;
 
-		&:hover {
-			svg {
-				fill: $color-grey-dark-1;
-			}
-		}
+    svg {
+      fill: $color-grey-light-4;
+    }
 
-		&--active {
-			svg {
-				fill: $color-grey-dark-1;
-			}
-		}
-	}
+    &:hover {
+      svg {
+        fill: $color-grey-dark-1;
+      }
+    }
 
-	&__counter {
-		right: 0;
-		position: absolute;
-		margin-right: 2rem;
-		@include font-size(1.8);
-		@include font-weight(200);
-	}
+    &--active {
+      svg {
+        fill: $color-grey-dark-1;
+      }
+    }
+  }
 
-	&__counter-text {
-		display: flex;
-		align-items: center;
-		text-decoration: underline;
-		color: $color-white;
-	}
+  &__counter {
+    right: 0;
+    position: absolute;
+    margin-right: 2rem;
+    @include font-size(1.8);
+    @include font-weight(200);
+  }
 
-	&__counter-number {
-		@include font-size(4.5);
-		@include font-weight(700);
-		color: $color-grey-dark-1;
-		margin: 0 10px;
-		text-decoration: none;
-	}
+  &__counter-text {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    color: $color-white;
+  }
+
+  &__counter-number {
+    @include font-size(4.5);
+    @include font-weight(700);
+    color: $color-grey-dark-1;
+    margin: 0 10px;
+    text-decoration: none;
+  }
 }

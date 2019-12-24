@@ -7,7 +7,12 @@ $themes: (
     profile-name-color: $color-grey-dark-2,
     side-navigation-background: $color-white,
     view-header-color: $color-grey-dark-1,
-    side-nav-active: 3px solid $material-color-blue
+    side-nav-active: 3px solid $material-color-blue,
+    box-background: $color-white,
+    box-primary-text: $color-grey-dark-1,
+    box-hover-background: $color-grey-light-2,
+    box-secondary-text: $color-grey-dark-2,
+    switcher-background: $color-white,
   ),
   dark: (
     color-dash-background: #1f2327,
@@ -18,5 +23,10 @@ $themes: (
     side-navigation-background: #33363b,
     view-header-color: $color-white,
     side-nav-active: 3px solid #09d3ac,
+    box-background: #292c3e,
+    box-primary-text: $color-grey-dark-0,
+    box-hover-background: lighten(#292c3e, 10%),
+    box-secondary-text: $material-color-light-green,
+    switcher-background: #33363b,
   ),
 );

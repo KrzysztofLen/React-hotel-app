@@ -10,6 +10,12 @@
     margin-left: 2rem;
   }
 
+  @include media-queries(M) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    flex-basis: calc(100% - 4rem);
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -43,6 +49,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include media-queries(M) {
+      width: 100%;
+    }
 
     &:focus {
       outline: none;

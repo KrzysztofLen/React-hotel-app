@@ -9,7 +9,17 @@
 
   @include media-queries(L) {
     margin-right: 5rem;
-    flex: 0 0 calc(50% - 5rem);
+    flex: 0 0 calc(30% - 5rem);
+  }
+
+  @include media-queries(M) {
+    flex-basis: calc(50% - 5rem);
+    padding-right: 5rem;
+    margin-right: 0;
+
+    @include themify($themes) {
+      background-color: themed('search-background');
+    }
   }
 
   &__container {

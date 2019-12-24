@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => {
+const GoogleSignUp = () => {
   return (
     <div className="social__container">
       <a href="/auth/google" className="button is-google">
@@ -9,3 +9,5 @@ export default () => {
     </div>
   );
 };
+
+export default GoogleSignUp;

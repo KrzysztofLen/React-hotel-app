@@ -76,13 +76,17 @@
 
     &--active::before,
     &--active:hover::before {
-      @include themify($themes) {
-        border-left: themed('side-nav-active');
+      @include media-queries(L) {
+        @include themify($themes) {
+          border-left: themed('side-nav-active');
+        }
       }
 
       @include media-queries(M) {
-        border-left: none;
-        border-bottom: 3px solid $material-color-blue;
+        @include themify($themes) {
+          border-left: none;
+          border-bottom: themed('side-nav-active');
+        }
       }
     }
 

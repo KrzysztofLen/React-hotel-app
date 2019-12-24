@@ -13,6 +13,10 @@
     background-color: themed('header-background');
   }
 
+  @include media-queries(M) {
+    flex-wrap: wrap;
+  }
+
   &__back {
     background-color: transparent;
     background-image: url('../assets/SVG/chevron-left.svg');
@@ -39,10 +43,23 @@
     flex-basis: calc(20% - 8rem);
     height: 100%;
 
+    @include media-queries(M) {
+      flex-basis: calc(50% - 5rem);
+      padding-left: 5rem;
+
+      @include themify($themes) {
+        background-color: themed('search-background');
+      }
+    }
+
     label {
       position: relative;
       padding: 0;
       margin: 0 1rem;
+
+      @include media-queries(M) {
+        margin-left: 0;
+      }
     }
   }
 }

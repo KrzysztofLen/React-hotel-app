@@ -5,32 +5,30 @@ import user from './../../assets/SVG/user.svg';
 
 import { Props } from './types';
 
-class Profile extends PureComponent<Props, {}> {
-  render() {
-    return (
-      <div className={'login'}>
-        <span className={'login__profile'}>{`Hello ${
-          this.props.currentUserAuth
-            ? this.props.currentUserAuth.name
-            : 'stranger'
-        } !`}</span>
-        <div className="login__container">
-          <Link to={'/profile'}>
-            <img
-              className={'login__avatar'}
-              src={
-                this.props.currentUserAuth
-                  ? this.props.currentUserAuth.photos[0].value
-                  : user
-              }
-              alt={'profile'}
-            />
-          </Link>
-        </div>
+const Profile = (props: Props) => {
+  const userName = props.currentUserAuth
+    ? props.currentUserAuth.name
+    : 'stranger';
+
+  return (
+    <div className={'login'}>
+      <span className={'login__profile'}>{`Hello ${userName} !`}</span>
+      <div className="login__container">
+        <Link to={'/profile'}>
+          <img
+            className={'login__avatar'}
+            src={
+              props.currentUserAuth
+                ? props.currentUserAuth.photos[0].value
+                : user
+            }
+            alt={'profile'}
+          />
+        </Link>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 const mapStateToProps = (state: any) => {
   return {

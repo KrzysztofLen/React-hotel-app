@@ -1,9 +1,12 @@
 .profile {
-  background: $color-dash-background;
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+
+  @include themify($themes) {
+    background: themed('color-dash-background');
+  }
 
   &__content {
     margin: 0 8rem;
@@ -13,6 +16,10 @@
     background: $color-white;
     padding: 20px;
     border-radius: 5px;
+
+    @include themify($themes) {
+      background: themed('box-background');
+    }
 
     @include media-queries(M) {
       width: calc(100% - 15rem);
@@ -41,6 +48,10 @@
     justify-content: space-between;
     @include font-size(2);
     margin-bottom: 2rem;
+
+    @include themify($themes) {
+      color: themed('box-primary-text');
+    }
   }
 
   &__email {
@@ -48,6 +59,10 @@
     justify-content: space-between;
     @include font-size(2);
     margin-bottom: 2rem;
+
+    @include themify($themes) {
+      color: themed('box-primary-text');
+    }
   }
 
   &__buttons {

@@ -1,13 +1,9 @@
 import * as React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import Notification from '../External/Notification/Notification';
+import { State, Props } from './types';
 
-interface IProps {
-  to: string;
-  activeOnlyWhenExact?: boolean;
-}
-
-export const SideMenuLink = ({ to, activeOnlyWhenExact }: IProps) => {
+export const SideMenuLink = ({ to, activeOnlyWhenExact }: Props) => {
   return (
     <Route
       path={to}
@@ -27,11 +23,7 @@ export const SideMenuLink = ({ to, activeOnlyWhenExact }: IProps) => {
   );
 };
 
-interface IState {
-  isUnderBreakpoint: boolean;
-}
-
-class Navigation extends React.Component<{}, IState> {
+class Navigation extends React.Component<{}, State> {
   state = {
     isUnderBreakpoint: false,
   };

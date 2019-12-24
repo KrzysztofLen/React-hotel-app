@@ -1,4 +1,4 @@
-@import "../themes/theme.scss";
+@import '../themes/theme.scss';
 
 .u-center-text {
   text-align: center;
@@ -61,5 +61,9 @@
 
   @include themify($themes) {
     color: themed('view-header-color');
+  }
+
+  @include media-queries(M) {
+    margin-top: 10rem;
   }
 }

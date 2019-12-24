@@ -1,111 +1,114 @@
-@import "../themes/theme.scss";
+@import '../themes/theme.scss';
 
 .content {
-    @include themify($themes) {
-        background: themed('color-dash-background');
+  @include themify($themes) {
+    background: themed('color-dash-background');
+  }
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 65px);
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+
+  &__header-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 8rem;
+
+    @include media-queries(L) {
+      margin: 0 5rem;
     }
 
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	min-height: calc(100vh - 65px);
+    @include media-queries(M) {
+      margin: 5rem;
+    }
+  }
 
-	@media only screen and (max-width: $bp-medium) {
-		flex-direction: column;
-	}
+  &__container {
+    height: 100%;
+    min-height: calc(100vh - 65px);
 
-	&__header-wrapper {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		margin: 0 8rem;
+    @include media-queries(M) {
+      height: 100%;
+    }
 
-		@include media-queries(L) {
-			margin: 0 5rem;
-		}
-	}
+    &:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+  }
 
-	&__container {
-		height: 100%;
-		min-height: calc(100vh - 65px);
+  &__no-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font-size(2.6);
+    color: $material-color-blue;
+    width: 50%;
+    height: 100px;
+    background: $color-white;
+    border-radius: 5px;
+    margin: 5rem auto;
+  }
 
-		@include media-queries(M) {
-			height: 100%;
-		}
+  .more-container {
+    background: $color-white;
+  }
 
-		&:after {
-			content: "";
-			clear: both;
-			display: table;
-		}
-	}
+  .btn-more {
+    cursor: pointer;
+    margin: 40px 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-rejected;
+  }
 
-	&__no-results {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		@include font-size(2.6);
-		color: $material-color-blue;
-		width: 50%;
-		height: 100px;
-		background: $color-white;
-		border-radius: 5px;
-		margin: 5rem auto;
-	}
-
-	.more-container {
-		background: $color-white;
-	}
-
-	.btn-more {
-		cursor: pointer;
-		margin: 40px 20px;
-		background: none;
-		border: none;
-		font-size: 16px;
-		font-weight: bold;
-		color: $color-rejected;
-	}
-
-	&__comment-container {
-		position: relative;
-	}
+  &__comment-container {
+    position: relative;
+  }
 }
 
 .overlay {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba($color-black, 0.7);
-	left: -100%;
-	transition: transform .2s,
-	left .4s cubic-bezier(1, 0, 0, 1) .2s,
-	background-color .1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-black, 0.7);
+  left: -100%;
+  transition: transform 0.2s, left 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+    background-color 0.1s;
 
-	&__text {
-		color: $color-white;
-		@include font-size(2);
-	}
+  &__text {
+    color: $color-white;
+    @include font-size(2);
+  }
 }
 
 .container {
-	background-color: $color-grey-light-1;
-	width: calc(100% - 8rem);
-	min-height: 100vh;
+  background-color: $color-grey-light-1;
+  width: calc(100% - 8rem);
+  min-height: 100vh;
 
-	@include media-queries(M) {
-		width: 100%;
-	}
+  @include media-queries(M) {
+    width: 100%;
+  }
 }
 
 .message {
-	&__notSupported {
-		margin: 0 3rem;
-		text-align: center;
-		@include font-size(2.5);
-		color: $color-rejected;
-	}
+  &__notSupported {
+    margin: 0 3rem;
+    text-align: center;
+    @include font-size(2.5);
+    color: $color-rejected;
+  }
 }

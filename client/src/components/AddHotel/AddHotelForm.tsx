@@ -6,7 +6,7 @@ import { Hotel } from '../../types';
 
 // Components
 import { TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS } from './formFields';
-import ToggleSwitch from '../External/ToggleSwitch/ToggleSwitch';
+import { ToggleSwitch } from '../External/ToggleSwitch/ToggleSwitch';
 import DropzoneElement from '../External/Dropzone/DropzoneElement';
 import Notification from '../External/Notification/Notification';
 
@@ -327,7 +327,4 @@ function mapStateToProps(state: any) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  actions,
-)(withRouter(AddHotelForm));
+export default connect(mapStateToProps, actions)(withRouter(AddHotelForm));

@@ -1,140 +1,150 @@
 .box {
-	background: $color-white;
-	transition: all .4s linear;
-	border-radius: 5px;
-	display: block;
-	width: calc(25% - 10px);
-	height: 100%;
-	position: relative;
+  transition: all 0.4s linear;
+  border-radius: 5px;
+  display: block;
+  width: calc(25% - 10px);
+  height: 100%;
+  position: relative;
 
-	@include media-queries(XL) {
-		width: calc(25% - 3rem);
-		max-width: 235px;
-	}
+  @include themify($themes) {
+    background: themed('box-background');
+  }
 
-	@include media-queries(L) {
-		width: calc(25% - 10px);
-		max-width: 175px;
-	}
+  @include media-queries(XL) {
+    width: calc(25% - 3rem);
+    max-width: 235px;
+  }
 
-	@include media-queries(M) {
-		width: calc(50% - 10px);
-		max-width: 200px;
+  @include media-queries(L) {
+    width: calc(25% - 10px);
+    max-width: 175px;
+  }
 
-		&:nth-child(odd) {
-			margin-bottom: 20px;
-			margin-right: 20px;
-		}
-	}
+  @include media-queries(M) {
+    width: calc(50% - 10px);
+    max-width: 200px;
 
-	&:hover {
-		box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
-	}
+    &:nth-child(odd) {
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+  }
 
-	&:after {
-		content: "";
-		display: block;
-		padding-bottom: 100%;
-	}
+  &:hover {
+    box-shadow: 3px 12px 25px 1px rgba(0, 0, 0, 0.2);
+  }
 
-	&__container {
-		display: flex;
-		margin: 10px 8rem;
-		justify-content: space-between;
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
 
-		@include media-queries(L) {
-			margin: 10px 5rem;
-		}
+  &__container {
+    display: flex;
+    margin: 10px 8rem;
+    justify-content: space-between;
 
-		@include media-queries(M) {
-			flex-wrap: wrap;
-			width: 80%;
-			margin: 10px auto;
-			justify-content: center;
-		}
-	}
+    @include media-queries(L) {
+      margin: 10px 5rem;
+    }
 
-	&__content {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		box-sizing: border-box;
-		align-items: center;
-		justify-content: space-evenly;
-	}
+    @include media-queries(M) {
+      flex-wrap: wrap;
+      width: 80%;
+      margin: 10px auto;
+      justify-content: center;
+    }
+  }
 
-	&__icon {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 
-		&::before {
-			content: '';
-			position: absolute;
-			width: 18px;
-			height: 18px;
-			background-repeat: no-repeat;
-			background-size: contain;
-		}
+  &__icon {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-		&--1 {
-			background: $material-color-green;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
-			&::before {
-				background-image: url('../assets/SVG/office.svg');
-			}
-		}
+    &--1 {
+      background: $material-color-green;
 
-		&--2 {
-			background: $material-color-blue;
+      &::before {
+        background-image: url('../assets/SVG/office.svg');
+      }
+    }
 
-			&::before {
-				background-image: url('../assets/SVG/star-full.svg');
-			}
-		}
+    &--2 {
+      background: $material-color-blue;
 
-		&--3 {
-			background: $material-color-yellow;
+      &::before {
+        background-image: url('../assets/SVG/star-full.svg');
+      }
+    }
 
-			&::before {
-				background-image: url('../assets/SVG/bubbles2.svg');
-			}
-		}
+    &--3 {
+      background: $material-color-yellow;
 
-		&--4 {
-			background: $material-color-pink;
+      &::before {
+        background-image: url('../assets/SVG/bubbles2.svg');
+      }
+    }
 
-			&::before {
-				background-image: url('../assets/SVG/pie-chart.svg');
-			}
-		}
-	}
+    &--4 {
+      background: $material-color-pink;
 
-	&__text {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		position: relative;
+      &::before {
+        background-image: url('../assets/SVG/pie-chart.svg');
+      }
+    }
+  }
 
-		&--title {
-			@include font-size(1.6);
-			@include font-weight(200);
-			animation: animeSlideBottom;
-			animation-duration: 0.6s;
-		}
+  &__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
 
-		&--value {
-			@include font-size(4.6);
-			@include font-weight(800);
-			margin-bottom: 10px;
-			color: $color-grey-dark-1;
-			animation: animeSlideTop;
-			animation-duration: 0.6s;
-		}
-	}
+    &--primary {
+      @include font-size(4.6);
+      @include font-weight(800);
+      margin-bottom: 10px;
+      animation: animeSlideTop;
+      animation-duration: 0.6s;
+
+      @include themify($themes) {
+        color: themed('box-primary-text');
+      }
+    }
+
+    &--secondary {
+      @include font-size(1.6);
+      @include font-weight(200);
+      animation: animeSlideBottom;
+      animation-duration: 0.6s;
+
+      @include themify($themes) {
+        color: themed('box-secondary-text');
+      }
+    }
+  }
 }
