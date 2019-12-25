@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink, Route } from 'react-router-dom';
-import Notification from '../External/Notification/Notification';
+import Notification from '../Notification/Notification';
 import { State, Props } from './types';
 
 export const SideMenuLink = ({ to, activeOnlyWhenExact }: Props) => {

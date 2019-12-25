@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react';
 import Search from '../../components/Search/Search';
 import LoginSystem from '../../components/Profile/Profile';
-import HotelsList from '../../components/HotelList/HotelList';
+import { HotelsList } from '../../components/HotelList/HotelList';
 import { getFilteredHotels } from '../../utils/getFilteredHotels';
 import { connect } from 'react-redux';
 import * as actions from '../../Redux/actions/index';
 import Boxes from '../../components/Boxes/Boxes';
 import ViewSwitcher from '../../components/ViewSwitcher/ViewSwitcher';
 import { Loader } from '../../components/External/Loader/Loader';
-import Notification from '../../components/External/Notification/Notification';
+import Notification from '../../components/Notification/Notification';
 
 import { Props, State } from './types';
-import { ToggleSwitch } from '../../components/External/ToggleSwitch/ToggleSwitch';
+import { ToggleSwitch } from '../../components/ToggleSwitch/ToggleSwitch';
 
 class HotelsView extends PureComponent<Props, State> {
   state: State = {

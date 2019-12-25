@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
-import { defaultProps, Props, State } from './types';
+import { Props, State } from './types';
+
+export const defaultProps = Object.freeze({
+  autoClose: 5000,
+  closeOnClick: true,
+  type: 'default',
+});
 
 class Notification extends Component<Props, State> {
-  private myInterval: any;
-
-  static defaultProps: defaultProps = {
-    autoClose: 5000,
-    closeOnClick: true,
-    type: 'default',
-  };
+  private notificationInterval: any;
+  static readonly defaultProps = defaultProps;
 
   state: State = {
     show: true,
@@ -24,7 +25,7 @@ class Notification extends Component<Props, State> {
       }, this.props.autoClose);
     }
 
-    this.myInterval = setInterval(() => {
+    this.notificationInterval = setInterval(() => {
       if (this.state.duration > 0) {
         this.setState(({ duration }) => ({
           duration: duration - 1000,
@@ -36,10 +37,10 @@ class Notification extends Component<Props, State> {
   }
 
   componentWillUnmount() {
-    clearInterval(this.myInterval);
+    clearInterval(this.notificationInterval);
   }
 
-  onDismiss = () => {
+  private onDismiss = (): void => {
     this.setState({ show: false });
   };
 
@@ -66,7 +67,7 @@ class Notification extends Component<Props, State> {
     this.setState({ prefix });
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <React.Fragment>
         {this.state.show && (

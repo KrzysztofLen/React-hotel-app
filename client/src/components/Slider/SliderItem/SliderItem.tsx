@@ -1,6 +1,6 @@
 import { Component, useEffect } from 'react';
 import React from 'react';
-import Notification from '../../External/Notification/Notification';
+import Notification from '../../Notification/Notification';
 import { Props } from './types';
 
 const SliderItem = (props: Props) => {

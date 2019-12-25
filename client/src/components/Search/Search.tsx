@@ -4,25 +4,23 @@ import { connect } from 'react-redux';
 import { searchHotels } from '../../Redux/actions';
 import { Props } from './types';
 
-class Search extends Component<Props, {}> {
-  handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.props.searchHotels(e.currentTarget.value);
+const Search = (props: Props) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    props.searchHotels(e.currentTarget.value);
   };
 
-  render() {
-    return (
-      <form action="#" className="search">
-        <input
-          type="text"
-          className="search__input"
-          placeholder="Search hotels"
-          value={this.props.hotelsSearch}
-          onChange={this.handleSearchChange}
-        />
-      </form>
-    );
-  }
-}
+  return (
+    <div className="search">
+      <input
+        type="text"
+        className="search__input"
+        placeholder="Search hotels"
+        value={props.hotelsSearch}
+        onChange={handleSearchChange}
+      />
+    </div>
+  );
+};
 
 const mapDispatchToProps = { searchHotels };
 

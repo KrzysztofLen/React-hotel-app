@@ -3,7 +3,7 @@ import * as actions from '../../Redux/actions/index';
 import HotelImage from '../Hotel/HotelImage/HotelImage';
 import HotelLink from '../Hotel/HotelLink/HotelLink';
 import HotelRating from '../Hotel/HotelRating/HotelRating';
-import ToggleButton from '../External/ToggleButton/ToggleButton';
+import { ToggleButton } from '../ToggleButton/ToggleButton';
 import HotelPrice from '../Hotel/HotelPrice/HotelPrice';
 import HotelOpinion from '../Hotel/HotelOpinion/HotelOpinion';
 import HotelFacilities from '../Hotel/HotelFacilities/HotelFacilities';
@@ -44,7 +44,7 @@ class HotelListItem extends React.Component<Props, State> {
     return (
       <div
         className={`hotel__container ${
-          this.props.viewTypeId === 1 ? 'hotel__container--list' : ''
+          this.props.viewTypeId === '1' ? 'hotel__container--list' : ''
         }`}>
         <div className="hotel__image-container">
           <HotelImage
@@ -86,7 +86,7 @@ class HotelListItem extends React.Component<Props, State> {
             <ToggleButton
               key={this.props.index}
               index={this.props.index}
-              activeIndex={this.state.activeIndex === this.props.index}
+              isOpen={this.state.activeIndex === this.props.index}
               onClick={this.onToggleButton}
               btnClass={'button inline'}
             />
@@ -107,7 +107,7 @@ class HotelListItem extends React.Component<Props, State> {
 }
 
 interface IViewTypeID {
-  viewTypeId: number;
+  viewTypeId: string;
 }
 
 function mapStateToProps({ viewTypeId }: IViewTypeID) {

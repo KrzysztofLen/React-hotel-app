@@ -6,9 +6,9 @@ import { Hotel } from '../../types';
 
 // Components
 import { TEXT_FIELDS, NUMBER_FIELDS, BOOLEAN_FIELDS } from './formFields';
-import { ToggleSwitch } from '../External/ToggleSwitch/ToggleSwitch';
+import { ToggleSwitch } from '../ToggleSwitch/ToggleSwitch';
 import DropzoneElement from '../External/Dropzone/DropzoneElement';
-import Notification from '../External/Notification/Notification';
+import Notification from '../Notification/Notification';
 
 interface IState {
   files: Array<any>;

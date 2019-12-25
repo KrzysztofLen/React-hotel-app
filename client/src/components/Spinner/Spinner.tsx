@@ -1,6 +1,5 @@
 import React from 'react';
-
-export const Spinner = () => (
+const Spinner = () => (
   <div className="lds-ellipsis">
     <div className="lds-ellipsis__item" />
     <div className="lds-ellipsis__item" />
@@ -8,3 +7,5 @@ export const Spinner = () => (
     <div className="lds-ellipsis__item" />
   </div>
 );
+
+export default Spinner;

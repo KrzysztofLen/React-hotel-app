@@ -1,15 +1,20 @@
-import * as types from '../../types';
+import { SET_THEME, ERROR } from '../../types';
 
 const initialState = {
   theme: 'theme-light',
   error: [],
 };
 
-export default (state = initialState, action) => {
+export type Action = {
+  payload: string;
+  type: string;
+};
+
+export default (state = initialState, action: Action) => {
   switch (action.type) {
-    case types.SET_THEME:
+    case SET_THEME:
       return { ...state, theme: action.payload };
-    case types.ERROR:
+    case ERROR:
       return action.payload;
     default:
       return state;

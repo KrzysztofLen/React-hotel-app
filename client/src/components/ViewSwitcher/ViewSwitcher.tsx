@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { switchView } from '../../Redux/actions';
@@ -10,34 +10,30 @@ import alignJustifyGrey from './../../assets/SVG/align-justify-grey.svg';
 
 import { Props, ViewType } from './types';
 
-class ViewSwitcher extends Component<Props, {}> {
-  private setActive = (id: number) => {
-    this.props.switchView(id);
+const ViewSwitcher = (props: Props) => {
+  const setActive = (event: any) => {
+    props.switchView(event.target.id);
   };
 
-  render() {
-    return (
-      <div className="viewSwitcher">
-        <div
-          className={'viewSwitcher__filter'}
-          onClick={() => this.setActive(1)}>
-          <img
-            src={this.props.viewTypeId === 1 ? alignJustify : alignJustifyGrey}
-            style={{ width: 20, height: 20 }}
-          />
-        </div>
-        <div
-          className={'viewSwitcher__filter'}
-          onClick={() => this.setActive(2)}>
-          <img
-            src={this.props.viewTypeId === 2 ? list : listGrey}
-            style={{ width: 20, height: 20 }}
-          />
-        </div>
+  return (
+    <div className="viewSwitcher">
+      <div className={'viewSwitcher__filter'} onClick={setActive}>
+        <img
+          id={'1'}
+          src={props.viewTypeId === '1' ? alignJustify : alignJustifyGrey}
+          style={{ width: 20, height: 20 }}
+        />
       </div>
-    );
-  }
-}
+      <div className={'viewSwitcher__filter'} onClick={setActive}>
+        <img
+          id={'2'}
+          src={props.viewTypeId === '2' ? list : listGrey}
+          style={{ width: 20, height: 20 }}
+        />
+      </div>
+    </div>
+  );
+};
 
 const mapStateToProps = ({ viewTypeId }: ViewType) => {
   return {
@@ -47,7 +43,4 @@ const mapStateToProps = ({ viewTypeId }: ViewType) => {
 
 const mapDispatchToProps = { switchView };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ViewSwitcher);
+export default connect(mapStateToProps, mapDispatchToProps)(ViewSwitcher);

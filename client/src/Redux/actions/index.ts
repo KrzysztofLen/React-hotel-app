@@ -1,15 +1,26 @@
+import { Hotel } from './../../types';
 import axios from 'axios';
-import * as types from '../../types';
+import {
+  SWITCH_VIEW,
+  AUTH_USER,
+  DELETE_HOTEL,
+  SEARCH_HOTELS,
+  FETCH_HOTELS,
+  ADD_HOTEL,
+  FETCH_USER,
+  ERROR,
+  SET_THEME,
+} from '../../types';
 
 //******* HOTEL *********//
-export const fetchHotels = () => async (dispatch) => {
-  function onSuccess(success) {
+export const fetchHotels = () => async (dispatch: any) => {
+  const onSuccess = (success: Hotel[]) => {
     dispatch({
-      type: types.FETCH_HOTELS,
+      type: FETCH_HOTELS,
       payload: success,
     });
     return success;
-  }
+  };
 
   try {
     const response = await axios.get('/api/hotels');
@@ -19,27 +30,27 @@ export const fetchHotels = () => async (dispatch) => {
   }
 };
 
-export const searchHotels = (text) => ({
-  type: types.SEARCH_HOTELS,
+export const searchHotels = (text: string) => ({
+  type: SEARCH_HOTELS,
   text,
 });
 
-export const addHotel = (values) => ({
-  type: types.ADD_HOTEL,
+export const addHotel = (values: Hotel) => ({
+  type: ADD_HOTEL,
   payload: values,
 });
 
-export const deleteHotel = (id) => async (dispatch) => {
+export const deleteHotel = (id: number) => async (dispatch: any) => {
   if (id === 0) {
     dispatch({
-      type: types.DELETE_HOTEL,
+      type: DELETE_HOTEL,
       payload: false,
     });
   } else {
     try {
       const res = await axios.delete(`/api/hotels/${id}`);
       dispatch({
-        type: types.DELETE_HOTEL,
+        type: DELETE_HOTEL,
         payload: res.data,
       });
     } catch (e) {
@@ -49,12 +60,14 @@ export const deleteHotel = (id) => async (dispatch) => {
 };
 
 //******* AUTH *********//
-export const signUpUser = (formProps, callback) => async (dispatch) => {
+export const signUpUser = (formProps: any, callback: any) => async (
+  dispatch: any,
+) => {
   try {
     const response = await axios.post('/api/signup', formProps);
 
     dispatch({
-      type: types.AUTH_USER,
+      type: AUTH_USER,
       payload: response.data.token,
     });
     callback();
@@ -63,12 +76,14 @@ export const signUpUser = (formProps, callback) => async (dispatch) => {
   }
 };
 
-export const signInUser = (formProps, callback) => async (dispatch) => {
+export const signInUser = (formProps: any, callback: any) => async (
+  dispatch: any,
+) => {
   try {
     const response = await axios.post('/api/signin', formProps);
 
     dispatch({
-      type: types.AUTH_USER,
+      type: AUTH_USER,
       payload: response.data.token,
     });
 
@@ -82,21 +97,23 @@ export const signInUser = (formProps, callback) => async (dispatch) => {
 export const signout = () => {
   localStorage.removeItem('token');
   return {
-    type: types.AUTH_USER,
+    type: AUTH_USER,
     payload: '',
   };
 };
 
-export const fetchUser = () => async (dispatch) => {
+export const fetchUser = () => async (dispatch: any) => {
   const response = await axios.get('/api/current_user');
 
   dispatch({
-    type: types.FETCH_USER,
+    type: FETCH_USER,
     payload: response.data,
   });
 };
 
-export const submitSurvey = (values, history) => async (dispatch) => {
+export const submitSurvey = (values: any, history: any) => async (
+  dispatch: any,
+) => {
   let formData = new FormData();
   for (const key of Object.keys(values.hotel_images)) {
     formData.append('hotel_images', values.hotel_images[key]);
@@ -133,26 +150,24 @@ export const submitSurvey = (values, history) => async (dispatch) => {
 };
 
 //******* SYSTEM *********//
-export const systemError = (error) => {
+export const systemError = (error: any) => {
   return {
-    type: types.ERROR,
+    type: ERROR,
     payload: error,
   };
 };
 
-export const switchView = (id) => ({
-  type: types.SWITCH_VIEW,
+export const switchView = (id: string) => ({
+  type: SWITCH_VIEW,
   id,
 });
 
-export const setTheme = (value) => {
-  console.log(value);
-
+export const setTheme = (value: string) => {
   const theme = value ? 'theme-dark' : 'theme-light';
   localStorage.setItem('theme', theme);
 
   return {
-    type: types.SET_THEME,
+    type: SET_THEME,
     payload: theme,
   };
 };
