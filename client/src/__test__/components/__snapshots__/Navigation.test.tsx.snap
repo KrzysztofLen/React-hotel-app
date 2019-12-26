@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component] Navigation should render Navigation component correctly 1`] = `
+"<Fragment>
+  <nav className=\\"side-navigation\\">
+    <ul className=\\"side-navigation__container\\">
+      <Component activeOnlyWhenExact={true} to=\\"/\\" />
+      <Component to=\\"/buy\\" />
+      <Component to=\\"/reservation\\" />
+      <Component to=\\"/add\\" />
+    </ul>
+  </nav>
+</Fragment>"
+`;
+
+exports[`[Component] Navigation should render SideMenuLink component correctly 1`] = `
+"<Route path=\\"/\\" exact={[undefined]}>
+  [function children]
+</Route>"
+`;
+
+exports[`[Component] Navigation should render SideMenuLink component correctly with given props 1`] = `
+"<Route path=\\"/add\\" exact={true}>
+  [function children]
+</Route>"
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENT] HotelLink should render HotelLink correctly 1`] = `
+<div
+  className="hotel__name"
+>
+  <NavLink
+    className="hotel__link"
+    to="/hotel/0"
+  >
+    Test Sunset Willow Resort
+  </NavLink>
+</div>
+`;

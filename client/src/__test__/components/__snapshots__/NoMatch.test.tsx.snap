@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render UnderConstruction component correctly 1`] = `
+exports[`[COMPONENT] NoMatch should render UnderConstruction component correctly 1`] = `
 "<div className=\\"noMatch\\">
   <h1 className=\\"noMatch__header\\">
     404

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HotelImage component it should render HotelImage component correctly 1`] = `
+exports[`HotelImage component should render HotelImage component correctly 1`] = `
 "<Fragment>
-  <div className=\\"overlay\\" onClick={[undefined]}>
+  <div className=\\"overlay\\" onClick={[Function: onClick]}>
     <span className=\\"overlay__text\\">
       Click
     </span>

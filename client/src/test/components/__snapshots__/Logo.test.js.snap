@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should render Logo correctly 1`] = `
-"<div className=\\"logo__container\\">
-  <NavLink to=\\"/\\">
-    <img src={{...}} className=\\"logo\\" alt=\\"logo\\" />
-  </NavLink>
-</div>"
-`;

@@ -19,5 +19,11 @@
         "jsx",
         "json",
         "node"
+    ],
+    "testMatch": [
+        "**/__test__/**/*.(ts|tsx)"
+    ],
+    "modulePaths": [
+        "<rootDir>/src"
     ]
 }
