@@ -1,33 +1,45 @@
 .rate__color {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 2em;
+    color: white;
+    border-radius: 4px;
+    line-height: 1.5;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    border-radius: 4px;
     @include font-size(2);
-    @include font-weight(400);
+    @include font-weight(100);
 
 	@include media-queries(M) {
 		margin-top: 1rem;
 	}
 
 	&--verybad {
-		color: $material-color-red;
+		background-color: $material-color-red;
 	}
 
 	&--poor {
-		color: $material-color-pink;
+		background-color: $material-color-pink;
 	}
 
 	&--fair {
-		color: $material-color-yellow;
+		background-color: $material-color-yellow;
 	}
 
 	&--good {
-		color: $material-color-blue;
+		background-color: $material-color-blue;
 	}
 
 	&--verygood {
-		color: $material-color-green;
+		background-color: $material-color-green;
 	}
 
 	&--excellent {
-		color: $material-color-light-green;
+		background-color: $material-color-light-green;
 	}
 }

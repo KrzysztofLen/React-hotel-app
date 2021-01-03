@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should render HotelRating Link correctly 1`] = `
-"<div className=\\"hotel__name\\">
-  <NavLink to=\\"/hotel/0\\" className=\\"hotel__link\\">
-    Test Sunset Willow Resort
-  </NavLink>
-</div>"
-`;

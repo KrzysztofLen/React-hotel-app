@@ -1,21 +1,21 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
 import { Props } from './types';
 
-class Box extends PureComponent<Props, {}> {
-  render() {
-    return (
-      <div key={this.props.index} className={`box box--${this.props.index}`}>
-        <div className={'box__content'}>
-          <div className={`box__icon box__icon--${this.props.index}`} />
-          <div className={'box__text'}>
-            <span className={'box__text--value'}>{this.props.value}</span>
-            <span className={'box__text--title'}>{this.props.title}</span>
-          </div>
+const Box = (props: Props) => {
+  const { index, value, title } = props;
+  return (
+    <div key={index} className={`box box--${index}`}>
+      <div className={'box__content'}>
+        <div className={`box__icon box__icon--${index}`} />
+        <div className={'box__text'}>
+          <span className={'box__text--primary'}>{value}</span>
+          <span className={'box__text--secondary'}>{title}</span>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default Box;
+const MemoizedBox = React.memo(Box);
+export { MemoizedBox as Box };

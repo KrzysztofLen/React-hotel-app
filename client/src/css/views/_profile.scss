@@ -1,0 +1,72 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+
+  @include themify($themes) {
+    background: themed('color-dash-background');
+  }
+
+  &__content {
+    margin: 0 8rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background: $color-white;
+    padding: 20px;
+    border-radius: 5px;
+
+    @include themify($themes) {
+      background: themed('box-background');
+    }
+
+    @include media-queries(M) {
+      width: calc(100% - 15rem);
+    }
+
+    @include media-queries(L) {
+      margin: 0 5rem;
+    }
+  }
+
+  &__label {
+    @include font-weight(200);
+  }
+
+  &__photos {
+    margin-bottom: 2rem;
+  }
+
+  &__photo {
+    max-width: 100px;
+    width: 100px;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    @include font-size(2);
+    margin-bottom: 2rem;
+
+    @include themify($themes) {
+      color: themed('box-primary-text');
+    }
+  }
+
+  &__email {
+    display: flex;
+    justify-content: space-between;
+    @include font-size(2);
+    margin-bottom: 2rem;
+
+    @include themify($themes) {
+      color: themed('box-primary-text');
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

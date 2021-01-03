@@ -51,29 +51,29 @@
 ///     @include font($fontName1);
 ///   }
 @mixin font-family($font) {
-    font-family: $font;
+  font-family: $font;
 }
 
 /// Mixin to work with Font weight
 /// @group shorthand
 ///
 @mixin font-weight($weight) {
-	font-weight: $weight;
+  font-weight: $weight;
 }
 
 /// Mixin to work with Font-size in rem's
 /// @group shorthand
 ///
 @mixin font-size($sizeValue: 1.6) {
-	font-size: ($sizeValue * 10) + px;
-	font-size: $sizeValue + rem;
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
 }
 
 /// Mixin to add border-radius
 /// @group shorthand
 ///
 @mixin border-radius($radius: 0.25em) {
-	border-radius: $radius;
+  border-radius: $radius;
 }
 
 /// Mixin for padding
@@ -83,7 +83,38 @@
 ///     @include padding(1.2rem, 4rem);
 ///   }
 @mixin padding($values...) {
-    @each $var in $values {
-        padding: #{$var};
+  @each $var in $values {
+    padding: #{$var};
+  }
+}
+
+/// Mixin for themes
+/// @group shorthand
+/// @example scss - `.nav`
+///   .nav {
+///     @include padding(1.2rem, 4rem);
+///   }
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
     }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
 }

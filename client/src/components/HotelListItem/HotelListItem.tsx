@@ -3,18 +3,24 @@ import * as actions from '../../Redux/actions/index';
 import HotelImage from '../Hotel/HotelImage/HotelImage';
 import HotelLink from '../Hotel/HotelLink/HotelLink';
 import HotelRating from '../Hotel/HotelRating/HotelRating';
-import ToggleButton from '../External/ToggleButton/ToggleButton';
+import { ToggleButton } from '../ToggleButton/ToggleButton';
 import HotelPrice from '../Hotel/HotelPrice/HotelPrice';
 import HotelOpinion from '../Hotel/HotelOpinion/HotelOpinion';
 import HotelFacilities from '../Hotel/HotelFacilities/HotelFacilities';
 import HotelDescription from '../Hotel/HotelDescription/HotelDescription';
-import Slider from '../External/Slider/Slider';
+import { Slider } from '../Slider/Slider';
+
+import Hotel_1 from '../../assets/image/1.jpg';
+import Hotel_2 from '../../assets/image/2.jpg';
+import Hotel_3 from '../../assets/image/3.jpg';
 
 import isNewIcon from '../../assets/SVG/new.svg';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import { connect } from 'react-redux';
 
 import { Props, State } from './types';
+
+const HOTEL_IMAGES = [Hotel_1, Hotel_2, Hotel_3];
 
 class HotelListItem extends React.Component<Props, State> {
   state: State = {
@@ -43,21 +49,21 @@ class HotelListItem extends React.Component<Props, State> {
 
     return (
       <div
-        className={
-          this.props.viewTypeId === 1
-            ? 'hotel__container'
-            : 'hotel__container hotel__container--list'
-        }>
+        className={`hotel__container ${
+          this.props.viewTypeId === '1' ? 'hotel__container--list' : ''
+        }`}>
         <div className="hotel__image-container">
           <HotelImage
             onClick={this.onModalOpen}
-            image={this.props.data.hotel_images}
+            image={HOTEL_IMAGES[this.props.index]}
           />
-          <ModalWindow
-            isOpen={this.state.modalIsOpen}
-            closeModal={this.onCloseModal}
-            component={<Slider images={this.props.data.hotel_images} />}
-          />
+          {this.props.data.hotel_images !== undefined && (
+            <ModalWindow
+              isOpen={this.state.modalIsOpen}
+              closeModal={this.onCloseModal}
+              component={<Slider images={this.props.data.hotel_images} />}
+            />
+          )}
         </div>
         <div className={'hotel__address-container'}>
           <div className={'hotel__name-wrapper'}>
@@ -86,7 +92,7 @@ class HotelListItem extends React.Component<Props, State> {
             <ToggleButton
               key={this.props.index}
               index={this.props.index}
-              activeIndex={this.state.activeIndex === this.props.index}
+              isOpen={this.state.activeIndex === this.props.index}
               onClick={this.onToggleButton}
               btnClass={'button inline'}
             />
@@ -107,7 +113,7 @@ class HotelListItem extends React.Component<Props, State> {
 }
 
 interface IViewTypeID {
-  viewTypeId: number;
+  viewTypeId: string;
 }
 
 function mapStateToProps({ viewTypeId }: IViewTypeID) {
@@ -116,7 +122,4 @@ function mapStateToProps({ viewTypeId }: IViewTypeID) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  actions,
-)(HotelListItem);
+export default connect(mapStateToProps, actions)(HotelListItem);

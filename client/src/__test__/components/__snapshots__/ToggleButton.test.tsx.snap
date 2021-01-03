@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENT] ToggleButton should render ToggleButton component correctly 1`] = `
+"<button className=\\"\\" onClick={[Function: onToggleButton]}>
+  Less
+</button>"
+`;
+
+exports[`[COMPONENT] ToggleButton should render inside test with Less 1`] = `
+"<button className=\\"\\" onClick={[Function: onToggleButton]}>
+  Less
+</button>"
+`;
+
+exports[`[COMPONENT] ToggleButton should render inside test with More 1`] = `
+"<button className=\\"\\" onClick={[Function: onToggleButton]}>
+  More info
+</button>"
+`;

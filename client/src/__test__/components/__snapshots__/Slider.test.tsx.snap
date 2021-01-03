@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component] Slider should render Slider component correctly 1`] = `
+<SliderItem
+  hasNext={true}
+  hasPrev={true}
+  imageSrc="2"
+  onCloseModal={[Function]}
+  onNext={[Function]}
+  onPrev={[Function]}
+/>
+`;

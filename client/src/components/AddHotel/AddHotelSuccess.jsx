@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Notification from '../External/Notification/Notification.tsx';
+import Notification from '../Notification/Notification.tsx';
 
 class AddHotelSuccess extends Component {
   constructor(props) {

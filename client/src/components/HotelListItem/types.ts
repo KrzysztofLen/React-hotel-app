@@ -1,7 +1,7 @@
 import { Hotel } from '../../types';
 
 export type Props = {
-  readonly viewTypeId: number;
+  readonly viewTypeId: string;
   readonly deleteHotel: (id: any) => any;
   readonly data: Hotel;
   readonly id: number;

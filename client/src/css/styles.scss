@@ -19,12 +19,10 @@
 @import "layout/breakpoints";
 @import "layout/content";
 @import "layout/buttons";
-@import "layout/logo";
 @import "layout/icons";
 @import "layout/rate";
 @import "layout/form";
 @import "layout/notification";
-@import "layout/dropdown";
 
 /* ------------- */
 /*		COMPONENTS    */
@@ -41,29 +39,29 @@
 @import "components/hotel-overview";
 @import "components/hotel-opinion";
 @import "components/hotel";
-@import "components/payments";
 @import "components/viewSwitcher";
 @import "components/hotel-details";
 @import "components/facilities";
 @import "components/loader";
 @import "components/login-system";
 @import "components/rating";
-@import "components/footer";
 @import "components/spinner";
 @import "components/addHotelForm";
 @import "components/success";
 @import "components/forbidden";
 @import "components/weather";
-@import "components/sign-up";
 @import "components/login-google-btn";
 @import "components/login";
 @import "components/toggleSwitch";
 @import "components/addHotelReview";
-@import "components/dropzone";
 @import "components/slider";
 @import "components/noMatch";
 @import "components/underConstruction";
-@import "components/dottedMenu";
+
+/* ------------- */
+/*		VIEWS    */
+/* ------------- */
+@import "views/profile";
 
 /* ------------- */
 /*		PAGES    */
@@ -73,7 +71,7 @@
 /* ------------- */
 /*		THEMES    */
 /* ------------- */
-
+@import "themes/theme";
 
 /* ------------- */
 /*		VENDORS    */

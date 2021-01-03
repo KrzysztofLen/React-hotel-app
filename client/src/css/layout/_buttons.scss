@@ -1,250 +1,261 @@
 $button-background-color: #fff !default;
 $button-border: 1px solid #dbdbdb !default;
 $button-color: #363636 !default;
-$button-padding-vertical: 1rem !default
+$button-padding-vertical: 1rem !default;
 $button-padding-horizontal: 0.75em !default;
 
 .button {
-	background-color: $button-background-color;
-	border: $button-border;
-	color: $button-color;
-	cursor: pointer;
-	padding: $button-padding-vertical $button-padding-horizontal;
-	text-align: center;
-	white-space: nowrap;
-	border-radius: 4px;
-	text-decoration: none;
-	text-transform: none;
-	@include font-weight(400);
-	@include font-family($oswald);
-	@include font-size(1.7);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: background .4s ease;
-	line-height: 22px;
-	outline: none;
+  background-color: $button-background-color;
+  border: $button-border;
+  color: $button-color;
+  cursor: pointer;
+  padding: $button-padding-vertical $button-padding-horizontal;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: none;
+  @include font-weight(400);
+  @include font-family($oswald);
+  @include font-size(1.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s ease;
+  line-height: 22px;
+  outline: none;
 }
 
 //#################
 //#### PRIMARY ####
 //#################
 .is-primary {
-	background-color: $material-color-green;
-	border-color: transparent;
-	color: #fff;
+  background-color: $material-color-green;
+  border-color: transparent;
+  color: #fff;
 
-	&:hover {
-		background: lighten($material-color-green, 5%);
-	}
+  &:hover {
+    background: lighten($material-color-green, 5%);
+  }
 
-	&--is-outlined {
-		background-color: transparent;
-		border-color: $material-color-green;
-		color: $material-color-green;
+  &--is-outlined {
+    background-color: transparent;
+    border-color: $material-color-green;
+    color: $material-color-green;
 
-		&:hover {
-			background-color: $material-color-green;
-			border-color: $material-color-green;
-			color: $color-white;
-		}
-	}
+    &:hover {
+      background-color: $material-color-green;
+      border-color: $material-color-green;
+      color: $color-white;
+    }
+  }
 }
 
 //#################
 //#### LINK #######
 //#################
 .is-link {
-	background-color: $material-color-blue;
-	border-color: transparent;
-	color: $color-white;
+  background-color: $material-color-blue;
+  border-color: transparent;
+  color: $color-white;
 
-	&:hover {
-		background: lighten($material-color-blue, 5%);
-	}
+  &:hover {
+    background: lighten($material-color-blue, 5%);
+  }
 
-	&--is-outlined {
-		background-color: transparent;
-		border-color: $material-color-blue;
-		color: $material-color-blue;
+  &--is-outlined {
+    background-color: transparent;
+    border-color: $material-color-blue;
+    color: $material-color-blue;
 
-		&:hover {
-			background-color: $material-color-blue;
-			border-color: $material-color-blue;
-			color: $color-white;
-		}
-	}
+    &:hover {
+      background-color: $material-color-blue;
+      border-color: $material-color-blue;
+      color: $color-white;
+    }
+  }
 }
 
 //#################
 //#### DANGER #####
 //#################
 .is-danger {
-	background-color: $material-color-red;
-	border-color: transparent;
-	color: $color-white;
+  background-color: $material-color-red;
+  border-color: transparent;
+  color: $color-white;
 
-	&:hover {
-		background: lighten($material-color-red, 5%);
-	}
+  &:hover {
+    background: lighten($material-color-red, 5%);
+  }
 
-	svg {
-		fill: $color-white;
-		margin-left: 10px;
-		margin-top: 1px;
-	}
+  svg {
+    fill: $color-white;
+    margin-left: 10px;
+    margin-top: 1px;
+  }
 
-	&--is-outlined {
-		background-color: transparent;
-		border-color: $material-color-red;
-		color: $material-color-red;
+  &--is-outlined {
+    background-color: transparent;
+    border-color: $material-color-red;
+    color: $material-color-red;
 
-		&:hover {
-			background-color: $material-color-red;
-			border-color: $material-color-red;
-			color: $color-white;
-		}
-	}
+    &:hover {
+      background-color: $material-color-red;
+      border-color: $material-color-red;
+      color: $color-white;
+    }
+  }
 }
 
 //#################
 //#### SUCCESS ####
 //#################
 .is-success {
-	background: $material-color-green;
-	border-color: transparent;
-	color: $color-white;
+  background: $material-color-green;
+  border-color: transparent;
+  color: $color-white;
 
-	&:hover {
-		background: lighten($material-color-green, 5%);
-	}
+  &:hover {
+    background: lighten($material-color-green, 5%);
+  }
 
-	svg {
-		fill: $color-white;
-		margin-left: 10px;
-	}
+  svg {
+    fill: $color-white;
+    margin-left: 10px;
+  }
 
-	&--is-outlined {
-		background-color: transparent;
-		border-color: $material-color-green;
-		color: $material-color-green;
+  &--is-outlined {
+    background-color: transparent;
+    border-color: $material-color-green;
+    color: $material-color-green;
 
-		&:hover {
-			background-color:  $material-color-green;
-			border-color:  $material-color-green;
-			color: $color-white;
-		}
-	}
+    &:hover {
+      background-color: $material-color-green;
+      border-color: $material-color-green;
+      color: $color-white;
+    }
+  }
 }
 
 //#################
 //#### INFO #######
 //#################
 .is-info {
-	background-color: #8388A4;
-	border-color: transparent;
-	color: #363B59;
+  background-color: #8388a4;
+  border-color: transparent;
+  color: #363b59;
 
-	&:hover {
-		background-color: #363B59;
-		color: $color-white;
-	}
+  &:hover {
+    background-color: #363b59;
+    color: $color-white;
+  }
 
-	&--is-outlined {
-		background-color: transparent;
-		border-color: #363B59;
-		color: #363B59;
+  &--is-outlined {
+    background-color: transparent;
+    border-color: #363b59;
+    color: #363b59;
 
-		&:hover {
-			background-color: #363B59;
-			border-color: #363B59;
-			color: #fff;
-		}
-	}
+    &:hover {
+      background-color: #363b59;
+      border-color: #363b59;
+      color: #fff;
+    }
+  }
 }
 
 //#################
 //#### WARNING ####
 //#################
 .is-warning {
-	background-color: $material-color-yellow;
-	border-color: transparent;
-	color: rgba(0, 0, 0, .7);
+  background-color: $material-color-yellow;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
 
-	&:hover {
-		background: lighten($material-color-yellow, 5%);
-	}
+  &:hover {
+    background: lighten($material-color-yellow, 5%);
+  }
 
-	&--is-outlined {
-		background-color: transparent;
-		border-color: $material-color-yellow;
-		color: $material-color-yellow;
+  &--is-outlined {
+    background-color: transparent;
+    border-color: $material-color-yellow;
+    color: $material-color-yellow;
 
-		&:hover {
-			background-color: $material-color-yellow;
-			border-color: $material-color-yellow;
-			color: $color-white;
-		}
-	}
+    &:hover {
+      background-color: $material-color-yellow;
+      border-color: $material-color-yellow;
+      color: $color-white;
+    }
+  }
 }
 
 //#################
 //#### SOCIAL ####
 //#################
 .is-google {
-	color: #fff;
-	background-color: #dd4b39;
-	max-width: 135px;
-	position: relative;
-	padding-left: 65px;
-	text-align: left;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  color: #fff;
+  background-color: #dd4b39;
+  max-width: 135px;
+  position: relative;
+  padding-left: 65px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-	&:hover {
-		background: lighten(#dd4b39, 5%);
-	}
+  &:hover {
+    background: lighten(#dd4b39, 5%);
+  }
 
-	svg {
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width: 52px;
-		line-height: 34px;
-		font-size: 1.6em;
-		text-align: center;
-		border-right: 1px solid rgba(0,0,0,0.2);
-		display: flex;
-		font-size: inherit;
-		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-		line-height: 45px;
-		padding: 8px;
-		box-sizing: border-box;
-		font-size: 1.8em;
-		align-items: center;
-		height: 100%;
-	}
+  &:before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../assets/SVG/google-plus.svg');
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 52px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    line-height: 45px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 1.8em;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 //#####################
 //#### INLINE TEXT ####
 //#####################
 .inline {
-	border: none;
-	color: $material-color-blue;
-	@include font-size(1.4);
-	padding: 0;
-	padding-bottom: 2px;
-	display: inline-block;
-	background-color: transparent;
-	cursor: pointer;
-	transition: all .2s;
+  border: none;
+  color: $material-color-blue;
+  @include font-size(1.4);
+  padding: 0;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
 
-	&:hover {
-		color: $color-grey-dark-1;
-		background: transparent;
-	}
+  &:hover {
+    color: $color-grey-dark-1;
+    background: transparent;
+  }
 }

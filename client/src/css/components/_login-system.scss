@@ -1,47 +1,49 @@
 .login {
-	&__container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 18.5rem;
-		margin-right: 15px;
-		border-left: 1px solid $color-grey-light-2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 8rem;
 
-		@include media-queries(M) {
-			width: 100%;
-			margin: 0;
-			height: auto;
-			border-top: 1px solid $color-grey-light-2;
-			border-left: none;
-			padding: 8px 0;
-		}
-	}
+  flex-basis: calc(20%);
+  height: 100%;
 
-	&__profile {
-		margin-right: 2rem;
-		display: flex;
-		position: relative;
-		align-items: center;
-		height: 4rem;
-		min-width: 18.5rem;
-		justify-content: flex-end;
-		@include font-size(1.6);
+  @include media-queries(L) {
+    margin-right: 5rem;
+    flex: 0 0 calc(30% - 5rem);
+  }
 
-		&::before {
-			content: "";
-			position: absolute;
-			background-image: url("./../assets/SVG/user.svg");
-			width: 30px;
-			height: 30px;
-			background-color: $color-grey-avatar;
-			border-radius: 50%;
-			border: 1px solid $color-grey-avatar-border;
-			left: 15px;
-		}
+  @include media-queries(M) {
+    flex-basis: calc(50% - 5rem);
+    padding-right: 5rem;
+    margin-right: 0;
 
-		&--name {
-			@include font-weight(200);
-			margin: 0 .3rem;
-		}
-	}
+    @include themify($themes) {
+      background-color: themed('search-background');
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &__profile {
+    margin-right: 2rem;
+    @include font-size(1.6);
+
+    @include themify($themes) {
+      color: themed('profile-name-color');
+    }
+  }
+
+  &__avatar {
+    width: 5rem;
+    max-width: 5rem;
+    border-radius: 50%;
+    background-color: $color-grey-avatar;
+    border: 1px solid $color-grey-avatar-border;
+  }
 }

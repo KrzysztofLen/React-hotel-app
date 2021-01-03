@@ -11,6 +11,7 @@ export const AUTH_USER: string = 'AUTH_USER';
 export const AUTH_ERROR: string = 'AUTH_ERROR';
 export const ADD_HOTEL: string = 'ADD_HOTEL';
 export const ERROR: string = 'ERROR';
+export const SET_THEME: string = 'SET_THEME';
 
 // ENTRIES API URL'S
 
@@ -35,4 +36,21 @@ export type Hotel = {
   facilities_card_payment: boolean;
   facilities_game_room: boolean;
   hotel_images?: Array<string>;
+};
+
+export type User = {
+  readonly googleId: string;
+  readonly name: string;
+  readonly id: string;
+  readonly emails: Array<UserEmails>;
+  readonly photos: Array<UserPhotos>;
+};
+
+export type UserEmails = {
+  value: string;
+  verified: boolean;
+};
+
+export type UserPhotos = {
+  value: string;
 };
