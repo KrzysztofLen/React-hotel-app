@@ -10,11 +10,17 @@ import HotelFacilities from '../Hotel/HotelFacilities/HotelFacilities';
 import HotelDescription from '../Hotel/HotelDescription/HotelDescription';
 import { Slider } from '../Slider/Slider';
 
+import Hotel_1 from '../../assets/image/1.jpg';
+import Hotel_2 from '../../assets/image/2.jpg';
+import Hotel_3 from '../../assets/image/3.jpg';
+
 import isNewIcon from '../../assets/SVG/new.svg';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import { connect } from 'react-redux';
 
 import { Props, State } from './types';
+
+const HOTEL_IMAGES = [Hotel_1, Hotel_2, Hotel_3];
 
 class HotelListItem extends React.Component<Props, State> {
   state: State = {
@@ -49,7 +55,7 @@ class HotelListItem extends React.Component<Props, State> {
         <div className="hotel__image-container">
           <HotelImage
             onClick={this.onModalOpen}
-            image={this.props.data.hotel_images}
+            image={HOTEL_IMAGES[this.props.index]}
           />
           {this.props.data.hotel_images !== undefined && (
             <ModalWindow
