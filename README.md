@@ -4,6 +4,8 @@
 
 # React Hotel App
 
+INFO: This repository is archivied due to outdated code. New version available under: https://github.com/KrzysztofLen/react-foodie-app
+
 ### Tech stack
 Application is build in MERN stack (MongoDB, React, Node and Express)
 
